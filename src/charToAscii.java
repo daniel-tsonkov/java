@@ -6,6 +6,6 @@ public class charToAscii {
 
         int oneChar = scanner.nextLine().charAt(1);
 
-        //System.out.println(oneChar);
+        System.out.println(oneChar);
     }
 }
