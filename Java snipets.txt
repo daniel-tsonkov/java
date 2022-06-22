@@ -1,0 +1,12 @@
+import java.util.Scanner;
+Scanner scanner = new Scanner(System.in);
+int oneChar = scanner.nextLine().charAt(1); - char към ASCII
+
+System.out.print(imeNaPromenliva.charAt(NOMER NA ELEMENTA)); - взимане на символ от String
+
+scanner.nextLine().split(" "); - сплитване по space
+
+int [] arr = Array.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray(); - String към arr
+
+List<String> imeNaPromenliva = Arrays.stream(values.split(" ")).collect(Collators.toList()); - String към List
+
