@@ -10,3 +10,5 @@ int [] arr = Array.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parse
 
 List<String> imeNaPromenliva = Arrays.stream(values.split(" ")).collect(Collators.toList()); - String към List
 
+
+.
