@@ -5,21 +5,20 @@ public class a06StrongNumber {
         Scanner scanner = new Scanner(System.in);
 
         int myNumber = Integer.parseInt(scanner.nextLine());
-        int mynewNumber = myNumber;
-        int factorial = 1;
+        int myNewNumber = myNumber;
         int tempSum = 0;
 
         while(myNumber > 0) {
-            int tempNumber = myNumber % 10;
-            factorial = 1;
-            myNumber = myNumber / 10;
+            int digit = myNumber % 10;
+            int factorial = 1;
+            myNumber /= 10;
 
-            for (int i = 1; i <= tempNumber; i++) {
+            for (int i = 1; i <= digit; i++) {
                 factorial = factorial * i;
             }
             tempSum += factorial;
         }
-        if (mynewNumber == tempSum) {
+        if (myNewNumber == tempSum) {
             System.out.println("yes");
         }else {
             System.out.println("no");
