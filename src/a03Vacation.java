@@ -10,48 +10,59 @@ public class a03Vacation {
         double totalPrice = 0.00;
 
         switch (typePerson) {
-            case "Students" -> {
+            case "Students":
                 switch (dayOfWeek) {
-                    case "Friday" -> totalPrice = (numberPersons * 8.45);
-                    case "Saturday" -> totalPrice = (numberPersons * 9.80);
-                    case "Sunday" -> totalPrice = (numberPersons * 10.46);
+                    case "Friday":
+                        totalPrice = (numberPersons * 8.45);
+                        break;
+                    case "Saturday":
+                        totalPrice = (numberPersons * 9.80);
+                        break;
+                    case "Sunday":
+                        totalPrice = (numberPersons * 10.46);
+                        break;
                 }
                 if (numberPersons >= 30) {
                     totalPrice = totalPrice * 0.85;
                 }
-            }
-            case "Business" -> {
+                break;
+            case "Business":
                 double tenPerson = 0;
                 switch (dayOfWeek) {
-                    case "Friday" -> {
+                    case "Friday":
                         totalPrice = (numberPersons * 10.90);
                         tenPerson = 10.90 * 10;
-                    }
-                    case "Saturday" -> {
+                        break;
+                    case "Saturday":
                         totalPrice = (numberPersons * 15.60);
                         tenPerson = 15.60 * 10;
-                    }
-                    case "Sunday" -> {
+                        break;
+                    case "Sunday":
                         totalPrice = (numberPersons * 16);
                         tenPerson = 16 * 10;
-                    }
+                        break;
                 }
                 if (numberPersons >= 100) {
 
                     totalPrice = totalPrice - tenPerson;
                 }
-            }
-            case "Regular" -> {
-                totalPrice = switch (dayOfWeek) {
-                    case "Friday" -> (numberPersons * 15);
-                    case "Saturday" -> (numberPersons * 20);
-                    case "Sunday" -> (numberPersons * 22.50);
-                    default -> totalPrice;
-                };
+                break;
+            case "Regular":
+                switch (dayOfWeek) {
+                    case "Friday":
+                        totalPrice = (numberPersons * 15);
+                        break;
+                    case "Saturday":
+                        totalPrice = (numberPersons * 20);
+                        break;
+                    case "Sunday":
+                        totalPrice = (numberPersons * 22.50);
+                        break;
+                }
                 if (numberPersons >= 10 && numberPersons <= 20) {
                     totalPrice = totalPrice * 0.95;
                 }
-            }
+                break;
         }
         String answear = String.format("Total price: %.2f", totalPrice);
         System.out.println(answear);
