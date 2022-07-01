@@ -6,7 +6,6 @@ public class a07VendingMachine {
 
         String inputString = "";
         Double mySum = 0.0;
-        double tempSum1 = 0.0;
 
         while(true){
             inputString = scanner.nextLine();
@@ -24,35 +23,35 @@ public class a07VendingMachine {
             inputString = scanner.nextLine();
 
             if ( inputString.equals("End")){
+                System.out.println(String.format("Change: %.2f", mySum));
                 break;
             }
 
             if ( inputString.equals("Nuts") || inputString.equals("Water") || inputString.equals("Crisps") || inputString.equals("Soda") || inputString.equals("Coke")){
-                tempSum1 = mySum;
+                double sumProduct = 0.0;
 
                 switch (inputString) {
                     case "Nuts":
-                         mySum -= 2.0;
+                        sumProduct = 2.0;
                          break;
                     case "Water":
-                         mySum -= 0.7;
+                        sumProduct = 0.7;
                          break;
                     case "Crisps":
-                         mySum -= 1.5;
+                        sumProduct = 1.5;
                          break;
                     case "Soda":
-                         mySum -= 0.8;
+                        sumProduct = 0.8;
                          break;
                     case "Coke":
-                         mySum -= 1.0;
+                        sumProduct = 1.0;
                          break;
                 }
-                if(mySum >= 0) {
+                if(mySum - sumProduct >= 0) {
                     System.out.println("Purchased " + inputString);
+                    mySum -= sumProduct;
                 }else {
                     System.out.println("Sorry, not enough money");
-                    System.out.println(String.format("Change: %.2f", tempSum1));
-                    break;
                 }
             }else {
                 System.out.println("Invalid product");
