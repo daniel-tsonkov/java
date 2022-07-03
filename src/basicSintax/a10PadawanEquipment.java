@@ -1,3 +1,5 @@
+package basicSintax;
+
 import java.util.Scanner;
 
 public class a10PadawanEquipment {
