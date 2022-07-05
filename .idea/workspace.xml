@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/src/a01Ages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/basicSintax/a01Ages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/a02Division.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/basicSintax/a02Division.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/a03Vacation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/basicSintax/a03Vacation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/a04PrintAndSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/basicSintax/a04PrintAndSum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/a06StrongNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/basicSintax/a06StrongNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/a07VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/basicSintax/a07VendingMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/a08TriangleOfNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/basicSintax/a08TriangleOfNumbers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/a09Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/basicSintax/a09Orders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/a10PadawanEquipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/basicSintax/a10PadawanEquipment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/a11RageExpenses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/basicSintax/a11RageExpenses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/basicSintax/a10PadawanEquipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/basicSintax/a10PadawanEquipment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,16 +42,14 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.a09Orders">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.a10PadawanEquipment">
     <configuration name="а06StrongNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="а06StrongNumber" />
-      <module name="testove" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="a04PrintAndSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="basicSintax.a04PrintAndSum" />
       <module name="testove" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -86,13 +76,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="a10PadawanEquipment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="basicSintax.a10PadawanEquipment" />
+      <module name="testove" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="basicSintax.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.a10PadawanEquipment" />
         <item itemvalue="Application.a09Orders" />
         <item itemvalue="Application.a08TriangleOfNumbers" />
         <item itemvalue="Application.a07VendingMachine" />
         <item itemvalue="Application.а06StrongNumber" />
-        <item itemvalue="Application.a04PrintAndSum" />
       </list>
     </recent_temporary>
   </component>
@@ -259,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656870908432</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Update">
+      <created>1656871501724</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1656871501724</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
