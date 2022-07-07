@@ -1,4 +1,4 @@
-package Arrays;
+package DataTypesVariables;
 
 import  java.util.Scanner;
 

@@ -8,7 +8,7 @@ scanner.nextLine().split(" "); - сплитване по space
 
 int [] arr = Array.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray(); - String към arr
 
-List<String> imeNaPromenliva = Arrays.stream(values.split(" ")).collect(Collators.toList()); - String към List
+List<String> imeNaPromenliva = DataTypesVariables.stream(values.split(" ")).collect(Collators.toList()); - String към List
 
 for(Map.Entry<String, Integer> entry : imeMap.entrySet()) {
     System.out.println(entry.getKey() + " " + entry.getValue());
