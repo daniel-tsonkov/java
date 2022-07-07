@@ -1,3 +1,5 @@
+package Razni;
+
 import java.util.*;
 import java.util.Scanner;
 

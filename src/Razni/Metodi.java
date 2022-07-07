@@ -1,3 +1,5 @@
+package Razni;
+
 public class Metodi {
     public static void main(String[] args) {
         printme();

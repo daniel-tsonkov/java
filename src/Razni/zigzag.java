@@ -1,3 +1,5 @@
+package Razni;
+
 import java.util.Scanner;
 
 public class zigzag {

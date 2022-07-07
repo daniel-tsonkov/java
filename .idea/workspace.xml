@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/DataTypesVariables/a11Snowballs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java snipets.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Java snipets.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Arrays/a01Train.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTypesVariables/a01Train.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Arrays/a02SumDigits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTypesVariables/a02SumDigits.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Arrays/a03Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTypesVariables/a03Elevator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Arrays/a04SumOfCharts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTypesVariables/a04SumOfCharts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Arrays/a05PrintPartOfASCIITable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTypesVariables/a05PrintPartOfASCIITable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Arrays/a06TriplesOfLatinLetters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTypesVariables/a06TriplesOfLatinLetters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Arrays/a07WaterOverflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTypesVariables/a07WaterOverflow.java" afterDir="false" />
-    </list>
+    <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -364,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657113336396</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Update">
+      <created>1657191497680</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1657191497680</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
