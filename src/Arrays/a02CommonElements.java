@@ -9,8 +9,8 @@ public class a02CommonElements {
         String[] firstArray = scanner.nextLine().split(" ");//new int{}
         String[] seccondArray = scanner.nextLine().split(" ");
 
-        for (String wordOne : firstArray) {
-            for (String wordTwo : seccondArray) {
+        for (String wordTwo : seccondArray) {
+            for (String wordOne : firstArray) {
                 if (wordTwo.equals(wordOne)) {
                     System.out.print(wordTwo + " ");
                 }
