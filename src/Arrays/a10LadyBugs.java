@@ -22,34 +22,45 @@ public class a10LadyBugs {
             int moveBug = Integer.parseInt(myCommand[2]);
 
             if (positionBug <= 0 || positionBug < myArray.length) {
-                if (myArray[Integer.parseInt(myCommand[0])] == 1) {
+                if (myArray[positionBug] == 1) {
                     if (myCommand[1].equals("right")) {
-                        if (myArray[positionBug + moveBug] != 0) {
-                            myArray[positionBug] = 0;
-                            int progresPosition = positionBug + moveBug;
+                        if(positionBug + moveBug < 0 || positionBug + moveBug < myArray.length ) {
+                            if (myArray[positionBug + moveBug] == 1) {
+                                myArray[positionBug] = 0;
+                                int progresPosition = positionBug + moveBug;
 
-                            while(myArray[progresPosition] != 0) {
+                                while (progresPosition < myArray.length) {
+                                    if (myArray[progresPosition] == 0) {
+                                        myArray[progresPosition] = 1;
+                                        break;
+                                    }
                                     progresPosition++;
+                                }
+                            } else {
+                                myArray[positionBug] = 0;
+                                myArray[positionBug + moveBug] = 1;
                             }
-                            if (progresPosition < myArray.length) {
-                                myArray[progresPosition] = 1;
-                            }
-                        } else {
+                        } else{
                             myArray[positionBug] = 0;
                         }
-
                     } else {
-                        if (myArray[positionBug - moveBug] == 0) {
-                            myArray[positionBug] = 0;
-                            int progresPosition = positionBug - moveBug;
+                        if(positionBug + moveBug > 0 || positionBug + moveBug < myArray.length ) {
+                            if (myArray[positionBug - moveBug] == 1) {
+                                myArray[positionBug] = 0;
+                                int progresPosition = positionBug + moveBug;
 
-                            while(myArray[progresPosition] != 0) {
-                                progresPosition++;
+                                while (progresPosition < myArray.length) {
+                                    if (myArray[progresPosition] == 0) {
+                                        myArray[progresPosition] = 1;
+                                        break;
+                                    }
+                                    progresPosition++;
+                                }
+                            } else {
+                                myArray[positionBug] = 0;
+                                myArray[positionBug + moveBug] = 1;
                             }
-                            if (progresPosition > 0) {
-                                myArray[progresPosition] = 1;
-                            }
-                        } else {
+                        } else{
                             myArray[positionBug] = 0;
                         }
 
