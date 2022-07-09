@@ -17,10 +17,49 @@ public class a10LadyBugs {
         }
 
         String[] myCommand = scanner.nextLine().split(" ");
-        while (myCommand[0].equals("end")) {
-            if (Integer.parseInt(myCommand[0]) <= 0 || Integer.parseInt(myCommand[0]) < myArray.length) {
+        while (!myCommand[0].equals("end")) {
+            int positionBug = Integer.parseInt(myCommand[0]);
+            int moveBug = Integer.parseInt(myCommand[2]);
 
+            if (positionBug <= 0 || positionBug < myArray.length) {
+                if (myArray[Integer.parseInt(myCommand[0])] == 1) {
+                    if (myCommand[1].equals("right")) {
+                        if (myArray[positionBug + moveBug] != 0) {
+                            myArray[positionBug] = 0;
+                            int progresPosition = positionBug + moveBug;
+
+                            while(myArray[progresPosition] != 0) {
+                                    progresPosition++;
+                            }
+                            if (progresPosition < myArray.length) {
+                                myArray[progresPosition] = 1;
+                            }
+                        } else {
+                            myArray[positionBug] = 0;
+                        }
+
+                    } else {
+                        if (myArray[positionBug - moveBug] == 0) {
+                            myArray[positionBug] = 0;
+                            int progresPosition = positionBug - moveBug;
+
+                            while(myArray[progresPosition] != 0) {
+                                progresPosition++;
+                            }
+                            if (progresPosition > 0) {
+                                myArray[progresPosition] = 1;
+                            }
+                        } else {
+                            myArray[positionBug] = 0;
+                        }
+
+                    }
+                }
             }
+            myCommand = scanner.nextLine().split(" ");
+        }
+        for (int bug : myArray) {
+            System.out.print(bug + " ");
         }
     }
 }
