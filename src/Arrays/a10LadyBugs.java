@@ -21,7 +21,31 @@ public class a10LadyBugs {
             int positionBug = Integer.parseInt(myCommand[0]);
             int moveBug = Integer.parseInt(myCommand[2]);
 
-            if (positionBug <= 0 || positionBug < myArray.length) {
+            if (positionBug >= 0 && positionBug < myArray.length) {
+                if (myCommand[1].equals("left")) {
+                    moveBug *= -1;
+                }
+                myArray[positionBug] = 0;
+
+                if(positionBug + moveBug >= 0 && positionBug + moveBug < myArray.length ) {
+                    if (myArray[positionBug + moveBug] == 1) {
+                        int progresPosition = positionBug + moveBug;
+
+                        while (progresPosition < myArray.length) {
+                            if (myArray[progresPosition] == 0) {
+                                myArray[progresPosition] = 1;
+                                break;
+                            }
+                            progresPosition++;
+                        }
+                    } else {
+                        myArray[positionBug + moveBug] = 1;
+                    }
+                }
+            }
+
+
+            /*if (positionBug <= 0 || positionBug < myArray.length) {
                 if (myArray[positionBug] == 1) {
                     if (myCommand[1].equals("right")) {
                         if(positionBug + moveBug < 0 || positionBug + moveBug < myArray.length ) {
@@ -43,30 +67,9 @@ public class a10LadyBugs {
                         } else{
                             myArray[positionBug] = 0;
                         }
-                    } else {
-                        if(positionBug + moveBug > 0 || positionBug + moveBug < myArray.length ) {
-                            if (myArray[positionBug - moveBug] == 1) {
-                                myArray[positionBug] = 0;
-                                int progresPosition = positionBug + moveBug;
-
-                                while (progresPosition < myArray.length) {
-                                    if (myArray[progresPosition] == 0) {
-                                        myArray[progresPosition] = 1;
-                                        break;
-                                    }
-                                    progresPosition++;
-                                }
-                            } else {
-                                myArray[positionBug] = 0;
-                                myArray[positionBug + moveBug] = 1;
-                            }
-                        } else{
-                            myArray[positionBug] = 0;
-                        }
-
                     }
                 }
-            }
+            }*/
             myCommand = scanner.nextLine().split(" ");
         }
         for (int bug : myArray) {
