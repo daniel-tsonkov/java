@@ -13,7 +13,9 @@ public class a10LadyBugs {
         int[] bugs = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 
         for (int j : bugs) {
-            myArray[j] = 1;
+            if(j >= 0 && j < myArray.length) {
+                myArray[j] = 1;
+            }
         }
 
         String[] myCommand = scanner.nextLine().split(" ");
@@ -21,7 +23,7 @@ public class a10LadyBugs {
             int positionBug = Integer.parseInt(myCommand[0]);
             int moveBug = Integer.parseInt(myCommand[2]);
 
-            if (positionBug >= 0 && positionBug < myArray.length) {
+            if (positionBug >= 0 && positionBug < myArray.length  && myArray[positionBug] == 1) {
                 if (myCommand[1].equals("left")) {
                     moveBug *= -1;
                 }
