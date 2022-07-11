@@ -13,11 +13,14 @@ public class a01SmallestOfThreeNumbers {
             myArray[i] = Integer.parseInt(scanner.nextLine());
         }
 
-        sortArray(myArray);
+
+        int mySmallestNumber = sortArray(myArray);
+        System.out.print(mySmallestNumber);
     }
 
-    public static  void sortArray(int...numbers) {
+    public static  int sortArray(int...numbers) {
         Arrays.sort(numbers);
-        System.out.print(numbers[0]);
+        //System.out.print(numbers[0]);
+        return numbers[0];
     }
 }
