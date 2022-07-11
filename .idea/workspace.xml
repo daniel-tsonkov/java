@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/Arrays/a07MaxSequence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Methods/a01SmallestOfThreeNumbers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,13 +47,13 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.a07MaxSequence">
-    <configuration name="a04ArrayRotation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Arrays.a04ArrayRotation" />
+  <component name="RunManager" selected="Application.a01SmallestOfThreeNumbers">
+    <configuration name="a01SmallestOfThreeNumbers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Methods.a01SmallestOfThreeNumbers" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Arrays.*" />
+          <option name="PATTERN" value="Methods.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -115,11 +115,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.a01SmallestOfThreeNumbers" />
         <item itemvalue="Application.a07MaxSequence" />
         <item itemvalue="Application.a10LadyBugs" />
         <item itemvalue="Application.a08MagicSum" />
         <item itemvalue="Application.a05TopIntegers" />
-        <item itemvalue="Application.a04ArrayRotation" />
       </list>
     </recent_temporary>
   </component>
@@ -131,13 +131,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00002" summary="test">
-      <created>1655897884942</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1655897884942</updated>
     </task>
     <task id="LOCAL-00003" summary="testa">
       <created>1656053617698</created>
@@ -475,7 +468,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657471095473</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Update">
+      <created>1657473846682</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1657473846682</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -513,11 +513,6 @@
           <url>file://$PROJECT_DIR$/src/Arrays/a10LadyBugs.java</url>
           <line>12</line>
           <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Arrays/a07MaxSequence.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="24" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
