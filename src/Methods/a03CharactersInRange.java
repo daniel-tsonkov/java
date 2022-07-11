@@ -21,8 +21,9 @@ public class a03CharactersInRange {
             end = temp;
         }
         for (int i = start + 1; i < end; i++) {
-            char charForPrint = (char) i;
-            System.out.print(charForPrint + " ");
+            //char charForPrint = (char) i;
+            //System.out.print(charForPrint + " ");
+            System.out.printf("%c ", i);
         }
     }
 }
