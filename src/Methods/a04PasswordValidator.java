@@ -22,18 +22,15 @@ public class a04PasswordValidator {
         }
 
         for (int i = 0; i < myPassword.length(); i++) {
-            if (myPassword.charAt(i) < 48) {
-                invalidCharacters = 1;
-            }
             if ((myPassword.charAt(i) < 48) || (myPassword.charAt(i) > 57)) {
                 if ((myPassword.charAt(i) < 65) || (myPassword.charAt(i) > 90)){
                     if ((myPassword.charAt(i) < 97) || (myPassword.charAt(i) > 122)){
                         invalidCharacters = 1;
                     }
                 }
-
             }
-            if ((myPassword.charAt(i) > 48) && (myPassword.charAt(i) <= 57)) {
+
+            if ((myPassword.charAt(i) >= 48) && (myPassword.charAt(i) <= 57)) {
                 digits++;
             }
         }
@@ -46,7 +43,7 @@ public class a04PasswordValidator {
             System.out.println("Password must have at least 2 digits");
         }
 
-        if ((digits > 2) && (invalidCharacters == 0) && (myPassword.length() > 6 && myPassword.length() < 10)) {
+        if ((digits >= 2) && (invalidCharacters == 0) && (myPassword.length() > 5 && myPassword.length() < 11)) {
             System.out.println("Password is valid");
         }
     }
