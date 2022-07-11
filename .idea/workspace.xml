@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/Methods/a02VowelsCount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Methods/a03CharactersInRange.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +47,7 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.a02VowelsCount">
+  <component name="RunManager" selected="Application.a03CharactersInRange">
     <configuration name="a01SmallestOfThreeNumbers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Methods.a01SmallestOfThreeNumbers" />
       <module name="testove" />
@@ -74,12 +74,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="a07MaxSequence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Arrays.a07MaxSequence" />
+    <configuration name="a03CharactersInRange" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Methods.a03CharactersInRange" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Arrays.*" />
+          <option name="PATTERN" value="Methods.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -87,8 +87,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="a08MagicSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Arrays.a08MagicSum" />
+    <configuration name="a07MaxSequence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Arrays.a07MaxSequence" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
@@ -115,11 +115,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.a03CharactersInRange" />
         <item itemvalue="Application.a02VowelsCount" />
         <item itemvalue="Application.a01SmallestOfThreeNumbers" />
         <item itemvalue="Application.a07MaxSequence" />
         <item itemvalue="Application.a10LadyBugs" />
-        <item itemvalue="Application.a08MagicSum" />
       </list>
     </recent_temporary>
   </component>
@@ -131,13 +131,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00005" summary="testa">
-      <created>1656071336605</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1656071336605</updated>
     </task>
     <task id="LOCAL-00006" summary="testa">
       <created>1656071406787</created>
@@ -475,7 +468,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657541455409</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Update">
+      <created>1657543373361</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1657543373361</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
