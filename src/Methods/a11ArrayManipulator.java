@@ -34,7 +34,7 @@ public class a11ArrayManipulator {
 
     public static void exchangeIndex(int index, int...newArray) {
         if (index > newArray.length) {
-            System.out.print("Invalid index");
+            System.out.println("Invalid index");
         } else {
             System.out.print("[");
             for (int i = index; i < newArray.length; i++) {
@@ -47,7 +47,7 @@ public class a11ArrayManipulator {
                     System.out.print(newArray[i] + ", ");
                 }
             }
-            System.out.print("]");
+            System.out.println("]");
         }
     }
 
@@ -115,7 +115,7 @@ public class a11ArrayManipulator {
         int sumOfDigit = Integer.parseInt(pieceselements);
 
         if(sumOfDigit > newArray.length) {
-            System.out.print("Invalid count");
+            System.out.println("Invalid count");
         } else {
             System.out.print("[");
             switch (oddOrEven) {
@@ -140,7 +140,7 @@ public class a11ArrayManipulator {
                     }
                     break;
             }
-            System.out.print("]");
+            System.out.println("]");
         }
     }
 
@@ -177,6 +177,6 @@ public class a11ArrayManipulator {
                 }
                 break;
         }
-        System.out.print("[" + firstDigit + " " + secondDigit + "]");
+        System.out.println("[" + firstDigit + " " + secondDigit + "]");
     }
 }
