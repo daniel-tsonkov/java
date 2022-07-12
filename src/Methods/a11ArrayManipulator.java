@@ -22,10 +22,10 @@ public class a11ArrayManipulator {
                     minEvenOdd(commands[1], myArray);
                     break;
                 case "first" :
-                    firstTwo(commands[2], myArray);
+                    firstTwo(commands[1], commands[2], myArray);
                     break;
                 case "last" :
-                    lastTwo(commands[2], myArray);
+                    lastTwo(commands[1], commands[2], myArray);
                     break;
             }
             commands = scanner.nextLine().split(" ");
@@ -111,46 +111,43 @@ public class a11ArrayManipulator {
         }
     }
 
-    public static void firstTwo(String oddOrEven, int...newArray) {
-        int firstDigit = 0;
-        int secondDigit = 0;
-        int sumOfDigit = 0;
+    public static void firstTwo(String pieceselements, String oddOrEven, int...newArray) {
+        int sumOfDigit = Integer.parseInt(pieceselements);
 
-        switch (oddOrEven) {
-            case "even": //нечетно
-                for (int i = 0; i < newArray.length; i++) {
-                    if (newArray[i] % 2 == 0 && sumOfDigit != 2) {
-                        if (sumOfDigit == 0) {
-                            firstDigit = newArray[i];
-                            sumOfDigit++;
+        if(sumOfDigit > newArray.length) {
+            System.out.print("Invalid count");
+        } else {
+            System.out.print("[");
+            switch (oddOrEven) {
+                case "even": //четно
+                    for (int i = 0; i < newArray.length; i++) {
+                        if (newArray[i] % 2 == 0 && i + 1 < sumOfDigit) {
+                            System.out.print(newArray[i] + ", ");
                         } else {
-                            secondDigit = newArray[i];
-                            sumOfDigit++;
+                            System.out.print(newArray[i]);
+                            break;
                         }
                     }
-                }
-                break;
-            case "odd": //нечетно
-                for (int i = 0; i < newArray.length; i++) {
-                    if (newArray[i] % 2 != 0 && sumOfDigit != 2) {
-                        if (sumOfDigit == 0) {
-                            firstDigit = newArray[i];
-                            sumOfDigit++;
+                    break;
+                case "odd": //нечетно
+                    for (int i = 0; i < newArray.length; i++) {
+                        if (newArray[i] % 2 != 0 && i + 1 < sumOfDigit) {
+                            System.out.print(newArray[i] + ", ");
                         } else {
-                            secondDigit = newArray[i];
-                            sumOfDigit++;
+                            System.out.print(newArray[i]);
+                            break;
                         }
                     }
-                }
-                break;
+                    break;
+            }
+            System.out.print("]");
         }
-        System.out.print("[" + firstDigit + " " + secondDigit + "]");
     }
 
-    public static void lastTwo(String oddOrEven, int...newArray) {
+    public static void lastTwo(String pieceselements, String oddOrEven, int...newArray) {
+        int sumOfDigit = Integer.parseInt(pieceselements);
         int firstDigit = 0;
         int secondDigit = 0;
-        int sumOfDigit = 0;
 
         switch (oddOrEven) {
             case "even": //нечетно
