@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/List/a01Train.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/List/a01Train.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/List/a01Train.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,13 +46,13 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.a11ArrayManipulator">
-    <configuration name="a04PasswordValidator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Methods.a04PasswordValidator" />
+  <component name="RunManager" selected="Application.a01Train">
+    <configuration name="a01Train" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="List.a01Train" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Methods.*" />
+          <option name="PATTERN" value="List.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -114,11 +114,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.a01Train" />
         <item itemvalue="Application.a11ArrayManipulator" />
         <item itemvalue="Application.a07NxNMatrix" />
         <item itemvalue="Application.a06MiddleCharacters" />
         <item itemvalue="Application.a05AddAndSubstract" />
-        <item itemvalue="Application.a04PasswordValidator" />
       </list>
     </recent_temporary>
   </component>
@@ -130,13 +130,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Update">
-      <created>1656678613793</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1656678613793</updated>
     </task>
     <task id="LOCAL-00018" summary="Update">
       <created>1656680033085</created>
@@ -474,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657629562837</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Update">
+      <created>1657721769856</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1657721769856</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
