@@ -20,14 +20,18 @@ public class a01Train {
                 vagons.add(Integer.parseInt(data[1]));
             } else {
                 for (int i = 0; i < vagons.size(); i++) {
-                    if ((vagons.indexOf(i) + (Integer.parseInt(data[1])) <= maxCapacity)) {
-                        vagons.add(i) = (vagons.indexOf(i) + (Integer.parseInt(data[1])));
+                    if ((vagons.get(i) + (Integer.parseInt(data[0])) <= maxCapacity)) {
+                        vagons.set(i, (vagons.get(i) + (Integer.parseInt(data[0]))));
+                        break;
                     }
                 }
             }
 
             myCommand = scanner.nextLine();
         }
-        System.out.println(vagons + " ");
+
+        for (int vagon: vagons) {
+            System.out.print(vagon + " ");
+        }
     }
 }
