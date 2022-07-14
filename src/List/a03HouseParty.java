@@ -17,9 +17,10 @@ public class a03HouseParty {
             if (commands[2].equals("going!")) {
                 boolean isAdded = false;
 
-                for (int j = 0; j < listGuests.size(); j++) {
-                    if (listGuests.get(j).equals(commands[0])) {
+                for (String listGuest : listGuests) {
+                    if (listGuest.equals(commands[0])) {
                         isAdded = true;
+                        break;
                     }
                 }
 
@@ -31,9 +32,10 @@ public class a03HouseParty {
             } else {
                 boolean isNotAdded = true;
 
-                for (int j = 0; j < listGuests.size(); j++) {
-                    if (listGuests.get(j).equals(commands[0])) {
+                for (String listGuest : listGuests) {
+                    if (listGuest.equals(commands[0])) {
                         isNotAdded = false;
+                        break;
                     }
                 }
 
