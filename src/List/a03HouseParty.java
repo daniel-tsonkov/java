@@ -1,10 +1,8 @@
 package List;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class a03HouseParty {
     public static void main(String[] args) {
@@ -12,9 +10,10 @@ public class a03HouseParty {
 
         int guests = Integer.parseInt(scanner.nextLine());
         List<String> listGuests = new ArrayList<>();
-        String[] commands = scanner.nextLine().split(" ");
+
 
         for (int i = 0; i < guests; i++) {
+            String[] commands = scanner.nextLine().split(" ");
             if (commands[2].equals("going!")) {
                 boolean isAdded = false;
 
@@ -38,13 +37,12 @@ public class a03HouseParty {
                     }
                 }
 
-                if (!isNotAdded) {
+                if (isNotAdded) {
                     System.out.println(commands[0] + " is not in the list!");
                 } else {
                     listGuests.remove(commands[0]);
                 }
             }
-            commands = scanner.nextLine().split(" ");
         }
         for (String myGuests: listGuests) {
             System.out.println(myGuests);
