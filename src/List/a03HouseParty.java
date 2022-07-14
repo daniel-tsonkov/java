@@ -14,9 +14,9 @@ public class a03HouseParty {
 
         for (int i = 0; i < guests; i++) {
             String[] commands = scanner.nextLine().split(" ");
-            if (commands[2].equals("going!")) {
-                boolean isAdded = false;
+            boolean isAdded = false;
 
+            if (commands[2].equals("going!")) {
                 for (String listGuest : listGuests) {
                     if (listGuest.equals(commands[0])) {
                         isAdded = true;
@@ -30,16 +30,14 @@ public class a03HouseParty {
                     System.out.println(commands[0] + " is already in the list!");
                 }
             } else {
-                boolean isNotAdded = true;
-
                 for (String listGuest : listGuests) {
                     if (listGuest.equals(commands[0])) {
-                        isNotAdded = false;
+                        isAdded = true;
                         break;
                     }
                 }
 
-                if (isNotAdded) {
+                if (!isAdded) {
                     System.out.println(commands[0] + " is not in the list!");
                 } else {
                     listGuests.remove(commands[0]);
