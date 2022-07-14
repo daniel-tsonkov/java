@@ -18,6 +18,7 @@ public class a02ChangeList {
                 for (int i = 0; i < myList.size(); i++) {
                     if (myList.get(i) == Integer.parseInt(commands[1])) {
                         myList.remove(i);
+                        i--;
                     }
                 }
             } else {
