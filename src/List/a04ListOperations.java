@@ -21,35 +21,34 @@ public class a04ListOperations {
                     myInteger.add(Integer.parseInt(commands[1]));
                     break;
                 case "Insert":
-                    if (Integer.parseInt(commands[2]) > myInteger.size()) {
+                    if (Integer.parseInt(commands[2]) < 0 || Integer.parseInt(commands[2]) > myInteger.size()) {
                         System.out.println("Invalid index");
                     } else {
-                        myInteger.add(Integer.parseInt(commands[2]), Integer.parseInt((commands[1])));
+                        myInteger.add(Integer.parseInt(commands[2]), Integer.parseInt(commands[1]));
                     }
                     break;
                 case "Remove":
-                    if (Integer.parseInt(commands[1]) > myInteger.size()) {
+                    if (Integer.parseInt(commands[1]) < 0 || Integer.parseInt(commands[1]) >= myInteger.size()) {
                         System.out.println("Invalid index");
                     } else {
-                        myInteger.remove(Integer.parseInt((commands[1])));
+                        myInteger.remove(Integer.parseInt(commands[1]));
                     }
                     break;
                 case "Shift":
-                    int tempvalue;
                     if (commands[1].equals("left")) {
                         int shiftValue = Integer.parseInt(commands[2]);
                         for (int i = 0; i < shiftValue; i++) {
-                            tempvalue = myInteger.get(0);
+                            myInteger.add(myInteger.get(0));
                             myInteger.remove(0);
-                            myInteger.add(tempvalue);
+
                         }
 
                     } else {
                         int shiftValue = Integer.parseInt(commands[2]);
                         for (int i = 0; i < shiftValue; i++) {
-                            tempvalue = myInteger.get(myInteger.size() - 1);
+                            myInteger.add(0, myInteger.get(myInteger.size() - 1));
                             myInteger.remove(myInteger.size() - 1);
-                            myInteger.add(0, tempvalue);
+
                         }
                     }
                     break;
