@@ -50,7 +50,20 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.a03HouseParty">
+  <component name="RunManager" selected="Application.a01AdvertismentMessage">
+    <configuration name="a01AdvertismentMessage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ObjectsAndClasses.a01AdvertismentMessage" />
+      <module name="testove" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ObjectsAndClasses.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="a01Train" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="List.a01Train" />
       <module name="testove" />
@@ -90,19 +103,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="a07NxNMatrix" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Methods.a07NxNMatrix" />
-      <module name="testove" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Methods.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="a11ArrayManipulator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Methods.a11ArrayManipulator" />
       <module name="testove" />
@@ -118,11 +118,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.a01AdvertismentMessage" />
         <item itemvalue="Application.a03HouseParty" />
         <item itemvalue="Application.a02ChangeList" />
         <item itemvalue="Application.a01Train" />
         <item itemvalue="Application.a11ArrayManipulator" />
-        <item itemvalue="Application.a07NxNMatrix" />
       </list>
     </recent_temporary>
   </component>
@@ -134,13 +134,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Update">
-      <created>1657104661996</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1657104661996</updated>
     </task>
     <task id="LOCAL-00028" summary="Update">
       <created>1657106911957</created>
@@ -478,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658163527252</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Update">
+      <created>1658253999828</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1658253999829</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
