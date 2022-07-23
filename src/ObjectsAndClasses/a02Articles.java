@@ -21,13 +21,17 @@ public class a02Articles {
 
             switch (commands[0]) {
                 case "Edit":
+                    article.setContent(commands[1]);
                     break;
                 case "ChangeAuthor":
+                    article.setAuthor(commands[1]);
                     break;
                 case "Rename":
+                    article.setTitle(commands[1]);
                     break;
             }
         }
+        System.out.println(article.toString());
     }
 
     static class Article {
@@ -67,7 +71,7 @@ public class a02Articles {
 
         @Override
         public String toString() {
-            return String.format("%s - %s:%s", this.title, this.content, this.author);
+            return String.format("%s - %s: %s", this.title, this.content, this.author);
 
         }
     }
