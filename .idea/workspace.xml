@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/ObjectsAndClasses/a02Articles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ObjectsAndClasses/a02Articles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObjectsAndClasses/a02Articles.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,41 +30,25 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
   <component name="ProjectId" id="2AvOnPAaEjDVaBILE3kT43gnp34" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "settings.editor.selected.configurable": "preferences.editor"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Daniel\IdeaProjects\java\src" />
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.a01AdvertismentMessage">
-    <configuration name="a01AdvertismentMessage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ObjectsAndClasses.a01AdvertismentMessage" />
-      <module name="testove" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ObjectsAndClasses.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.a04ListOperations">
     <configuration name="a01Train" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="List.a01Train" />
       <module name="testove" />
@@ -103,6 +88,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="a04ListOperations" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="List.a04ListOperations" />
+      <module name="testove" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="List.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="a11ArrayManipulator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Methods.a11ArrayManipulator" />
       <module name="testove" />
@@ -118,7 +116,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.a01AdvertismentMessage" />
+        <item itemvalue="Application.a04ListOperations" />
         <item itemvalue="Application.a03HouseParty" />
         <item itemvalue="Application.a02ChangeList" />
         <item itemvalue="Application.a01Train" />
@@ -458,25 +456,25 @@
       <updated>1657798737822</updated>
     </task>
     <task id="LOCAL-00075" summary="Update">
-      <created>1658163527251</created>
+      <created>1657799119139</created>
       <option name="number" value="00075" />
       <option name="presentableId" value="LOCAL-00075" />
       <option name="project" value="LOCAL" />
-      <updated>1658163527252</updated>
+      <updated>1657799119139</updated>
     </task>
     <task id="LOCAL-00076" summary="Update">
-      <created>1658253999828</created>
+      <created>1657867491592</created>
       <option name="number" value="00076" />
       <option name="presentableId" value="LOCAL-00076" />
       <option name="project" value="LOCAL" />
-      <updated>1658253999829</updated>
+      <updated>1657867491593</updated>
     </task>
     <task id="LOCAL-00077" summary="Update">
-      <created>1658255153930</created>
+      <created>1657993117197</created>
       <option name="number" value="00077" />
       <option name="presentableId" value="LOCAL-00077" />
       <option name="project" value="LOCAL" />
-      <updated>1658255153930</updated>
+      <updated>1657993117197</updated>
     </task>
     <option name="localTasksCounter" value="78" />
     <servers />
@@ -491,6 +489,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
