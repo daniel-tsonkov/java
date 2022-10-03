@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/testove/ObjectsAndClasses/a03OpinionPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/testove/ObjectsAndClasses/a03OpinionPool.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ObjectsAndClasses/a06VehicleCatalogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObjectsAndClasses/a06VehicleCatalogue.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,26 +48,13 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.a03OpinionPool">
+  <component name="RunManager" selected="Application.a06VehicleCatalogue">
     <configuration name="a02Articles" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ObjectsAndClasses.a02Articles" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ObjectsAndClasses.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="a02ChangeList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="List.a02ChangeList" />
-      <module name="testove" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="List.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -113,13 +101,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="a06VehicleCatalogue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ObjectsAndClasses.a06VehicleCatalogue" />
+      <module name="testove" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ObjectsAndClasses.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.a06VehicleCatalogue" />
         <item itemvalue="Application.a03OpinionPool" />
         <item itemvalue="Application.a02Articles" />
         <item itemvalue="Application.a04ListOperations" />
         <item itemvalue="Application.a03HouseParty" />
-        <item itemvalue="Application.a02ChangeList" />
       </list>
     </recent_temporary>
   </component>
@@ -131,13 +132,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Update">
-      <created>1657274313380</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1657274313380</updated>
     </task>
     <task id="LOCAL-00039" summary="Update">
       <created>1657275452594</created>
@@ -475,7 +469,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664780495027</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Update">
+      <created>1664782186479</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1664782186479</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

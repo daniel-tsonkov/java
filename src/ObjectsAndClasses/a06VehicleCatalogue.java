@@ -3,6 +3,7 @@ package ObjectsAndClasses;
 import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class a06VehicleCatalogue {
     public static void main(String[] args) {
@@ -25,6 +26,23 @@ public class a06VehicleCatalogue {
 
             line = scanner.nextLine();
         }
+
+        List<Vehcicle> cars = vehcicleList.stream().filter(vehcicle -> vehcicle.getType().equals("car")).collect(Collectors.toList());
+        List<Vehcicle> trucks = vehcicleList.stream().filter(vehcicle -> vehcicle.getType().equals("truck")).collect(Collectors.toList());
+
+
+        double carsAvgHp = avrHp(cars);
+        double trucksAvgHp = avrHp(trucks);
+
+        System.out.printf("Cars have average horsepower of: %.2f.%n", carsAvgHp);
+        System.out.printf("Trucks have average horsepower of: %.2f.", trucksAvgHp);
+    }
+
+    static double avrHp(List<Vehcicle> vehcicles) {
+        if (vehcicles.size() == 0) {
+            return 0;
+        }
+        return vehcicles.stream().mapToDouble(Vehcicle :: getHorsePower).sum() / vehcicles.size();
     }
 
     static class Vehcicle{
@@ -58,7 +76,7 @@ public class a06VehicleCatalogue {
 
         @Override
         public String toString() {
-            return String.format("Type: %s%n" + "Model: %s%n" + "Color: %s%n" + "Horsepower: %d%n", this.type, this.model, this.color, this.horsePower);
+            return String.format("Type: %s%n" + "Model: %s%n" + "Color: %s%n" + "Horsepower: %d", getType().toUpperCase().charAt(0) + getType().substring(1), this.model, this.color, this.horsePower);
         }
     }
 }
