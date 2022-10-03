@@ -16,6 +16,15 @@ public class a06VehicleCatalogue {
 
             line = scanner.nextLine();
         }
+
+        line = scanner.nextLine();
+        while (!line.equals("Close the Catalogue")){
+            String model = line;
+
+            vehcicleList.stream().filter(vehcicle -> vehcicle.getModel().equals(model)).forEach(vehcicle -> System.out.println(vehcicle.toString()));
+
+            line = scanner.nextLine();
+        }
     }
 
     static class Vehcicle{
@@ -29,6 +38,22 @@ public class a06VehicleCatalogue {
             this.model = model;
             this.color = color;
             this.horsePower = horsePower;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public String getModel() {
+            return model;
+        }
+
+        public String getcolor() {
+            return color;
+        }
+
+        public int getHorsePower() {
+            return horsePower;
         }
 
         @Override
