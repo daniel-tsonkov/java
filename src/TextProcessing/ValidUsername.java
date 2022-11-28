@@ -10,22 +10,18 @@ public class ValidUsername {
 
         for (String username : data) {
             boolean isValid = true;
-            if ((username.length() <= 3) || (username.length() >= 16)) {
+            if ((username.length() < 3) || (username.length() > 16)) {
                 isValid = false;
-            }
 
-            for (int i = 0; i < username.length(); i++) {
-                //char symbol = username.toLowerCase().charAt(i);
-                int symbol = username.toLowerCase().charAt(i);
+            } else {
+                for (int i = 0; i < username.length(); i++) {
+                    //char symbol = username.toLowerCase().charAt(i);
+                    int symbol = username.toLowerCase().charAt(i);
 
-                if (symbol >= 48 && symbol <= 122) {
-                    if (symbol >= 58 && symbol <= 96) {
+                    if ((symbol >= 48 && symbol <= 57) || (symbol >= 97 && symbol <= 122) || (symbol == 45) || (symbol == 95)) {
+
+                    } else {
                         isValid = false;
-                        break;
-                        if (symbol != 45 || symbol != 95) {
-                            isValid = false;
-                            break;
-                        }
                     }
                 }
             }
