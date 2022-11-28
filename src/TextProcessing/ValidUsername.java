@@ -15,13 +15,11 @@ public class ValidUsername {
 
             } else {
                 for (int i = 0; i < username.length(); i++) {
-                    //char symbol = username.toLowerCase().charAt(i);
                     int symbol = username.toLowerCase().charAt(i);
 
-                    if ((symbol >= 48 && symbol <= 57) || (symbol >= 97 && symbol <= 122) || (symbol == 45) || (symbol == 95)) {
-
-                    } else {
+                    if ((symbol < 48 || symbol > 57) && (symbol < 97 || symbol > 122) && (symbol != 45) && (symbol != 95)) {
                         isValid = false;
+                        break;
                     }
                 }
             }
