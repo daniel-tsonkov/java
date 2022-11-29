@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextProcessing/CharacterMultiplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextProcessing/CharacterMultiplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextProcessing/ExtractFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextProcessing/ExtractFile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +50,7 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CharacterMultiplier">
+  <component name="RunManager" selected="Application.ExtractFile">
     <configuration name="CharacterMultiplier" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TextProcessing.CharacterMultiplier" />
       <module name="testove" />
@@ -64,12 +64,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LegendaryFarming" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AssociativeArrays.LegendaryFarming" />
+    <configuration name="ExtractFile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TextProcessing.ExtractFile" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="AssociativeArrays.*" />
+          <option name="PATTERN" value="TextProcessing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,11 +118,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ExtractFile" />
         <item itemvalue="Application.CharacterMultiplier" />
         <item itemvalue="Application.ValidUsername" />
         <item itemvalue="Application.StudentAcademy" />
         <item itemvalue="Application.Orders" />
-        <item itemvalue="Application.LegendaryFarming" />
       </list>
     </recent_temporary>
   </component>
@@ -134,20 +134,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00062" summary="Update">
-      <created>1657611972660</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1657611972660</updated>
-    </task>
-    <task id="LOCAL-00063" summary="Update">
-      <created>1657625566248</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1657625566248</updated>
     </task>
     <task id="LOCAL-00064" summary="Update">
       <created>1657629126127</created>
@@ -478,7 +464,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669721870308</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="Update">
+      <created>1669722984038</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1669722984038</updated>
+    </task>
+    <task id="LOCAL-00112" summary="Update">
+      <created>1669723119160</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1669723119160</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
