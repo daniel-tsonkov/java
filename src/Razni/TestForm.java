@@ -12,7 +12,7 @@ public class TestForm {
         buttoncheButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-JOptionPane.showMessageDialog(null, "Dura bura");
+                JOptionPane.showMessageDialog(null, "Dura bura");
             }
         });
     }
