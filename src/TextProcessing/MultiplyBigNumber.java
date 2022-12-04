@@ -22,14 +22,11 @@ public class MultiplyBigNumber {
                 result += (digit * multiplier + rest) % 10;
                 rest = (digit * multiplier + rest) / 10;
             }
-            //System.out.println();
         }
         if (rest != 0){
             result += rest;
         }
-        //System.out.println(StringFormatter.reverseString("my name is khan")result);
         char[] resultarray = result.toCharArray();
-        //System.out.println(result);
         for (int i = resultarray.length - 1; i >= 0; i--) {
             System.out.print(resultarray[i]);
         }
