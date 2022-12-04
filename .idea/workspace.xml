@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/src/TextProcessing/MultiplyBigNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextProcessing/MultiplyBigNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Razni/TestForm.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Razni/TestForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +51,7 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MultiplyBigNumber">
+  <component name="RunManager" selected="Application.TestForm">
     <configuration name="CaesarCipher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TextProcessing.CaesarCipher" />
       <module name="testove" />
@@ -102,12 +104,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ValidUsername" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TextProcessing.ValidUsername" />
+    <configuration name="TestForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Razni.TestForm" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="TextProcessing.*" />
+          <option name="PATTERN" value="Razni.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -117,11 +119,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestForm" />
         <item itemvalue="Application.MultiplyBigNumber" />
         <item itemvalue="Application.CaesarCipher" />
         <item itemvalue="Application.ExtractFile" />
         <item itemvalue="Application.CharacterMultiplier" />
-        <item itemvalue="Application.ValidUsername" />
       </list>
     </recent_temporary>
   </component>
@@ -133,13 +135,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00069" summary="Update">
-      <created>1657781099605</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1657781099605</updated>
     </task>
     <task id="LOCAL-00070" summary="Update">
       <created>1657781260249</created>
@@ -477,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669733915968</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="Update">
+      <created>1670143377673</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1670143377673</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
