@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextProcessing/LettersChangeNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextProcessing/LettersChangeNumbers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +50,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Daniel\IdeaProjects\java\src" />
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
     </key>
   </component>
@@ -137,13 +138,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00075" summary="Update">
-      <created>1657799119139</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1657799119139</updated>
     </task>
     <task id="LOCAL-00076" summary="Update">
       <created>1657867491592</created>
@@ -481,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670269481891</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="Update">
+      <created>1670271190845</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1670271190845</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
