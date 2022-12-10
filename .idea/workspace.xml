@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/StaksAndQueue/BasicStackOperations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextProcessing/ReplaceRepeatingChars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextProcessing/ReplaceRepeatingChars.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StaksAndQueue/BasicStackOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaksAndQueue/BasicStackOperations.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,13 +50,13 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestForm">
-    <configuration name="CaesarCipher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TextProcessing.CaesarCipher" />
+  <component name="RunManager" selected="Application.BasicStackOperations">
+    <configuration name="BasicStackOperations" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StaksAndQueue.BasicStackOperations" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="TextProcessing.*" />
+          <option name="PATTERN" value="StaksAndQueue.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -66,8 +64,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CharacterMultiplier" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TextProcessing.CharacterMultiplier" />
+    <configuration name="CaesarCipher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TextProcessing.CaesarCipher" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
@@ -120,11 +118,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BasicStackOperations" />
         <item itemvalue="Application.TestForm" />
         <item itemvalue="Application.MultiplyBigNumber" />
         <item itemvalue="Application.CaesarCipher" />
         <item itemvalue="Application.ExtractFile" />
-        <item itemvalue="Application.CharacterMultiplier" />
       </list>
     </recent_temporary>
   </component>
@@ -136,13 +134,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00071" summary="Update">
-      <created>1657796211004</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1657796211005</updated>
     </task>
     <task id="LOCAL-00072" summary="Update">
       <created>1657798070840</created>
@@ -480,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670144778404</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="Update">
+      <created>1670671843927</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1670671843928</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -518,6 +516,11 @@
           <url>file://$PROJECT_DIR$/src/Arrays/a10LadyBugs.java</url>
           <line>12</line>
           <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/StaksAndQueue/BasicStackOperations.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
