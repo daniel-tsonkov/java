@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StaksAndQueue/SimpleTextEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaksAndQueue/SimpleTextEditor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +32,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2AvOnPAaEjDVaBILE3kT43gnp34" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -47,25 +50,13 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Daniel\IdeaProjects\java\src" />
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SimpleTextEditor">
-    <configuration name="BasicStackOperations" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="StaksAndQueue.BasicStackOperations" />
-      <module name="testove" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="StaksAndQueue.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CaesarCipher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TextProcessing.CaesarCipher" />
+  <component name="RunManager" selected="Application.ReverseNumbersWithAStack">
+    <configuration name="LettersChangeNumbers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TextProcessing.LettersChangeNumbers" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
@@ -77,8 +68,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MultiplyBigNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TextProcessing.MultiplyBigNumber" />
+    <configuration name="ReplaceRepeatingChars" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TextProcessing.ReplaceRepeatingChars" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
@@ -90,12 +81,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SimpleTextEditor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="StaksAndQueue.SimpleTextEditor" />
+    <configuration name="ReverseNumbersWithAStack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StaksAndQueue.ReverseNumbersWithAStack" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="StaksAndQueue.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringExplosion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TextProcessing.StringExplosion" />
+      <module name="testove" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TextProcessing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,11 +122,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SimpleTextEditor" />
-        <item itemvalue="Application.BasicStackOperations" />
+        <item itemvalue="Application.ReverseNumbersWithAStack" />
+        <item itemvalue="Application.LettersChangeNumbers" />
+        <item itemvalue="Application.StringExplosion" />
+        <item itemvalue="Application.ReplaceRepeatingChars" />
         <item itemvalue="Application.TestForm" />
-        <item itemvalue="Application.MultiplyBigNumber" />
-        <item itemvalue="Application.CaesarCipher" />
       </list>
     </recent_temporary>
   </component>
@@ -134,6 +138,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Update">
+      <created>1657993117197</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1657993117197</updated>
     </task>
     <task id="LOCAL-00078" summary="Update">
       <created>1658586298741</created>
@@ -430,55 +441,48 @@
       <updated>1670144778404</updated>
     </task>
     <task id="LOCAL-00120" summary="Update">
-      <created>1670671843927</created>
+      <created>1670268051675</created>
       <option name="number" value="00120" />
       <option name="presentableId" value="LOCAL-00120" />
       <option name="project" value="LOCAL" />
-      <updated>1670671843928</updated>
+      <updated>1670268051675</updated>
     </task>
     <task id="LOCAL-00121" summary="Update">
-      <created>1670675198354</created>
+      <created>1670268245960</created>
       <option name="number" value="00121" />
       <option name="presentableId" value="LOCAL-00121" />
       <option name="project" value="LOCAL" />
-      <updated>1670675198354</updated>
+      <updated>1670268245960</updated>
     </task>
     <task id="LOCAL-00122" summary="Update">
-      <created>1670676103982</created>
+      <created>1670269210327</created>
       <option name="number" value="00122" />
       <option name="presentableId" value="LOCAL-00122" />
       <option name="project" value="LOCAL" />
-      <updated>1670676103982</updated>
+      <updated>1670269210327</updated>
     </task>
     <task id="LOCAL-00123" summary="Update">
-      <created>1670678139847</created>
+      <created>1670269481891</created>
       <option name="number" value="00123" />
       <option name="presentableId" value="LOCAL-00123" />
       <option name="project" value="LOCAL" />
-      <updated>1670678139847</updated>
+      <updated>1670269481891</updated>
     </task>
     <task id="LOCAL-00124" summary="Update">
-      <created>1670678209727</created>
+      <created>1670271190845</created>
       <option name="number" value="00124" />
       <option name="presentableId" value="LOCAL-00124" />
       <option name="project" value="LOCAL" />
-      <updated>1670678209727</updated>
+      <updated>1670271190845</updated>
     </task>
     <task id="LOCAL-00125" summary="Update">
-      <created>1670768801745</created>
+      <created>1670356553181</created>
       <option name="number" value="00125" />
       <option name="presentableId" value="LOCAL-00125" />
       <option name="project" value="LOCAL" />
-      <updated>1670768801745</updated>
+      <updated>1670356553182</updated>
     </task>
-    <task id="LOCAL-00126" summary="Update">
-      <created>1670769022214</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1670769022214</updated>
-    </task>
-    <option name="localTasksCounter" value="127" />
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -491,7 +495,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
