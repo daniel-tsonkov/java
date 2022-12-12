@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MultidimensionalArrays/FillTheMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultidimensionalArrays/FillTheMatrix.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +54,20 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ReverseNumbersWithAStack">
+  <component name="RunManager" selected="Application.FillTheMatrix">
+    <configuration name="FillTheMatrix" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MultidimensionalArrays.FillTheMatrix" />
+      <module name="testove" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="MultidimensionalArrays.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LettersChangeNumbers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TextProcessing.LettersChangeNumbers" />
       <module name="testove" />
@@ -107,26 +120,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Razni.TestForm" />
-      <module name="testove" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Razni.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FillTheMatrix" />
         <item itemvalue="Application.ReverseNumbersWithAStack" />
         <item itemvalue="Application.LettersChangeNumbers" />
         <item itemvalue="Application.StringExplosion" />
         <item itemvalue="Application.ReplaceRepeatingChars" />
-        <item itemvalue="Application.TestForm" />
       </list>
     </recent_temporary>
   </component>
@@ -138,13 +138,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00077" summary="Update">
-      <created>1657993117197</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1657993117197</updated>
     </task>
     <task id="LOCAL-00078" summary="Update">
       <created>1658586298741</created>
@@ -482,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670356553182</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="Update">
+      <created>1670868647721</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1670868647721</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
