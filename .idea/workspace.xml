@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MultidimensionalArrays/MatrixOfPalindromes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultidimensionalArrays/MatrixOfPalindromes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +54,7 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MatrixShuffling">
+  <component name="RunManager" selected="Application.MatrixOfPalindromes">
     <configuration name="DiagonalDifference" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MultidimensionalArrays.DiagonalDifference" />
       <module name="testove" />
@@ -80,12 +81,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LettersChangeNumbers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TextProcessing.LettersChangeNumbers" />
+    <configuration name="MatrixOfPalindromes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MultidimensionalArrays.MatrixOfPalindromes" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="TextProcessing.*" />
+          <option name="PATTERN" value="MultidimensionalArrays.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -121,11 +122,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MatrixOfPalindromes" />
         <item itemvalue="Application.MatrixShuffling" />
         <item itemvalue="Application.DiagonalDifference" />
         <item itemvalue="Application.FillTheMatrix" />
         <item itemvalue="Application.ReverseNumbersWithAStack" />
-        <item itemvalue="Application.LettersChangeNumbers" />
       </list>
     </recent_temporary>
   </component>
@@ -137,13 +138,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00084" summary="Update">
-      <created>1664777014996</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1664777014997</updated>
     </task>
     <task id="LOCAL-00085" summary="Update">
       <created>1664778650784</created>
@@ -481,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670961201969</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="Update">
+      <created>1671128628816</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1671128628817</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
