@@ -14,12 +14,9 @@ public class MatrixOfPalindromes {
         for (int row = 0; row < rows; row++) {
             char leter = (char)(row + 97);
             for (int col = 0; col < cols; col++) {
-
-                char palindom = (char)(row + col + 97);
-                String word = "" + leter + palindom + leter;
+                String word = "" + leter + (char)(leter + col) + leter;
                 myMatrix[row][col] = word;
             }
-
         }
 
         for (int rol = 0; rol < rows; rol++) {
