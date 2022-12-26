@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/SetsAndMap/UniqueUsernames.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SetsAndMap/UniqueUsernames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SetsAndMap/UniqueUsernames.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +54,7 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MatrixOfPalindromes">
+  <component name="RunManager" selected="Application.UniqueUsernames">
     <configuration name="DiagonalDifference" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MultidimensionalArrays.DiagonalDifference" />
       <module name="testove" />
@@ -107,12 +107,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReverseNumbersWithAStack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="StaksAndQueue.ReverseNumbersWithAStack" />
+    <configuration name="UniqueUsernames" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SetsAndMap.UniqueUsernames" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="StaksAndQueue.*" />
+          <option name="PATTERN" value="SetsAndMap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -122,11 +122,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UniqueUsernames" />
         <item itemvalue="Application.MatrixOfPalindromes" />
         <item itemvalue="Application.MatrixShuffling" />
         <item itemvalue="Application.DiagonalDifference" />
         <item itemvalue="Application.FillTheMatrix" />
-        <item itemvalue="Application.ReverseNumbersWithAStack" />
       </list>
     </recent_temporary>
   </component>
@@ -138,13 +138,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00087" summary="Update">
-      <created>1664782186479</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1664782186479</updated>
     </task>
     <task id="LOCAL-00088" summary="Update">
       <created>1664785877164</created>
@@ -482,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671130713104</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="Update">
+      <created>1672057692626</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1672057692626</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
