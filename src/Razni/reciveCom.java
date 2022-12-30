@@ -3,19 +3,20 @@ package Razni;
 import com.fazecast.jSerialComm.SerialPort;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
- * Simple application that is part of an tutorial. 
+ * Simple application that is part of an tutorial.
  * The tutorial shows how to establish a serial connection between a Java and Arduino program with the help of an USB-to-TTL Module.
- * @author Michael Schoeffler (www.mschoeffler.de)
  *
+ * @author Michael Schoeffler (www.mschoeffler.de)
  */
 public class reciveCom {
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        SerialPort sp = SerialPort.getCommPort("COM9"); // device name TODO: must be changed
+        SerialPort sp = SerialPort.getCommPort("COM9");
         sp.setComPortParameters(9600, 8, 1, 0); // default connection settings for Arduino
-        sp.setComPortTimeouts(SerialPort.TIMEOUT_WRITE_BLOCKING, 0, 0); // block until bytes can be written
+        sp.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0); // block until bytes can be written
 
         if (sp.openPort()) {
             System.out.println("Port is open :)");
@@ -24,18 +25,29 @@ public class reciveCom {
             return;
         }
 
-        for (Integer i = 0; i < 5; ++i) {
-            //sp.getOutputStream().write(i.byteValue());
-            byte[] asd = sp.getInputStream().readAllBytes();
-            //System.out.println(asd);
-            //sp.getOutputStream().flush();
-            /*for (int j = 0; j < asd.length; j++) {
-                System.out.println(asd[j]);
-            }*/
+        //for (Integer i = 0; i < 5; ++i) {
 
-            //System.out.println("Sent number: " + i);
-            Thread.sleep(1000);
+        InputStream inputStream = sp.getInputStream();
+        //for (int j = 0, x = 0; true; j++) {
+
+        String command = "";
+        boolean end = true;
+        while (end) {
+            command += (char) inputStream.read();
+            System.out.print(command);
+            System.out.print(command.length());
+
+
         }
+            /*sp.getOutputStream().write(i.byteValue());
+            sp.getOutputStream().flush();
+            for (int j = 0; j < inputStream.length; j++) {
+                System.out.println(inputStream[j]);
+            }
+
+            System.out.println("Sent number: " + i);
+            Thread.sleep(1000);*/
+        //}
 
         if (sp.closePort()) {
             System.out.println("Port is closed :)");
@@ -48,3 +60,18 @@ public class reciveCom {
     }
 
 }
+
+/*
+ARDUINO COEDE
+    int i = 0;
+
+    void setup() {
+        Serial.begin(9600);
+    }
+
+    void loop() {
+        Serial.print("Test");
+        Serial.println(i);
+        i++;
+        delay(1000);
+    }*/
