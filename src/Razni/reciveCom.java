@@ -34,11 +34,10 @@ public class reciveCom {
         boolean end = true;
         while (end) {
             command += (char) inputStream.read();
+            command = command.replace("\n", "").replace("\r", "");
             if(command.length() == 5) {
                 System.out.println(command);
-                char temp = (char) inputStream.read();
-                char temp1 = (char) inputStream.read();
-                if (command.contains("Test5")) {
+                if (command.contains("Test7")) {
                     end = false;
                     System.out.println("END...");
                 }
