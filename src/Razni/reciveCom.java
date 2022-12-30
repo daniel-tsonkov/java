@@ -34,8 +34,16 @@ public class reciveCom {
         boolean end = true;
         while (end) {
             command += (char) inputStream.read();
-            System.out.print(command);
-            System.out.print(command.length());
+            if(command.length() == 5) {
+                System.out.println(command);
+                char temp = (char) inputStream.read();
+                char temp1 = (char) inputStream.read();
+                if (command.contains("Test5")) {
+                    end = false;
+                    System.out.println("END...");
+                }
+                command = "";
+            }
 
 
         }
@@ -44,7 +52,6 @@ public class reciveCom {
             for (int j = 0; j < inputStream.length; j++) {
                 System.out.println(inputStream[j]);
             }
-
             System.out.println("Sent number: " + i);
             Thread.sleep(1000);*/
         //}
