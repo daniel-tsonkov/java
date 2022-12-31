@@ -1,9 +1,9 @@
 package Razni;
 
 import com.fazecast.jSerialComm.SerialPort;
-
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Scanner;
 
 /**
  * Simple application that is part of an tutorial.
@@ -14,7 +14,19 @@ import java.io.InputStream;
 public class reciveCom {
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        SerialPort sp = SerialPort.getCommPort("COM9");
+        Scanner scanner = new Scanner(System.in);
+        SerialPort[] s = SerialPort.getCommPorts();
+
+        for (SerialPort port : s) {
+            System.out.println("" + port.getSystemPortName());
+        }
+
+        String comPort = "";
+        while (comPort.isEmpty()) {
+            comPort = scanner.nextLine();
+        }
+
+        SerialPort sp = SerialPort.getCommPort(comPort);//COM9
         sp.setComPortParameters(9600, 8, 1, 0); // default connection settings for Arduino
         sp.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0); // block until bytes can be written
 
@@ -25,11 +37,7 @@ public class reciveCom {
             return;
         }
 
-        //for (Integer i = 0; i < 5; ++i) {
-
         InputStream inputStream = sp.getInputStream();
-        //for (int j = 0, x = 0; true; j++) {
-
         String command = "";
         boolean end = true;
         while (end) {
@@ -37,14 +45,12 @@ public class reciveCom {
             command = command.replace("\n", "").replace("\r", "");
             if(command.length() == 5) {
                 System.out.println(command);
-                if (command.contains("Test7")) {
+                if (command.contains("Test5")) {
                     end = false;
                     System.out.println("END...");
                 }
                 command = "";
             }
-
-
         }
             /*sp.getOutputStream().write(i.byteValue());
             sp.getOutputStream().flush();
@@ -61,10 +67,7 @@ public class reciveCom {
             System.out.println("Failed to close port :(");
             return;
         }
-
-
     }
-
 }
 
 /*
