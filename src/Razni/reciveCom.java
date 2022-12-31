@@ -51,21 +51,19 @@ public class reciveCom {
                 }
                 command = "";
             }
-        }
-            /*sp.getOutputStream().write(i.byteValue());
+             /*sp.getOutputStream().write(i.byteValue());
             sp.getOutputStream().flush();
             for (int j = 0; j < inputStream.length; j++) {
                 System.out.println(inputStream[j]);
             }
             System.out.println("Sent number: " + i);
             Thread.sleep(1000);*/
-        //}
+        }
 
         if (sp.closePort()) {
             System.out.println("Port is closed :)");
         } else {
             System.out.println("Failed to close port :(");
-            return;
         }
     }
 }
