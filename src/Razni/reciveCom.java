@@ -31,7 +31,7 @@ public class reciveCom {
         sp.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0); // block until bytes can be written
 
         if (sp.openPort()) {
-            System.out.println("Port is open :)");
+            System.out.println(comPort + " is open :)");
         } else {
             System.out.println("Failed to open port :(");
             return;
@@ -61,7 +61,7 @@ public class reciveCom {
         }
 
         if (sp.closePort()) {
-            System.out.println("Port is closed :)");
+            System.out.println(comPort + " is closed :)");
         } else {
             System.out.println("Failed to close port :(");
         }
