@@ -14,6 +14,9 @@ public class MyFrame extends JFrame implements ActionListener {
 
     MyFrame() {
 
+        this.setIconImage();
+        this.setTitle("COM Port Test");
+        this.setSize(800,600);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new FlowLayout());
 
