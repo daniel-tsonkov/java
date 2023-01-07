@@ -1,7 +1,6 @@
 package Swing;
 
 import com.fazecast.jSerialComm.SerialPort;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,14 +10,27 @@ import java.util.LinkedList;
 
 public class MyFrame extends JFrame implements ActionListener {
     JComboBox runPort;
+    ImageIcon icon = new ImageIcon("/icon.jpg");
+    JLabel statusPort = new JLabel();
+    JPanel myPanel = new JPanel();
 
     MyFrame() {
-
-        this.setIconImage();
-        this.setTitle("COM Port Test");
-        this.setSize(800,600);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
         this.setLayout(new FlowLayout());
+        this.setSize(800, 600);
+        //this.setResizable(false);
+        this.setVisible(true);
+        this.setIconImage(icon.getImage());
+        this.setTitle("COM Port Test");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        //this.myPanel.setSize(300, 300);
+        this.myPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 100, 50));
+        this.myPanel.setBackground(Color.BLUE);
+        this.add(myPanel);
+
+        this.add(statusPort);
+        statusPort.setText("Select PORT ");
 
         SerialPort[] s = SerialPort.getCommPorts();
         LinkedList<String> ports = new LinkedList<String>();
@@ -31,8 +43,8 @@ public class MyFrame extends JFrame implements ActionListener {
             myPorts[i] = ports.get(i);
         }
 
-        runPort = new JComboBox(myPorts);
-        runPort.addActionListener(this);
+        this.runPort = new JComboBox(myPorts);
+        this.runPort.addActionListener(this);
 
         this.add(runPort);
         this.pack();
@@ -49,8 +61,10 @@ public class MyFrame extends JFrame implements ActionListener {
 
             if (sp.openPort()) {
                 System.out.println(openPort + " is open :)");
+                statusPort.setText(openPort + " is open");
             } else {
                 System.out.println("Failed to open port :(");
+                statusPort.setText("Check again " + openPort);
                 return;
             }
         }
