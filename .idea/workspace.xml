@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
+      <change afterPath="$PROJECT_DIR$/src/Swing/MyFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Swing/TestComPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/TestComPort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +49,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\Razni" />
+      <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\Swing" />
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
+      <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\Razni" />
     </key>
   </component>
   <component name="RunManager" selected="Application.reciveCom">
@@ -78,12 +81,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Razni.TestForm" />
+    <configuration name="TestComPort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing.TestComPort" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Razni.*" />
+          <option name="PATTERN" value="Swing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -120,10 +123,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.reciveCom" />
+        <item itemvalue="Application.TestComPort" />
         <item itemvalue="Application.reciveComII" />
         <item itemvalue="Application.SimpleTextEditor" />
         <item itemvalue="Application.BasicStackOperations" />
-        <item itemvalue="Application.TestForm" />
       </list>
     </recent_temporary>
   </component>
@@ -135,13 +138,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00085" summary="Update">
-      <created>1664778650784</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1664778650784</updated>
     </task>
     <task id="LOCAL-00086" summary="Update">
       <created>1664780495027</created>
@@ -479,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672480384342</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="Update">
+      <created>1673110036710</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1673110036710</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -22,9 +22,9 @@ public class reciveCom {
         }
 
         String comPort = "";
-        while (comPort.isEmpty()) {
+        //while (comPort.isEmpty()) {
             comPort = scanner.nextLine();
-        }
+        //}
 
         SerialPort sp = SerialPort.getCommPort(comPort);//COM9
         sp.setComPortParameters(9600, 8, 1, 0); // default connection settings for Arduino
