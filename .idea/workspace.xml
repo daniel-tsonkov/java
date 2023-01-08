@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/Swing/TestCOM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Swing/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/MyFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Swing/TestCOM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/TestCOM.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,9 +53,9 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\Razni" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestComPort">
-    <configuration name="BasicStackOperations" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="StaksAndQueue.BasicStackOperations" />
+  <component name="RunManager" selected="Application.TestCOM">
+    <configuration name="SimpleTextEditor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StaksAndQueue.SimpleTextEditor" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
@@ -68,12 +67,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SimpleTextEditor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="StaksAndQueue.SimpleTextEditor" />
+    <configuration name="TestCOM" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Swing.TestCOM" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="StaksAndQueue.*" />
+          <option name="PATTERN" value="Swing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -122,11 +121,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestCOM" />
         <item itemvalue="Application.TestComPort" />
         <item itemvalue="Application.reciveCom" />
         <item itemvalue="Application.reciveComII" />
         <item itemvalue="Application.SimpleTextEditor" />
-        <item itemvalue="Application.BasicStackOperations" />
       </list>
     </recent_temporary>
   </component>
@@ -138,13 +137,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00090" summary="Update">
-      <created>1664799395170</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1664799395170</updated>
     </task>
     <task id="LOCAL-00091" summary="Update">
       <created>1668782114728</created>
@@ -482,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673125285747</updated>
     </task>
-    <option name="localTasksCounter" value="139" />
+    <task id="LOCAL-00139" summary="Update">
+      <created>1673181696339</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1673181696344</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
