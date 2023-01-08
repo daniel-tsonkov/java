@@ -6,15 +6,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.LinkedList;
 
 public class TestCOM {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, InterruptedException {
         new MyFrame();
     }
 
     public static class MyFrame extends JFrame implements ActionListener {
         JLabel selectPort = new JLabel();
+        JLabel statusLed = new JLabel();
         JComboBox runPort;
         JButton connectButton = new JButton();
         JButton disconnectButton = new JButton();
@@ -23,7 +26,8 @@ public class TestCOM {
         String openPort;
         SerialPort sp;
 
-        MyFrame() {
+        MyFrame() throws IOException {
+
 
             SerialPort[] s = SerialPort.getCommPorts();
             LinkedList<String> ports = new LinkedList<String>();
@@ -36,6 +40,35 @@ public class TestCOM {
                 myPorts[i] = ports.get(i);
             }
 
+            //start recive
+                /*InputStream inputStream = sp.getInputStream();
+                String command = "";
+                boolean end = true;
+                while (end) {
+                    command += (char) inputStream.read();
+                    command = command.replace("\n", "").replace("\r", "");
+                    if (command.length() == 5) {
+                        System.out.println(command);
+                        if (command.contains("Test5")) {
+                            end = false;
+                            System.out.println("END...");
+                        }
+                        command = "";
+                    }
+                }*/
+
+
+            /*while (true)
+            {
+                byte[] readBuffer = new byte[100];
+                int numRead = sp.readBytes(readBuffer, readBuffer.length);
+                System.out.print("Read " + numRead + " bytes -");
+                //System.out.println(readBuffer);
+                String S = new String(readBuffer, "UTF-8"); //convert bytes to String
+                System.out.println("Received -> "+ S);
+            }*/
+            //end recive
+
             runPort = new JComboBox(myPorts);
             runPort.setPreferredSize(new Dimension(110, 30));
             runPort.addActionListener(this);
@@ -44,6 +77,11 @@ public class TestCOM {
             selectPort.setFont(new Font("Arial", Font.PLAIN, 18));
             selectPort.setForeground(new Color(255, 255, 255));
             selectPort.setBounds(100, 100, 300, 300);
+
+            statusLed.setText("LED");
+            statusLed.setFont(new Font("Arial", Font.PLAIN, 14));
+            statusLed.setForeground(new Color(255, 255, 255));
+            //statusLed.setVerticalTextPosition(JLabel.BOTTOM);
 
             connectButton.setText("Connect");
             connectButton.setFocusable(false);
@@ -67,12 +105,16 @@ public class TestCOM {
             offButton.addActionListener(this);
 
             JPanel leftPanel = new JPanel();
-            leftPanel.setBounds(0, 0, 200, 560);
-            leftPanel.setBackground(new Color(90, 90, 90));
+            leftPanel.setBounds(0, 0, 200, 540);
+            leftPanel.setBackground(new Color(100, 100, 100));
 
             JPanel rightPanel = new JPanel();
-            rightPanel.setBounds(585, 0, 200, 560);
-            rightPanel.setBackground(new Color(90, 90, 90));
+            rightPanel.setBounds(585, 0, 200, 540);
+            rightPanel.setBackground(new Color(100, 100, 100));
+
+            JPanel statusPanel = new JPanel();
+            statusPanel.setBounds(0, 541, 785, 20);
+            statusPanel.setBackground(new Color(100, 100, 100));
 
             JFrame frame = new JFrame();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -84,16 +126,32 @@ public class TestCOM {
             frame.setResizable(false);
             frame.setLocationRelativeTo(null);
             leftPanel.add(selectPort);
+            statusPanel.add(statusLed);
             leftPanel.add(runPort);
             leftPanel.add(connectButton);
             leftPanel.add(disconnectButton);
             rightPanel.add(onButton);
             rightPanel.add(offButton);
             frame.add(leftPanel);
+            frame.add(statusPanel);
             frame.add(rightPanel);
             frame.setIconImage(Toolkit.getDefaultToolkit().getImage(TestCOM.class.getResource("/icon.jpg")));
-        }
 
+
+        }
+        void readBytes() {
+            byte[] readBuffer = new byte[10];
+            sp.readBytes(readBuffer, readBuffer.length);
+            String isLedOn = null; //convert bytes to String
+            try {
+                isLedOn = new String(readBuffer, "UTF-8");
+            } catch (UnsupportedEncodingException ex) {
+                ex.printStackTrace();
+            }
+            isLedOn = isLedOn.replace("\n", "").replace("\r", "").replace("\0", "");
+            System.out.println("LED -> "+ isLedOn);
+            statusLed.setText("LED " + isLedOn);
+        }
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -131,26 +189,30 @@ public class TestCOM {
             }
 
             if (e.getSource() == onButton) {
-                byte[] WriteByte = new byte[2];
-                WriteByte[0] = 111; //send A
-                WriteByte[1] = 110; //send A
-
-
-                int bytesTxed  = 0;
-
-                bytesTxed  = sp.writeBytes(WriteByte,2);
+                byte[] WriteByte = {111, 110}; //on
+                sp.writeBytes(WriteByte, 2);
+                readBytes();
             }
-            if (e.getSource() == offButton) {
-                byte[] WriteByte = new byte[3];
-                WriteByte[0] = 111; //send A
-                WriteByte[1] = 102; //send A
-                WriteByte[2] = 102; //send A
-
-
-                int bytesTxed  = 0;
-
-                bytesTxed  = sp.writeBytes(WriteByte,3);
+            if (e.getSource() == offButton) { //off
+                byte[] WriteByte = {111, 102, 102};
+                sp.writeBytes(WriteByte, 3);
+                readBytes();
             }
+
+            /*if (sp.bytesAvailable() != 0) {
+                byte[] readBuffer = new byte[10];
+                int numRead = sp.readBytes(readBuffer, readBuffer.length);
+                //System.out.print("Read " + numRead + " bytes -");
+                //System.out.println(readBuffer);
+                String S = null; //convert bytes to String
+                try {
+                    S = new String(readBuffer, "UTF-8");
+                } catch (UnsupportedEncodingException ex) {
+                    ex.printStackTrace();
+                }
+                System.out.println("LED -> "+ S);
+            }*/
         }
     }
+
 }
