@@ -1,4 +1,4 @@
-package Swing;
+package Swing1;
 
 import com.fazecast.jSerialComm.SerialPort;
 
@@ -9,12 +9,14 @@ import java.awt.event.ActionListener;
 import java.util.LinkedList;
 
 public class TestCOM {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         new MyFrame();
     }
+
     public static class MyFrame extends JFrame implements ActionListener {
         JLabel selectPort = new JLabel();
         JComboBox runPort;
+
         MyFrame() {
 
             SerialPort[] s = SerialPort.getCommPorts();
@@ -55,23 +57,24 @@ public class TestCOM {
         }
 
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (e.getSource() == runPort) {
-                    String openPort = runPort.getSelectedItem().toString();
-                    SerialPort sp = SerialPort.getCommPort(openPort);//COM9
-                    sp.setComPortParameters(9600, 8, 1, 0); // default connection settings for Arduino
-                    sp.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0); // block until bytes can be written
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == runPort) {
+                String openPort = runPort.getSelectedItem().toString();
+                SerialPort sp = SerialPort.getCommPort(openPort);//COM9
+                sp.setComPortParameters(9600, 8, 1, 0); // default connection settings for Arduino
+                sp.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0); // block until bytes can be written
 
-                    if (sp.openPort()) {
-                        System.out.println(openPort + " is open :)");
-                        selectPort.setText(openPort + " is open");
-                    } else {
-                        System.out.println("Failed to open port :(");
-                        selectPort.setText("Check again " + openPort);
-                    }
+                if (sp.openPort()) {
+                    System.out.println(openPort + " is open :)");
+                    selectPort.setText(openPort + " is open");
+                } else {
+                    System.out.println("Failed to open port :(");
+                    selectPort.setText("Check again " + openPort);
                 }
             }
-
+        }
     }
+
+
 }

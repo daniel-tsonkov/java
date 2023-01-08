@@ -45,7 +45,7 @@ public class MyFrame extends JFrame implements ActionListener {
         this.runPort.addActionListener(this);
         myPanel.add(runPort);
         //this.add(runPort);
-        this.pack();
+        //this.pack();
         this.setVisible(true);
 
         //this.myPanel.setSize(300, 300);
