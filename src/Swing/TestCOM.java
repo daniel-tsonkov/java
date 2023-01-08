@@ -13,9 +13,10 @@ public class TestCOM {
         new MyFrame();
     }
     public static class MyFrame extends JFrame implements ActionListener {
-        JLabel statusPort = new JLabel();
+        JLabel selectPort = new JLabel();
         JComboBox runPort;
         MyFrame() {
+
             SerialPort[] s = SerialPort.getCommPorts();
             LinkedList<String> ports = new LinkedList<String>();
 
@@ -30,13 +31,12 @@ public class TestCOM {
             runPort = new JComboBox(myPorts);
             runPort.addActionListener(this);
 
-            JLabel selectPort = new JLabel();
             selectPort.setText("Select PORT");
             selectPort.setForeground(new Color(255, 255, 255));
             selectPort.setBounds(100, 100, 300, 300);
 
             JPanel leftPanel = new JPanel();
-            leftPanel.setBounds(0, 0, 100, 550);
+            leftPanel.setBounds(0, 0, 150, 550);
             leftPanel.setBackground(new Color(90, 90, 90));
 
             JFrame frame = new JFrame();
@@ -46,7 +46,7 @@ public class TestCOM {
             frame.setVisible(true);
             frame.getContentPane().setBackground(new Color(42, 63, 84));
             frame.setTitle("COM Port Test");
-            //frame.setResizable(false);
+            frame.setResizable(false);
             frame.setLocationRelativeTo(null);
             leftPanel.add(selectPort);
             leftPanel.add(runPort);
@@ -65,11 +65,10 @@ public class TestCOM {
 
                     if (sp.openPort()) {
                         System.out.println(openPort + " is open :)");
-                        statusPort.setText(openPort + " is open");
+                        selectPort.setText(openPort + " is open");
                     } else {
                         System.out.println("Failed to open port :(");
-                        statusPort.setText("Check again " + openPort);
-                        return;
+                        selectPort.setText("Check again " + openPort);
                     }
                 }
             }
