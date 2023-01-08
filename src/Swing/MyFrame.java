@@ -1,6 +1,7 @@
 package Swing;
 
 import com.fazecast.jSerialComm.SerialPort;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -24,12 +25,7 @@ public class MyFrame extends JFrame implements ActionListener {
         this.setTitle("COM Port Test");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        //this.myPanel.setSize(300, 300);
-        this.myPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 100, 50));
-        this.myPanel.setBackground(Color.BLUE);
-        this.add(myPanel);
-
-        this.add(statusPort);
+        //this.add(statusPort);
         statusPort.setText("Select PORT ");
 
         SerialPort[] s = SerialPort.getCommPorts();
@@ -42,13 +38,21 @@ public class MyFrame extends JFrame implements ActionListener {
         for (int i = 0; i < ports.size(); i++) {
             myPorts[i] = ports.get(i);
         }
+        //runPort = new JComboBox(myPorts);
+        myPanel.add(statusPort);
 
         this.runPort = new JComboBox(myPorts);
         this.runPort.addActionListener(this);
-
-        this.add(runPort);
+        myPanel.add(runPort);
+        //this.add(runPort);
         this.pack();
         this.setVisible(true);
+
+        //this.myPanel.setSize(300, 300);
+        this.myPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 100, 50));
+        this.myPanel.setBackground(Color.GRAY);
+        this.myPanel.setBounds(0, 0, 400, 400);
+        this.add(myPanel);
     }
 
     @Override
