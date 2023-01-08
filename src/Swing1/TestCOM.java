@@ -40,35 +40,6 @@ public class TestCOM {
                 myPorts[i] = ports.get(i);
             }
 
-            //start recive
-                /*InputStream inputStream = sp.getInputStream();
-                String command = "";
-                boolean end = true;
-                while (end) {
-                    command += (char) inputStream.read();
-                    command = command.replace("\n", "").replace("\r", "");
-                    if (command.length() == 5) {
-                        System.out.println(command);
-                        if (command.contains("Test5")) {
-                            end = false;
-                            System.out.println("END...");
-                        }
-                        command = "";
-                    }
-                }*/
-
-
-            /*while (true)
-            {
-                byte[] readBuffer = new byte[100];
-                int numRead = sp.readBytes(readBuffer, readBuffer.length);
-                System.out.print("Read " + numRead + " bytes -");
-                //System.out.println(readBuffer);
-                String S = new String(readBuffer, "UTF-8"); //convert bytes to String
-                System.out.println("Received -> "+ S);
-            }*/
-            //end recive
-
             runPort = new JComboBox(myPorts);
             runPort.setPreferredSize(new Dimension(110, 30));
             runPort.addActionListener(this);
@@ -137,7 +108,6 @@ public class TestCOM {
             frame.add(rightPanel);
             frame.setIconImage(Toolkit.getDefaultToolkit().getImage(TestCOM.class.getResource("/icon.jpg")));
 
-
         }
         void readBytes() {
             byte[] readBuffer = new byte[10];
@@ -159,13 +129,11 @@ public class TestCOM {
                 openPort = runPort.getSelectedItem().toString();
             }
             if (e.getSource() == connectButton) {
-
                 sp = SerialPort.getCommPort(openPort);//COM9
                 sp.setComPortParameters(9600, 8, 1, 0); // default connection settings for Arduino
                 sp.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0); // block until bytes can be written
 
                 if (sp.openPort()) {
-                    //connectButton.setText("Disconnect");
                     disconnectButton.setEnabled(true);
                     connectButton.setEnabled(false);
                     System.out.println(openPort + " is open :)");
@@ -177,7 +145,6 @@ public class TestCOM {
             }
             if (e.getSource() == disconnectButton) {
                 if (sp.closePort()) {
-                    //connectButton.setText("Connect");
                     disconnectButton.setEnabled(false);
                     connectButton.setEnabled(true);
                     System.out.println(openPort + " is closed :)");
@@ -198,21 +165,6 @@ public class TestCOM {
                 sp.writeBytes(WriteByte, 3);
                 readBytes();
             }
-
-            /*if (sp.bytesAvailable() != 0) {
-                byte[] readBuffer = new byte[10];
-                int numRead = sp.readBytes(readBuffer, readBuffer.length);
-                //System.out.print("Read " + numRead + " bytes -");
-                //System.out.println(readBuffer);
-                String S = null; //convert bytes to String
-                try {
-                    S = new String(readBuffer, "UTF-8");
-                } catch (UnsupportedEncodingException ex) {
-                    ex.printStackTrace();
-                }
-                System.out.println("LED -> "+ S);
-            }*/
         }
     }
-
 }
