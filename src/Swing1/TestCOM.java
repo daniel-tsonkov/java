@@ -131,7 +131,7 @@ public class TestCOM {
             if (e.getSource() == connectButton) {
                 sp = SerialPort.getCommPort(openPort);//COM9
                 sp.setComPortParameters(9600, 8, 1, 0); // default connection settings for Arduino
-                sp.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0); // block until bytes can be written
+                sp.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0); // block until bytes can be written TIMEOUT_READ_SEMI_BLOCKING
 
                 if (sp.openPort()) {
                     disconnectButton.setEnabled(true);
