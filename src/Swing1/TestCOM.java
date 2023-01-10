@@ -52,7 +52,8 @@ public class TestCOM {
             selectPort.setBounds(100, 100, 300, 300);
 
             statusLed.setText("LED");
-            statusLed.setFont(new Font("Arial", Font.PLAIN, 14));
+            //statusLed.setHorizontalAlignment(SwingConstants.LEFT);
+            statusLed.setFont(new Font("Arial", Font.PLAIN, 12));
             statusLed.setForeground(new Color(255, 255, 255));
             //statusLed.setVerticalTextPosition(JLabel.BOTTOM);
 
@@ -78,23 +79,30 @@ public class TestCOM {
             offButton.addActionListener(this);
 
             JPanel leftPanel = new JPanel();
-            leftPanel.setBounds(0, 0, 200, 540);
+            //leftPanel.setBounds(0, 0, 200, 540);
+            leftPanel.setPreferredSize(new Dimension(200, 200));
             leftPanel.setBackground(new Color(100, 100, 100));
 
             JPanel rightPanel = new JPanel();
-            rightPanel.setBounds(585, 0, 200, 540);
+            //rightPanel.setBounds(585, 0, 200, 540);
+            rightPanel.setPreferredSize(new Dimension(200, 200));
             rightPanel.setBackground(new Color(100, 100, 100));
 
             JPanel statusPanel = new JPanel();
-            statusPanel.setBounds(0, 541, 785, 20);
+            //statusPanel.setBounds(0, 541, 785, 20);
+            statusPanel.setPreferredSize(new Dimension(20, 20));
             statusPanel.setBackground(new Color(100, 100, 100));
+
+            JPanel workArea = new JPanel();
+            workArea.setPreferredSize(new Dimension(200, 200));
+            workArea.setBackground(new Color(0, 0, 0));
 
             JFrame frame = new JFrame();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setLayout(null);
-            frame.setSize(800, 600);
+            frame.setSize(1280, 768);
+            frame.setLayout(new BorderLayout(1, 2));
             frame.setVisible(true);
-            frame.getContentPane().setBackground(new Color(42, 63, 84));
+            frame.getContentPane().setBackground(new Color(200, 200, 200));
             frame.setTitle("COM Port Test");
             frame.setResizable(false);
             frame.setLocationRelativeTo(null);
@@ -105,9 +113,10 @@ public class TestCOM {
             leftPanel.add(disconnectButton);
             rightPanel.add(onButton);
             rightPanel.add(offButton);
-            frame.add(leftPanel);
-            frame.add(statusPanel);
-            frame.add(rightPanel);
+            frame.add(leftPanel, BorderLayout.WEST);
+            frame.add(rightPanel, BorderLayout.EAST);
+            frame.add(statusPanel, BorderLayout.SOUTH);
+            frame.add(workArea, BorderLayout.CENTER);
             frame.setIconImage(Toolkit.getDefaultToolkit().getImage(TestCOM.class.getResource("/icon.jpg")));
         }
 
@@ -125,7 +134,7 @@ public class TestCOM {
             statusLed.setText("LED " + isLedOn);
         }*/
 
-        public void incomingData(SerialPort activePort) {
+        public void incomingData() {
             sp.addDataListener(new SerialPortDataListener() {
                 @Override
                 public int getListeningEvents() {
@@ -199,7 +208,9 @@ public class TestCOM {
                 }
             }
             receivedAnswers = "";
-            incomingData(sp);
+            if(sp != null) {
+                incomingData();
+            }
         }
     }
 }
