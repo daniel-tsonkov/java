@@ -109,7 +109,7 @@ public class TestCOM {
             frame.setIconImage(Toolkit.getDefaultToolkit().getImage(TestCOM.class.getResource("/icon.jpg")));
 
         }
-        void readBytes() {
+        public void readBytes(){
             byte[] readBuffer = new byte[10];
             sp.readBytes(readBuffer, readBuffer.length);
             String isLedOn = null; //convert bytes to String
