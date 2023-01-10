@@ -1,21 +1,28 @@
 package Swing1;
 
 import com.fazecast.jSerialComm.SerialPort;
+import com.fazecast.jSerialComm.SerialPortDataListener;
+import com.fazecast.jSerialComm.SerialPortEvent;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.LinkedList;
+import java.io.OutputStream;
 
 public class TestCOM {
     public static void main(String[] args) throws IOException, InterruptedException {
+        /*FromComport tread2 = new FromComport();
+        tread2.start();
+        System.out.println(tread2.isAlive());*/
+
         new MyFrame();
     }
 
     public static class MyFrame extends JFrame implements ActionListener {
+
+        //serialEvent(sp);
         JLabel selectPort = new JLabel();
         JLabel statusLed = new JLabel();
         JComboBox runPort;
@@ -25,22 +32,17 @@ public class TestCOM {
         JButton offButton = new JButton();
         String openPort;
         SerialPort sp;
+        OutputStream outputStream1;
+        String receivedAnswers = "";
 
-        MyFrame() throws IOException {
-
-
+        MyFrame() {
             SerialPort[] s = SerialPort.getCommPorts();
-            LinkedList<String> ports = new LinkedList<String>();
+            runPort = new JComboBox();
 
+            runPort.removeAllItems();
             for (SerialPort port : s) {
-                ports.add(port.getSystemPortName());
+                runPort.addItem(port.getSystemPortName());
             }
-            String[] myPorts = new String[ports.size()];
-            for (int i = 0; i < ports.size(); i++) {
-                myPorts[i] = ports.get(i);
-            }
-
-            runPort = new JComboBox(myPorts);
             runPort.setPreferredSize(new Dimension(110, 30));
             runPort.addActionListener(this);
 
@@ -107,9 +109,9 @@ public class TestCOM {
             frame.add(statusPanel);
             frame.add(rightPanel);
             frame.setIconImage(Toolkit.getDefaultToolkit().getImage(TestCOM.class.getResource("/icon.jpg")));
-
         }
-        public void readBytes(){
+
+        /*public void readBytes() {
             byte[] readBuffer = new byte[10];
             sp.readBytes(readBuffer, readBuffer.length);
             String isLedOn = null; //convert bytes to String
@@ -119,8 +121,28 @@ public class TestCOM {
                 ex.printStackTrace();
             }
             isLedOn = isLedOn.replace("\n", "").replace("\r", "").replace("\0", "");
-            System.out.println("LED -> "+ isLedOn);
+            System.out.println("LED -> " + isLedOn);
             statusLed.setText("LED " + isLedOn);
+        }*/
+
+        public void incomingData(SerialPort activePort) {
+            sp.addDataListener(new SerialPortDataListener() {
+                @Override
+                public int getListeningEvents() {
+                    return SerialPort.LISTENING_EVENT_DATA_RECEIVED;
+                }
+
+                @Override
+                public void serialEvent(SerialPortEvent serialPortEvent) {
+                    byte[] newData = serialPortEvent.getReceivedData();
+
+                    for (byte b : newData) {
+                        receivedAnswers += (char) b;
+                    }
+                    statusLed.setText("LED " + receivedAnswers);
+                    System.out.print(receivedAnswers);
+                }
+            });
         }
 
         @Override
@@ -143,6 +165,7 @@ public class TestCOM {
                     selectPort.setText("Check again " + openPort);
                 }
             }
+
             if (e.getSource() == disconnectButton) {
                 if (sp.closePort()) {
                     disconnectButton.setEnabled(false);
@@ -156,15 +179,27 @@ public class TestCOM {
             }
 
             if (e.getSource() == onButton) {
-                byte[] WriteByte = {111, 110}; //on
-                sp.writeBytes(WriteByte, 2);
-                readBytes();
+                outputStream1 = sp.getOutputStream();
+                String dataToSend = "";
+                dataToSend = "on";
+                try {
+                    outputStream1.write(dataToSend.getBytes());
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
             }
             if (e.getSource() == offButton) { //off
-                byte[] WriteByte = {111, 102, 102};
-                sp.writeBytes(WriteByte, 3);
-                readBytes();
+                outputStream1 = sp.getOutputStream();
+                String dataToSend = "";
+                dataToSend = "off";
+                try {
+                    outputStream1.write(dataToSend.getBytes());
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
             }
+            receivedAnswers = "";
+            incomingData(sp);
         }
     }
 }
