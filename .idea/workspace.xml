@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/Razni/testLan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/aaa/asd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/aaa/zzz/zzz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,13 +50,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\aaa" />
+      <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\ааа" />
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\Swing1" />
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\Swing" />
-      <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\Razni" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestCOM (1)">
+  <component name="RunManager" selected="Application.testLan">
     <configuration name="TestCOM (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Swing1.TestCOM" />
       <module name="testove" />
@@ -108,8 +110,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="reciveComII" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Razni.reciveComII" />
+    <configuration name="testLan" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Razni.testLan" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
@@ -123,11 +125,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.testLan" />
         <item itemvalue="Application.TestCOM (1)" />
         <item itemvalue="Application.TestCOM" />
         <item itemvalue="Application.TestComPort" />
         <item itemvalue="Application.reciveCom" />
-        <item itemvalue="Application.reciveComII" />
       </list>
     </recent_temporary>
   </component>
@@ -139,13 +141,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00103" summary="Update">
-      <created>1669210368274</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1669210368274</updated>
     </task>
     <task id="LOCAL-00104" summary="Update">
       <created>1669541139365</created>
@@ -483,7 +478,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673375962449</updated>
     </task>
-    <option name="localTasksCounter" value="152" />
+    <task id="LOCAL-00152" summary="Update">
+      <created>1674292975630</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1674292975631</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
