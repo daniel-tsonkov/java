@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/SwingLan/MainClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Razni/html.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Razni/html.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SwingLan/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SwingLan/MainClass.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +56,7 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\Swing" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.html">
+  <component name="RunManager" selected="Application.MainClass">
     <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SwingLan.MainClass" />
       <module name="testove" />
@@ -125,8 +124,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.html" />
         <item itemvalue="Application.MainClass" />
+        <item itemvalue="Application.html" />
         <item itemvalue="Application.TestCOM (1)" />
         <item itemvalue="Application.testLan" />
         <item itemvalue="Application.TestCOM" />
@@ -141,13 +140,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00108" summary="Update">
-      <created>1669642194087</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1669642194087</updated>
     </task>
     <task id="LOCAL-00109" summary="Update">
       <created>1669642394516</created>
@@ -485,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675433009889</updated>
     </task>
-    <option name="localTasksCounter" value="157" />
+    <task id="LOCAL-00157" summary="Update">
+      <created>1675686487824</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1675686487825</updated>
+    </task>
+    <option name="localTasksCounter" value="158" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

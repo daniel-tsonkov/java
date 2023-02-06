@@ -17,6 +17,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.charset.StandardCharsets;
 
 public class MainClass {
     public static void main(String[] args) {
@@ -191,13 +192,13 @@ public class MainClass {
             }
 
             if (e.getSource() == onButton) {
-                System.out.println("LED ON");
+                //System.out.println("LED ON");
                 try {
                     URL webpage = null;
                     URLConnection conn = null;
                     webpage = new URL("http://192.168.5.61/?LED=ON");
                     conn = webpage.openConnection();
-                    InputStreamReader reader = new InputStreamReader(conn.getInputStream(), "UTF8");
+                    InputStreamReader reader = new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8);
                     BufferedReader buffer = new BufferedReader(reader);
                     String line = "";
 
@@ -216,13 +217,13 @@ public class MainClass {
                 }
             }
             if (e.getSource() == offButton) {
-                System.out.println("LED OFF");
+                //System.out.println("LED OFF");
                 try {
                     URL webpage = null;
                     URLConnection conn = null;
                     webpage = new URL("http://192.168.5.61/?LED=OFF");
                     conn = webpage.openConnection();
-                    InputStreamReader reader = new InputStreamReader(conn.getInputStream(), "UTF8");
+                    InputStreamReader reader = new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8);
                     BufferedReader buffer = new BufferedReader(reader);
                     String line = "";
 
