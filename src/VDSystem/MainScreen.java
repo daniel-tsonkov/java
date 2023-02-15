@@ -34,9 +34,9 @@ public class MainScreen extends JFrame implements ActionListener {
         //Screen property
         {
             this.setLocationRelativeTo(null);
-            //this.setSize(800, 600);
+            this.setSize(1024, 768);
             this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-
+            //this.setResizable(false);
             this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/icon.jpg")));
             this.setTitle("Onaya programa");
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
