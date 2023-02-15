@@ -14,7 +14,7 @@ public class html {
     public static void main(String[] args) throws IOException {
         URL webpage = null;
         URLConnection conn = null;
-        webpage = new URL("http://192.168.5.61/?LED=OFF");
+        webpage = new URL("http://192.168.5.61/");
         //webpage = new URL("https://google.com");
         conn = webpage.openConnection();
         InputStreamReader reader = new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8);
