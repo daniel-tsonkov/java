@@ -2,6 +2,7 @@ package VDSystem;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -91,6 +92,7 @@ public class MainScreen extends JFrame implements ActionListener {
             Container pane = this.getContentPane(); //add to JPane toolbar
             pane.add(toolBar, BorderLayout.NORTH);
             new_object.addActionListener(this);
+            new_evidence.addActionListener(this);
             new_work.addActionListener(this);
         }
         //Tree view
@@ -145,26 +147,33 @@ public class MainScreen extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==exit_item){
+        if (e.getSource() == exit_item) {
             this.dispose();
         }
 
-        if(e.getSource()==new_object){
+        if (e.getSource() == new_object) {
             numberObject++;
+
+            DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) new_expertise;//main_tree.getSelectionPath().getLastPathComponent();
             DefaultMutableTreeNode evidence1 = new DefaultMutableTreeNode("Обект " + numberObject);
-            new_expertise.add(evidence1);
+            selectedNode.add(evidence1);
 
-            main_tree = new JTree(new_expertise);
-            main_tree.setShowsRootHandles(true);
-
-            main_tree.setRowHeight(30);
-            this.add(main_tree);
-            main_tree.setBounds(0, 80, 200, 900);
-            main_tree.setVisible(true);
+            DefaultTreeModel model = (DefaultTreeModel) main_tree.getModel();
+            model.reload();
         }
 
-        if(e.getSource()==new_work){
+        if (e.getSource() == new_work) {
             NewExpertiсе newExpertiсе = new NewExpertiсе();
+        }
+
+        if (e.getSource() == new_evidence) {
+            /*DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) main_tree.getSelectionPath().getLastPathComponent();
+            DefaultMutableTreeNode evidence1 = new DefaultMutableTreeNode("Обект " + numberObject);
+            selectedNode.add(evidence1);
+
+            DefaultTreeModel model = (DefaultTreeModel) main_tree.getModel();
+            model.reload();*/
+            NewEvidence newEvidence = new NewEvidence();
         }
     }
 }
