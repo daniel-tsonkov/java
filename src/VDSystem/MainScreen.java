@@ -25,7 +25,7 @@ public class MainScreen extends JFrame implements ActionListener {
     JButton generate_expertise;
     JTree main_tree;
     JTabbedPane protocol;
-    String expertise = "2023-00550";
+    String expertise = "Няма име";
     int numberObject = 1;
 
     DefaultMutableTreeNode new_expertise;
@@ -98,6 +98,7 @@ public class MainScreen extends JFrame implements ActionListener {
         //Tree view
         {
             new_expertise = new DefaultMutableTreeNode(expertise);
+            /*new_expertise = new DefaultMutableTreeNode(expertise);
             DefaultMutableTreeNode protokol = new DefaultMutableTreeNode("Протокол");
             DefaultMutableTreeNode evidence = new DefaultMutableTreeNode("Обект " + numberObject);
             DefaultMutableTreeNode PUK = new DefaultMutableTreeNode("ПУК код");
@@ -112,7 +113,7 @@ public class MainScreen extends JFrame implements ActionListener {
 
             evidence.add(info);
             evidence.add(GSM);
-            evidence.add(SIM);
+            evidence.add(SIM);*/
 
             main_tree = new JTree(new_expertise);
             main_tree.setShowsRootHandles(true);

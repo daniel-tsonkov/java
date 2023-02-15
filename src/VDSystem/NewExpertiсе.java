@@ -81,6 +81,7 @@ public class NewExpertiсе implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == ok) {
             newE.setVisible(false);
+            //expertise = field_expertise.getText();
         }
         if (e.getSource() == cancel) {
             newE.setVisible(false);
