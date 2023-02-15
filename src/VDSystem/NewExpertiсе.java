@@ -2,8 +2,10 @@ package VDSystem;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class NewExpertiсе{
+public class NewExpertiсе implements ActionListener {
     JButton ok;
 
     public NewExpertiсе(){
@@ -16,7 +18,13 @@ public class NewExpertiсе{
         //newE.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         ok = new JButton("OK");
-        //ok.addActionListener((ActionListener) newE);
+        newE.add(ok);
+        ok.addActionListener(this);
         newE.setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 }
