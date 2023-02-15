@@ -7,9 +7,10 @@ import java.awt.event.ActionListener;
 
 public class NewExpertiсе implements ActionListener {
     JButton ok;
+    JFrame newE;
 
-    public NewExpertiсе(){
-        JFrame newE = new JFrame();
+    public NewExpertiсе() {
+        newE = new JFrame();
         newE.setLocationRelativeTo(null);
         newE.setSize(800, 600);
 
@@ -25,6 +26,8 @@ public class NewExpertiсе implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if (e.getSource() == ok) {
+            newE.setVisible(false);
+        }
     }
 }
