@@ -22,10 +22,14 @@ public class MainScreen extends JFrame implements ActionListener {
     JButton open_work;
     JButton new_object;
     JButton new_evidence;
+    JComboBox select_object;
+    JTextField other_object;
+    JButton remove_evidence;
     JButton generate_expertise;
     JTree main_tree;
     JTabbedPane protocol;
     String expertise = "Няма име";
+    String s_item;
     int numberObject = 1;
 
     DefaultMutableTreeNode new_expertise;
@@ -84,9 +88,21 @@ public class MainScreen extends JFrame implements ActionListener {
             generate_expertise = new JButton("Генерирай експертиза");
             toolBar.add(new_work);
             toolBar.add(open_work);
-            toolBar.addSeparator(new Dimension(10, 45));
+            toolBar.addSeparator(new Dimension(10, 25));
             toolBar.add(new_object);
             toolBar.add(new_evidence);
+            String[] objects = {"GSM", "SIM", "MMC", "Tablet", "Флаш", "GSM Рутер", "GPS", "Друго"};
+            select_object = new JComboBox(objects);
+            toolBar.add(select_object);
+            select_object.addActionListener(this);
+            other_object = new JTextField();
+            other_object.getText();
+            other_object.setText("Друг обект");
+            //other_object.setPreferredSize(new Dimension(100, 25));
+            toolBar.add(other_object);
+            other_object.setEditable(false);
+            remove_evidence = new JButton("Премахни обект");
+            toolBar.add(remove_evidence);
             toolBar.add(Box.createHorizontalGlue());
             toolBar.add(generate_expertise);
             Container pane = this.getContentPane(); //add to JPane toolbar
@@ -94,6 +110,7 @@ public class MainScreen extends JFrame implements ActionListener {
             new_object.addActionListener(this);
             new_evidence.addActionListener(this);
             new_work.addActionListener(this);
+            remove_evidence.addActionListener(this);
         }
         //Tree view
         {
@@ -120,7 +137,7 @@ public class MainScreen extends JFrame implements ActionListener {
 
             main_tree.setRowHeight(30);
             this.add(main_tree);
-            main_tree.setBounds(0, 80, 200, 900);
+            main_tree.setBounds(0, 60, 200, 900);
             main_tree.setVisible(true);
         }
         //Tabs protokol
@@ -155,7 +172,7 @@ public class MainScreen extends JFrame implements ActionListener {
         if (e.getSource() == new_object) {
             numberObject++;
 
-            DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) new_expertise;//main_tree.getSelectionPath().getLastPathComponent();
+            DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) new_expertise;
             DefaultMutableTreeNode evidence1 = new DefaultMutableTreeNode("Обект " + numberObject);
             selectedNode.add(evidence1);
 
@@ -171,10 +188,38 @@ public class MainScreen extends JFrame implements ActionListener {
             /*DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) main_tree.getSelectionPath().getLastPathComponent();
             DefaultMutableTreeNode evidence1 = new DefaultMutableTreeNode("Обект " + numberObject);
             selectedNode.add(evidence1);
-
             DefaultTreeModel model = (DefaultTreeModel) main_tree.getModel();
             model.reload();*/
-            NewEvidence newEvidence = new NewEvidence();
+            DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) main_tree.getSelectionPath().getLastPathComponent();
+            if (select_object.getSelectedItem().toString().equals("Друго")) {
+                s_item = other_object.getText();
+            }else{
+                s_item = select_object.getSelectedItem().toString();
+            }
+            DefaultMutableTreeNode evidence1 = new DefaultMutableTreeNode(s_item);
+            selectedNode.add(evidence1);
+
+            DefaultTreeModel model = (DefaultTreeModel) main_tree.getModel();
+            model.reload();
+        }
+
+        if (e.getSource() == select_object) {
+            if (select_object.getSelectedItem().toString().equals("Друго")) {
+                other_object.setEditable(true);
+            }else{
+                other_object.setEditable(false);
+            }
+        }
+
+        if(e.getSource() == remove_evidence){
+            int confirm_delete = JOptionPane.showConfirmDialog(null, "Сигурен ли си че искаш да го изтриеш?", "Изтриване", JOptionPane.YES_NO_OPTION);
+            //System.out.println(confirm_delete);
+            if(confirm_delete == 0){
+                DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) main_tree.getSelectionPath().getLastPathComponent();
+                DefaultTreeModel model = (DefaultTreeModel) main_tree.getModel();
+                model.removeNodeFromParent(selectedNode);
+            }
+
         }
     }
 }
