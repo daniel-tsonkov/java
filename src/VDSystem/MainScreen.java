@@ -48,7 +48,7 @@ public class MainScreen extends JFrame implements ActionListener {
             //this.getContentPane().setBackground(new Color(0, 0, 0));
             //this.setLayout(null);
         }
-        //Menubar
+        // Menubar
         {
             menuBar = new JMenuBar();
 
@@ -161,8 +161,12 @@ public class MainScreen extends JFrame implements ActionListener {
             protocol.setVisible(true);
         }
         this.setVisible(true);
-    }
 
+
+    }
+    /*public MainScreen(String expertise){
+        this.expertise = expertise;
+    }*/
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == exit_item) {
