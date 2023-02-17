@@ -177,6 +177,7 @@ public class MainScreen extends JFrame implements ActionListener {
         if (e.getSource() == new_work) {
             //this.setEnabled(false);
             NewExpertiсе newExpertiсе = new NewExpertiсе();
+            this.setVisible(false);
             //this.setVisible(false);
         }
 
