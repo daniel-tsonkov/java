@@ -11,12 +11,14 @@ public class MainScreen extends JFrame implements ActionListener {
     JMenuBar menuBar;
     JMenu file_menu;
     JMenu edin_menu;
+    JMenu help_menu;
     JMenuItem new_item;
     JMenuItem open_item;
     JMenuItem exit_item;
     JMenuItem cut_item;
     JMenuItem copy_item;
     JMenuItem paste_item;
+    JMenuItem version_item;
     JToolBar toolBar;
     JButton new_work;
     JButton open_work;
@@ -43,7 +45,7 @@ public class MainScreen extends JFrame implements ActionListener {
             this.setExtendedState(JFrame.MAXIMIZED_BOTH);
             //this.setResizable(false);
             this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/icon.jpg")));
-            this.setTitle("Onaya programa");
+            this.setTitle("Onaya programa v1.0.0");
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             //this.getContentPane().setBackground(new Color(0, 0, 0));
             //this.setLayout(null);
@@ -54,6 +56,7 @@ public class MainScreen extends JFrame implements ActionListener {
 
             file_menu = new JMenu("File");
             edin_menu = new JMenu("Edit");
+            help_menu = new JMenu("Help");
 
             new_item = new JMenuItem("Нова експертиза");
             open_item = new JMenuItem("Отвори експертиза");
@@ -61,11 +64,13 @@ public class MainScreen extends JFrame implements ActionListener {
             cut_item = new JMenuItem("Cut");
             copy_item = new JMenuItem("Copy");
             paste_item = new JMenuItem("Paste");
+            version_item = new JMenuItem("Версия");
 
             this.setJMenuBar(menuBar);
 
             menuBar.add(file_menu);
             menuBar.add(edin_menu);
+            menuBar.add(help_menu);
 
             file_menu.add(new_item);
             file_menu.add(open_item);
@@ -73,40 +78,41 @@ public class MainScreen extends JFrame implements ActionListener {
             edin_menu.add(cut_item);
             edin_menu.add(copy_item);
             edin_menu.add(paste_item);
+            help_menu.add(version_item);
+
 
             exit_item.addActionListener(this);
+            version_item.addActionListener(this);
         }
         //Toolbar
         {
             toolBar = new JToolBar();
             new_work = new JButton("Нова експертиза");
-            //new_work = new JButton("<html>" + "Нова" + "<br>" + "експертиза" + "</html>");
-            //new_work.setSize(new Dimension(120, 40));
-            open_work = new JButton("Отвори експертиза");
-            new_object = new JButton("Нов обект");
-            new_evidence = new JButton("Ново ВД");
-            generate_expertise = new JButton("Генерирай експертиза");
             toolBar.add(new_work);
+            open_work = new JButton("Отвори експертиза");
             toolBar.add(open_work);
-            toolBar.addSeparator(new Dimension(10, 25));
+            toolBar.addSeparator(new Dimension(20, 25));
+            new_object = new JButton("Нов обект");
             toolBar.add(new_object);
+            new_evidence = new JButton("Ново ВД");
             toolBar.add(new_evidence);
             String[] objects = {"GSM", "SIM", "MMC", "Tablet", "Флаш", "GSM Рутер", "GPS", "Друго"};
             select_object = new JComboBox(objects);
             toolBar.add(select_object);
-            select_object.addActionListener(this);
             other_object = new JTextField();
             other_object.getText();
             other_object.setText("Друг обект");
-            //other_object.setPreferredSize(new Dimension(100, 25));
             toolBar.add(other_object);
             other_object.setEditable(false);
             remove_evidence = new JButton("Премахни обект");
             toolBar.add(remove_evidence);
             toolBar.add(Box.createHorizontalGlue());
+            toolBar.addSeparator(new Dimension(20, 25));
+            generate_expertise = new JButton("Генерирай експертиза");
             toolBar.add(generate_expertise);
             Container pane = this.getContentPane(); //add to JPane toolbar
             pane.add(toolBar, BorderLayout.NORTH);
+            select_object.addActionListener(this);
             new_object.addActionListener(this);
             new_evidence.addActionListener(this);
             new_work.addActionListener(this);
@@ -224,6 +230,10 @@ public class MainScreen extends JFrame implements ActionListener {
                 model.removeNodeFromParent(selectedNode);
             }
 
+        }
+
+        if(e.getSource() == version_item){
+            JOptionPane.showMessageDialog(null, "Версия 1.0.0", "За програмата", JOptionPane.OK_OPTION);
         }
     }
 }
