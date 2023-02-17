@@ -1,6 +1,7 @@
 package VDSystem;
 
 import javax.swing.*;
+import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -80,12 +81,21 @@ public class NewExpertiсе implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == ok) {
-            newE.setVisible(false);
             String expertise = field_expertise.getText();
-            System.out.println(expertise);
-            /*new MainScreen(expertise){
 
-            };*/
+            MainScreen mainScreen = new MainScreen();
+            mainScreen.expertise = expertise;
+
+            mainScreen.new_expertise = new DefaultMutableTreeNode(expertise);
+            mainScreen.main_tree = new JTree(mainScreen.new_expertise);
+            mainScreen.main_tree.setShowsRootHandles(true);
+
+            mainScreen.main_tree.setRowHeight(30);
+            mainScreen.main_tree.setBounds(0, 0, 150, 900);
+            mainScreen.tree_panell.add(mainScreen.main_tree, BorderLayout.WEST);
+            mainScreen.main_tree.setVisible(true);
+            
+            newE.setVisible(false);
         }
         if (e.getSource() == cancel) {
             newE.setVisible(false);

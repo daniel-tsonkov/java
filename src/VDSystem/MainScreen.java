@@ -28,9 +28,11 @@ public class MainScreen extends JFrame implements ActionListener {
     JTextField other_object;
     JButton remove_evidence;
     JButton generate_expertise;
+    //JLabel ekspertiza;
     JTree main_tree;
+    JPanel tree_panell;
     JTabbedPane protocol;
-    String expertise = "Няма име";
+    String expertise = "No Name";
     String s_item;
     int numberObject = 1;
 
@@ -108,6 +110,8 @@ public class MainScreen extends JFrame implements ActionListener {
             toolBar.add(remove_evidence);
             toolBar.add(Box.createHorizontalGlue());
             toolBar.addSeparator(new Dimension(20, 25));
+            //ekspertiza = new JLabel();
+            //toolBar.add(ekspertiza);
             generate_expertise = new JButton("Генерирай експертиза");
             toolBar.add(generate_expertise);
             Container pane = this.getContentPane(); //add to JPane toolbar
@@ -117,34 +121,17 @@ public class MainScreen extends JFrame implements ActionListener {
             new_evidence.addActionListener(this);
             new_work.addActionListener(this);
             remove_evidence.addActionListener(this);
+            generate_expertise.addActionListener(this);
         }
         //Tree view
         {
-            new_expertise = new DefaultMutableTreeNode(expertise);
-            /*new_expertise = new DefaultMutableTreeNode(expertise);
-            DefaultMutableTreeNode protokol = new DefaultMutableTreeNode("Протокол");
-            DefaultMutableTreeNode evidence = new DefaultMutableTreeNode("Обект " + numberObject);
-            DefaultMutableTreeNode PUK = new DefaultMutableTreeNode("ПУК код");
-
-            new_expertise.add(protokol);
-            new_expertise.add(PUK);
-            new_expertise.add(evidence);
-
-            DefaultMutableTreeNode info = new DefaultMutableTreeNode("Инфо");
-            DefaultMutableTreeNode GSM = new DefaultMutableTreeNode("Телефон");
-            DefaultMutableTreeNode SIM = new DefaultMutableTreeNode("СИМ карта");
-
-            evidence.add(info);
-            evidence.add(GSM);
-            evidence.add(SIM);*/
-
-            main_tree = new JTree(new_expertise);
-            main_tree.setShowsRootHandles(true);
-
-            main_tree.setRowHeight(30);
-            this.add(main_tree);
-            main_tree.setBounds(0, 60, 200, 900);
-            main_tree.setVisible(true);
+            tree_panell = new JPanel();
+            tree_panell.setBorder(BorderFactory.createEmptyBorder(0, 5, 5, 5));
+            tree_panell.setPreferredSize(new Dimension(150, 900));
+            tree_panell.setBorder(BorderFactory.createLineBorder(Color.black));
+            tree_panell.setBackground(Color.white);
+            this.add(tree_panell, BorderLayout.WEST);
+            //TreeView();
         }
         //Tabs protokol
         {
@@ -163,12 +150,9 @@ public class MainScreen extends JFrame implements ActionListener {
             protocol.add("Задачи на експертизата", panel5);
 
             this.add(protocol);
-            protocol.setBounds(300, 80, 1000, 900);
             protocol.setVisible(true);
         }
         this.setVisible(true);
-
-
     }
     /*public MainScreen(String expertise){
         this.expertise = expertise;
@@ -180,7 +164,6 @@ public class MainScreen extends JFrame implements ActionListener {
         }
 
         if (e.getSource() == new_object) {
-            numberObject++;
 
             DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) new_expertise;
             DefaultMutableTreeNode evidence1 = new DefaultMutableTreeNode("Обект " + numberObject);
@@ -188,10 +171,12 @@ public class MainScreen extends JFrame implements ActionListener {
 
             DefaultTreeModel model = (DefaultTreeModel) main_tree.getModel();
             model.reload();
+            numberObject++;
         }
 
         if (e.getSource() == new_work) {
             NewExpertiсе newExpertiсе = new NewExpertiсе();
+            //this.setVisible(false);
         }
 
         if (e.getSource() == new_evidence) {
@@ -235,5 +220,29 @@ public class MainScreen extends JFrame implements ActionListener {
         if(e.getSource() == version_item){
             JOptionPane.showMessageDialog(null, "Версия 1.0.0", "За програмата", JOptionPane.OK_OPTION);
         }
+
+        if(e.getSource() == generate_expertise){
+            /*new_expertise = new DefaultMutableTreeNode(expertise);
+            main_tree = new JTree(new_expertise);
+            main_tree.setShowsRootHandles(true);
+
+            main_tree.setRowHeight(30);
+            tree_panell.add(main_tree, BorderLayout.WEST);
+            main_tree.setBounds(0, 0, 150, 900);
+            main_tree.setVisible(true);*/
+            //TreeView();
+        }
+    }
+
+    public void TreeView(){
+        main_tree.setVisible(false);
+        new_expertise = new DefaultMutableTreeNode(expertise);
+        main_tree = new JTree(new_expertise);
+        main_tree.setShowsRootHandles(true);
+
+        main_tree.setRowHeight(30);
+        main_tree.setBounds(0, 0, 150, 900);
+        tree_panell.add(main_tree, BorderLayout.WEST);
+        main_tree.setVisible(true);
     }
 }
