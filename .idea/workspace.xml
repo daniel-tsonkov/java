@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/ZadaciIzpit/ZadDve.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ZadaciIzpit/ZadEdno.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ZadaciIzpit/ZadChetiri.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ZadaciIzpit/ZadTri.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +60,7 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\Swing" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ZadDve">
+  <component name="RunManager" selected="Application.ZadTri">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="VDSystem.Main" />
       <module name="testove" />
@@ -113,12 +113,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="html" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Razni.html" />
+    <configuration name="ZadTri" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ZadaciIzpit.ZadTri" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Razni.*" />
+          <option name="PATTERN" value="ZadaciIzpit.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -128,11 +128,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ZadTri" />
         <item itemvalue="Application.ZadDve" />
         <item itemvalue="Application.ZadEdno" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.MainClass" />
-        <item itemvalue="Application.html" />
       </list>
     </recent_temporary>
   </component>
@@ -144,13 +144,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00124" summary="Update">
-      <created>1670678209727</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1670678209727</updated>
     </task>
     <task id="LOCAL-00125" summary="Update">
       <created>1670768801745</created>
@@ -488,7 +481,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676645399075</updated>
     </task>
-    <option name="localTasksCounter" value="173" />
+    <task id="LOCAL-00173" summary="Update">
+      <created>1676807039156</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1676807039156</updated>
+    </task>
+    <option name="localTasksCounter" value="174" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -526,6 +526,11 @@
           <url>file://$PROJECT_DIR$/src/Arrays/a10LadyBugs.java</url>
           <line>12</line>
           <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ZadaciIzpit/ZadTri.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
