@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/ZadaciIzpit/ZadChetiri.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ZadaciIzpit/ZadTri.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ZadaciIzpit/ZadChetiri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ZadaciIzpit/ZadChetiri.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +59,7 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\Swing" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ZadTri">
+  <component name="RunManager" selected="Application.ZadChetiri">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="VDSystem.Main" />
       <module name="testove" />
@@ -74,12 +73,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="SwingLan.MainClass" />
+    <configuration name="ZadChetiri" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ZadaciIzpit.ZadChetiri" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="SwingLan.*" />
+          <option name="PATTERN" value="ZadaciIzpit.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -128,11 +127,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ZadChetiri" />
         <item itemvalue="Application.ZadTri" />
         <item itemvalue="Application.ZadDve" />
         <item itemvalue="Application.ZadEdno" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.MainClass" />
       </list>
     </recent_temporary>
   </component>
@@ -144,13 +143,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00125" summary="Update">
-      <created>1670768801745</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1670768801745</updated>
     </task>
     <task id="LOCAL-00126" summary="Update">
       <created>1670769022214</created>
@@ -488,7 +480,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676807039156</updated>
     </task>
-    <option name="localTasksCounter" value="174" />
+    <task id="LOCAL-00174" summary="Update">
+      <created>1676809363045</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1676809363045</updated>
+    </task>
+    <option name="localTasksCounter" value="175" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -531,6 +530,11 @@
           <url>file://$PROJECT_DIR$/src/ZadaciIzpit/ZadTri.java</url>
           <line>16</line>
           <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ZadaciIzpit/ZadChetiri.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
