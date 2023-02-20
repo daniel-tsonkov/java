@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/FunctionalPrograming/ConsumerPrint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ZadaciIzpit/ZadShest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FunctionalPrograming/KnightOfHonor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ZadaciIzpit/ZadDve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ZadaciIzpit/ZadDve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ZadaciIzpit/ZadPet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ZadaciIzpit/ZadPet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +45,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -62,7 +59,7 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\Swing" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ConsumerPrint">
+  <component name="RunManager" selected="Application.KnightOfHonor">
     <configuration name="ConsumerPrint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FunctionalPrograming.ConsumerPrint" />
       <module name="testove" />
@@ -76,12 +73,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ZadChetiri" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ZadaciIzpit.ZadChetiri" />
+    <configuration name="KnightOfHonor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FunctionalPrograming.KnightOfHonor" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ZadaciIzpit.*" />
+          <option name="PATTERN" value="FunctionalPrograming.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -89,8 +86,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ZadDve" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ZadaciIzpit.ZadDve" />
+    <configuration name="ZadChetiri" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ZadaciIzpit.ZadChetiri" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
@@ -130,11 +127,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.KnightOfHonor" />
         <item itemvalue="Application.ConsumerPrint" />
         <item itemvalue="Application.ZadPet" />
         <item itemvalue="Application.ZadChetiri" />
         <item itemvalue="Application.ZadTri" />
-        <item itemvalue="Application.ZadDve" />
       </list>
     </recent_temporary>
   </component>
@@ -146,13 +143,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00127" summary="Update">
-      <created>1672421231885</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1672421231885</updated>
     </task>
     <task id="LOCAL-00128" summary="Update">
       <created>1672429263745</created>
@@ -490,7 +480,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676813903213</updated>
     </task>
-    <option name="localTasksCounter" value="176" />
+    <task id="LOCAL-00176" summary="Update">
+      <created>1676878369121</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1676878369121</updated>
+    </task>
+    <option name="localTasksCounter" value="177" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
