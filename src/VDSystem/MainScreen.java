@@ -28,18 +28,16 @@ public class MainScreen extends JFrame implements ActionListener {
     JTextField other_object;
     JButton remove_evidence;
     JButton generate_expertise;
-    //JLabel ekspertiza;
-    public static JTree main_tree;
-    public static JPanel tree_panell;
+    static JTree main_tree;
+    static JPanel tree_panell;
     JTabbedPane protocol;
     public static String expertise = "No Name";
     String s_item;
     int numberObject = 1;
 
-    public static DefaultMutableTreeNode new_expertise;
+    static DefaultMutableTreeNode new_expertise;
 
     public MainScreen() {
-        //this.setEnabled(true);
         //Screen property
         {
             this.setLocationRelativeTo(null);
@@ -131,7 +129,7 @@ public class MainScreen extends JFrame implements ActionListener {
             tree_panell.setBorder(BorderFactory.createLineBorder(Color.black));
             tree_panell.setBackground(Color.white);
             this.add(tree_panell, BorderLayout.WEST);
-            //TreeView();
+            TreeView();
         }
         //Tabs protokol
         {
@@ -154,9 +152,6 @@ public class MainScreen extends JFrame implements ActionListener {
         }
         this.setVisible(true);
     }
-    /*public MainScreen(String expertise){
-        this.expertise = expertise;
-    }*/
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == exit_item) {
@@ -175,10 +170,7 @@ public class MainScreen extends JFrame implements ActionListener {
         }
 
         if (e.getSource() == new_work) {
-            //this.setEnabled(false);
             NewExpertiсе newExpertiсе = new NewExpertiсе();
-            //this.setVisible(false);
-            //this.setVisible(false);
         }
 
         if (e.getSource() == new_evidence) {
@@ -210,13 +202,11 @@ public class MainScreen extends JFrame implements ActionListener {
 
         if(e.getSource() == remove_evidence){
             int confirm_delete = JOptionPane.showConfirmDialog(null, "Сигурен ли си че искаш да го изтриеш?", "Изтриване", JOptionPane.YES_NO_OPTION);
-            //System.out.println(confirm_delete);
             if(confirm_delete == 0){
                 DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) main_tree.getSelectionPath().getLastPathComponent();
                 DefaultTreeModel model = (DefaultTreeModel) main_tree.getModel();
                 model.removeNodeFromParent(selectedNode);
             }
-
         }
 
         if(e.getSource() == version_item){
@@ -224,20 +214,10 @@ public class MainScreen extends JFrame implements ActionListener {
         }
 
         if(e.getSource() == generate_expertise){
-            /*new_expertise = new DefaultMutableTreeNode(expertise);
-            main_tree = new JTree(new_expertise);
-            main_tree.setShowsRootHandles(true);
-
-            main_tree.setRowHeight(30);
-            tree_panell.add(main_tree, BorderLayout.WEST);
-            main_tree.setBounds(0, 0, 150, 900);
-            main_tree.setVisible(true);*/
-            //TreeView();
         }
     }
 
     public static void TreeView(){
-        main_tree.setVisible(false);
         new_expertise = new DefaultMutableTreeNode(expertise);
         main_tree = new JTree(new_expertise);
         main_tree.setShowsRootHandles(true);

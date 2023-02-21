@@ -80,20 +80,9 @@ public class NewExpertiсе implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == ok) {
-            //String expertise = field_expertise.getText();
             MainScreen.expertise = field_expertise.getText();
-            System.out.println(MainScreen.expertise);
-            //MainScreen mainScreen = new MainScreen();
-            //mainScreen.expertise = expertise;
 
-            /*mainScreen.new_expertise = new DefaultMutableTreeNode(expertise);
-            mainScreen.main_tree = new JTree(mainScreen.new_expertise);
-            mainScreen.main_tree.setShowsRootHandles(true);
-
-            mainScreen.main_tree.setRowHeight(30);
-            mainScreen.main_tree.setBounds(0, 0, 150, 900);
-            mainScreen.tree_panell.add(mainScreen.main_tree, BorderLayout.WEST);
-            mainScreen.main_tree.setVisible(true);*/
+            MainScreen.main_tree.setVisible(false);
             MainScreen.TreeView();
             newE.setVisible(false);
         }

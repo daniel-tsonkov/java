@@ -4,7 +4,6 @@
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VDSystem/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VDSystem/MainScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VDSystem/NewEvidence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VDSystem/NewEvidence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VDSystem/NewExpertiсе.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VDSystem/NewExpertiсе.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -145,13 +144,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00135" summary="Update">
-      <created>1673111265118</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1673111265118</updated>
     </task>
     <task id="LOCAL-00136" summary="Update">
       <created>1673113214555</created>
@@ -489,7 +481,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676971932341</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="Update">
+      <created>1676987777019</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1676987777019</updated>
+    </task>
+    <option name="localTasksCounter" value="185" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
