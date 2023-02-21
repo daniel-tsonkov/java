@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MainScreen extends JFrame implements ActionListener {
+    static String nameProgram = "Onaya programa v1.0.0";
     JMenuBar menuBar;
     JMenu file_menu;
     JMenu edin_menu;
@@ -45,10 +46,8 @@ public class MainScreen extends JFrame implements ActionListener {
             this.setExtendedState(JFrame.MAXIMIZED_BOTH);
             //this.setResizable(false);
             this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/icon.jpg")));
-            this.setTitle("Onaya programa v1.0.0");
+            this.setTitle(nameProgram);
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            //this.getContentPane().setBackground(new Color(0, 0, 0));
-            //this.setLayout(null);
         }
         // Menubar
         {
@@ -180,6 +179,7 @@ public class MainScreen extends JFrame implements ActionListener {
             DefaultTreeModel model = (DefaultTreeModel) main_tree.getModel();
             model.reload();*/
             DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) main_tree.getSelectionPath().getLastPathComponent();
+            //System.out.println(selectedNode);
             if (select_object.getSelectedItem().toString().equals("Друго")) {
                 s_item = other_object.getText();
             }else{
@@ -219,6 +219,8 @@ public class MainScreen extends JFrame implements ActionListener {
 
     public static void TreeView(){
         new_expertise = new DefaultMutableTreeNode(expertise);
+        DefaultMutableTreeNode protokol = new DefaultMutableTreeNode("Протокол");
+        new_expertise.add(protokol);
         main_tree = new JTree(new_expertise);
         main_tree.setShowsRootHandles(true);
 

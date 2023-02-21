@@ -81,6 +81,9 @@ public class NewExpertiсе implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == ok) {
             MainScreen.expertise = field_expertise.getText();
+            String nameProgram = MainScreen.nameProgram + " " + field_expertise.getText();
+            MainScreen.nameProgram = nameProgram;
+            //MainScreen.setTitle(nameProgram);// ne raboti?????
 
             MainScreen.main_tree.setVisible(false);
             MainScreen.TreeView();
