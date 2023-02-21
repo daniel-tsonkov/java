@@ -128,7 +128,7 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
             tree_panell.setBorder(BorderFactory.createEmptyBorder(0, 5, 5, 5));
             tree_panell.setPreferredSize(new Dimension(150, 900));
             tree_panell.setBorder(BorderFactory.createLineBorder(Color.black));
-            tree_panell.setBackground(Color.white);
+            //tree_panell.setBackground(Color.white);//Da ne se trie!!!
             this.add(tree_panell, BorderLayout.WEST);
             TreeView();
         }
@@ -149,7 +149,7 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
             protocol.add("Задачи на експертизата", panel5);
 
             this.add(protocol);
-            protocol.setVisible(true);
+            protocol.setVisible(false);
         }
         this.setVisible(true);
         addMouseListener(this);
@@ -165,6 +165,10 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
             DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) new_expertise;
             DefaultMutableTreeNode evidence1 = new DefaultMutableTreeNode("Обект " + numberObject);
             selectedNode.add(evidence1);
+
+            DefaultMutableTreeNode infoFile = new DefaultMutableTreeNode("Инфо");
+            evidence1.add(infoFile);
+            s_item = select_object.getSelectedItem().toString();
 
             DefaultTreeModel model = (DefaultTreeModel) main_tree.getModel();
             model.reload();
@@ -186,10 +190,9 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
             if (select_object.getSelectedItem().toString().equals("Друго")) {
                 s_item = other_object.getText();
             }else{
-                s_item = select_object.getSelectedItem().toString();
+                DefaultMutableTreeNode evidence1 = new DefaultMutableTreeNode(s_item);
+                selectedNode.add(evidence1);
             }
-            DefaultMutableTreeNode evidence1 = new DefaultMutableTreeNode(s_item);
-            selectedNode.add(evidence1);
 
             DefaultTreeModel model = (DefaultTreeModel) main_tree.getModel();
             model.reload();
@@ -224,8 +227,12 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
     public void mouseClicked(MouseEvent e) {
         //System.out.println("mouse double");
         DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) main_tree.getSelectionPath().getLastPathComponent();
-        if(selectedNode.equals("Протокол")) {
-            System.out.println("mouse double");
+        String mySelectedNode = selectedNode.getUserObject().toString();
+        //System.out.println(mySelectedNode);
+        if(mySelectedNode.equals("Протокол")) {
+            protocol.setVisible(true);
+        }else{
+            protocol.setVisible(false);
         }
     }
 
@@ -257,6 +264,7 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
         main_tree.setShowsRootHandles(true);
 
         main_tree.setRowHeight(30);
+        main_tree.expandRow(0);
         main_tree.setBounds(0, 0, 150, 900);
         tree_panell.add(main_tree, BorderLayout.WEST);
         main_tree.setVisible(true);
