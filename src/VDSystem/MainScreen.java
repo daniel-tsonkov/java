@@ -6,8 +6,10 @@ import javax.swing.tree.DefaultTreeModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class MainScreen extends JFrame implements ActionListener {
+public class MainScreen extends JFrame implements ActionListener, MouseListener {
     static String nameProgram = "Onaya programa v1.0.0";
     JMenuBar menuBar;
     JMenu file_menu;
@@ -150,6 +152,7 @@ public class MainScreen extends JFrame implements ActionListener {
             protocol.setVisible(true);
         }
         this.setVisible(true);
+        addMouseListener(this);
     }
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -215,6 +218,35 @@ public class MainScreen extends JFrame implements ActionListener {
 
         if(e.getSource() == generate_expertise){
         }
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        //System.out.println("mouse double");
+        DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) main_tree.getSelectionPath().getLastPathComponent();
+        if(selectedNode.equals("Протокол")) {
+            System.out.println("mouse double");
+        }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        //System.out.println("mouse pres");
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        //System.out.println("mouse real");
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
     }
 
     public static void TreeView(){
