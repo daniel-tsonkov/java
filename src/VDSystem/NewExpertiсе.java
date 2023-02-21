@@ -84,6 +84,7 @@ public class NewExpertiсе implements ActionListener {
             String nameProgram = MainScreen.nameProgram + " " + field_expertise.getText();
             MainScreen.nameProgram = nameProgram;
             //MainScreen.setTitle(nameProgram);// ne raboti?????
+            //MainScreen.se
 
             MainScreen.main_tree.setVisible(false);
             MainScreen.TreeView();

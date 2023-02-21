@@ -177,6 +177,7 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
 
         if (e.getSource() == new_work) {
             NewExpertiсе newExpertiсе = new NewExpertiсе();
+            this.setEnabled(false);
         }
 
         if (e.getSource() == new_evidence) {
