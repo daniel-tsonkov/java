@@ -85,7 +85,7 @@ public class NewEvidence implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == ok) {
-            newEvidence.setVisible(false);
+            //newEvidence.setVisible(false);
         }
         if (e.getSource() == cancel) {
             newEvidence.setVisible(false);

@@ -29,14 +29,14 @@ public class MainScreen extends JFrame implements ActionListener {
     JButton remove_evidence;
     JButton generate_expertise;
     //JLabel ekspertiza;
-    JTree main_tree;
-    JPanel tree_panell;
+    public static JTree main_tree;
+    public static JPanel tree_panell;
     JTabbedPane protocol;
-    String expertise = "No Name";
+    public static String expertise = "No Name";
     String s_item;
     int numberObject = 1;
 
-    DefaultMutableTreeNode new_expertise;
+    public static DefaultMutableTreeNode new_expertise;
 
     public MainScreen() {
         //this.setEnabled(true);
@@ -177,7 +177,7 @@ public class MainScreen extends JFrame implements ActionListener {
         if (e.getSource() == new_work) {
             //this.setEnabled(false);
             NewExpertiсе newExpertiсе = new NewExpertiсе();
-            this.setVisible(false);
+            //this.setVisible(false);
             //this.setVisible(false);
         }
 
@@ -236,7 +236,7 @@ public class MainScreen extends JFrame implements ActionListener {
         }
     }
 
-    public void TreeView(){
+    public static void TreeView(){
         main_tree.setVisible(false);
         new_expertise = new DefaultMutableTreeNode(expertise);
         main_tree = new JTree(new_expertise);

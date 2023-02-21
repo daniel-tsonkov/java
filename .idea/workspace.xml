@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/FunctionalPrograming/TronConquering.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VDSystem/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VDSystem/MainScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VDSystem/NewEvidence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VDSystem/NewEvidence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VDSystem/NewExpertiсе.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VDSystem/NewExpertiсе.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +61,7 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\Swing" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CustomMinFunction">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="ConsumerPrint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FunctionalPrograming.ConsumerPrint" />
       <module name="testove" />
@@ -99,12 +101,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ZadChetiri" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ZadaciIzpit.ZadChetiri" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="VDSystem.Main" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ZadaciIzpit.*" />
+          <option name="PATTERN" value="VDSystem.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -127,11 +129,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.CustomMinFunction" />
         <item itemvalue="Application.KnightOfHonor" />
         <item itemvalue="Application.ConsumerPrint" />
         <item itemvalue="Application.ZadPet" />
-        <item itemvalue="Application.ZadChetiri" />
       </list>
     </recent_temporary>
   </component>
@@ -143,13 +145,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00134" summary="Update">
-      <created>1673110036710</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
-      <option name="project" value="LOCAL" />
-      <updated>1673110036710</updated>
     </task>
     <task id="LOCAL-00135" summary="Update">
       <created>1673111265118</created>
@@ -487,7 +482,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676906510247</updated>
     </task>
-    <option name="localTasksCounter" value="183" />
+    <task id="LOCAL-00183" summary="Update">
+      <created>1676971932340</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1676971932341</updated>
+    </task>
+    <option name="localTasksCounter" value="184" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
