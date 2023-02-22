@@ -1,6 +1,8 @@
 package VDSystem;
 
 import javax.swing.*;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.*;
@@ -29,11 +31,12 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
     JButton new_evidence;
     JComboBox select_object;
     JTextField other_object;
+    JButton rename_object;
     JButton remove_evidence;
     JButton generate_expertise;
     static JTree main_tree;
     static JPanel tree_panell;
-    JTabbedPane protocol;
+    static JTabbedPane protocol;
     public static String expertise = "No Name";
     String s_item;
     int numberObject = 1;
@@ -105,6 +108,8 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
             other_object.setText("Друг обект");
             toolBar.add(other_object);
             other_object.setEditable(false);
+            rename_object = new JButton("Преименувай обект");
+            toolBar.add(rename_object);
             remove_evidence = new JButton("Премахни обект");
             toolBar.add(remove_evidence);
             toolBar.add(Box.createHorizontalGlue());
@@ -119,6 +124,7 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
             new_object.addActionListener(this);
             new_evidence.addActionListener(this);
             new_work.addActionListener(this);
+            rename_object.addActionListener(this);
             remove_evidence.addActionListener(this);
             generate_expertise.addActionListener(this);
         }
@@ -128,7 +134,7 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
             tree_panell.setBorder(BorderFactory.createEmptyBorder(0, 5, 5, 5));
             tree_panell.setPreferredSize(new Dimension(150, 900));
             tree_panell.setBorder(BorderFactory.createLineBorder(Color.black));
-            //tree_panell.setBackground(Color.white);//Da ne se trie!!!
+            tree_panell.setBackground(Color.white);//Da ne se trie!!!
             this.add(tree_panell, BorderLayout.WEST);
             TreeView();
         }
@@ -153,6 +159,7 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
         }
         this.setVisible(true);
         addMouseListener(this);
+        //treeNodeSelect();
     }
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -177,7 +184,7 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
 
         if (e.getSource() == new_work) {
             NewExpertiсе newExpertiсе = new NewExpertiсе();
-            this.setEnabled(false);
+            //this.setEnabled(false);
         }
 
         if (e.getSource() == new_evidence) {
@@ -262,12 +269,41 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
         DefaultMutableTreeNode protokol = new DefaultMutableTreeNode("Протокол");
         new_expertise.add(protokol);
         main_tree = new JTree(new_expertise);
-        main_tree.setShowsRootHandles(true);
+        //main_tree.setShowsRootHandles(true);
 
         main_tree.setRowHeight(30);
-        main_tree.expandRow(0);
+        //main_tree.expandRow(0);
         main_tree.setBounds(0, 0, 150, 900);
         tree_panell.add(main_tree, BorderLayout.WEST);
         main_tree.setVisible(true);
+        main_tree.addTreeSelectionListener(new TreeSelectionListener() {
+            @Override
+            public void valueChanged(TreeSelectionEvent e) {
+                DefaultMutableTreeNode node = (DefaultMutableTreeNode) main_tree.getLastSelectedPathComponent();
+                String myNode = node.toString();
+                if(myNode.equals("Протокол")){
+                    protocol.setVisible(true);
+                }else {
+                    protocol.setVisible(false);
+                }
+            }
+        });
     }
+
+    public static void treeNodeSelect(){
+        main_tree.addTreeSelectionListener(new TreeSelectionListener() {
+            @Override
+            public void valueChanged(TreeSelectionEvent e) {
+                DefaultMutableTreeNode node = (DefaultMutableTreeNode)
+                        main_tree.getLastSelectedPathComponent();
+                //System.out.println(node);
+                String myNode = node.toString();
+                if(myNode.equals("Протокол")){
+                    protocol.setVisible(true);
+                }else {
+                    protocol.setVisible(false);
+                }
+            }
+        });
+    }//Ne se polzva za sega!!!
 }
