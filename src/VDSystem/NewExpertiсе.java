@@ -85,6 +85,12 @@ public class NewExpertiсе implements ActionListener {
             MainScreen.nameProgram = nameProgram;
             //MainScreen.setTitle(nameProgram);// ne raboti?????
             //MainScreen.se
+            MainScreen.new_object.setEnabled(true);
+            MainScreen.new_evidence.setEnabled(true);
+            MainScreen.select_object.setEnabled(true);
+            MainScreen.rename_object.setEnabled(true);
+            MainScreen.remove_evidence.setEnabled(true);
+            MainScreen.generate_expertise.setEnabled(true);
 
             MainScreen.main_tree.setVisible(false);
             MainScreen.TreeView();

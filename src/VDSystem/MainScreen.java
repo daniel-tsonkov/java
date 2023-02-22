@@ -25,13 +25,13 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
     JToolBar toolBar;
     JButton new_work;
     JButton open_work;
-    JButton new_object;
-    JButton new_evidence;
-    JComboBox select_object;
-    JTextField other_object;
-    JButton rename_object;
-    JButton remove_evidence;
-    JButton generate_expertise;
+    static JButton new_object;
+    static JButton new_evidence;
+    static JComboBox select_object;
+    static JTextField other_object;
+    static JButton rename_object;
+    static JButton remove_evidence;
+    static JButton generate_expertise;
     static JTree main_tree;
     JButton expand_tree;
     JButton colapse_tree;
@@ -100,13 +100,16 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
             toolBar.add(open_work);
             toolBar.addSeparator(new Dimension(20, 25));
             new_object = new JButton("Нов обект");
+            new_object.setEnabled(false);
             new_object.setFocusable(false);
             toolBar.add(new_object);
             new_evidence = new JButton("Ново ВД");
+            new_evidence.setEnabled(false);
             new_evidence.setFocusable(false);
             toolBar.add(new_evidence);
             String[] objects = {"GSM", "SIM", "MMC", "Tablet", "Флаш", "GSM Рутер", "GPS", "Друго"};
             select_object = new JComboBox(objects);
+            select_object.setEnabled(false);
             select_object.setFocusCycleRoot(false);
             toolBar.add(select_object);
             other_object = new JTextField();
@@ -115,9 +118,11 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
             toolBar.add(other_object);
             other_object.setEditable(false);
             rename_object = new JButton("Преименувай обект");
+            rename_object.setEnabled(false);
             rename_object.setFocusable(false);
             toolBar.add(rename_object);
             remove_evidence = new JButton("Премахни обект");
+            remove_evidence.setEnabled(false);
             remove_evidence.setFocusable(false);
             toolBar.add(remove_evidence);
             toolBar.add(Box.createHorizontalGlue());
@@ -125,14 +130,15 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
             //ekspertiza = new JLabel();
             //toolBar.add(ekspertiza);
             generate_expertise = new JButton("Генерирай експертиза");
+            generate_expertise.setEnabled(false);
             generate_expertise.setFocusable(false);
             toolBar.add(generate_expertise);
             Container pane = this.getContentPane(); //add to JPane toolbar
             pane.add(toolBar, BorderLayout.NORTH);
+            new_work.addActionListener(this);
             select_object.addActionListener(this);
             new_object.addActionListener(this);
             new_evidence.addActionListener(this);
-            new_work.addActionListener(this);
             rename_object.addActionListener(this);
             remove_evidence.addActionListener(this);
             generate_expertise.addActionListener(this);
@@ -215,12 +221,18 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         }
 
         if (e.getSource() == new_work) {
-            int confirm_new = JOptionPane.showConfirmDialog(null, "Сигурен ли си че искаш нова експертиза", "Нова експериза", JOptionPane.YES_NO_OPTION);
-            if (confirm_new == 0) {
+            if(expertise.equals("No Name")){
                 NewExpertiсе newExpertiсе = new NewExpertiсе();
                 //this.setEnabled(false);
-                numberObject = 1;
+            }else  {
+                int confirm_new = JOptionPane.showConfirmDialog(null, "Сигурен ли си че искаш нова експертиза", "Нова експериза", JOptionPane.YES_NO_OPTION);
+                if (confirm_new == 0) {
+                    NewExpertiсе newExpertiсе = new NewExpertiсе();
+                    //this.setEnabled(false);
+                    numberObject = 1;
+                }
             }
+
         }
 
         if (e.getSource() == new_evidence) {
@@ -285,15 +297,6 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
 
     /*@Override
     public void mouseClicked(MouseEvent e) {
-        //System.out.println("mouse double");
-        DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) main_tree.getSelectionPath().getLastPathComponent();
-        String mySelectedNode = selectedNode.getUserObject().toString();
-        //System.out.println(mySelectedNode);
-        if(mySelectedNode.equals("Протокол")) {
-            protocol.setVisible(true);
-        }else{
-            protocol.setVisible(false);
-        }
     }
 
     @Override
@@ -318,10 +321,11 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
 
     public static void TreeView() {
         new_expertise = new DefaultMutableTreeNode(expertise);
-        DefaultMutableTreeNode protokol = new DefaultMutableTreeNode("Протокол");
-        new_expertise.add(protokol);
+        if (!expertise.equals("No Name")) {
+            DefaultMutableTreeNode protokol = new DefaultMutableTreeNode("Протокол");
+            new_expertise.add(protokol);
+        }
         main_tree = new JTree(new_expertise);
-
         main_tree.setRowHeight(25);
         main_tree.setBounds(0, 0, 150, 900);
         tree_panell.add(main_tree, BorderLayout.WEST);
