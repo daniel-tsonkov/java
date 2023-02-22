@@ -9,7 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainScreen extends JFrame implements ActionListener{//, MouseListener {
+public class MainScreen extends JFrame implements ActionListener {//, MouseListener {
     static String nameProgram = "Onaya programa v1.0.0";
     JMenuBar menuBar;
     JMenu file_menu;
@@ -189,6 +189,7 @@ public class MainScreen extends JFrame implements ActionListener{//, MouseListen
         //addMouseListener(this);
         //treeNodeSelect();
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == exit_item) {
@@ -215,7 +216,7 @@ public class MainScreen extends JFrame implements ActionListener{//, MouseListen
 
         if (e.getSource() == new_work) {
             int confirm_new = JOptionPane.showConfirmDialog(null, "Сигурен ли си че искаш нова експертиза", "Нова експериза", JOptionPane.YES_NO_OPTION);
-            if(confirm_new == 0){
+            if (confirm_new == 0) {
                 NewExpertiсе newExpertiсе = new NewExpertiсе();
                 //this.setEnabled(false);
                 numberObject = 1;
@@ -229,7 +230,7 @@ public class MainScreen extends JFrame implements ActionListener{//, MouseListen
                 s_item = other_object.getText();
                 DefaultMutableTreeNode evidence1 = new DefaultMutableTreeNode(s_item);
                 selectedNode.add(evidence1);
-            }else{
+            } else {
                 s_item = select_object.getSelectedItem().toString();
                 DefaultMutableTreeNode evidence1 = new DefaultMutableTreeNode(s_item);
                 selectedNode.add(evidence1);
@@ -246,36 +247,36 @@ public class MainScreen extends JFrame implements ActionListener{//, MouseListen
         if (e.getSource() == select_object) {
             if (select_object.getSelectedItem().toString().equals("Друго")) {
                 other_object.setEditable(true);
-            }else{
+            } else {
                 other_object.setEditable(false);
             }
         }
 
-        if(e.getSource() == remove_evidence){
+        if (e.getSource() == remove_evidence) {
             int confirm_delete = JOptionPane.showConfirmDialog(null, "Сигурен ли си че искаш да го изтриеш?", "Изтриване", JOptionPane.YES_NO_OPTION);
-            if(confirm_delete == 0 && (myNode.equals("Протокол") != true)){
+            if (confirm_delete == 0 && (myNode.equals("Протокол") != true)) {
                 DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) main_tree.getSelectionPath().getLastPathComponent();
                 DefaultTreeModel model = (DefaultTreeModel) main_tree.getModel();
                 model.removeNodeFromParent(selectedNode);
-            }else{
+            } else {
                 JOptionPane.showConfirmDialog(null, "Не можеш да изтриеш протокола?", "Изтриване", JOptionPane.DEFAULT_OPTION, 2, null);
             }
         }
 
-        if(e.getSource() == version_item){
+        if (e.getSource() == version_item) {
             JOptionPane.showMessageDialog(null, "Версия 1.0.0", "За програмата", JOptionPane.OK_OPTION);
         }
 
-        if(e.getSource() == generate_expertise){
+        if (e.getSource() == generate_expertise) {
         }
 
-        if(e.getSource() == expand_tree){
+        if (e.getSource() == expand_tree) {
             for (int i = 0; i < main_tree.getRowCount(); i++) {
                 main_tree.expandRow(i);
             }
         }
 
-        if(e.getSource() == colapse_tree){
+        if (e.getSource() == colapse_tree) {
             for (int i = 0; i < main_tree.getRowCount(); i++) {
                 main_tree.collapseRow(i);
             }
@@ -315,7 +316,7 @@ public class MainScreen extends JFrame implements ActionListener{//, MouseListen
 
     }*/
 
-    public static void TreeView(){
+    public static void TreeView() {
         new_expertise = new DefaultMutableTreeNode(expertise);
         DefaultMutableTreeNode protokol = new DefaultMutableTreeNode("Протокол");
         new_expertise.add(protokol);
@@ -329,12 +330,12 @@ public class MainScreen extends JFrame implements ActionListener{//, MouseListen
             @Override
             public void valueChanged(TreeSelectionEvent e) {
                 //DefaultMutableTreeNode node = (DefaultMutableTreeNode) main_tree.getLastSelectedPathComponent();
-                if(main_tree.getLastSelectedPathComponent() != null){
+                if (main_tree.getLastSelectedPathComponent() != null) {
                     myNode = main_tree.getLastSelectedPathComponent().toString();
                     //System.out.println(myNode);
-                    if(myNode.equals("Протокол")){
+                    if (myNode.equals("Протокол")) {
                         protocol.setVisible(true);//
-                    }else {
+                    } else {
                         protocol.setVisible(false);
                     }
                 }
@@ -343,7 +344,7 @@ public class MainScreen extends JFrame implements ActionListener{//, MouseListen
 
     }
 
-    public static void treeNodeSelect(){
+    public static void treeNodeSelect() {
         main_tree.addTreeSelectionListener(new TreeSelectionListener() {
             @Override
             public void valueChanged(TreeSelectionEvent e) {
@@ -351,9 +352,9 @@ public class MainScreen extends JFrame implements ActionListener{//, MouseListen
                         main_tree.getLastSelectedPathComponent();
                 //System.out.println(node);
                 String myNode = node.toString();
-                if(myNode.equals("Протокол")){
+                if (myNode.equals("Протокол")) {
                     protocol.setVisible(true);
-                }else {
+                } else {
                     protocol.setVisible(false);
                 }
             }

@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/docx_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/VDSystem/entities/MyTreeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VDSystem/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VDSystem/MainScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/docx_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/VDSystem/resources/docx_icon.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,11 +54,11 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\VDSystem" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\VDSystem\resources" />
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\aaa" />
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\ааа" />
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\Swing1" />
-      <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\Swing" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -142,13 +145,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00145" summary="Update">
-      <created>1673204226011</created>
-      <option name="number" value="00145" />
-      <option name="presentableId" value="LOCAL-00145" />
-      <option name="project" value="LOCAL" />
-      <updated>1673204226016</updated>
     </task>
     <task id="LOCAL-00146" summary="Update">
       <created>1673213617663</created>
@@ -486,7 +482,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677059550727</updated>
     </task>
-    <option name="localTasksCounter" value="194" />
+    <task id="LOCAL-00194" summary="Update">
+      <created>1677068177826</created>
+      <option name="number" value="00194" />
+      <option name="presentableId" value="LOCAL-00194" />
+      <option name="project" value="LOCAL" />
+      <updated>1677068177826</updated>
+    </task>
+    <option name="localTasksCounter" value="195" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -534,11 +537,6 @@
           <url>file://$PROJECT_DIR$/src/ZadaciIzpit/ZadChetiri.java</url>
           <line>18</line>
           <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/VDSystem/MainScreen.java</url>
-          <line>299</line>
-          <option name="timeStamp" value="31" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
