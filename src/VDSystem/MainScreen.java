@@ -47,10 +47,10 @@ public class MainScreen extends JFrame implements ActionListener{//, MouseListen
     public MainScreen() {
         //Screen property
         {
-            this.setLocationRelativeTo(null);
-            this.setSize(1024, 768);
-            this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            this.setSize(1280, 900);
+            //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
             //this.setResizable(false);
+            this.setLocationRelativeTo(null);
             this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/icon.jpg")));
             this.setTitle(nameProgram);
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -93,7 +93,7 @@ public class MainScreen extends JFrame implements ActionListener{//, MouseListen
         {
             toolBar = new JToolBar();
             new_work = new JButton("Нова експертиза");
-            new_work.setFocusable(false);
+            //new_work.setFocusable(false);
             toolBar.add(new_work);
             open_work = new JButton("Отвори експертиза");
             open_work.setFocusable(false);
@@ -106,8 +106,8 @@ public class MainScreen extends JFrame implements ActionListener{//, MouseListen
             new_evidence.setFocusable(false);
             toolBar.add(new_evidence);
             String[] objects = {"GSM", "SIM", "MMC", "Tablet", "Флаш", "GSM Рутер", "GPS", "Друго"};
-            //select_object.setFocusable(false);!!!!!
             select_object = new JComboBox(objects);
+            select_object.setFocusCycleRoot(false);
             toolBar.add(select_object);
             other_object = new JTextField();
             other_object.getText();
@@ -140,15 +140,15 @@ public class MainScreen extends JFrame implements ActionListener{//, MouseListen
         //Tree view
         {
             tree_panell = new JPanel();
-            tree_panell.setBorder(BorderFactory.createEmptyBorder(0, 5, 5, 5));
+            tree_panell.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
             tree_panell.setPreferredSize(new Dimension(170, 900));
             tree_panell.setBorder(BorderFactory.createLineBorder(Color.black));
-            tree_panell.setBackground(Color.white);//Da ne se trie!!!
+            tree_panell.setBackground(Color.white);
             this.add(tree_panell, BorderLayout.WEST);
 
             JPanel buttons_tree = new JPanel();
-            //buttons_tree.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
-            //buttons_tree.setBorder(BorderFactory.createLineBorder(Color.black));
+            buttons_tree.setBorder(BorderFactory.createLineBorder(Color.black));
+            buttons_tree.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));
             tree_panell.add(buttons_tree);
 
 
@@ -158,8 +158,9 @@ public class MainScreen extends JFrame implements ActionListener{//, MouseListen
             colapse_tree = new JButton("Свий");
             buttons_tree.add(colapse_tree);
 
-            //JSeparator separator = new JSeparator();
-            tree_panell.add(new JSeparator());
+            JSeparator separator = new JSeparator();
+            tree_panell.add(separator);
+            //tree_panell.add(new JSeparator());
 
             TreeView();
             expand_tree.addActionListener(this);
@@ -213,17 +214,15 @@ public class MainScreen extends JFrame implements ActionListener{//, MouseListen
         }
 
         if (e.getSource() == new_work) {
-            NewExpertiсе newExpertiсе = new NewExpertiсе();
-            //this.setEnabled(false);
-            numberObject = 1;
+            int confirm_new = JOptionPane.showConfirmDialog(null, "Сигурен ли си че искаш нова експертиза", "Нова експериза", JOptionPane.YES_NO_OPTION);
+            if(confirm_new == 0){
+                NewExpertiсе newExpertiсе = new NewExpertiсе();
+                //this.setEnabled(false);
+                numberObject = 1;
+            }
         }
 
         if (e.getSource() == new_evidence) {
-            /*DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) main_tree.getSelectionPath().getLastPathComponent();
-            DefaultMutableTreeNode evidence1 = new DefaultMutableTreeNode("Обект " + numberObject);
-            selectedNode.add(evidence1);
-            DefaultTreeModel model = (DefaultTreeModel) main_tree.getModel();
-            model.reload();*/
             DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) main_tree.getSelectionPath().getLastPathComponent();
 
             if (select_object.getSelectedItem().toString().equals("Друго")) {
@@ -254,10 +253,12 @@ public class MainScreen extends JFrame implements ActionListener{//, MouseListen
 
         if(e.getSource() == remove_evidence){
             int confirm_delete = JOptionPane.showConfirmDialog(null, "Сигурен ли си че искаш да го изтриеш?", "Изтриване", JOptionPane.YES_NO_OPTION);
-            if(confirm_delete == 0){
+            if(confirm_delete == 0 && (myNode.equals("Протокол") != true)){
                 DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) main_tree.getSelectionPath().getLastPathComponent();
                 DefaultTreeModel model = (DefaultTreeModel) main_tree.getModel();
                 model.removeNodeFromParent(selectedNode);
+            }else{
+                JOptionPane.showConfirmDialog(null, "Не можеш да изтриеш протокола?", "Изтриване", JOptionPane.DEFAULT_OPTION, 2, null);
             }
         }
 
