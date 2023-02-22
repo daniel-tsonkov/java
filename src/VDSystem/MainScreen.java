@@ -63,10 +63,10 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         }
 
         if (e.getSource() == new_work) {
-            if(expertise.equals("No Name")){
+            if (expertise.equals("No Name")) {
                 NewExpertiсе newExpertiсе = new NewExpertiсе();
                 //this.setEnabled(false);
-            }else  {
+            } else {
                 int confirm_new = JOptionPane.showConfirmDialog(null, "Сигурен ли си че искаш нова експертиза", "Нова експериза", JOptionPane.YES_NO_OPTION);
                 if (confirm_new == 0) {
                     NewExpertiсе newExpertiсе = new NewExpertiсе();
@@ -103,6 +103,10 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
             } else {
                 other_object.setEditable(false);
             }
+        }
+
+        if (e.getSource() == rename_object) {
+            RenameObject renameObject = new RenameObject();
         }
 
         if (e.getSource() == remove_evidence) {
@@ -188,6 +192,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         });
 
     }
+
     private void ScreenProperty() {
         this.setSize(1280, 900);
         //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -198,7 +203,8 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
     }
-    private void Menubar(){
+
+    private void Menubar() {
         menuBar = new JMenuBar();
 
         file_menu = new JMenu("File");
@@ -231,7 +237,8 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         exit_item.addActionListener(this);
         version_item.addActionListener(this);
     }
-    private void ToolbarMenu(){
+
+    private void ToolbarMenu() {
         toolBar = new JToolBar();
         new_work = new JButton("Нова експертиза");
         //new_work.setFocusable(false);
@@ -284,7 +291,8 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         remove_evidence.addActionListener(this);
         generate_expertise.addActionListener(this);
     }
-    private void TreeViewMenu(){
+
+    private void TreeViewMenu() {
         tree_panell = new JPanel();
         tree_panell.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
         tree_panell.setPreferredSize(new Dimension(170, 900));
@@ -310,7 +318,8 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         expand_tree.addActionListener(this);
         colapse_tree.addActionListener(this);
     }
-    private void TabsProtokol(){
+
+    private void TabsProtokol() {
         JPanel panel1 = new JPanel();
         JPanel panel2 = new JPanel();
         JPanel panel3 = new JPanel();
@@ -328,6 +337,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         this.add(protocol);
         protocol.setVisible(false);
     }
+
     public static void treeNodeSelect() {
         main_tree.addTreeSelectionListener(new TreeSelectionListener() {
             @Override
