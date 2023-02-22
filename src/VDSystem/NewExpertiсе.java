@@ -91,6 +91,8 @@ public class NewExpertiсе implements ActionListener {
             MainScreen.rename_object.setEnabled(true);
             MainScreen.remove_evidence.setEnabled(true);
             MainScreen.generate_expertise.setEnabled(true);
+            MainScreen.expand_tree.setEnabled(true);
+            MainScreen.colapse_tree.setEnabled(true);
 
             MainScreen.main_tree.setVisible(false);
             MainScreen.TreeView();
