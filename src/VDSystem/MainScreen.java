@@ -282,7 +282,7 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
                 DefaultMutableTreeNode node = (DefaultMutableTreeNode) main_tree.getLastSelectedPathComponent();
                 String myNode = node.toString();
                 if(myNode.equals("Протокол")){
-                    protocol.setVisible(true);
+                    protocol.setVisible(true);//
                 }else {
                     protocol.setVisible(false);
                 }
