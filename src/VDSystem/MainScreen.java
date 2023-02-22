@@ -8,10 +8,8 @@ import javax.swing.tree.DefaultTreeModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
-public class MainScreen extends JFrame implements ActionListener, MouseListener {
+public class MainScreen extends JFrame implements ActionListener{//, MouseListener {
     static String nameProgram = "Onaya programa v1.0.0";
     JMenuBar menuBar;
     JMenu file_menu;
@@ -35,11 +33,14 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
     JButton remove_evidence;
     JButton generate_expertise;
     static JTree main_tree;
+    JButton expand_tree;
+    JButton colapse_tree;
     static JPanel tree_panell;
     static JTabbedPane protocol;
     public static String expertise = "No Name";
     String s_item;
     int numberObject = 1;
+    static String myNode;
 
     static DefaultMutableTreeNode new_expertise;
 
@@ -92,15 +93,20 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
         {
             toolBar = new JToolBar();
             new_work = new JButton("Нова експертиза");
+            new_work.setFocusable(false);
             toolBar.add(new_work);
             open_work = new JButton("Отвори експертиза");
+            open_work.setFocusable(false);
             toolBar.add(open_work);
             toolBar.addSeparator(new Dimension(20, 25));
             new_object = new JButton("Нов обект");
+            new_object.setFocusable(false);
             toolBar.add(new_object);
             new_evidence = new JButton("Ново ВД");
+            new_evidence.setFocusable(false);
             toolBar.add(new_evidence);
             String[] objects = {"GSM", "SIM", "MMC", "Tablet", "Флаш", "GSM Рутер", "GPS", "Друго"};
+            //select_object.setFocusable(false);!!!!!
             select_object = new JComboBox(objects);
             toolBar.add(select_object);
             other_object = new JTextField();
@@ -109,14 +115,17 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
             toolBar.add(other_object);
             other_object.setEditable(false);
             rename_object = new JButton("Преименувай обект");
+            rename_object.setFocusable(false);
             toolBar.add(rename_object);
             remove_evidence = new JButton("Премахни обект");
+            remove_evidence.setFocusable(false);
             toolBar.add(remove_evidence);
             toolBar.add(Box.createHorizontalGlue());
             toolBar.addSeparator(new Dimension(20, 25));
             //ekspertiza = new JLabel();
             //toolBar.add(ekspertiza);
             generate_expertise = new JButton("Генерирай експертиза");
+            generate_expertise.setFocusable(false);
             toolBar.add(generate_expertise);
             Container pane = this.getContentPane(); //add to JPane toolbar
             pane.add(toolBar, BorderLayout.NORTH);
@@ -132,11 +141,29 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
         {
             tree_panell = new JPanel();
             tree_panell.setBorder(BorderFactory.createEmptyBorder(0, 5, 5, 5));
-            tree_panell.setPreferredSize(new Dimension(150, 900));
+            tree_panell.setPreferredSize(new Dimension(170, 900));
             tree_panell.setBorder(BorderFactory.createLineBorder(Color.black));
             tree_panell.setBackground(Color.white);//Da ne se trie!!!
             this.add(tree_panell, BorderLayout.WEST);
+
+            JPanel buttons_tree = new JPanel();
+            //buttons_tree.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
+            //buttons_tree.setBorder(BorderFactory.createLineBorder(Color.black));
+            tree_panell.add(buttons_tree);
+
+
+            expand_tree = new JButton("Разтегли");
+            expand_tree.setFocusable(false);
+            buttons_tree.add(expand_tree);
+            colapse_tree = new JButton("Свий");
+            buttons_tree.add(colapse_tree);
+
+            //JSeparator separator = new JSeparator();
+            tree_panell.add(new JSeparator());
+
             TreeView();
+            expand_tree.addActionListener(this);
+            colapse_tree.addActionListener(this);
         }
         //Tabs protokol
         {
@@ -158,7 +185,7 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
             protocol.setVisible(false);
         }
         this.setVisible(true);
-        addMouseListener(this);
+        //addMouseListener(this);
         //treeNodeSelect();
     }
     @Override
@@ -180,11 +207,15 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
             DefaultTreeModel model = (DefaultTreeModel) main_tree.getModel();
             model.reload();
             numberObject++;
+            for (int i = 0; i < main_tree.getRowCount(); i++) {
+                main_tree.expandRow(i);
+            }
         }
 
         if (e.getSource() == new_work) {
             NewExpertiсе newExpertiсе = new NewExpertiсе();
             //this.setEnabled(false);
+            numberObject = 1;
         }
 
         if (e.getSource() == new_evidence) {
@@ -194,16 +225,23 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
             DefaultTreeModel model = (DefaultTreeModel) main_tree.getModel();
             model.reload();*/
             DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) main_tree.getSelectionPath().getLastPathComponent();
-            //System.out.println(selectedNode);
+
             if (select_object.getSelectedItem().toString().equals("Друго")) {
                 s_item = other_object.getText();
+                DefaultMutableTreeNode evidence1 = new DefaultMutableTreeNode(s_item);
+                selectedNode.add(evidence1);
             }else{
+                s_item = select_object.getSelectedItem().toString();
                 DefaultMutableTreeNode evidence1 = new DefaultMutableTreeNode(s_item);
                 selectedNode.add(evidence1);
             }
 
             DefaultTreeModel model = (DefaultTreeModel) main_tree.getModel();
             model.reload();
+
+            for (int i = 0; i < main_tree.getRowCount(); i++) {
+                main_tree.expandRow(i);
+            }
         }
 
         if (e.getSource() == select_object) {
@@ -229,9 +267,21 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
 
         if(e.getSource() == generate_expertise){
         }
+
+        if(e.getSource() == expand_tree){
+            for (int i = 0; i < main_tree.getRowCount(); i++) {
+                main_tree.expandRow(i);
+            }
+        }
+
+        if(e.getSource() == colapse_tree){
+            for (int i = 0; i < main_tree.getRowCount(); i++) {
+                main_tree.collapseRow(i);
+            }
+        }
     }
 
-    @Override
+    /*@Override
     public void mouseClicked(MouseEvent e) {
         //System.out.println("mouse double");
         DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) main_tree.getSelectionPath().getLastPathComponent();
@@ -262,32 +312,34 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
     @Override
     public void mouseExited(MouseEvent e) {
 
-    }
+    }*/
 
     public static void TreeView(){
         new_expertise = new DefaultMutableTreeNode(expertise);
         DefaultMutableTreeNode protokol = new DefaultMutableTreeNode("Протокол");
         new_expertise.add(protokol);
         main_tree = new JTree(new_expertise);
-        //main_tree.setShowsRootHandles(true);
 
-        main_tree.setRowHeight(30);
-        //main_tree.expandRow(0);
+        main_tree.setRowHeight(25);
         main_tree.setBounds(0, 0, 150, 900);
         tree_panell.add(main_tree, BorderLayout.WEST);
         main_tree.setVisible(true);
         main_tree.addTreeSelectionListener(new TreeSelectionListener() {
             @Override
             public void valueChanged(TreeSelectionEvent e) {
-                DefaultMutableTreeNode node = (DefaultMutableTreeNode) main_tree.getLastSelectedPathComponent();
-                String myNode = node.toString();
-                if(myNode.equals("Протокол")){
-                    protocol.setVisible(true);//
-                }else {
-                    protocol.setVisible(false);
+                //DefaultMutableTreeNode node = (DefaultMutableTreeNode) main_tree.getLastSelectedPathComponent();
+                if(main_tree.getLastSelectedPathComponent() != null){
+                    myNode = main_tree.getLastSelectedPathComponent().toString();
+                    //System.out.println(myNode);
+                    if(myNode.equals("Протокол")){
+                        protocol.setVisible(true);//
+                    }else {
+                        protocol.setVisible(false);
+                    }
                 }
             }
         });
+
     }
 
     public static void treeNodeSelect(){
