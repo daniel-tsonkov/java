@@ -32,6 +32,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
     ImageIcon new_file_icon;
     ImageIcon open_file_icon;
     ImageIcon save_file_icon;
+    ImageIcon exit_program_icon;
 
     public MainScreen() {
         ScreenProperty();
@@ -45,7 +46,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == new_item) {
+        if (e.getSource() == new_item) {
             NewWork();
         }
 
@@ -199,7 +200,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         //this.setResizable(false);
         this.setLocationRelativeTo(null);
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/icon.jpg")));
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/favicon.png")));
         this.setTitle(nameProgram);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
@@ -209,7 +210,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         new_file_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/newfile.png")));
         open_file_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/openfile.png")));
         save_file_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/savefile.png")));
-
+        exit_program_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/exit.png")));
         menuBar = new JMenuBar();
 
         file_menu = new JMenu("File");
@@ -226,6 +227,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         save_item = new JMenuItem("Запиши експертиза");
         save_item.setIcon(save_file_icon);
         exit_item = new JMenuItem("Exit");
+        exit_item.setIcon(exit_program_icon);
         cut_item = new JMenuItem("Cut");
         copy_item = new JMenuItem("Copy");
         paste_item = new JMenuItem("Paste");
