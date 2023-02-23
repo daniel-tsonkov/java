@@ -8,12 +8,13 @@ import javax.swing.tree.DefaultTreeModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 public class MainScreen extends JFrame implements ActionListener {//, MouseListener {
     static String nameProgram = "Onaya programa v1.0.0";
     JMenuBar menuBar;
     JMenu file_menu, edin_menu, help_menu;
-    JMenuItem new_item, open_item, save_item, exit_item, cut_item, copy_item, paste_item, version_item;
+    JMenuItem new_item, open_item, save_item, exit_item, cut_item, copy_item, paste_item, manual_item, version_item;
     JToolBar toolBar;
     JButton new_work, open_work;
     static JButton new_object, new_evidence, rename_object, remove_evidence, generate_expertise, expand_tree, colapse_tree;
@@ -204,8 +205,11 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         menuBar = new JMenuBar();
 
         file_menu = new JMenu("File");
+        file_menu.setMnemonic(KeyEvent.VK_F);
         edin_menu = new JMenu("Edit");
+        edin_menu.setMnemonic(KeyEvent.VK_E);
         help_menu = new JMenu("Help");
+        help_menu.setMnemonic(KeyEvent.VK_H);
 
         new_item = new JMenuItem("Нова експертиза");
         open_item = new JMenuItem("Отвори експертиза");
@@ -214,6 +218,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         cut_item = new JMenuItem("Cut");
         copy_item = new JMenuItem("Copy");
         paste_item = new JMenuItem("Paste");
+        manual_item = new JMenuItem("Ръководство");
         version_item = new JMenuItem("Версия");
 
         this.setJMenuBar(menuBar);
@@ -230,6 +235,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         edin_menu.add(cut_item);
         edin_menu.add(copy_item);
         edin_menu.add(paste_item);
+        help_menu.add(manual_item);
         help_menu.add(version_item);
 
         new_item.addActionListener(this);
