@@ -28,7 +28,7 @@ public class NewExpertiсе extends JFrame implements ActionListener, WindowList
             this.mainScreen = mainScreen;
             //newE = new JFrame();
             this.setLocationRelativeTo(null);
-            this.setSize(800, 600);
+            this.setSize(350, 450);
             this.setLocationRelativeTo(null);
             this.setResizable(false);
             this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/icon.jpg")));
@@ -37,47 +37,48 @@ public class NewExpertiсе extends JFrame implements ActionListener, WindowList
 
             no_expertise = new JLabel("Номер на експертизата");
             this.add(no_expertise);
-            no_expertise.setBounds(50, 20, 200, 35);
+            no_expertise.setBounds(40, 20, 200, 35);
 
             field_expertise = new JTextField();
             this.add(field_expertise);
-            field_expertise.setBounds(50, 50, 300, 35);
+            field_expertise.setBounds(40, 50, 250, 35);
 
             date_expertise = new JLabel("Дата");
             this.add(date_expertise);
-            date_expertise.setBounds(50, 100, 200, 35);
+            date_expertise.setBounds(40, 100, 200, 35);
 
             field_date_expertise = new JTextField();
             this.add(field_date_expertise);
-            field_date_expertise.setBounds(50, 130, 300, 35);
+            field_date_expertise.setBounds(40, 130, 250, 35);
 
             reg_no = new JLabel("Регистрационен номер");
             this.add(reg_no);
-            reg_no.setBounds(50, 180, 200, 35);
+            reg_no.setBounds(40, 180, 200, 35);
 
             field_reg_no = new JTextField();
             this.add(field_reg_no);
-            field_reg_no.setBounds(50, 210, 300, 35);
+            field_reg_no.setBounds(40, 210, 250, 35);
 
             dp_no = new JLabel("ДП номер");
             this.add(dp_no);
-            dp_no.setBounds(50, 260, 200, 35);
+            dp_no.setBounds(40, 260, 200, 35);
 
             field_dp_no = new JTextField();
             this.add(field_dp_no);
-            field_dp_no.setBounds(50, 290, 300, 35);
+            field_dp_no.setBounds(40, 290, 250, 35);
 
             ok = new JButton("Създай");
             this.add(ok);
             ok.addActionListener(this);
-            ok.setBounds(250,500, 120, 30);
+            ok.setBounds(40,350, 120, 30);
 
             cancel = new JButton("Отказвам се");
             this.add(cancel);
             cancel.addActionListener(this);
-            cancel.setBounds(450,500, 120, 30);
+            cancel.setBounds(170,350, 120, 30);
 
             this.setVisible(true);
+            this.addWindowListener(this);
         }
 
     }
@@ -99,7 +100,8 @@ public class NewExpertiсе extends JFrame implements ActionListener, WindowList
             MainScreen.expand_tree.setEnabled(true);
             MainScreen.colapse_tree.setEnabled(true);
 
-            MainScreen.main_tree.setVisible(false);
+            //MainScreen.main_tree.setVisible(false);
+            MainScreen.main_tree.setModel(null);
             MainScreen.TreeView();
             mainScreen.setEnabled(true);
             this.dispose();
@@ -117,6 +119,7 @@ public class NewExpertiсе extends JFrame implements ActionListener, WindowList
 
     @Override
     public void windowClosing(WindowEvent e) {
+        System.out.println("from X");
         mainScreen.setEnabled(true);
     }
 

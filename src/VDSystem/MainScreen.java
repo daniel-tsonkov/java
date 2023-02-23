@@ -65,15 +65,15 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         if (e.getSource() == new_work) {
             if (expertise.equals("No Name")) {
                 NewExpertiсе newExpertiсе = new NewExpertiсе(this);
-                //this.setEnabled(false);
+                this.setEnabled(false);
             } else {
                 int confirm_new = JOptionPane.showConfirmDialog(null, "Сигурен ли си че искаш нова експертиза", "Нова експериза", JOptionPane.YES_NO_OPTION);
                 if (confirm_new == 0) {
                     NewExpertiсе newExpertiсе = new NewExpertiсе(this);
                     numberObject = 1;
+                    this.setEnabled(false);
                 }
             }
-            this.setEnabled(false);
         }
 
         if (e.getSource() == new_evidence) {
@@ -111,13 +111,15 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         }
 
         if (e.getSource() == remove_evidence) {
-            int confirm_delete = JOptionPane.showConfirmDialog(null, "Сигурен ли си че искаш да го изтриеш?", "Изтриване", JOptionPane.YES_NO_OPTION);
-            if (confirm_delete == 0 && (myNode.equals("Протокол") != true)) {
-                DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) main_tree.getSelectionPath().getLastPathComponent();
-                DefaultTreeModel model = (DefaultTreeModel) main_tree.getModel();
-                model.removeNodeFromParent(selectedNode);
-            } else {
-                JOptionPane.showConfirmDialog(null, "Не можеш да изтриеш протокола?", "Изтриване", JOptionPane.DEFAULT_OPTION, 2, null);
+            if((myNode.equals("Протокол")) || (myNode.equals("Инфо"))){
+                JOptionPane.showConfirmDialog(null, "Не можеш да изтриеш този файл!", "Изтриване", JOptionPane.DEFAULT_OPTION, 2, null);
+            }else {
+                int confirm_delete = JOptionPane.showConfirmDialog(null, "Сигурен ли си че искаш да го изтриеш?", "Изтриване", JOptionPane.YES_NO_OPTION);
+                if (confirm_delete == 0) {
+                    DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) main_tree.getSelectionPath().getLastPathComponent();
+                    DefaultTreeModel model = (DefaultTreeModel) main_tree.getModel();
+                    model.removeNodeFromParent(selectedNode);
+                }
             }
         }
 
