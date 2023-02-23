@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
+
 public class MainScreen extends JFrame implements ActionListener {//, MouseListener {
     static String nameProgram = "Onaya programa v1.0.0";
     JMenuBar menuBar;
@@ -28,6 +29,9 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
     int numberObject = 1;
     static String myNode;
     static DefaultMutableTreeNode new_expertise;
+    ImageIcon new_file_icon;
+    ImageIcon open_file_icon;
+    ImageIcon save_file_icon;
 
     public MainScreen() {
         ScreenProperty();
@@ -202,6 +206,10 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
     }
 
     private void Menubar() {
+        new_file_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/newfile.png")));
+        open_file_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/openfile.png")));
+        save_file_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/savefile.png")));
+
         menuBar = new JMenuBar();
 
         file_menu = new JMenu("File");
@@ -212,8 +220,11 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         help_menu.setMnemonic(KeyEvent.VK_H);
 
         new_item = new JMenuItem("Нова експертиза");
+        new_item.setIcon(new_file_icon);
         open_item = new JMenuItem("Отвори експертиза");
+        open_item.setIcon(open_file_icon);
         save_item = new JMenuItem("Запиши експертиза");
+        save_item.setIcon(save_file_icon);
         exit_item = new JMenuItem("Exit");
         cut_item = new JMenuItem("Cut");
         copy_item = new JMenuItem("Copy");
