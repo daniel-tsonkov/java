@@ -15,7 +15,7 @@ public class RenameObject implements ActionListener {
     public RenameObject(){
         newNameObject = new JFrame();
         newNameObject.setLocationRelativeTo(null);
-        newNameObject.setSize(370, 330);
+        newNameObject.setSize(330, 240);
         newNameObject.setLocationRelativeTo(null);
         newNameObject.setResizable(false);
         newNameObject.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/icon.jpg")));
@@ -23,35 +23,26 @@ public class RenameObject implements ActionListener {
         newNameObject.setLayout(null);
         newNameObject.setVisible(true);
 
-        oldNameObject = new JLabel("Старо име");
-        oldNameObject.setHorizontalAlignment(SwingConstants.CENTER);
-        //oldNameObject.setVerticalAlignment(20);
-        newNameObject.add(oldNameObject);
-        oldNameObject.setBounds(0, 20, 200, 35);
-
-        oldNameObject = new JLabel(MainScreen.myNode);
-        newNameObject.add(oldNameObject);
-        oldNameObject.setForeground(new Color(255, 0, 0));
-        oldNameObject.setBounds(150, 50, 200, 35);
-        oldNameObject.setFont(new Font(null, Font.PLAIN, 24));
-
         newNameObjectLabel = new JLabel("Ново име");
         newNameObject.add(newNameObjectLabel);
-        newNameObjectLabel.setBounds(50, 100, 200, 35);
+        newNameObjectLabel.setBounds(30, 20, 200, 35);
 
         newNameObjectText = new JTextField();
+        newNameObjectText.setText(MainScreen.myNode);
+        newNameObjectText.setForeground(new Color(255, 0, 0));
+        newNameObjectText.setFont(new Font(null, Font.PLAIN, 24));
         newNameObject.add(newNameObjectText);
-        newNameObjectText.setBounds(50, 130, 250, 35);
+        newNameObjectText.setBounds(30, 60, 250, 35);
 
-        ok = new JButton("Създай");
+        ok = new JButton("Преименувай");
         newNameObject.add(ok);
         ok.addActionListener(this);
-        ok.setBounds(50,200, 120, 30);
+        ok.setBounds(30,140, 120, 30);
 
         cancel = new JButton("Отказвам се");
         newNameObject.add(cancel);
         cancel.addActionListener(this);
-        cancel.setBounds(180,200, 120, 30);
+        cancel.setBounds(160,140, 120, 30);
     }
 
     @Override
