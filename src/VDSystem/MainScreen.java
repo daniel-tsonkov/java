@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.io.File;
 
 
 public class MainScreen extends JFrame implements ActionListener {//, MouseListener {
@@ -48,6 +49,25 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == new_item) {
             NewWork();
+        }
+
+        if(e.getSource() == open_item) {
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.getIcon(new File("open.png"));//setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/favicon.png")));
+            int response = fileChooser.showSaveDialog(null);
+            if(response == JFileChooser.APPROVE_OPTION) {
+                File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
+                System.out.println(file);
+            }
+        }
+
+        if(e.getSource() == save_item) {
+            JFileChooser fileChooser = new JFileChooser();
+            int response = fileChooser.showSaveDialog(null);
+            if(response == JFileChooser.APPROVE_OPTION) {
+                File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
+                System.out.println(file);
+            }
         }
 
         if (e.getSource() == exit_item) {
@@ -251,6 +271,8 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         help_menu.add(manual_item);
         help_menu.add(version_item);
 
+        open_item.addActionListener(this);
+        save_item.addActionListener(this);
         new_item.addActionListener(this);
         exit_item.addActionListener(this);
         version_item.addActionListener(this);

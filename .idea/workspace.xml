@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/VDSystem/open.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VDSystem/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VDSystem/MainScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,11 +53,11 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\VDSystem" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\VDSystem" />
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\VDSystem\resources" />
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\aaa" />
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\ааа" />
-      <recent name="C:\Users\Dani\IdeaProjects\java\tests\Swing1" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -143,13 +144,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00159" summary="Update">
-      <created>1676454692340</created>
-      <option name="number" value="00159" />
-      <option name="presentableId" value="LOCAL-00159" />
-      <option name="project" value="LOCAL" />
-      <updated>1676454692340</updated>
     </task>
     <task id="LOCAL-00160" summary="Update">
       <created>1676463680918</created>
@@ -487,7 +481,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677178966086</updated>
     </task>
-    <option name="localTasksCounter" value="208" />
+    <task id="LOCAL-00208" summary="Update">
+      <created>1677179565055</created>
+      <option name="number" value="00208" />
+      <option name="presentableId" value="LOCAL-00208" />
+      <option name="project" value="LOCAL" />
+      <updated>1677179565055</updated>
+    </task>
+    <option name="localTasksCounter" value="209" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
