@@ -1,6 +1,8 @@
 package VDSystem;
 
 import javax.swing.*;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -56,6 +58,15 @@ public class RenameObject extends JFrame implements ActionListener, WindowListen
             mainScreen.setEnabled(true);
             this.dispose();
 
+            DefaultMutableTreeNode nodeForRename = (DefaultMutableTreeNode) MainScreen.main_tree.getSelectionPath().getLastPathComponent();
+            nodeForRename.setUserObject(newNameObjectText.getText());
+
+            DefaultTreeModel model = (DefaultTreeModel) MainScreen.main_tree.getModel();
+            model.reload();
+
+            for (int i = 0; i < MainScreen.main_tree.getRowCount(); i++) {
+                MainScreen.main_tree.expandRow(i);
+            }
         }
         if (e.getSource() == cancel) {
             mainScreen.setEnabled(true);
