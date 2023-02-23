@@ -64,15 +64,16 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
 
         if (e.getSource() == new_work) {
             if (expertise.equals("No Name")) {
-                NewExpertiсе newExpertiсе = new NewExpertiсе();
+                NewExpertiсе newExpertiсе = new NewExpertiсе(this);
                 //this.setEnabled(false);
             } else {
                 int confirm_new = JOptionPane.showConfirmDialog(null, "Сигурен ли си че искаш нова експертиза", "Нова експериза", JOptionPane.YES_NO_OPTION);
                 if (confirm_new == 0) {
-                    NewExpertiсе newExpertiсе = new NewExpertiсе();
+                    NewExpertiсе newExpertiсе = new NewExpertiсе(this);
                     numberObject = 1;
                 }
             }
+            this.setEnabled(false);
         }
 
         if (e.getSource() == new_evidence) {

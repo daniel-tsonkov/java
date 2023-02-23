@@ -75,7 +75,7 @@ public class RenameObject extends JFrame implements ActionListener, WindowListen
 
     @Override
     public void windowClosed(WindowEvent e) {
-        System.out.println("From button");
+        //System.out.println("From button");
         /*frame.toFront();
         frame.requestFocus();
         frame.setEnabled(true);*/

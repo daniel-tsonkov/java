@@ -4,9 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
-public class NewExpertiсе implements ActionListener {
-    JFrame newE;
+public class NewExpertiсе extends JFrame implements ActionListener, WindowListener {
+    //JFrame newE;
     JLabel no_expertise;
     JTextField field_expertise;
     JLabel date_expertise;
@@ -18,61 +20,64 @@ public class NewExpertiсе implements ActionListener {
     JButton ok;
     JButton cancel;
 
-    public NewExpertiсе() {
+    MainScreen mainScreen;
+
+    public NewExpertiсе(MainScreen mainScreen) {
         //Screen property
         {
-            newE = new JFrame();
-            newE.setLocationRelativeTo(null);
-            newE.setSize(800, 600);
-            newE.setLocationRelativeTo(null);
-            newE.setResizable(false);
-            newE.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/icon.jpg")));
-            newE.setTitle("Нова експертиза");
-            newE.setLayout(null);
+            this.mainScreen = mainScreen;
+            //newE = new JFrame();
+            this.setLocationRelativeTo(null);
+            this.setSize(800, 600);
+            this.setLocationRelativeTo(null);
+            this.setResizable(false);
+            this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/icon.jpg")));
+            this.setTitle("Нова експертиза");
+            this.setLayout(null);
 
             no_expertise = new JLabel("Номер на експертизата");
-            newE.add(no_expertise);
+            this.add(no_expertise);
             no_expertise.setBounds(50, 20, 200, 35);
 
             field_expertise = new JTextField();
-            newE.add(field_expertise);
+            this.add(field_expertise);
             field_expertise.setBounds(50, 50, 300, 35);
 
             date_expertise = new JLabel("Дата");
-            newE.add(date_expertise);
+            this.add(date_expertise);
             date_expertise.setBounds(50, 100, 200, 35);
 
             field_date_expertise = new JTextField();
-            newE.add(field_date_expertise);
+            this.add(field_date_expertise);
             field_date_expertise.setBounds(50, 130, 300, 35);
 
             reg_no = new JLabel("Регистрационен номер");
-            newE.add(reg_no);
+            this.add(reg_no);
             reg_no.setBounds(50, 180, 200, 35);
 
             field_reg_no = new JTextField();
-            newE.add(field_reg_no);
+            this.add(field_reg_no);
             field_reg_no.setBounds(50, 210, 300, 35);
 
             dp_no = new JLabel("ДП номер");
-            newE.add(dp_no);
+            this.add(dp_no);
             dp_no.setBounds(50, 260, 200, 35);
 
             field_dp_no = new JTextField();
-            newE.add(field_dp_no);
+            this.add(field_dp_no);
             field_dp_no.setBounds(50, 290, 300, 35);
 
             ok = new JButton("Създай");
-            newE.add(ok);
+            this.add(ok);
             ok.addActionListener(this);
             ok.setBounds(250,500, 120, 30);
 
             cancel = new JButton("Отказвам се");
-            newE.add(cancel);
+            this.add(cancel);
             cancel.addActionListener(this);
             cancel.setBounds(450,500, 120, 30);
 
-            newE.setVisible(true);
+            this.setVisible(true);
         }
 
     }
@@ -96,10 +101,47 @@ public class NewExpertiсе implements ActionListener {
 
             MainScreen.main_tree.setVisible(false);
             MainScreen.TreeView();
-            newE.setVisible(false);
+            mainScreen.setEnabled(true);
+            this.dispose();
         }
         if (e.getSource() == cancel) {
-            newE.setVisible(false);
+            mainScreen.setEnabled(true);
+            this.dispose();
         }
+    }
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        mainScreen.setEnabled(true);
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+
     }
 }
