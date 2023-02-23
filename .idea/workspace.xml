@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/src/VDSystem/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VDSystem/MainScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VDSystem/RenameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VDSystem/RenameObject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,13 +142,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00155" summary="Update">
-      <created>1675428276320</created>
-      <option name="number" value="00155" />
-      <option name="presentableId" value="LOCAL-00155" />
-      <option name="project" value="LOCAL" />
-      <updated>1675428276320</updated>
     </task>
     <task id="LOCAL-00156" summary="Update">
       <created>1675433009889</created>
@@ -487,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677172101586</updated>
     </task>
-    <option name="localTasksCounter" value="204" />
+    <task id="LOCAL-00204" summary="Update">
+      <created>1677173135801</created>
+      <option name="number" value="00204" />
+      <option name="presentableId" value="LOCAL-00204" />
+      <option name="project" value="LOCAL" />
+      <updated>1677173135801</updated>
+    </task>
+    <option name="localTasksCounter" value="205" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

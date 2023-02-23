@@ -40,6 +40,10 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == new_item) {
+            NewWork();
+        }
+
         if (e.getSource() == exit_item) {
             this.dispose();
         }
@@ -63,17 +67,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         }
 
         if (e.getSource() == new_work) {
-            if (expertise.equals("No Name")) {
-                NewExpertiсе newExpertiсе = new NewExpertiсе(this);
-                this.setEnabled(false);
-            } else {
-                int confirm_new = JOptionPane.showConfirmDialog(null, "Сигурен ли си че искаш нова експертиза", "Нова експериза", JOptionPane.YES_NO_OPTION);
-                if (confirm_new == 0) {
-                    NewExpertiсе newExpertiсе = new NewExpertiсе(this);
-                    numberObject = 1;
-                    this.setEnabled(false);
-                }
-            }
+            NewWork();
         }
 
         if (e.getSource() == new_evidence) {
@@ -111,9 +105,9 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         }
 
         if (e.getSource() == remove_evidence) {
-            if((myNode.equals("Протокол")) || (myNode.equals("Инфо"))){
+            if ((myNode.equals("Протокол")) || (myNode.equals("Инфо"))) {
                 JOptionPane.showConfirmDialog(null, "Не можеш да изтриеш този файл!", "Изтриване", JOptionPane.DEFAULT_OPTION, 2, null);
-            }else {
+            } else {
                 int confirm_delete = JOptionPane.showConfirmDialog(null, "Сигурен ли си че искаш да го изтриеш?", "Изтриване", JOptionPane.YES_NO_OPTION);
                 if (confirm_delete == 0) {
                     DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) main_tree.getSelectionPath().getLastPathComponent();
@@ -238,9 +232,23 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         edin_menu.add(paste_item);
         help_menu.add(version_item);
 
-
+        new_item.addActionListener(this);
         exit_item.addActionListener(this);
         version_item.addActionListener(this);
+    }
+
+    private void NewWork() {
+        if (expertise.equals("No Name")) {
+            NewExpertiсе newExpertiсе = new NewExpertiсе(this);
+            this.setEnabled(false);
+        } else {
+            int confirm_new = JOptionPane.showConfirmDialog(null, "Сигурен ли си че искаш нова експертиза", "Нова експериза", JOptionPane.YES_NO_OPTION);
+            if (confirm_new == 0) {
+                NewExpertiсе newExpertiсе = new NewExpertiсе(this);
+                numberObject = 1;
+                this.setEnabled(false);
+            }
+        }
     }
 
     private void ToolbarMenu() {

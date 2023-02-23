@@ -8,7 +8,6 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 public class NewExpertiсе extends JFrame implements ActionListener, WindowListener {
-    //JFrame newE;
     JLabel no_expertise;
     JTextField field_expertise;
     JLabel date_expertise;
@@ -89,8 +88,6 @@ public class NewExpertiсе extends JFrame implements ActionListener, WindowList
             MainScreen.expertise = field_expertise.getText();
             String nameProgram = MainScreen.nameProgram + " " + field_expertise.getText();
             MainScreen.nameProgram = nameProgram;
-            //MainScreen.setTitle(nameProgram);// ne raboti?????
-            //MainScreen.se
             MainScreen.new_object.setEnabled(true);
             MainScreen.new_evidence.setEnabled(true);
             MainScreen.select_object.setEnabled(true);
@@ -100,7 +97,6 @@ public class NewExpertiсе extends JFrame implements ActionListener, WindowList
             MainScreen.expand_tree.setEnabled(true);
             MainScreen.colapse_tree.setEnabled(true);
 
-            //MainScreen.main_tree.setVisible(false);
             MainScreen.main_tree.setModel(null);
             MainScreen.TreeView();
             mainScreen.setEnabled(true);
