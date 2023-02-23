@@ -17,13 +17,13 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
     JMenuBar menuBar;
     JMenu file_menu, edin_menu, help_menu;
     JMenuItem new_item, open_item, save_item, exit_item, cut_item, copy_item, paste_item, manual_item, version_item;
-    JToolBar toolBar;
-    JButton new_work, open_work;
+    JToolBar toolBar, text_tools;
+    JButton new_work, open_work, test_buton;
     static JButton new_object, new_evidence, rename_object, remove_evidence, generate_expertise, expand_tree, colapse_tree;
     static JComboBox select_object;
     static JTextField other_object;
     static JTree main_tree;
-    static JPanel tree_panell;
+    static JPanel tree_panell, text_tools_panel;
     static JTabbedPane protocol;
     public static String expertise = "No Name";
     String s_item;
@@ -40,6 +40,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         Menubar();
         ToolbarMenu();
         TreeViewMenu();
+        //TextTools();
         TabsProtokol();
         //addMouseListener(this);
         //treeNodeSelect();
@@ -51,20 +52,20 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
             NewWork();
         }
 
-        if(e.getSource() == open_item) {
+        if (e.getSource() == open_item) {
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.getIcon(new File("open.png"));//setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/favicon.png")));
             int response = fileChooser.showSaveDialog(null);
-            if(response == JFileChooser.APPROVE_OPTION) {
+            if (response == JFileChooser.APPROVE_OPTION) {
                 File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
                 System.out.println(file);
             }
         }
 
-        if(e.getSource() == save_item) {
+        if (e.getSource() == save_item) {
             JFileChooser fileChooser = new JFileChooser();
             int response = fileChooser.showSaveDialog(null);
-            if(response == JFileChooser.APPROVE_OPTION) {
+            if (response == JFileChooser.APPROVE_OPTION) {
                 File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
                 System.out.println(file);
             }
@@ -371,6 +372,21 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         TreeView();
         expand_tree.addActionListener(this);
         colapse_tree.addActionListener(this);
+    }
+
+    private void TextTools() {
+        text_tools_panel = new JPanel();
+        text_tools_panel.setBorder(BorderFactory.createEmptyBorder(500, 500, 500, 500));
+        //text_tools_panel.setPreferredSize(new Dimension(900, 25));
+        text_tools_panel.setBorder(BorderFactory.createLineBorder(Color.red));
+        text_tools_panel.setBackground(Color.white);
+        this.add(text_tools_panel);
+
+        text_tools = new JToolBar();
+        Container textpane = text_tools_panel;//.getContentPane(); //add to JPane toolbar
+        textpane.add(text_tools, BorderLayout.WEST);
+        test_buton = new JButton("Test");
+        text_tools.add(test_buton);
     }
 
     private void TabsProtokol() {
