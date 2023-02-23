@@ -70,7 +70,6 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
                 int confirm_new = JOptionPane.showConfirmDialog(null, "Сигурен ли си че искаш нова експертиза", "Нова експериза", JOptionPane.YES_NO_OPTION);
                 if (confirm_new == 0) {
                     NewExpertiсе newExpertiсе = new NewExpertiсе();
-                    //this.setEnabled(false);
                     numberObject = 1;
                 }
             }
@@ -106,7 +105,8 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         }
 
         if (e.getSource() == rename_object) {
-            RenameObject renameObject = new RenameObject();
+            RenameObject renameObject = new RenameObject(this);
+            this.setEnabled(false);
         }
 
         if (e.getSource() == remove_evidence) {
@@ -190,7 +190,6 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
                 }
             }
         });
-
     }
 
     private void ScreenProperty() {

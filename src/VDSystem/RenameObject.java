@@ -4,54 +4,100 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
-public class RenameObject implements ActionListener {
-    JFrame newNameObject;
-    JLabel oldNameObject;
+public class RenameObject extends JFrame implements ActionListener, WindowListener {
     JLabel newNameObjectLabel;
     JTextField newNameObjectText;
     JButton ok;
     JButton cancel;
-    public RenameObject(){
-        newNameObject = new JFrame();
-        newNameObject.setLocationRelativeTo(null);
-        newNameObject.setSize(330, 240);
-        newNameObject.setLocationRelativeTo(null);
-        newNameObject.setResizable(false);
-        newNameObject.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/icon.jpg")));
-        newNameObject.setTitle("Преименуване на обект");
-        newNameObject.setLayout(null);
-        newNameObject.setVisible(true);
+
+    MainScreen mainScreen;
+
+    public RenameObject(MainScreen mainScreen){
+        this.mainScreen = mainScreen;
+        this.setLocationRelativeTo(null);
+        this.setSize(330, 240);
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/icon.jpg")));
+        this.setTitle("Преименуване на обект");
+        this.setLayout(null);
+        this.setVisible(true);
 
         newNameObjectLabel = new JLabel("Ново име");
-        newNameObject.add(newNameObjectLabel);
+        this.add(newNameObjectLabel);
         newNameObjectLabel.setBounds(30, 20, 200, 35);
 
         newNameObjectText = new JTextField();
         newNameObjectText.setText(MainScreen.myNode);
         newNameObjectText.setForeground(new Color(255, 0, 0));
         newNameObjectText.setFont(new Font(null, Font.PLAIN, 24));
-        newNameObject.add(newNameObjectText);
+        this.add(newNameObjectText);
         newNameObjectText.setBounds(30, 60, 250, 35);
 
         ok = new JButton("Преименувай");
-        newNameObject.add(ok);
+        this.add(ok);
         ok.addActionListener(this);
         ok.setBounds(30,140, 120, 30);
 
         cancel = new JButton("Отказвам се");
-        newNameObject.add(cancel);
+        this.add(cancel);
         cancel.addActionListener(this);
         cancel.setBounds(160,140, 120, 30);
+
+        this.addWindowListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == ok) {
-            newNameObject.setVisible(false);
+            mainScreen.setEnabled(true);
+            this.dispose();
+
         }
         if (e.getSource() == cancel) {
-            newNameObject.setVisible(false);
+            mainScreen.setEnabled(true);
+            this.dispose();
         }
+    }
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        System.out.println("From X");
+        mainScreen.setEnabled(true);
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+        System.out.println("From button");
+        /*frame.toFront();
+        frame.requestFocus();
+        frame.setEnabled(true);*/
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+
     }
 }
