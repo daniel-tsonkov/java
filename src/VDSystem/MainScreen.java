@@ -13,7 +13,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
     static String nameProgram = "Onaya programa v1.0.0";
     JMenuBar menuBar;
     JMenu file_menu, edin_menu, help_menu;
-    JMenuItem new_item, open_item, exit_item, cut_item, copy_item, paste_item, version_item;
+    JMenuItem new_item, open_item, save_item, exit_item, cut_item, copy_item, paste_item, version_item;
     JToolBar toolBar;
     JButton new_work, open_work;
     static JButton new_object, new_evidence, rename_object, remove_evidence, generate_expertise, expand_tree, colapse_tree;
@@ -212,6 +212,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
 
         new_item = new JMenuItem("Нова експертиза");
         open_item = new JMenuItem("Отвори експертиза");
+        save_item = new JMenuItem("Запиши експертиза");
         exit_item = new JMenuItem("Exit");
         cut_item = new JMenuItem("Cut");
         copy_item = new JMenuItem("Copy");
@@ -226,6 +227,8 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
 
         file_menu.add(new_item);
         file_menu.add(open_item);
+        file_menu.add(save_item);
+        file_menu.add(new JSeparator());
         file_menu.add(exit_item);
         edin_menu.add(cut_item);
         edin_menu.add(copy_item);
