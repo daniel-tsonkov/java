@@ -155,30 +155,34 @@ public class NewExpertiсе extends JFrame implements ActionListener, KeyListene
 
     public void okButton() {
         String originalName = " - Onaya programa v1.0.0 ";
-        MainScreen.expertise = field_expertise.getText();
+        if(field_expertise.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Попълни полетата", "Информация", JOptionPane.OK_OPTION);
+        }else{
+            MainScreen.expertise = field_expertise.getText();
+            String nameProgram = field_expertise.getText() + originalName;
+            MainScreen.nameProgram = field_expertise.getText();
+            mainScreen.setTitle(nameProgram);
 
-        String nameProgram = field_expertise.getText() + originalName;
-        MainScreen.nameProgram = field_expertise.getText();
-        mainScreen.setTitle(nameProgram);
+            MainScreen.new_object.setEnabled(true);
+            MainScreen.new_evidence.setEnabled(true);
+            MainScreen.select_object.setEnabled(true);
+            MainScreen.rename_object.setEnabled(true);
+            MainScreen.remove_evidence.setEnabled(true);
+            MainScreen.generate_expertise.setEnabled(true);
+            MainScreen.expand_tree.setEnabled(true);
+            MainScreen.colapse_tree.setEnabled(true);
 
-        MainScreen.new_object.setEnabled(true);
-        MainScreen.new_evidence.setEnabled(true);
-        MainScreen.select_object.setEnabled(true);
-        MainScreen.rename_object.setEnabled(true);
-        MainScreen.remove_evidence.setEnabled(true);
-        MainScreen.generate_expertise.setEnabled(true);
-        MainScreen.expand_tree.setEnabled(true);
-        MainScreen.colapse_tree.setEnabled(true);
+            MainScreen.color_buton.setEnabled(true);
+            MainScreen.bold_buton.setEnabled(true);
+            MainScreen.italic_buton.setEnabled(true);
+            MainScreen.underline_buton.setEnabled(true);
+            MainScreen.font_box.setEnabled(true);
 
-        MainScreen.color_buton.setEnabled(true);
-        MainScreen.bold_buton.setEnabled(true);
-        MainScreen.italic_buton.setEnabled(true);
-        MainScreen.underline_buton.setEnabled(true);
-        MainScreen.font_box.setEnabled(true);
+            MainScreen.main_tree.setModel(null);
+            MainScreen.TreeView();
+            mainScreen.setEnabled(true);
+            this.dispose();
+        }
 
-        MainScreen.main_tree.setModel(null);
-        MainScreen.TreeView();
-        mainScreen.setEnabled(true);
-        this.dispose();
     }
 }

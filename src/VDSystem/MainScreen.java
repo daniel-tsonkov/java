@@ -348,7 +348,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         remove_evidence.setFocusable(false);
         toolBar.add(remove_evidence);
         toolBar.add(Box.createHorizontalGlue());
-        toolBar.addSeparator(new Dimension(20, 25));
+        toolBar.addSeparator(new Dimension(100, 25));
         //ekspertiza = new JLabel();
         //toolBar.add(ekspertiza);
         generate_expertise = new JButton("Генерирай експертиза");
