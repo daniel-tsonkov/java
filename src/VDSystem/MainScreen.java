@@ -18,12 +18,12 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
     JMenu file_menu, edin_menu, help_menu;
     JMenuItem new_item, open_item, save_item, exit_item, cut_item, copy_item, paste_item, manual_item, version_item;
     JToolBar toolBar, text_tools;
-    JButton new_work, open_work, test_buton;
+    JButton new_work, open_work, test_buton, test_buton1;
     static JButton new_object, new_evidence, rename_object, remove_evidence, generate_expertise, expand_tree, colapse_tree;
     static JComboBox select_object;
     static JTextField other_object;
     static JTree main_tree;
-    static JPanel tree_panell, text_tools_panel;
+    static JPanel tree_panell, text_panel;
     static JTabbedPane protocol;
     public static String expertise = "No Name";
     String s_item;
@@ -40,7 +40,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         Menubar();
         ToolbarMenu();
         TreeViewMenu();
-        //TextTools();
+        TextTools();
         TabsProtokol();
         //addMouseListener(this);
         //treeNodeSelect();
@@ -218,6 +218,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
 
     private void ScreenProperty() {
         this.setSize(1280, 900);
+        this.setLayout(new BorderLayout());
         //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         //this.setResizable(false);
         this.setLocationRelativeTo(null);
@@ -338,6 +339,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         toolBar.add(generate_expertise);
         Container pane = this.getContentPane(); //add to JPane toolbar
         pane.add(toolBar, BorderLayout.NORTH);
+
         new_work.addActionListener(this);
         select_object.addActionListener(this);
         new_object.addActionListener(this);
@@ -375,18 +377,29 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
     }
 
     private void TextTools() {
-        text_tools_panel = new JPanel();
-        text_tools_panel.setBorder(BorderFactory.createEmptyBorder(500, 500, 500, 500));
-        //text_tools_panel.setPreferredSize(new Dimension(900, 25));
-        text_tools_panel.setBorder(BorderFactory.createLineBorder(Color.red));
-        text_tools_panel.setBackground(Color.white);
-        this.add(text_tools_panel);
+        text_panel = new JPanel();
+        text_panel.setLayout(new BorderLayout());
+        text_panel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        //text_panel.setPreferredSize(new Dimension(1050, 35));
+        //text_panel.setBorder(BorderFactory.createLineBorder(Color.yellow));
+        //text_tools_panel.setBackground(Color.white);
+        this.add(text_panel);
 
         text_tools = new JToolBar();
-        Container textpane = text_tools_panel;//.getContentPane(); //add to JPane toolbar
-        textpane.add(text_tools, BorderLayout.WEST);
         test_buton = new JButton("Test");
+        test_buton.setLayout(null);
+        test_buton.setLocation(1000, 0);
+        test_buton.setPreferredSize(new Dimension(80, 30));
         text_tools.add(test_buton);
+
+        test_buton1 = new JButton("Test 1");
+        test_buton1.setLayout(null);
+        test_buton1.setLocation(1000, 0);
+        test_buton1.setPreferredSize(new Dimension(80, 30));
+        text_tools.add(test_buton1);
+
+        Container textpane = text_panel; //add to JPane toolbar
+        textpane.add(text_tools, BorderLayout.NORTH);
     }
 
     private void TabsProtokol() {
@@ -399,12 +412,18 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         protocol = new JTabbedPane();
 
         protocol.add("Възложител", panel1);
+        panel1.setBackground(Color.white);
         protocol.add("Дата на получаване", panel2);
+        panel2.setBackground(Color.white);
         protocol.add("Обстоятелства по делото", panel3);
+        panel3.setBackground(Color.white);
         protocol.add("Обекти на експертизата", panel4);
+        panel4.setBackground(Color.white);
         protocol.add("Задачи на експертизата", panel5);
+        panel5.setBackground(Color.white);
 
-        this.add(protocol);
+        text_panel.add(protocol, BorderLayout.CENTER);
+        //protocol.setBorder(BorderFactory.createLineBorder(Color.green));
         protocol.setVisible(false);
     }
 
