@@ -67,13 +67,14 @@ public class NewExpertiсе extends JFrame implements ActionListener, KeyListene
 
             ok = new JButton("Създай");
             this.add(ok);
+            ok.setBounds(40, 380, 120, 30);
+
             field_expertise.addKeyListener(this);
             field_date_expertise.addKeyListener(this);
             field_reg_no.addKeyListener(this);
             field_dp_no.addKeyListener(this);
             worker_field.addKeyListener(this);
             ok.addActionListener(this);
-            ok.setBounds(40, 380, 120, 30);
 
             cancel = new JButton("Отказвам се");
             this.add(cancel);
@@ -83,7 +84,6 @@ public class NewExpertiсе extends JFrame implements ActionListener, KeyListene
             this.setVisible(true);
             this.addWindowListener(this);
         }
-
     }
 
     @Override
@@ -104,8 +104,9 @@ public class NewExpertiсе extends JFrame implements ActionListener, KeyListene
 
     @Override
     public void windowClosing(WindowEvent e) {
-        System.out.println("from X");
+        //System.out.println("from X");
         mainScreen.setEnabled(true);
+        this.dispose();
     }
 
     @Override
@@ -183,6 +184,5 @@ public class NewExpertiсе extends JFrame implements ActionListener, KeyListene
             mainScreen.setEnabled(true);
             this.dispose();
         }
-
     }
 }
