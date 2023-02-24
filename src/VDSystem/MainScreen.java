@@ -15,8 +15,8 @@ import java.io.File;
 public class MainScreen extends JFrame implements ActionListener {//, MouseListener {
     static String nameProgram = "Onaya programa v1.0.0";
     JMenuBar menuBar;
-    JMenu file_menu, edin_menu, help_menu;
-    JMenuItem new_item, open_item, save_item, exit_item, cut_item, copy_item, paste_item, manual_item, version_item;
+    JMenu file_menu, edin_menu, tools_menu, help_menu;
+    JMenuItem new_item, open_item, save_item, exit_item, cut_item, copy_item, paste_item, settings_item, manual_item, version_item;
     JToolBar toolBar, text_tools;
     JButton new_work, open_work, test_buton, test_buton1;
     static JButton new_object, new_evidence, rename_object, remove_evidence, generate_expertise, expand_tree, colapse_tree;
@@ -43,7 +43,6 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         TextTools();
         TabsProtokol();
         //addMouseListener(this);
-        //treeNodeSelect();
     }
 
     @Override
@@ -239,6 +238,8 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         file_menu.setMnemonic(KeyEvent.VK_F);
         edin_menu = new JMenu("Edit");
         edin_menu.setMnemonic(KeyEvent.VK_E);
+        tools_menu = new JMenu("Tools");
+        tools_menu.setMnemonic(KeyEvent.VK_T);
         help_menu = new JMenu("Help");
         help_menu.setMnemonic(KeyEvent.VK_H);
 
@@ -253,6 +254,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         cut_item = new JMenuItem("Cut");
         copy_item = new JMenuItem("Copy");
         paste_item = new JMenuItem("Paste");
+        settings_item = new JMenuItem("Настройки");
         manual_item = new JMenuItem("Ръководство");
         version_item = new JMenuItem("Версия");
 
@@ -260,6 +262,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
 
         menuBar.add(file_menu);
         menuBar.add(edin_menu);
+        menuBar.add(tools_menu);
         menuBar.add(help_menu);
 
         file_menu.add(new_item);
@@ -270,6 +273,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         edin_menu.add(cut_item);
         edin_menu.add(copy_item);
         edin_menu.add(paste_item);
+        tools_menu.add(settings_item);
         help_menu.add(manual_item);
         help_menu.add(version_item);
 
@@ -426,21 +430,4 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         //protocol.setBorder(BorderFactory.createLineBorder(Color.green));
         protocol.setVisible(false);
     }
-
-    public static void treeNodeSelect() {
-        main_tree.addTreeSelectionListener(new TreeSelectionListener() {
-            @Override
-            public void valueChanged(TreeSelectionEvent e) {
-                DefaultMutableTreeNode node = (DefaultMutableTreeNode)
-                        main_tree.getLastSelectedPathComponent();
-                //System.out.println(node);
-                String myNode = node.toString();
-                if (myNode.equals("Протокол")) {
-                    protocol.setVisible(true);
-                } else {
-                    protocol.setVisible(false);
-                }
-            }
-        });
-    }//Ne se polzva za sega!!!
 }
