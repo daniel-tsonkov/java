@@ -2,10 +2,7 @@ package VDSystem;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
+import java.awt.event.*;
 
 public class NewExpertiсе extends JFrame implements ActionListener, WindowListener {
     JLabel no_expertise;
@@ -67,6 +64,7 @@ public class NewExpertiсе extends JFrame implements ActionListener, WindowList
             field_dp_no.setBounds(40, 290, 250, 35);
 
             ok = new JButton("Създай");
+            ok.setMnemonic(KeyEvent.VK_ENTER);
             this.add(ok);
             ok.addActionListener(this);
             ok.setBounds(40,350, 120, 30);

@@ -52,13 +52,14 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         }
 
         if (e.getSource() == open_item) {
-            JFileChooser fileChooser = new JFileChooser();
+            OpenWork();
+            /*JFileChooser fileChooser = new JFileChooser();
             fileChooser.getIcon(new File("open.png"));//setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/favicon.png")));
             int response = fileChooser.showSaveDialog(null);
             if (response == JFileChooser.APPROVE_OPTION) {
                 File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
                 System.out.println(file);
-            }
+            }*/
         }
 
         if (e.getSource() == save_item) {
@@ -94,6 +95,10 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
 
         if (e.getSource() == new_work) {
             NewWork();
+        }
+
+        if (e.getSource() == open_work) {
+            OpenWork();
         }
 
         if (e.getSource() == new_evidence) {
@@ -218,7 +223,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
     private void ScreenProperty() {
         this.setSize(1280, 900);
         this.setLayout(new BorderLayout());
-        //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         //this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/favicon.png")));
@@ -345,6 +350,7 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         pane.add(toolBar, BorderLayout.NORTH);
 
         new_work.addActionListener(this);
+        open_work.addActionListener(this);
         select_object.addActionListener(this);
         new_object.addActionListener(this);
         new_evidence.addActionListener(this);
@@ -429,5 +435,15 @@ public class MainScreen extends JFrame implements ActionListener {//, MouseListe
         text_panel.add(protocol, BorderLayout.CENTER);
         //protocol.setBorder(BorderFactory.createLineBorder(Color.green));
         protocol.setVisible(false);
+    }
+
+    private void OpenWork() {
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.getIcon(new File("open.png"));//setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/favicon.png")));
+        int response = fileChooser.showOpenDialog(null);
+        if (response == JFileChooser.APPROVE_OPTION) {
+            File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
+            System.out.println(file);
+        }
     }
 }
