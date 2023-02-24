@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class NewExpertiсе extends JFrame implements ActionListener, WindowListener {
+public class NewExpertiсе extends JFrame implements ActionListener, KeyListener,WindowListener {
     JLabel no_expertise;
     JTextField field_expertise;
     JLabel date_expertise;
@@ -64,8 +64,11 @@ public class NewExpertiсе extends JFrame implements ActionListener, WindowList
             field_dp_no.setBounds(40, 290, 250, 35);
 
             ok = new JButton("Създай");
-            ok.setMnemonic(KeyEvent.VK_ENTER);
+            //ok.addKeyListener(KeyEvent.VK_ENTER);// setMnemonic(KeyEvent.VK_ENTER);
+            //ok.setAction(KeyEvent.VK_ENTER);
+            //ok.addKeyListener();
             this.add(ok);
+            field_expertise.addKeyListener(this);
             ok.addActionListener(this);
             ok.setBounds(40,350, 120, 30);
 
@@ -83,22 +86,7 @@ public class NewExpertiсе extends JFrame implements ActionListener, WindowList
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == ok) {
-            MainScreen.expertise = field_expertise.getText();
-            String nameProgram = MainScreen.nameProgram + " " + field_expertise.getText();
-            MainScreen.nameProgram = nameProgram;
-            MainScreen.new_object.setEnabled(true);
-            MainScreen.new_evidence.setEnabled(true);
-            MainScreen.select_object.setEnabled(true);
-            MainScreen.rename_object.setEnabled(true);
-            MainScreen.remove_evidence.setEnabled(true);
-            MainScreen.generate_expertise.setEnabled(true);
-            MainScreen.expand_tree.setEnabled(true);
-            MainScreen.colapse_tree.setEnabled(true);
-
-            MainScreen.main_tree.setModel(null);
-            MainScreen.TreeView();
-            mainScreen.setEnabled(true);
-            this.dispose();
+            okButton();
         }
         if (e.getSource() == cancel) {
             mainScreen.setEnabled(true);
@@ -140,5 +128,40 @@ public class NewExpertiсе extends JFrame implements ActionListener, WindowList
     @Override
     public void windowDeactivated(WindowEvent e) {
 
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == 10) {
+            okButton();
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
+
+    public void okButton() {
+            MainScreen.expertise = field_expertise.getText();
+            String nameProgram = MainScreen.nameProgram + " " + field_expertise.getText();
+            MainScreen.nameProgram = nameProgram;
+            MainScreen.new_object.setEnabled(true);
+            MainScreen.new_evidence.setEnabled(true);
+            MainScreen.select_object.setEnabled(true);
+            MainScreen.rename_object.setEnabled(true);
+            MainScreen.remove_evidence.setEnabled(true);
+            MainScreen.generate_expertise.setEnabled(true);
+            MainScreen.expand_tree.setEnabled(true);
+            MainScreen.colapse_tree.setEnabled(true);
+
+            MainScreen.main_tree.setModel(null);
+            MainScreen.TreeView();
+            mainScreen.setEnabled(true);
+            this.dispose();
     }
 }
