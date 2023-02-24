@@ -1,6 +1,8 @@
 package VDSystem;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -10,7 +12,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.font.TextAttribute;
 import java.io.File;
+import java.util.Map;
 
 
 public class MainScreen extends JFrame implements ActionListener, KeyListener {//, MouseListener {
@@ -19,9 +23,9 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     JMenu file_menu, edin_menu, tools_menu, help_menu;
     JMenuItem new_item, open_item, save_item, exit_item, cut_item, copy_item, paste_item, settings_item, manual_item, version_item;
     JToolBar toolBar, text_tools;
-    JButton new_work, open_work, test_buton, test_buton1;
+    static JButton new_work, open_work, color_buton, bold_buton, italic_buton, underline_buton;
     static JButton new_object, new_evidence, rename_object, remove_evidence, generate_expertise, expand_tree, colapse_tree;
-    static JComboBox select_object;
+    static JComboBox select_object, font_box;
     static JTextField other_object;
     static JTree main_tree;
     static JPanel tree_panell, text_panel;
@@ -54,13 +58,6 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
 
         if (e.getSource() == open_item) {
             OpenWork();
-            /*JFileChooser fileChooser = new JFileChooser();
-            fileChooser.getIcon(new File("open.png"));//setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/favicon.png")));
-            int response = fileChooser.showSaveDialog(null);
-            if (response == JFileChooser.APPROVE_OPTION) {
-                File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
-                System.out.println(file);
-            }*/
         }
 
         if (e.getSource() == save_item) {
@@ -164,6 +161,17 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
             }
         }
 
+        if (e.getSource() == color_buton) {
+            JColorChooser colorChooser = new JColorChooser();
+            Color color = colorChooser.showDialog(null, "Цвят на текст", Color.black);
+            //textArea.setForeground(color);
+            color_buton.setForeground(color);
+        }
+
+        if (e.getSource() == font_box) {
+            //textArea.setFont(new Font((String)font_box.getSelectedItem(), Font.PLAIN, textArea.getFont().getSize()));
+        }
+
         if (e.getSource() == version_item) {
             JOptionPane.showMessageDialog(null, "Версия 1.0.0", "За програмата", JOptionPane.OK_OPTION);
         }
@@ -224,7 +232,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     private void ScreenProperty() {
         this.setSize(1280, 900);
         this.setLayout(new BorderLayout());
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         //this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/favicon.png")));
@@ -396,22 +404,85 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         //text_panel.setBorder(BorderFactory.createLineBorder(Color.yellow));
         //text_tools_panel.setBackground(Color.white);
         this.add(text_panel);
-
         text_tools = new JToolBar();
-        test_buton = new JButton("Test");
-        test_buton.setLayout(null);
-        test_buton.setLocation(1000, 0);
-        test_buton.setPreferredSize(new Dimension(80, 30));
-        text_tools.add(test_buton);
 
-        test_buton1 = new JButton("Test 1");
-        test_buton1.setLayout(null);
-        test_buton1.setLocation(1000, 0);
-        test_buton1.setPreferredSize(new Dimension(80, 30));
-        text_tools.add(test_buton1);
+        JLabel font_size_label = new JLabel("Size");
+        font_size_label.setBounds(0, 0, 200, 35);
+        text_tools.add(font_size_label);
 
+        text_tools.addSeparator(new Dimension(5, 25));
+
+        JSpinner font_size_spiner = new JSpinner();
+        font_size_spiner.setValue(20);
+        font_size_spiner.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+
+            }
+        });
+        text_tools.add(font_size_spiner);
+
+        text_tools.addSeparator(new Dimension(15, 25));
+
+        color_buton = new JButton("Цвят");
+        //color_buton.setLayout(null);
+        color_buton.setPreferredSize(new Dimension(40, 25));
+        color_buton.setMargin(new Insets(0, 0, 2, 2));
+        text_tools.add(color_buton);
+
+        text_tools.addSeparator(new Dimension(15, 25));
+
+        bold_buton = new JButton("B");
+        bold_buton.setFont(bold_buton.getFont().deriveFont(Font.BOLD));
+        //bold_buton.setLayout(null);
+        //bold_buton.setLocation(1000, 0);
+        bold_buton.setPreferredSize(new Dimension(25, 25));
+        text_tools.add(bold_buton);
+
+        italic_buton = new JButton("I");
+        italic_buton.setFont(italic_buton.getFont().deriveFont(Font.ITALIC));
+        italic_buton.setLayout(null);
+        italic_buton.setLocation(1000, 0);
+        italic_buton.setPreferredSize(new Dimension(25, 25));
+        text_tools.add(italic_buton);
+
+        underline_buton = new JButton("U");
+        Font font = underline_buton.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        underline_buton.setFont(font.deriveFont(attributes));
+
+        underline_buton.setLayout(null);
+        underline_buton.setLocation(1000, 0);
+        underline_buton.setPreferredSize(new Dimension(25, 25));
+        text_tools.add(underline_buton);
+
+        text_tools.addSeparator(new Dimension(15, 25));
+
+        JLabel size_label = new JLabel("Font");
+        size_label.setBounds(0, 0, 200, 25);
+        text_tools.add(size_label);
+
+        text_tools.addSeparator(new Dimension(5, 25));
+
+        String[] available_fonts = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
+        font_box = new JComboBox(available_fonts);
+        font_box.setFocusCycleRoot(false);
+        font_box.setSelectedItem("Arial");
+        text_tools.add(font_box);
+
+        text_tools.addSeparator(new Dimension(550, 25));
+
+        color_buton.addActionListener(this);
+        font_box.addActionListener(this);
         Container textpane = text_panel; //add to JPane toolbar
         textpane.add(text_tools, BorderLayout.NORTH);
+        font_size_spiner.setEnabled(false);
+        color_buton.setEnabled(false);
+        bold_buton.setEnabled(false);
+        italic_buton.setEnabled(false);
+        underline_buton.setEnabled(false);
+        font_box.setEnabled(false);
     }
 
     private void TabsProtokol() {
@@ -451,12 +522,10 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
 
     @Override
     public void keyTyped(KeyEvent e) {
-        System.out.println("z" + e);
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        System.out.println("v" + e);
     }
 
     @Override

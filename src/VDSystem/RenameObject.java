@@ -4,12 +4,9 @@ import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
+import java.awt.event.*;
 
-public class RenameObject extends JFrame implements ActionListener, WindowListener {
+public class RenameObject extends JFrame implements ActionListener, KeyListener, WindowListener {
     JLabel newNameObjectLabel;
     JTextField newNameObjectText;
     JButton ok;
@@ -17,7 +14,7 @@ public class RenameObject extends JFrame implements ActionListener, WindowListen
 
     MainScreen mainScreen;
 
-    public RenameObject(MainScreen mainScreen){
+    public RenameObject(MainScreen mainScreen) {
         this.mainScreen = mainScreen;
         this.setLocationRelativeTo(null);
         this.setSize(330, 240);
@@ -42,31 +39,21 @@ public class RenameObject extends JFrame implements ActionListener, WindowListen
         ok = new JButton("Преименувай");
         this.add(ok);
         ok.addActionListener(this);
-        ok.setBounds(30,140, 120, 30);
+        ok.setBounds(30, 140, 120, 30);
 
         cancel = new JButton("Отказвам се");
         this.add(cancel);
         cancel.addActionListener(this);
-        cancel.setBounds(160,140, 120, 30);
+        cancel.setBounds(160, 140, 120, 30);
 
+        newNameObjectText.addKeyListener(this);
         this.addWindowListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == ok) {
-            mainScreen.setEnabled(true);
-            this.dispose();
-
-            DefaultMutableTreeNode nodeForRename = (DefaultMutableTreeNode) MainScreen.main_tree.getSelectionPath().getLastPathComponent();
-            nodeForRename.setUserObject(newNameObjectText.getText());
-
-            DefaultTreeModel model = (DefaultTreeModel) MainScreen.main_tree.getModel();
-            model.reload();
-
-            for (int i = 0; i < MainScreen.main_tree.getRowCount(); i++) {
-                MainScreen.main_tree.expandRow(i);
-            }
+            OkButton();
         }
         if (e.getSource() == cancel) {
             mainScreen.setEnabled(true);
@@ -110,5 +97,37 @@ public class RenameObject extends JFrame implements ActionListener, WindowListen
     @Override
     public void windowDeactivated(WindowEvent e) {
 
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == 10) {
+            OkButton();
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
+
+    public void OkButton() {
+        mainScreen.setEnabled(true);
+        this.dispose();
+
+        DefaultMutableTreeNode nodeForRename = (DefaultMutableTreeNode) MainScreen.main_tree.getSelectionPath().getLastPathComponent();
+        nodeForRename.setUserObject(newNameObjectText.getText());
+
+        DefaultTreeModel model = (DefaultTreeModel) MainScreen.main_tree.getModel();
+        model.reload();
+
+        for (int i = 0; i < MainScreen.main_tree.getRowCount(); i++) {
+            MainScreen.main_tree.expandRow(i);
+        }
     }
 }
