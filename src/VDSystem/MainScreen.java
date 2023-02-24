@@ -23,8 +23,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     JMenu file_menu, edin_menu, tools_menu, help_menu;
     JMenuItem new_item, open_item, save_item, exit_item, cut_item, copy_item, paste_item, settings_item, manual_item, version_item;
     JToolBar toolBar, text_tools;
-    static JButton new_work, open_work, color_buton, bold_buton, italic_buton, underline_buton;
-    static JButton new_object, new_evidence, rename_object, remove_evidence, generate_expertise, expand_tree, colapse_tree;
+    static JButton new_work, open_work, color_buton, bold_buton, italic_buton, underline_buton, new_object, new_evidence, rename_object, remove_evidence, generate_expertise, expand_tree, colapse_tree;
     static JComboBox select_object, font_box;
     static JTextField other_object;
     static JTree main_tree;
@@ -316,7 +315,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     private void ToolbarMenu() {
         toolBar = new JToolBar();
         new_work = new JButton("Нова експертиза");
-        //new_work.setFocusable(false);
+        new_work.setFocusable(false);
         toolBar.add(new_work);
         open_work = new JButton("Отвори експертиза");
         open_work.setFocusable(false);
@@ -400,9 +399,6 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         text_panel = new JPanel();
         text_panel.setLayout(new BorderLayout());
         text_panel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        //text_panel.setPreferredSize(new Dimension(1050, 35));
-        //text_panel.setBorder(BorderFactory.createLineBorder(Color.yellow));
-        //text_tools_panel.setBackground(Color.white);
         this.add(text_panel);
         text_tools = new JToolBar();
 
@@ -434,8 +430,6 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
 
         bold_buton = new JButton("B");
         bold_buton.setFont(bold_buton.getFont().deriveFont(Font.BOLD));
-        //bold_buton.setLayout(null);
-        //bold_buton.setLocation(1000, 0);
         bold_buton.setPreferredSize(new Dimension(25, 25));
         text_tools.add(bold_buton);
 

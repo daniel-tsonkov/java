@@ -5,14 +5,8 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class NewExpertiсе extends JFrame implements ActionListener, KeyListener, WindowListener {
-    JLabel no_expertise;
-    JTextField field_expertise;
-    JLabel date_expertise;
-    JTextField field_date_expertise;
-    JLabel reg_no;
-    JTextField field_reg_no;
-    JLabel dp_no;
-    JTextField field_dp_no;
+    JLabel no_expertise, date_expertise, reg_no, dp_no, worket_label;
+    JTextField field_expertise, field_date_expertise, field_reg_no, field_dp_no, worker_field;
     JButton ok;
     JButton cancel;
 
@@ -24,7 +18,7 @@ public class NewExpertiсе extends JFrame implements ActionListener, KeyListene
             this.mainScreen = mainScreen;
             //newE = new JFrame();
             this.setLocationRelativeTo(null);
-            this.setSize(350, 450);
+            this.setSize(350, 480);
             this.setLocationRelativeTo(null);
             this.setResizable(false);
             this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/icon.jpg")));
@@ -33,47 +27,58 @@ public class NewExpertiсе extends JFrame implements ActionListener, KeyListene
 
             no_expertise = new JLabel("Номер на експертизата");
             this.add(no_expertise);
-            no_expertise.setBounds(40, 25, 200, 35);
+            no_expertise.setBounds(40, 15, 200, 35);
 
             field_expertise = new JTextField();
             this.add(field_expertise);
-            field_expertise.setBounds(40, 50, 250, 35);
+            field_expertise.setBounds(40, 40, 250, 35);
 
             date_expertise = new JLabel("Дата");
             this.add(date_expertise);
-            date_expertise.setBounds(40, 90, 200, 35);
+            date_expertise.setBounds(40, 80, 200, 35);
 
             field_date_expertise = new JTextField();
             this.add(field_date_expertise);
-            field_date_expertise.setBounds(40, 115, 250, 35);
+            field_date_expertise.setBounds(40, 105, 250, 35);
 
             reg_no = new JLabel("Регистрационен номер");
             this.add(reg_no);
-            reg_no.setBounds(40, 155, 200, 35);
+            reg_no.setBounds(40, 145, 200, 35);
 
             field_reg_no = new JTextField();
             this.add(field_reg_no);
-            field_reg_no.setBounds(40, 180, 250, 35);
+            field_reg_no.setBounds(40, 170, 250, 35);
 
             dp_no = new JLabel("ДП номер");
             this.add(dp_no);
-            dp_no.setBounds(40, 225, 200, 35);
+            dp_no.setBounds(40, 215, 200, 35);
 
             field_dp_no = new JTextField();
             this.add(field_dp_no);
-            field_dp_no.setBounds(40, 250, 250, 35);
+            field_dp_no.setBounds(40, 240, 250, 35);
+
+            worket_label = new JLabel("Назначена от");
+            this.add(worket_label);
+            worket_label.setBounds(40, 285, 200, 35);
+
+            worker_field = new JTextField();
+            this.add(worker_field);
+            worker_field.setBounds(40, 310, 250, 35);
 
             ok = new JButton("Създай");
             this.add(ok);
             field_expertise.addKeyListener(this);
             field_date_expertise.addKeyListener(this);
+            field_reg_no.addKeyListener(this);
+            field_dp_no.addKeyListener(this);
+            worker_field.addKeyListener(this);
             ok.addActionListener(this);
-            ok.setBounds(40, 350, 120, 30);
+            ok.setBounds(40, 380, 120, 30);
 
             cancel = new JButton("Отказвам се");
             this.add(cancel);
             cancel.addActionListener(this);
-            cancel.setBounds(170, 350, 120, 30);
+            cancel.setBounds(170, 380, 120, 30);
 
             this.setVisible(true);
             this.addWindowListener(this);
@@ -149,9 +154,13 @@ public class NewExpertiсе extends JFrame implements ActionListener, KeyListene
     }
 
     public void okButton() {
+        String originalName = " - Onaya programa v1.0.0 ";
         MainScreen.expertise = field_expertise.getText();
-        String nameProgram = MainScreen.nameProgram + " " + field_expertise.getText();
-        MainScreen.nameProgram = nameProgram;
+
+        String nameProgram = field_expertise.getText() + originalName;
+        MainScreen.nameProgram = field_expertise.getText();
+        mainScreen.setTitle(nameProgram);
+
         MainScreen.new_object.setEnabled(true);
         MainScreen.new_evidence.setEnabled(true);
         MainScreen.select_object.setEnabled(true);
