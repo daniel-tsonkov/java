@@ -166,7 +166,6 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         if (e.getSource() == color_buton) {
             JColorChooser colorChooser = new JColorChooser();
             Color color = colorChooser.showDialog(null, "Цвят на текст", Color.black);
-            //textArea.setForeground(color);
             color_buton.setForeground(color);
         }
 
@@ -253,7 +252,8 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     }
 
     private void ScreenProperty() {
-        this.setSize(1280, 900);
+        //this.setSize(1280, 900);
+        this.setMinimumSize(new Dimension(1280, 900));
         this.setLayout(new BorderLayout());
         //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         //this.setResizable(false);
