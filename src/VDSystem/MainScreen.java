@@ -173,6 +173,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
 
         if (e.getSource() == settings_item) {
             Settings settings = new Settings(this);
+            this.setEnabled(false);
         }
 
         if(e.getSource() == manual_item) {
