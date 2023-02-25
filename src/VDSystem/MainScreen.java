@@ -29,7 +29,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     static JTree main_tree;
     static JPanel tree_panell, text_panel;
     static JTabbedPane protocol;
-    public static String expertise = "No Name";
+    public static String expertise = "Няма име";
     String s_item;
     int numberObject = 1;
     static String myNode;
@@ -207,7 +207,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
 
     public static void TreeView() {
         new_expertise = new DefaultMutableTreeNode(expertise);
-        if (!expertise.equals("No Name")) {
+        if (!expertise.equals("Няма име")) {
             DefaultMutableTreeNode protokol = new DefaultMutableTreeNode("Протокол");
             new_expertise.add(protokol);
         }
@@ -305,7 +305,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     }
 
     private void NewWork() {
-        if (expertise.equals("No Name")) {
+        if (expertise.equals("Няма име")) {
             NewExpertiсе newExpertiсе = new NewExpertiсе(this);
             this.setEnabled(false);
         } else {
