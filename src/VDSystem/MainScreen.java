@@ -171,6 +171,11 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
             //textArea.setFont(new Font((String)font_box.getSelectedItem(), Font.PLAIN, textArea.getFont().getSize()));
         }
 
+        if(e.getSource() == manual_item) {
+            Manual manual = new Manual(this);
+            this.setEnabled(false);
+        }
+
         if (e.getSource() == version_item) {
             JOptionPane.showMessageDialog(null, "Версия 1.0.0", "За програмата", JOptionPane.OK_OPTION);
         }
@@ -295,6 +300,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         save_item.addActionListener(this);
         new_item.addActionListener(this);
         exit_item.addActionListener(this);
+        manual_item.addActionListener(this);
         version_item.addActionListener(this);
     }
 
