@@ -21,7 +21,7 @@ public class NewExpertiсе extends JFrame implements ActionListener, KeyListene
             this.setSize(350, 480);
             this.setLocationRelativeTo(null);
             this.setResizable(false);
-            this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/icon.jpg")));
+            this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/favicon.png")));
             this.setTitle("Нова експертиза");
             this.setLayout(null);
 
