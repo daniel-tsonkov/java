@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/VDSystem/resources/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/VDSystem/resources/generatee.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VDSystem/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VDSystem/MainScreen.java" afterDir="false" />
     </list>
@@ -144,13 +144,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00177" summary="Update">
-      <created>1676879751711</created>
-      <option name="number" value="00177" />
-      <option name="presentableId" value="LOCAL-00177" />
-      <option name="project" value="LOCAL" />
-      <updated>1676879751711</updated>
     </task>
     <task id="LOCAL-00178" summary="Update">
       <created>1676884604278</created>
@@ -488,7 +481,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677350436511</updated>
     </task>
-    <option name="localTasksCounter" value="226" />
+    <task id="LOCAL-00226" summary="Update">
+      <created>1677353984764</created>
+      <option name="number" value="00226" />
+      <option name="presentableId" value="LOCAL-00226" />
+      <option name="project" value="LOCAL" />
+      <updated>1677353984764</updated>
+    </task>
+    <option name="localTasksCounter" value="227" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

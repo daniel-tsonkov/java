@@ -21,7 +21,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     static String nameProgram = "Onaya programa v1.0.0";
     JMenuBar menuBar;
     JMenu file_menu, edin_menu, tools_menu, help_menu;
-    JMenuItem new_item, open_item, save_item, exit_item, cut_item, copy_item, paste_item, BLANK, settings_item, manual_item, version_item;
+    JMenuItem new_item, open_item, save_item, generat_expertise_item, exit_item, cut_item, copy_item, paste_item, BLANK, settings_item, manual_item, version_item;
     JToolBar toolBar, text_tools;
     JCheckBoxMenuItem show_toolbar;
     //JCheckBoxMenuItem
@@ -40,6 +40,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     ImageIcon open_file_icon;
     ImageIcon save_file_icon;
     ImageIcon exit_program_icon;
+    ImageIcon generate_expertise_icon;
 
     public MainScreen() {
         ScreenProperty();
@@ -268,6 +269,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         new_file_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/newfile.png")));
         open_file_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/openfile.png")));
         save_file_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/savefile.png")));
+        generate_expertise_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/generatee.png")));
         exit_program_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/exit.png")));
         menuBar = new JMenuBar();
 
@@ -286,6 +288,8 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         open_item.setIcon(open_file_icon);
         save_item = new JMenuItem("Запиши експертиза");
         save_item.setIcon(save_file_icon);
+        generat_expertise_item = new JMenuItem("генерирай експертиза");
+        generat_expertise_item.setIcon(generate_expertise_icon);
         exit_item = new JMenuItem("Exit");
         exit_item.setIcon(exit_program_icon);
         cut_item = new JMenuItem("Cut");
@@ -307,6 +311,8 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         file_menu.add(new_item);
         file_menu.add(open_item);
         file_menu.add(save_item);
+        file_menu.add(new JSeparator());
+        file_menu.add(generat_expertise_item);
         file_menu.add(new JSeparator());
         file_menu.add(exit_item);
         edin_menu.add(cut_item);
