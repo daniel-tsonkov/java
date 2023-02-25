@@ -13,21 +13,45 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
     public Settings(MainScreen mainScreen) {
         this.mainScreen = mainScreen;
         this.setLocationRelativeTo(null);
-        this.setSize(350, 480);
+        this.setSize(650, 480);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/favicon.png")));
-        this.setTitle("Нова експертиза");
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/gear.png")));
+        this.setTitle("Настройки");
         this.setLayout(null);
         this.setVisible(true);
 
+        JPanel panel1 = new JPanel();
+        JPanel panel2 = new JPanel();
+        JPanel panel3 = new JPanel();
+        JPanel panel4 = new JPanel();
+        JPanel panel5 = new JPanel();
+
+        JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT);
+        tabbedPane.setBounds(5, 5, 620, 350);
+        //tabbedPane.setTabPlacement(RIGHT_ALIGNMENT);
+
+        tabbedPane.add("Възложител", panel1);
+        panel1.setBackground(Color.white);
+        tabbedPane.add("Дата", panel2);
+        panel2.setBackground(Color.white);
+        tabbedPane.add("Обстоятелства", panel3);
+        panel3.setBackground(Color.white);
+        tabbedPane.add("Обекти", panel4);
+        panel4.setBackground(Color.white);
+        tabbedPane.add("Задачи", panel5);
+        panel5.setBackground(Color.white);
+
+        tabbedPane.setVisible(true);
+        this.add(tabbedPane);
+
         ok = new JButton("Приложи");
         this.add(ok);
-        ok.setBounds(40, 380, 120, 30);
+        ok.setBounds(370, 380, 120, 30);
 
         cancel = new JButton("Отказвам се");
         this.add(cancel);
-        cancel.setBounds(170, 380, 120, 30);
+        cancel.setBounds(500, 380, 120, 30);
 
         ok.addActionListener(this);
         cancel.addActionListener(this);

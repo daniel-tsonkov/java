@@ -17,7 +17,7 @@ public class Manual extends JFrame implements ActionListener, KeyListener, Windo
         this.setSize(600, 680);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/favicon.png")));
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/favicon.png")));
         this.setTitle("Ръководство");
         this.setLayout(null);
         this.setVisible(true);

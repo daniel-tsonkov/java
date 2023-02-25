@@ -20,7 +20,7 @@ public class RenameObject extends JFrame implements ActionListener, KeyListener,
         this.setSize(330, 240);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/icon.jpg")));
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/favicon.png")));
         this.setTitle("Преименуване на обект");
         this.setLayout(null);
         this.setVisible(true);
