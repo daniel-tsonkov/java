@@ -21,8 +21,10 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     static String nameProgram = "Onaya programa v1.0.0";
     JMenuBar menuBar;
     JMenu file_menu, edin_menu, tools_menu, help_menu;
-    JMenuItem new_item, open_item, save_item, exit_item, cut_item, copy_item, paste_item, settings_item, manual_item, version_item;
+    JMenuItem new_item, open_item, save_item, exit_item, cut_item, copy_item, paste_item, BLANK, settings_item, manual_item, version_item;
     JToolBar toolBar, text_tools;
+    JCheckBoxMenuItem show_toolbar;
+    //JCheckBoxMenuItem
     static JButton new_work, open_work, color_buton, bold_buton, italic_buton, underline_buton, new_object, new_evidence, rename_object, remove_evidence, generate_expertise, expand_tree, colapse_tree;
     static JComboBox select_object, font_box;
     static JTextField other_object;
@@ -171,6 +173,17 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
             //textArea.setFont(new Font((String)font_box.getSelectedItem(), Font.PLAIN, textArea.getFont().getSize()));
         }
 
+        if (e.getSource() == show_toolbar) {
+            if (show_toolbar.isSelected()) {
+                toolBar.setVisible(false);
+            }else {
+                toolBar.setVisible(true);
+            }
+        }
+
+        if (e.getSource() == BLANK) {
+        }
+
         if (e.getSource() == settings_item) {
             Settings settings = new Settings(this);
             this.setEnabled(false);
@@ -244,7 +257,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         //this.setResizable(false);
         this.setLocationRelativeTo(null);
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/favicon.png")));
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/logo.png")));
         this.setTitle(nameProgram);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
@@ -278,6 +291,8 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         cut_item = new JMenuItem("Cut");
         copy_item = new JMenuItem("Copy");
         paste_item = new JMenuItem("Paste");
+        BLANK = new JMenuItem("BLANK");
+        show_toolbar = new JCheckBoxMenuItem("Покажи инструментите");
         settings_item = new JMenuItem("Настройки");
         manual_item = new JMenuItem("Ръководство");
         version_item = new JMenuItem("Версия");
@@ -297,14 +312,18 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         edin_menu.add(cut_item);
         edin_menu.add(copy_item);
         edin_menu.add(paste_item);
+        tools_menu.add(show_toolbar);
+        tools_menu.add(BLANK);
         tools_menu.add(settings_item);
         help_menu.add(manual_item);
         help_menu.add(version_item);
 
+        show_toolbar.addActionListener(this);
         open_item.addActionListener(this);
         save_item.addActionListener(this);
         new_item.addActionListener(this);
         exit_item.addActionListener(this);
+        BLANK.addActionListener(this);
         settings_item.addActionListener(this);
         manual_item.addActionListener(this);
         version_item.addActionListener(this);
