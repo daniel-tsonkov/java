@@ -28,30 +28,26 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
         JPanel panel5 = new JPanel();
 
         JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT);
-        tabbedPane.setBounds(5, 5, 620, 350);
-        //tabbedPane.setTabPlacement(RIGHT_ALIGNMENT);
+        tabbedPane.setBounds(5, 5, 630, 370);
 
         tabbedPane.add("Възложител", panel1);
-        panel1.setBackground(Color.white);
         tabbedPane.add("Дата", panel2);
-        panel2.setBackground(Color.white);
         tabbedPane.add("Обстоятелства", panel3);
-        panel3.setBackground(Color.white);
         tabbedPane.add("Обекти", panel4);
-        panel4.setBackground(Color.white);
         tabbedPane.add("Задачи", panel5);
-        panel5.setBackground(Color.white);
+
+        this.add(tabbedPane, BorderLayout.CENTER);
 
         tabbedPane.setVisible(true);
         this.add(tabbedPane);
 
         ok = new JButton("Приложи");
         this.add(ok);
-        ok.setBounds(370, 380, 120, 30);
+        ok.setBounds(370, 390, 120, 30);
 
         cancel = new JButton("Отказвам се");
         this.add(cancel);
-        cancel.setBounds(500, 380, 120, 30);
+        cancel.setBounds(500, 390, 120, 30);
 
         ok.addActionListener(this);
         cancel.addActionListener(this);
