@@ -21,7 +21,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     static String nameProgram = "Onaya programa v1.0.0";
     JMenuBar menuBar;
     JMenu file_menu, edin_menu, tools_menu, help_menu;
-    JMenuItem new_item, open_item, save_item, generat_expertise_item, exit_item, cut_item, copy_item, paste_item, BLANK, settings_item, manual_item, version_item;
+    JMenuItem new_item, open_item, save_item, generat_expertise_item, exit_item, cut_item, copy_item, paste_item, rename_item, delete_item, BLANK, settings_item, manual_item, version_item;
     JToolBar toolBar, text_tools;
     JCheckBoxMenuItem show_toolbar;
     //JCheckBoxMenuItem
@@ -149,6 +149,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         }
 
         if (e.getSource() == generate_expertise) {
+            System.out.println();
         }
 
         if (e.getSource() == expand_tree) {
@@ -171,6 +172,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
 
         if (e.getSource() == font_box) {
             //textArea.setFont(new Font((String)font_box.getSelectedItem(), Font.PLAIN, textArea.getFont().getSize()));
+            System.out.println();
         }
 
         if (e.getSource() == show_toolbar) {
@@ -181,7 +183,26 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
             }
         }
 
+        if (e.getSource() == rename_item) {
+            RenameObject renameObject = new RenameObject(this);
+            this.setEnabled(false);
+        }
+
+        if (e.getSource() == delete_item) {
+            if ((myNode.equals("Протокол")) || (myNode.equals("Инфо"))) {
+                JOptionPane.showConfirmDialog(null, "Не можеш да изтриеш този файл!", "Изтриване", JOptionPane.DEFAULT_OPTION, 2, null);
+            } else {
+                int confirm_delete = JOptionPane.showConfirmDialog(null, "Сигурен ли си че искаш да го изтриеш?", "Изтриване", JOptionPane.YES_NO_OPTION);
+                if (confirm_delete == 0) {
+                    DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) main_tree.getSelectionPath().getLastPathComponent();
+                    DefaultTreeModel model = (DefaultTreeModel) main_tree.getModel();
+                    model.removeNodeFromParent(selectedNode);
+                }
+            }
+        }
+
         if (e.getSource() == BLANK) {
+            System.out.println();
         }
 
         if (e.getSource() == settings_item) {
@@ -222,34 +243,6 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     public void mouseExited(MouseEvent e) {
 
     }*/
-
-    public static void TreeView() {
-        new_expertise = new DefaultMutableTreeNode(expertise);
-        if (!expertise.equals("Няма име")) {
-            DefaultMutableTreeNode protokol = new DefaultMutableTreeNode("Протокол");
-            new_expertise.add(protokol);
-        }
-        main_tree = new JTree(new_expertise);
-        main_tree.setRowHeight(25);
-        main_tree.setBounds(0, 0, 150, 900);
-        tree_panell.add(main_tree, BorderLayout.WEST);
-        main_tree.setVisible(true);
-        main_tree.addTreeSelectionListener(new TreeSelectionListener() {
-            @Override
-            public void valueChanged(TreeSelectionEvent e) {
-                //DefaultMutableTreeNode node = (DefaultMutableTreeNode) main_tree.getLastSelectedPathComponent();
-                if (main_tree.getLastSelectedPathComponent() != null) {
-                    myNode = main_tree.getLastSelectedPathComponent().toString();
-                    //System.out.println(myNode);
-                    if (myNode.equals("Протокол")) {
-                        protocol.setVisible(true);//
-                    } else {
-                        protocol.setVisible(false);
-                    }
-                }
-            }
-        });
-    }
 
     private void ScreenProperty() {
         //this.setSize(1280, 900);
@@ -295,6 +288,8 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         cut_item = new JMenuItem("Cut");
         copy_item = new JMenuItem("Copy");
         paste_item = new JMenuItem("Paste");
+        rename_item = new JMenuItem("Преименувай обект");
+        delete_item = new JMenuItem("Премахни обект");
         BLANK = new JMenuItem("BLANK");
         show_toolbar = new JCheckBoxMenuItem("Покажи инструментите");
         settings_item = new JMenuItem("Настройки");
@@ -315,9 +310,14 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         file_menu.add(generat_expertise_item);
         file_menu.add(new JSeparator());
         file_menu.add(exit_item);
+
         edin_menu.add(cut_item);
         edin_menu.add(copy_item);
         edin_menu.add(paste_item);
+        edin_menu.add(new JSeparator());
+        edin_menu.add(rename_item);
+        edin_menu.add(delete_item);
+
         tools_menu.add(show_toolbar);
         tools_menu.add(BLANK);
         tools_menu.add(settings_item);
@@ -329,24 +329,12 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         save_item.addActionListener(this);
         new_item.addActionListener(this);
         exit_item.addActionListener(this);
+        rename_item.addActionListener(this);
+        delete_item.addActionListener(this);
         BLANK.addActionListener(this);
         settings_item.addActionListener(this);
         manual_item.addActionListener(this);
         version_item.addActionListener(this);
-    }
-
-    private void NewWork() {
-        if (expertise.equals("Няма име")) {
-            NewExpertiсе newExpertiсе = new NewExpertiсе(this);
-            this.setEnabled(false);
-        } else {
-            int confirm_new = JOptionPane.showConfirmDialog(null, "Сигурен ли си че искаш нова експертиза", "Нова експериза", JOptionPane.YES_NO_OPTION);
-            if (confirm_new == 0) {
-                NewExpertiсе newExpertiсе = new NewExpertiсе(this);
-                numberObject = 1;
-                this.setEnabled(false);
-            }
-        }
     }
 
     private void ToolbarMenu() {
@@ -541,6 +529,20 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         protocol.setVisible(false);
     }
 
+    private void NewWork() {
+        if (expertise.equals("Няма име")) {
+            NewExpertiсе newExpertiсе = new NewExpertiсе(this);
+            this.setEnabled(false);
+        } else {
+            int confirm_new = JOptionPane.showConfirmDialog(null, "Сигурен ли си че искаш нова експертиза", "Нова експериза", JOptionPane.YES_NO_OPTION);
+            if (confirm_new == 0) {
+                NewExpertiсе newExpertiсе = new NewExpertiсе(this);
+                numberObject = 1;
+                this.setEnabled(false);
+            }
+        }
+    }
+
     private void OpenWork() {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.getIcon(new File("open.png"));//setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/favicon.png")));
@@ -549,6 +551,34 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
             File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
             System.out.println(file);
         }
+    }
+
+    public static void TreeView() {
+        new_expertise = new DefaultMutableTreeNode(expertise);
+        if (!expertise.equals("Няма име")) {
+            DefaultMutableTreeNode protokol = new DefaultMutableTreeNode("Протокол");
+            new_expertise.add(protokol);
+        }
+        main_tree = new JTree(new_expertise);
+        main_tree.setRowHeight(25);
+        main_tree.setBounds(0, 0, 150, 900);
+        tree_panell.add(main_tree, BorderLayout.WEST);
+        main_tree.setVisible(true);
+        main_tree.addTreeSelectionListener(new TreeSelectionListener() {
+            @Override
+            public void valueChanged(TreeSelectionEvent e) {
+                //DefaultMutableTreeNode node = (DefaultMutableTreeNode) main_tree.getLastSelectedPathComponent();
+                if (main_tree.getLastSelectedPathComponent() != null) {
+                    myNode = main_tree.getLastSelectedPathComponent().toString();
+                    //System.out.println(myNode);
+                    if (myNode.equals("Протокол")) {
+                        protocol.setVisible(true);//
+                    } else {
+                        protocol.setVisible(false);
+                    }
+                }
+            }
+        });
     }
 
     @Override
