@@ -206,7 +206,11 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         }
 
         if (e.getSource() == settings_item) {
-            Settings settings = new Settings(this);
+            try {
+                Settings settings = new Settings(this);
+            } catch (ClassNotFoundException ex) {
+                ex.printStackTrace();
+            }
             this.setEnabled(false);
         }
 
@@ -398,7 +402,8 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         tree_panell.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
         tree_panell.setPreferredSize(new Dimension(170, 900));
         tree_panell.setBorder(BorderFactory.createLineBorder(Color.black));
-        tree_panell.setBackground(Color.white);
+
+        //tree_panell.setBackground(Color.white);
         this.add(tree_panell, BorderLayout.WEST);
 
         JPanel buttons_tree = new JPanel();
@@ -560,6 +565,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
             new_expertise.add(protokol);
         }
         main_tree = new JTree(new_expertise);
+        main_tree.setBackground(null);
         main_tree.setRowHeight(25);
         main_tree.setBounds(0, 0, 150, 900);
         tree_panell.add(main_tree, BorderLayout.WEST);
