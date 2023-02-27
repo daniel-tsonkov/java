@@ -4,9 +4,7 @@
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VDSystem/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VDSystem/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VDSystem/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VDSystem/MainScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VDSystem/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VDSystem/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testove.iml" beforeDir="false" afterPath="$PROJECT_DIR$/testove.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,13 +144,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00184" summary="Update">
-      <created>1676987777019</created>
-      <option name="number" value="00184" />
-      <option name="presentableId" value="LOCAL-00184" />
-      <option name="project" value="LOCAL" />
-      <updated>1676987777019</updated>
     </task>
     <task id="LOCAL-00185" summary="Update">
       <created>1676989388903</created>
@@ -490,7 +481,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677427174369</updated>
     </task>
-    <option name="localTasksCounter" value="233" />
+    <task id="LOCAL-00233" summary="Update">
+      <created>1677509076006</created>
+      <option name="number" value="00233" />
+      <option name="presentableId" value="LOCAL-00233" />
+      <option name="project" value="LOCAL" />
+      <updated>1677509076008</updated>
+    </task>
+    <option name="localTasksCounter" value="234" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

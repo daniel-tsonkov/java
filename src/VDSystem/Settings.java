@@ -1,13 +1,22 @@
 package VDSystem;
 
+import com.formdev.flatlaf.intellijthemes.FlatArcIJTheme;
+import com.formdev.flatlaf.intellijthemes.FlatArcOrangeIJTheme;
+import com.formdev.flatlaf.intellijthemes.FlatCarbonIJTheme;
+import com.formdev.flatlaf.intellijthemes.FlatHighContrastIJTheme;
+import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatLightOwlContrastIJTheme;
+import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatNightOwlContrastIJTheme;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
 public class Settings extends JFrame implements ActionListener, KeyListener, WindowListener {
+    JButton applay;
     JButton ok;
     JButton cancel;
     JComboBox select_theme;
+    String selectet_theme_string = "";
 
     MainScreen mainScreen;
 
@@ -35,6 +44,8 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
         String[] objects = {"FlatArcIJTheme", "FlatArcOrangeIJTheme", "FlatCarbonIJTheme", "FlatHighContrastIJTheme", "FlatLightOwlContrastIJTheme", "FlatNightOwlContrastIJTheme"};
         select_theme = new JComboBox(objects);
 
+        //applay = new JButton("Приложи");
+
         JPanel panel1 = new JPanel();
         JPanel panel2 = new JPanel();
         JPanel panel3 = new JPanel();
@@ -51,13 +62,14 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
         tabbedPane.add("Задачи", panel5);
 
         panel1.add(select_theme);
+        //panel1.add(applay);
 
         this.add(tabbedPane, BorderLayout.CENTER);
 
         tabbedPane.setVisible(true);
         this.add(tabbedPane);
 
-        ok = new JButton("Приложи");
+        ok = new JButton("Затвори");
         this.add(ok);
         ok.setBounds(370, 390, 120, 30);
 
@@ -65,6 +77,8 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
         this.add(cancel);
         cancel.setBounds(500, 390, 120, 30);
 
+        select_theme.addActionListener(this);
+        //applay.addActionListener(this);
         ok.addActionListener(this);
         cancel.addActionListener(this);
         this.addWindowListener(this);
@@ -73,6 +87,64 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == select_theme) {
+            if (!selectet_theme_string.equals(select_theme.getSelectedItem().toString())) {
+                switch (select_theme.getSelectedItem().toString()){
+                    case "FlatArcIJTheme":
+                        try{
+                            System.out.println("select1");
+                            UIManager.setLookAndFeel(new FlatArcIJTheme());
+                        } catch (Exception s) {
+                            s.printStackTrace();
+                        }
+                        break;
+                    case "FlatArcOrangeIJTheme":
+                        try{
+                            System.out.println("select2");
+                            UIManager.setLookAndFeel(new FlatArcOrangeIJTheme());
+                        } catch (Exception s) {
+                            s.printStackTrace();
+                        }
+                        break;
+                    case "FlatCarbonIJTheme":
+                        try{
+                            UIManager.setLookAndFeel(new FlatCarbonIJTheme());
+                        } catch (Exception s) {
+                            s.printStackTrace();
+                        }
+                        break;
+                    case "FlatHighContrastIJTheme":
+                        try{
+                            UIManager.setLookAndFeel(new FlatHighContrastIJTheme());
+                        } catch (Exception s) {
+                            s.printStackTrace();
+                        }
+                        break;
+                    case "FlatLightOwlContrastIJTheme":
+                        try{
+                            UIManager.setLookAndFeel(new FlatLightOwlContrastIJTheme());
+                        } catch (Exception s) {
+                            s.printStackTrace();
+                        }
+                        break;
+                    case "FlatNightOwlContrastIJTheme":
+                        try{
+                            UIManager.setLookAndFeel(new FlatNightOwlContrastIJTheme());
+                        } catch (Exception s) {
+                            s.printStackTrace();
+                        }
+                        break;
+                }
+                SwingUtilities.updateComponentTreeUI(this);
+                SwingUtilities.updateComponentTreeUI(mainScreen);
+                selectet_theme_string = select_theme.getSelectedItem().toString();
+            }
+        }
+
+        if (e.getSource() == applay) {
+
+        }
+
         if (e.getSource() == ok) {
             okButtonSettings();
         }
