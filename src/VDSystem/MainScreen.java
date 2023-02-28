@@ -82,6 +82,12 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
             DefaultMutableTreeNode evidence1 = new DefaultMutableTreeNode("Обект " + numberObject);
             selectedNode.add(evidence1);
 
+            ImageIcon leafIcon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/xlsx_icon.png")));
+            DefaultTreeCellRenderer renderer = new DefaultTreeCellRenderer();
+            renderer.setLeafIcon(leafIcon);
+            //renderer.set
+            main_tree.setCellRenderer(renderer);// DANE SE TRIE!!!!!!!!!!!!
+
             DefaultMutableTreeNode infoFile = new DefaultMutableTreeNode("Инфо");
             evidence1.add(infoFile);
             s_item = select_object.getSelectedItem().toString();
@@ -564,14 +570,12 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         if (!expertise.equals("Няма име")) {
             DefaultMutableTreeNode protokol = new DefaultMutableTreeNode("Протокол");
             new_expertise.add(protokol);
-        } else {
-
         }
         main_tree = new JTree(new_expertise);
         main_tree.setBackground(null);
         main_tree.setRowHeight(25);
         main_tree.setBounds(0, 0, 150, 900);
-        tree_panell.add(main_tree, BorderLayout.EAST);
+        tree_panell.add(main_tree, BorderLayout.WEST);
         main_tree.setVisible(true);
 
         ImageIcon leafIcon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/docx_icon.png")));//createImageIcon("resources/docx_icon.png");
