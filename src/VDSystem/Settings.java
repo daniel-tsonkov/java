@@ -16,7 +16,6 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
     JButton ok;
     JButton cancel;
     JComboBox select_theme;
-    String selectet_theme_string = "";
 
     MainScreen mainScreen;
 
@@ -31,16 +30,6 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
         this.setLayout(null);
         this.setVisible(true);
 
-
-        //FieldTest ft = new FieldTest();
-        //Class ftClass = Class.forName("com.formdev.flatlaf.FlatLightLaf");//ft.getClass();
-        /*Class c = Class.forName(".formdev.flatlaf.intellijthemes.FlatArcIJTheme");
-        Method [] m = c.getDeclaredMethods();
-        for (Method m1:m){
-            System.out.println(m1.getName());
-        }*/
-        //Field[] fields = ftClass.getDeclaredFields();
-        //String[] object = (com.formdev.flatlaf).tostring;
         String[] objects = {"FlatArcIJTheme", "FlatArcOrangeIJTheme", "FlatCarbonIJTheme", "FlatHighContrastIJTheme", "FlatLightOwlContrastIJTheme", "FlatNightOwlContrastIJTheme"};
         select_theme = new JComboBox(objects);
 
@@ -71,10 +60,10 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
 
         ok = new JButton("Затвори");
         this.add(ok);
-        ok.setBounds(370, 390, 120, 30);
+        ok.setBounds(500, 390, 120, 30);
 
         cancel = new JButton("Отказвам се");
-        this.add(cancel);
+        //this.add(cancel);
         cancel.setBounds(500, 390, 120, 30);
 
         select_theme.addActionListener(this);
@@ -88,57 +77,54 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == select_theme) {
-            if (!selectet_theme_string.equals(select_theme.getSelectedItem().toString())) {
-                switch (select_theme.getSelectedItem().toString()){
-                    case "FlatArcIJTheme":
-                        try{
-                            System.out.println("select1");
-                            UIManager.setLookAndFeel(new FlatArcIJTheme());
-                        } catch (Exception s) {
-                            s.printStackTrace();
-                        }
-                        break;
-                    case "FlatArcOrangeIJTheme":
-                        try{
-                            System.out.println("select2");
-                            UIManager.setLookAndFeel(new FlatArcOrangeIJTheme());
-                        } catch (Exception s) {
-                            s.printStackTrace();
-                        }
-                        break;
-                    case "FlatCarbonIJTheme":
-                        try{
-                            UIManager.setLookAndFeel(new FlatCarbonIJTheme());
-                        } catch (Exception s) {
-                            s.printStackTrace();
-                        }
-                        break;
-                    case "FlatHighContrastIJTheme":
-                        try{
-                            UIManager.setLookAndFeel(new FlatHighContrastIJTheme());
-                        } catch (Exception s) {
-                            s.printStackTrace();
-                        }
-                        break;
-                    case "FlatLightOwlContrastIJTheme":
-                        try{
-                            UIManager.setLookAndFeel(new FlatLightOwlContrastIJTheme());
-                        } catch (Exception s) {
-                            s.printStackTrace();
-                        }
-                        break;
-                    case "FlatNightOwlContrastIJTheme":
-                        try{
-                            UIManager.setLookAndFeel(new FlatNightOwlContrastIJTheme());
-                        } catch (Exception s) {
-                            s.printStackTrace();
-                        }
-                        break;
-                }
-                SwingUtilities.updateComponentTreeUI(this);
-                SwingUtilities.updateComponentTreeUI(mainScreen);
-                selectet_theme_string = select_theme.getSelectedItem().toString();
+            switch (select_theme.getSelectedItem().toString()) {
+                case "FlatArcIJTheme":
+                    try {
+                        System.out.println("select1");
+                        UIManager.setLookAndFeel(new FlatArcIJTheme());
+                    } catch (Exception s) {
+                        s.printStackTrace();
+                    }
+                    break;
+                case "FlatArcOrangeIJTheme":
+                    try {
+                        System.out.println("select2");
+                        UIManager.setLookAndFeel(new FlatArcOrangeIJTheme());
+                    } catch (Exception s) {
+                        s.printStackTrace();
+                    }
+                    break;
+                case "FlatCarbonIJTheme":
+                    try {
+                        UIManager.setLookAndFeel(new FlatCarbonIJTheme());
+                    } catch (Exception s) {
+                        s.printStackTrace();
+                    }
+                    break;
+                case "FlatHighContrastIJTheme":
+                    try {
+                        UIManager.setLookAndFeel(new FlatHighContrastIJTheme());
+                    } catch (Exception s) {
+                        s.printStackTrace();
+                    }
+                    break;
+                case "FlatLightOwlContrastIJTheme":
+                    try {
+                        UIManager.setLookAndFeel(new FlatLightOwlContrastIJTheme());
+                    } catch (Exception s) {
+                        s.printStackTrace();
+                    }
+                    break;
+                case "FlatNightOwlContrastIJTheme":
+                    try {
+                        UIManager.setLookAndFeel(new FlatNightOwlContrastIJTheme());
+                    } catch (Exception s) {
+                        s.printStackTrace();
+                    }
+                    break;
             }
+            SwingUtilities.updateComponentTreeUI(this);
+            SwingUtilities.updateComponentTreeUI(mainScreen);
         }
 
         if (e.getSource() == applay) {
@@ -214,22 +200,5 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
     public void okButtonSettings() {
         mainScreen.setEnabled(true);
         this.dispose();
-    }
-
-    public class FieldTest {
-
-        private String pri;
-        protected String pro;
-        public String pub;
-
-        public FieldTest() {
-        }
-
-        public FieldTest(String pri, String pro, String pub) {
-            this.pri = pri;
-            this.pro = pro;
-            this.pub = pub;
-        }
-
     }
 }

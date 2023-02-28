@@ -6,6 +6,7 @@ import javax.swing.event.ChangeListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -178,7 +179,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         if (e.getSource() == show_toolbar) {
             if (show_toolbar.isSelected()) {
                 toolBar.setVisible(false);
-            }else {
+            } else {
                 toolBar.setVisible(true);
             }
         }
@@ -214,7 +215,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
             this.setEnabled(false);
         }
 
-        if(e.getSource() == manual_item) {
+        if (e.getSource() == manual_item) {
             Manual manual = new Manual(this);
             this.setEnabled(false);
         }
@@ -400,7 +401,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     private void TreeViewMenu() {
         tree_panell = new JPanel();
         tree_panell.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        tree_panell.setPreferredSize(new Dimension(170, 900));
+        tree_panell.setPreferredSize(new Dimension(175, 900));
         tree_panell.setBorder(BorderFactory.createLineBorder(Color.black));
 
         //tree_panell.setBackground(Color.white);
@@ -563,13 +564,23 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         if (!expertise.equals("Няма име")) {
             DefaultMutableTreeNode protokol = new DefaultMutableTreeNode("Протокол");
             new_expertise.add(protokol);
+        } else {
+
         }
         main_tree = new JTree(new_expertise);
         main_tree.setBackground(null);
         main_tree.setRowHeight(25);
         main_tree.setBounds(0, 0, 150, 900);
-        tree_panell.add(main_tree, BorderLayout.WEST);
+        tree_panell.add(main_tree, BorderLayout.EAST);
         main_tree.setVisible(true);
+
+        ImageIcon leafIcon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/docx_icon.png")));//createImageIcon("resources/docx_icon.png");
+        if (!expertise.equals("Няма име")) {
+            DefaultTreeCellRenderer renderer = new DefaultTreeCellRenderer();
+            renderer.setLeafIcon(leafIcon);
+            main_tree.setCellRenderer(renderer);
+        }
+
         main_tree.addTreeSelectionListener(new TreeSelectionListener() {
             @Override
             public void valueChanged(TreeSelectionEvent e) {
