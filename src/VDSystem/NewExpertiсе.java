@@ -159,10 +159,14 @@ public class NewExpertiсе extends JFrame implements ActionListener, KeyListene
         if(field_expertise.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Попълни полетата", "Информация", JOptionPane.OK_OPTION);
         }else{
-            MainScreen.expertise = field_expertise.getText();
             String nameProgram = field_expertise.getText() + originalName;
             MainScreen.nameProgram = field_expertise.getText();
             mainScreen.setTitle(nameProgram);
+            MainScreen.expertise = field_expertise.getText();
+            MainScreen.date_expertise = field_date_expertise.getText();
+            MainScreen.reg_no = field_reg_no.getText();
+            MainScreen.dp_no = field_dp_no.getText();
+            MainScreen.name_contractor = worker_field.getText();
 
             MainScreen.new_object.setEnabled(true);
             MainScreen.new_evidence.setEnabled(true);
@@ -183,6 +187,9 @@ public class NewExpertiсе extends JFrame implements ActionListener, KeyListene
             MainScreen.TreeView();
             mainScreen.setEnabled(true);
             this.dispose();
+
+            SwingUtilities.updateComponentTreeUI(this);
+            SwingUtilities.updateComponentTreeUI(mainScreen);
         }
     }
 }

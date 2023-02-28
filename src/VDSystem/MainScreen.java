@@ -25,7 +25,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     JMenuItem new_item, open_item, save_item, generat_expertise_item, exit_item, cut_item, copy_item, paste_item, rename_item, delete_item, BLANK, settings_item, manual_item, version_item;
     JToolBar toolBar, text_tools;
     JCheckBoxMenuItem show_toolbar;
-    //JCheckBoxMenuItem
+    static JTextField T1, T2, T3, T4, T5, T6;
     static JButton new_work, open_work, color_buton, bold_buton, italic_buton, underline_buton, new_object, new_evidence, rename_object, remove_evidence, generate_expertise, expand_tree, colapse_tree;
     static JComboBox select_object, font_box;
     static JTextField other_object;
@@ -33,6 +33,10 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     static JPanel tree_panell, text_panel;
     static JTabbedPane protocol;
     public static String expertise = "Няма име";
+    public static String date_expertise = "N/A";
+    public static String reg_no = "N/A";
+    public static String dp_no = "N/A";
+    public static String name_contractor = "N/A";
     String s_item;
     int numberObject = 1;
     static String myNode;
@@ -155,7 +159,10 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         }
 
         if (e.getSource() == generate_expertise) {
-            System.out.println();
+            //System.out.println(name_contractor);
+            //SwingUtilities.updateComponentTreeUI(this);
+            //SwingUtilities.updateComponentTreeUI(this);
+            this.repaint();
         }
 
         if (e.getSource() == expand_tree) {
@@ -259,7 +266,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         this.setMinimumSize(new Dimension(1280, 900));
         this.setLayout(new BorderLayout());
         //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        //this.setResizable(false);
+        this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/logo.png")));
         this.setTitle(nameProgram);
@@ -522,6 +529,44 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         JPanel panel4 = new JPanel();
         JPanel panel5 = new JPanel();
 
+        JLabel L1 = new JLabel("Експертизата е назначена от ");
+        L1.setFont(new Font("Arial", Font.PLAIN, 16));
+        panel1.add(L1);
+        T1 = new JTextField();
+        T1.setText(name_contractor);
+        T1.setPreferredSize(new Dimension(200, 25));
+        panel1.add(T1);
+        JLabel L2 = new JLabel(" - ");
+        panel1.add(L2);
+        T2 = new JTextField();
+        T2.setText("Длъжност");
+        T2.setPreferredSize(new Dimension(200, 25));
+        panel1.add(T2);
+        JLabel L3 = new JLabel(" при ");
+        panel1.add(L3);
+        T3 = new JTextField();
+        T3.setText("Служба");
+        T3.setPreferredSize(new Dimension(200, 25));
+        panel1.add(T3);
+        JLabel L4 = new JLabel(" с постановление с рег. № ");
+        panel1.add(L4);
+        T4 = new JTextField("N/A");
+        T4.setText(reg_no);
+        T4.setPreferredSize(new Dimension(200, 25));
+        panel1.add(T4);
+        JLabel L5 = new JLabel("г., по досъдебно производство № ");
+        panel1.add(L5);
+        T5 = new JTextField();
+        T5.setText(expertise);
+        T5.setPreferredSize(new Dimension(200, 25));
+        panel1.add(T5);
+        JLabel L6 = new JLabel("г., по описа на ");
+        panel1.add(L6);
+        T6 = new JTextField("N/A");
+        T6.setText(expertise);
+        T6.setPreferredSize(new Dimension(200, 25));
+        panel1.add(T6);
+
         protocol = new JTabbedPane();
 
         protocol.add("Възложител", panel1);
@@ -570,6 +615,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
             DefaultMutableTreeNode protokol = new DefaultMutableTreeNode("Протокол");
             new_expertise.add(protokol);
         }
+
         main_tree = new JTree(new_expertise);
         main_tree.setBackground(null);
         main_tree.setRowHeight(25);
@@ -592,13 +638,19 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
                     myNode = main_tree.getLastSelectedPathComponent().toString();
                     //System.out.println(myNode);
                     if (myNode.equals("Протокол")) {
-                        protocol.setVisible(true);//
+                        T1.setText(name_contractor);
+                        T4.setText(reg_no);
+                        T5.setText(expertise);
+                        protocol.setVisible(true);
                     } else {
                         protocol.setVisible(false);
                     }
                 }
             }
         });
+    }
+    public void repaintScreen(){
+        this.repaint();
     }
 
     @Override
