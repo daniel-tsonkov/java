@@ -533,36 +533,47 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         L1.setFont(new Font("Arial", Font.PLAIN, 16));
         panel1.add(L1);
         T1 = new JTextField();
+        T1.setFont(new Font("Arial", Font.PLAIN, 16));
         T1.setText(name_contractor);
         T1.setPreferredSize(new Dimension(200, 25));
         panel1.add(T1);
         JLabel L2 = new JLabel(" - ");
+        L2.setFont(new Font("Arial", Font.PLAIN, 16));
         panel1.add(L2);
         T2 = new JTextField();
+        T2.setFont(new Font("Arial", Font.PLAIN, 16));
         T2.setText("Длъжност");
         T2.setPreferredSize(new Dimension(200, 25));
         panel1.add(T2);
         JLabel L3 = new JLabel(" при ");
+        L3.setFont(new Font("Arial", Font.PLAIN, 16));
         panel1.add(L3);
         T3 = new JTextField();
+        T3.setFont(new Font("Arial", Font.PLAIN, 16));
         T3.setText("Служба");
         T3.setPreferredSize(new Dimension(200, 25));
         panel1.add(T3);
         JLabel L4 = new JLabel(" с постановление с рег. № ");
+        L4.setFont(new Font("Arial", Font.PLAIN, 16));
         panel1.add(L4);
         T4 = new JTextField("N/A");
+        T4.setFont(new Font("Arial", Font.PLAIN, 16));
         T4.setText(reg_no);
         T4.setPreferredSize(new Dimension(200, 25));
         panel1.add(T4);
         JLabel L5 = new JLabel("г., по досъдебно производство № ");
+        L5.setFont(new Font("Arial", Font.PLAIN, 16));
         panel1.add(L5);
         T5 = new JTextField();
+        T5.setFont(new Font("Arial", Font.PLAIN, 16));
         T5.setText(expertise);
         T5.setPreferredSize(new Dimension(200, 25));
         panel1.add(T5);
         JLabel L6 = new JLabel("г., по описа на ");
+        L6.setFont(new Font("Arial", Font.PLAIN, 16));
         panel1.add(L6);
         T6 = new JTextField("N/A");
+        T6.setFont(new Font("Arial", Font.PLAIN, 16));
         T6.setText(expertise);
         T6.setPreferredSize(new Dimension(200, 25));
         panel1.add(T6);
@@ -648,9 +659,6 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
                 }
             }
         });
-    }
-    public void repaintScreen(){
-        this.repaint();
     }
 
     @Override
