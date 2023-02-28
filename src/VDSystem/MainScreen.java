@@ -85,7 +85,6 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
             ImageIcon leafIcon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/xlsx_icon.png")));
             DefaultTreeCellRenderer renderer = new DefaultTreeCellRenderer();
             renderer.setLeafIcon(leafIcon);
-            //renderer.set
             main_tree.setCellRenderer(renderer);// DANE SE TRIE!!!!!!!!!!!!
 
             DefaultMutableTreeNode infoFile = new DefaultMutableTreeNode("Инфо");
