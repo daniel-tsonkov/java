@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Settings extends JFrame implements ActionListener, KeyListener, WindowListener {
+    JTextField generate_expertise_field;
+    JButton path_expertise;
     JButton ok;
     JButton cancel;
     JComboBox select_theme;
@@ -22,9 +24,26 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
         this.setLayout(null);
         this.setVisible(true);
 
+        JPanel skin_panel = new JPanel();
+        skin_panel.setBorder(BorderFactory.createLineBorder(Color.black));
+        skin_panel.setPreferredSize(new Dimension(500, 100));
+        //skin_panel.setBorder(BorderFactory.createEmptyBorder(10, 20, 20, 20));
+        skin_panel.setBackground(new Color(250, 250, 250));
+
+        JPanel generate_expertise_panel = new JPanel();
+        generate_expertise_panel.setBorder(BorderFactory.createLineBorder(Color.black));
+        generate_expertise_panel.setPreferredSize(new Dimension(500, 100));
+        //generate_expertise_panel.setBorder(BorderFactory.createEmptyBorder(10, 20, 20, 20));
+        generate_expertise_panel.setBackground(new Color(250, 250, 250));
+
         JLabel theme = new JLabel("Тема(Skin) ");
         select_theme = new JComboBox(MainScreen.objects);
         select_theme.setSelectedIndex(findIndex(MainScreen.objects, MainScreen.valueOfSkin));
+
+        JLabel generate_expertise_label = new JLabel("Директория на експертизата ");
+        generate_expertise_field = new JTextField();
+        generate_expertise_field.setPreferredSize(new Dimension(280, 25));
+        path_expertise = new JButton("...");
 
         JPanel panel1 = new JPanel();
         JPanel panel2 = new JPanel();
@@ -41,8 +60,13 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
         tabbedPane.add("Обекти", panel4);
         tabbedPane.add("Задачи", panel5);
 
-        panel1.add(theme);
-        panel1.add(select_theme);
+        panel1.add(skin_panel);
+        skin_panel.add(theme);
+        skin_panel.add(select_theme);
+        panel1.add(generate_expertise_panel);
+        generate_expertise_panel.add(generate_expertise_label);
+        generate_expertise_panel.add(generate_expertise_field);
+        generate_expertise_panel.add(path_expertise);
 
         this.add(tabbedPane, BorderLayout.CENTER);
 
@@ -53,7 +77,7 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
         this.add(ok);
         ok.setBounds(500, 390, 120, 30);
 
-
+        path_expertise.addActionListener(this);
         select_theme.addActionListener(this);
         ok.addActionListener(this);
         this.addWindowListener(this);
@@ -67,13 +91,29 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
             SwingUtilities.updateComponentTreeUI(mainScreen);
         }
 
+        if (e.getSource() == path_expertise) {
+            JFileChooser chooser = new JFileChooser();
+            chooser.setCurrentDirectory(new java.io.File("."));
+            chooser.setDialogTitle("Директория за експертизи");
+            chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+            chooser.setAcceptAllFileFilterUsed(false);
+            if (chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+               /* System.out.println("getCurrentDirectory(): " + chooser.getCurrentDirectory());
+                System.out.println("getSelectedFile() : " + chooser.getSelectedFile());*///dane se triqt za sega
+            } else {
+                System.out.println("No Selection ");
+            }
+            generate_expertise_field.setText(chooser.getSelectedFile().toString());
+        }
+
         if (e.getSource() == ok) {
             okButtonSettings();
         }
-        if (e.getSource() == cancel) {
+        /*if (e.getSource() == cancel) {
             mainScreen.setEnabled(true);
             this.dispose();
-        }
+        }*/
+
     }
 
     /*private void nameTheme(Class nameTheme){
