@@ -18,9 +18,11 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.font.TextAttribute;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
+import java.util.Scanner;
 
 
 public class MainScreen extends JFrame implements ActionListener, KeyListener {//, MouseListener {
@@ -49,17 +51,6 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     static DefaultMutableTreeNode new_expertise;
     public static String valueOfSkin;
     public static String[] objects = {"FlatArcIJTheme", "FlatArcOrangeIJTheme", "FlatCarbonIJTheme", "FlatHighContrastIJTheme", "FlatLightOwlContrastIJTheme", "FlatNightOwlContrastIJTheme"};
-    //FileReader reader = new FileReader("set.txt");
-
-    public MainScreen() {
-        ScreenProperty();
-        Menubar();
-        ToolbarMenu();
-        TreeViewMenu();
-        TextTools();
-        TabsProtokol();
-        //addMouseListener(this);
-    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -241,6 +232,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         }
     }
 
+
     /*@Override
     public void mouseClicked(MouseEvent e) {
     }
@@ -264,6 +256,16 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     public void mouseExited(MouseEvent e) {
 
     }*/
+
+    public MainScreen() {
+        ScreenProperty();
+        Menubar();
+        ToolbarMenu();
+        TreeViewMenu();
+        TextTools();
+        TabsProtokol();
+        //addMouseListener(this);
+    }
 
     private void ScreenProperty() {
         //this.setSize(1280, 900);
@@ -815,13 +817,29 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     }
 
     public static void readWriteInfoFile() {
-        try{
-            FileWriter myWriter = new FileWriter("C:/Users/Dani/IdeaProjects/java/tests/src/VDSystem/set.txt");
-            myWriter.write(valueOfSkin);
-            myWriter.close();
-        } catch (IOException e) {
-        System.out.println("Липса set файла");
-        e.printStackTrace();
-    }
+        try {
+            File readFile = new File("C:/Users/Dani/IdeaProjects/java/tests/src/VDSystem/set.txt");
+            String data = null;
+            Scanner setReader = new Scanner(readFile);
+            while (setReader.hasNextLine()) {
+                data = setReader.nextLine();
+            }
+            setReader.close();
+            if(!data.equals(valueOfSkin)){
+                try{
+                    FileWriter setWriter = new FileWriter("C:/Users/Dani/IdeaProjects/java/tests/src/VDSystem/set.txt");
+                    setWriter.write(valueOfSkin);
+                    setWriter.close();
+                } catch (IOException e) {
+                    System.out.println("Липса set файла");
+                    e.printStackTrace();
+                }
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
+
     }
 }
