@@ -74,58 +74,6 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == select_theme) {
             MainScreen.setSkinTheme(select_theme.getSelectedItem().toString());
-            /*switch (select_theme.getSelectedItem().toString()) {
-                case "FlatArcIJTheme":
-                    try {
-                        System.out.println("select1");
-                        UIManager.setLookAndFeel(new FlatArcIJTheme());
-                    } catch (Exception s) {
-                        s.printStackTrace();
-                    }
-                    break;
-                case "FlatArcOrangeIJTheme":
-                    try {
-                        System.out.println("select2");
-                        UIManager.setLookAndFeel(new FlatArcOrangeIJTheme());
-                    } catch (Exception s) {
-                        s.printStackTrace();
-                    }
-                    break;
-                case "FlatCarbonIJTheme":
-                    try {
-                        UIManager.setLookAndFeel(new FlatCarbonIJTheme());
-                    } catch (Exception s) {
-                        s.printStackTrace();
-                    }
-                    break;
-                case "FlatHighContrastIJTheme":
-                    try {
-                        UIManager.setLookAndFeel(new FlatHighContrastIJTheme());
-                    } catch (Exception s) {
-                        s.printStackTrace();
-                    }
-                    break;
-                case "FlatLightOwlContrastIJTheme":
-                    try {
-                        UIManager.setLookAndFeel(new FlatLightOwlContrastIJTheme());
-                    } catch (Exception s) {
-                        s.printStackTrace();
-                    }
-                    break;
-                case "FlatNightOwlContrastIJTheme":
-                    //nameTheme(FlatNightOwlContrastIJTheme);
-                    //Class c = new Class();
-                    //String.valueOf("FlatNightOwlContrastIJTheme"); ca = new FlatNightOwlContrastIJTheme();
-                    try {
-                        //UIManager.setLookAndFeel(ca);
-                        UIManager.setLookAndFeel(new FlatNightOwlContrastIJTheme());
-                    } catch (Exception s) {
-                        s.printStackTrace();
-                    }
-                    break;
-            }
-            SwingUtilities.updateComponentTreeUI(this);
-            SwingUtilities.updateComponentTreeUI(mainScreen);*/
             SwingUtilities.updateComponentTreeUI(this);
             SwingUtilities.updateComponentTreeUI(mainScreen);
         }

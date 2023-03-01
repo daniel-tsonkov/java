@@ -18,6 +18,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.font.TextAttribute;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Map;
 
 
@@ -758,7 +760,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
 
     }
 
-    public static void setSkinTheme(String select_theme){
+    public static void setSkinTheme(String select_theme) {
         switch (select_theme) {
             case "FlatArcIJTheme":
                 try {
@@ -809,5 +811,17 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
                 }
                 break;
         }
+        readWriteInfoFile();
+    }
+
+    public static void readWriteInfoFile() {
+        try{
+            FileWriter myWriter = new FileWriter("C:/Users/Dani/IdeaProjects/java/tests/src/VDSystem/set.txt");
+            myWriter.write(valueOfSkin);
+            myWriter.close();
+        } catch (IOException e) {
+        System.out.println("Липса set файла");
+        e.printStackTrace();
+    }
     }
 }

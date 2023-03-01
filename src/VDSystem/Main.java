@@ -1,8 +1,5 @@
 package VDSystem;
 
-import com.formdev.flatlaf.intellijthemes.FlatArcOrangeIJTheme;
-
-import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
@@ -14,16 +11,20 @@ public class Main {
         Scanner myReader = new Scanner(reader);
         while (myReader.hasNextLine()) {
             data = myReader.nextLine();
-            System.out.println(data);
+            System.out.println("Процхетена тема" + data);
         }
         myReader.close();
 
         try{
             MainScreen.setSkinTheme(data);
-            UIManager.setLookAndFeel(new FlatArcOrangeIJTheme());
+            //UIManager.setLookAndFeel(new FlatArcOrangeIJTheme());
         } catch (Exception e) {
             e.printStackTrace();
         }
         MainScreen mainScreen = new MainScreen();
     }
+}
+
+class  readSetFile {
+
 }
