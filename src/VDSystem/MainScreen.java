@@ -32,7 +32,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     JMenuItem new_item, open_item, save_item, generat_expertise_item, exit_item, cut_item, copy_item, paste_item, rename_item, delete_item, BLANK, settings_item, manual_item, version_item;
     JToolBar toolBar, text_tools;
     JCheckBoxMenuItem show_toolbar;
-    static JTextField T1, T2, T3, T4, T5, T6;
+    static JTextField T1, T2, T3, T4, T5, T6, T11, T12;
     static JButton new_work, open_work, color_buton, bold_buton, italic_buton, underline_buton, new_object, new_evidence, rename_object, remove_evidence, generate_expertise, expand_tree, colapse_tree;
     static JComboBox select_object, font_box;
     static JSpinner font_size_spiner;
@@ -231,7 +231,6 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
             JOptionPane.showMessageDialog(null, "Версия 1.0.0", "За програмата", JOptionPane.OK_OPTION);
         }
     }
-
 
     /*@Override
     public void mouseClicked(MouseEvent e) {
@@ -545,31 +544,48 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     }
 
     private void TabsProtokol() {
+        JPanel vazlozhitel_panel = new JPanel();
+        vazlozhitel_panel.setBorder(BorderFactory.createLineBorder(Color.black));
+        //vazlozhitel_panel.setBorder(BorderFactory.createEmptyBorder(100, 20, 200, 20));
+        //vazlozhitel_panel.setBorder(new EmptyBorder(100, 100, 100, 100));
+        vazlozhitel_panel.setPreferredSize(new Dimension(800, 500));
+
+        JPanel vazlozhitel_panel1 = new JPanel();
+        vazlozhitel_panel1.setBorder(BorderFactory.createLineBorder(Color.black));
+        vazlozhitel_panel1.setPreferredSize(new Dimension(800, 500));
+
         JPanel panel1 = new JPanel();
+        panel1.setBorder(BorderFactory.createEmptyBorder(50, 20, 300, 20));
+        panel1.setLayout(new BorderLayout());
         JPanel panel2 = new JPanel();
+        panel2.setBorder(BorderFactory.createEmptyBorder(50, 20, 300, 20));
+        panel2.setLayout(new BorderLayout());
         JPanel panel3 = new JPanel();
         JPanel panel4 = new JPanel();
         JPanel panel5 = new JPanel();
+
+        panel1.add(vazlozhitel_panel, BorderLayout.CENTER);
+        panel2.add(vazlozhitel_panel1, BorderLayout.CENTER);
 
         JLabel L1 = new JLabel("Експертизата е назначена от ");
         L1.setFont(new Font("Arial", Font.PLAIN, 16));
         Dimension size = L1.getPreferredSize();
         L1.setBounds(150, 100, size.width, size.height);
         L1.setLayout(null);
-        panel1.add(L1);
+        vazlozhitel_panel.add(L1);
         T1 = new JTextField();
         T1.setFont(new Font("Arial", Font.PLAIN, 16));
         T1.setText(name_contractor);
         T1.setPreferredSize(new Dimension(200, 25));
-        panel1.add(T1);
+        vazlozhitel_panel.add(T1);
         JLabel L2 = new JLabel(" - ");
         L2.setFont(new Font("Arial", Font.PLAIN, 16));
-        panel1.add(L2);
+        vazlozhitel_panel.add(L2);
         T2 = new JTextField();
         T2.setFont(new Font("Arial", Font.PLAIN, 16));
         T2.setText("Длъжност");
-        T2.setPreferredSize(new Dimension(200, 25));
-        T2.setForeground(new Color(250, 100, 100));
+        T2.setPreferredSize(new Dimension(300, 25));
+        T2.setForeground(new Color(250, 80, 80));
         T2.addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
@@ -584,19 +600,19 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
                 T2.setText(T2.getText());
                 if (T2.getText().equals("")) {
                     T2.setText("Длъжност");
-                    T2.setForeground(new Color(250, 100, 100));
+                    T2.setForeground(new Color(250, 80, 80));
                 } else {
                     T2.setForeground(new Color(0, 0, 0));
                 }
             }
         });
-        panel1.add(T2);
+        vazlozhitel_panel.add(T2);
         JLabel L3 = new JLabel(" при ");
         L3.setFont(new Font("Arial", Font.PLAIN, 16));
-        panel1.add(L3);
+        vazlozhitel_panel.add(L3);
         T3 = new JTextField();
-        T3.setPreferredSize(new Dimension(200, 25));
-        T3.setForeground(new Color(250, 100, 100));
+        T3.setPreferredSize(new Dimension(300, 25));
+        T3.setForeground(new Color(250, 80, 80));
         T3.setFont(new Font("Arial", Font.PLAIN, 16));
         T3.setText("Служба");
         T3.addFocusListener(new FocusListener() {
@@ -613,35 +629,35 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
                 T3.setText(T3.getText());
                 if (T3.getText().equals("")) {
                     T3.setText("Служба");
-                    T3.setForeground(new Color(250, 100, 100));
+                    T3.setForeground(new Color(250, 80, 80));
                 } else {
                     T3.setForeground(new Color(0, 0, 0));
                 }
             }
         });
-        panel1.add(T3);
+        vazlozhitel_panel.add(T3);
         JLabel L4 = new JLabel(" с постановление с рег. № ");
         L4.setFont(new Font("Arial", Font.PLAIN, 16));
-        panel1.add(L4);
+        vazlozhitel_panel.add(L4);
         T4 = new JTextField("N/A");
         T4.setFont(new Font("Arial", Font.PLAIN, 16));
         T4.setText(reg_no);
         T4.setPreferredSize(new Dimension(200, 25));
-        panel1.add(T4);
+        vazlozhitel_panel.add(T4);
         JLabel L5 = new JLabel("г., по досъдебно производство № ");
         L5.setFont(new Font("Arial", Font.PLAIN, 16));
-        panel1.add(L5);
+        vazlozhitel_panel.add(L5);
         T5 = new JTextField();
         T5.setFont(new Font("Arial", Font.PLAIN, 16));
         T5.setText(expertise);
         T5.setPreferredSize(new Dimension(200, 25));
-        panel1.add(T5);
+        vazlozhitel_panel.add(T5);
         JLabel L6 = new JLabel("г., по описа на ");
         L6.setFont(new Font("Arial", Font.PLAIN, 16));
-        panel1.add(L6);
+        vazlozhitel_panel.add(L6);
         T6 = new JTextField("Няма име");
         T6.setFont(new Font("Arial", Font.PLAIN, 16));
-        T6.setForeground(new Color(250, 100, 100));
+        T6.setForeground(new Color(250, 80, 80));
         T6.setPreferredSize(new Dimension(200, 25));
         T6.addFocusListener(new FocusListener() {
             @Override
@@ -657,25 +673,48 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
                 T6.setText(T6.getText());
                 if (T6.getText().equals("")) {
                     T6.setText("Няма име");
-                    T6.setForeground(new Color(250, 100, 100));
+                    T6.setForeground(new Color(250, 80, 80));
                 } else {
                     T6.setForeground(new Color(0, 0, 0));
                 }
             }
         });
-        panel1.add(T6);
+        vazlozhitel_panel.add(T6);
+
+        JLabel L11 = new JLabel("Преписката е заведена в НИК – МВР под вх. №  ");
+        L11.setFont(new Font("Arial", Font.PLAIN, 16));
+        Dimension size2 = L11.getPreferredSize();
+        L11.setBounds(150, 100, size2.width, size2.height);
+        L11.setLayout(null);
+        vazlozhitel_panel1.add(L11);
+        T11 = new JTextField();
+        T11.setFont(new Font("Arial", Font.PLAIN, 16));
+        T11.setText(dp_no);
+        T11.setPreferredSize(new Dimension(120, 25));
+        vazlozhitel_panel1.add(T11);
+        JLabel L12 = new JLabel(" /  ");
+        L12.setFont(new Font("Arial", Font.PLAIN, 16));
+        //Dimension size2 = L11.getPreferredSize();
+        //L11.setBounds(150, 100, size2.width, size2.height);
+        L12.setLayout(null);
+        vazlozhitel_panel1.add(L12);
+        T12 = new JTextField();
+        T12.setFont(new Font("Arial", Font.PLAIN, 16));
+        T12.setText(date_expertise);
+        T12.setPreferredSize(new Dimension(120, 25));
+        vazlozhitel_panel1.add(T12);
 
         protocol = new JTabbedPane();
 
-        protocol.add("Възложител", panel1);
+        protocol.add("1. Възложител", panel1);
         panel1.setBackground(Color.white);
-        protocol.add("Дата на получаване", panel2);
+        protocol.add("2. Дата на получаване", panel2);
         panel2.setBackground(Color.white);
-        protocol.add("Обстоятелства по делото", panel3);
+        protocol.add("3. Обстоятелства по делото", panel3);
         panel3.setBackground(Color.white);
-        protocol.add("Обекти на експертизата", panel4);
+        protocol.add("4. Обекти на експертизата", panel4);
         panel4.setBackground(Color.white);
-        protocol.add("Задачи на експертизата", panel5);
+        protocol.add("5. Задачи на експертизата", panel5);
         panel5.setBackground(Color.white);
 
         text_panel.add(protocol, BorderLayout.CENTER);
@@ -739,7 +778,9 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
                     if (myNode.equals("Протокол")) {
                         T1.setText(name_contractor);
                         T4.setText(reg_no);
-                        T5.setText(expertise);
+                        T5.setText(dp_no);
+                        T11.setText(expertise);
+                        T12.setText(date_expertise);
                         protocol.setVisible(true);
                     } else {
                         protocol.setVisible(false);
