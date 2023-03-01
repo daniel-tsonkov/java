@@ -41,7 +41,7 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
         select_theme.setSelectedIndex(findIndex(MainScreen.objects, MainScreen.valueOfSkin));
 
         JLabel generate_expertise_label = new JLabel("Директория на експертизата ");
-        generate_expertise_field = new JTextField();
+        generate_expertise_field = new JTextField("");
         generate_expertise_field.setPreferredSize(new Dimension(280, 25));
         path_expertise = new JButton("...");
 
@@ -93,17 +93,17 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
 
         if (e.getSource() == path_expertise) {
             JFileChooser chooser = new JFileChooser();
-            chooser.setCurrentDirectory(new java.io.File("."));
+            chooser.setCurrentDirectory(new java.io.File("C:\\"));//(new java.io.File(".")); //tekushta direktoria
             chooser.setDialogTitle("Директория за експертизи");
             chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
             chooser.setAcceptAllFileFilterUsed(false);
             if (chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
                /* System.out.println("getCurrentDirectory(): " + chooser.getCurrentDirectory());
-                System.out.println("getSelectedFile() : " + chooser.getSelectedFile());*///dane se triqt za sega
+                System.out.println("getSelectedFile() : " + chooser.getSelectedFile());*///  dane se triqt za sega!!!!
+                generate_expertise_field.setText(chooser.getSelectedFile().toString());
             } else {
                 System.out.println("No Selection ");
             }
-            generate_expertise_field.setText(chooser.getSelectedFile().toString());
         }
 
         if (e.getSource() == ok) {
