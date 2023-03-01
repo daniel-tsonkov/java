@@ -8,7 +8,6 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
     JTextField generate_expertise_field;
     JButton path_expertise;
     JButton ok;
-    JButton cancel;
     JComboBox select_theme;
 
     MainScreen mainScreen;
@@ -33,7 +32,6 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
         JPanel generate_expertise_panel = new JPanel();
         generate_expertise_panel.setBorder(BorderFactory.createLineBorder(Color.black));
         generate_expertise_panel.setPreferredSize(new Dimension(500, 100));
-        //generate_expertise_panel.setBorder(BorderFactory.createEmptyBorder(10, 20, 20, 20));
         generate_expertise_panel.setBackground(new Color(250, 250, 250));
 
         JLabel theme = new JLabel("Тема(Skin) ");
