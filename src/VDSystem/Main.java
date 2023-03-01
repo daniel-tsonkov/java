@@ -11,20 +11,14 @@ public class Main {
         Scanner myReader = new Scanner(reader);
         while (myReader.hasNextLine()) {
             data = myReader.nextLine();
-            System.out.println("Процхетена тема" + data);
         }
         myReader.close();
 
         try{
             MainScreen.setSkinTheme(data);
-            //UIManager.setLookAndFeel(new FlatArcOrangeIJTheme());
         } catch (Exception e) {
             e.printStackTrace();
         }
         MainScreen mainScreen = new MainScreen();
     }
-}
-
-class  readSetFile {
-
 }

@@ -50,7 +50,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     static String myNode;
     static DefaultMutableTreeNode new_expertise;
     public static String valueOfSkin;
-    public static String[] objects = {"FlatArcIJTheme", "FlatArcOrangeIJTheme", "FlatCarbonIJTheme", "FlatHighContrastIJTheme", "FlatLightOwlContrastIJTheme", "FlatNightOwlContrastIJTheme"};
+    public static String[] objects = {"Standart", "FlatArcIJTheme", "FlatArcOrangeIJTheme", "FlatCarbonIJTheme", "FlatHighContrastIJTheme", "FlatLightOwlContrastIJTheme", "FlatNightOwlContrastIJTheme"};
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -764,6 +764,14 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
 
     public static void setSkinTheme(String select_theme) {
         switch (select_theme) {
+            case "Standart":
+                try {
+                    UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+                    valueOfSkin = "Standart";
+                } catch (Exception s) {
+                    s.printStackTrace();
+                }
+                break;
             case "FlatArcIJTheme":
                 try {
                     UIManager.setLookAndFeel(new FlatArcIJTheme());
@@ -812,6 +820,8 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
                     s.printStackTrace();
                 }
                 break;
+            default:
+
         }
         readWriteInfoFile();
     }
