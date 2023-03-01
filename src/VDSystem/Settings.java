@@ -26,7 +26,7 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
         JLabel theme = new JLabel("Тема(Skin) ");
         //public static String[] objects = {"FlatArcIJTheme", "FlatArcOrangeIJTheme", "FlatCarbonIJTheme", "FlatHighContrastIJTheme", "FlatLightOwlContrastIJTheme", "FlatNightOwlContrastIJTheme"};
         select_theme = new JComboBox(MainScreen.objects);
-        select_theme.setSelectedIndex(1);
+        select_theme.setSelectedIndex(findIndex(MainScreen.objects, MainScreen.valueOfSkin));
 
         //applay = new JButton("Приложи");
 
@@ -161,5 +161,15 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
     public void okButtonSettings() {
         mainScreen.setEnabled(true);
         this.dispose();
+    }
+
+    public static int findIndex(String objects[], String setTheme) {
+        int i;
+        for (i = 0; i < objects.length; i++) {
+            if (objects[i].equals(setTheme)) {
+                break;
+            }
+        }
+        return i;
     }
 }
