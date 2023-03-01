@@ -1,18 +1,21 @@
 package VDSystem;
 
+import com.formdev.flatlaf.intellijthemes.FlatArcIJTheme;
+import com.formdev.flatlaf.intellijthemes.FlatArcOrangeIJTheme;
+import com.formdev.flatlaf.intellijthemes.FlatCarbonIJTheme;
+import com.formdev.flatlaf.intellijthemes.FlatHighContrastIJTheme;
+import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatLightOwlContrastIJTheme;
+import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatNightOwlContrastIJTheme;
+
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 import java.awt.font.TextAttribute;
 import java.io.File;
 import java.util.Map;
@@ -28,6 +31,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     static JTextField T1, T2, T3, T4, T5, T6;
     static JButton new_work, open_work, color_buton, bold_buton, italic_buton, underline_buton, new_object, new_evidence, rename_object, remove_evidence, generate_expertise, expand_tree, colapse_tree;
     static JComboBox select_object, font_box;
+    static JSpinner font_size_spiner;
     static JTextField other_object;
     static JTree main_tree;
     static JPanel tree_panell, text_panel;
@@ -41,11 +45,9 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     int numberObject = 1;
     static String myNode;
     static DefaultMutableTreeNode new_expertise;
-    ImageIcon new_file_icon;
-    ImageIcon open_file_icon;
-    ImageIcon save_file_icon;
-    ImageIcon exit_program_icon;
-    ImageIcon generate_expertise_icon;
+    public static String valueOfSkin;
+    public static String[] objects = {"FlatArcIJTheme", "FlatArcOrangeIJTheme", "FlatCarbonIJTheme", "FlatHighContrastIJTheme", "FlatLightOwlContrastIJTheme", "FlatNightOwlContrastIJTheme"};
+    //FileReader reader = new FileReader("set.txt");
 
     public MainScreen() {
         ScreenProperty();
@@ -86,10 +88,10 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
             DefaultMutableTreeNode evidence1 = new DefaultMutableTreeNode("Обект " + numberObject);
             selectedNode.add(evidence1);
 
-            ImageIcon leafIcon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/xlsx_icon.png")));
+            /*ImageIcon leafIcon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/xlsx_icon.png")));
             DefaultTreeCellRenderer renderer = new DefaultTreeCellRenderer();
             renderer.setLeafIcon(leafIcon);
-            main_tree.setCellRenderer(renderer);// DANE SE TRIE!!!!!!!!!!!!
+            main_tree.setCellRenderer(renderer);// DANE SE TRIE!!!!!!!!!!!!*/
 
             DefaultMutableTreeNode infoFile = new DefaultMutableTreeNode("Инфо");
             evidence1.add(infoFile);
@@ -276,11 +278,15 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     }
 
     private void Menubar() {
-        new_file_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/newfile.png")));
-        open_file_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/openfile.png")));
-        save_file_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/savefile.png")));
-        generate_expertise_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/generatee.png")));
-        exit_program_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/exit.png")));
+        ImageIcon new_file_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/newfile.png")));
+        ImageIcon open_file_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/openfile.png")));
+        ImageIcon save_file_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/savefile.png")));
+        ImageIcon generate_expertise_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/generatee.png")));
+        ImageIcon exit_program_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/exit.png")));
+        ImageIcon cut_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/cut_icon.png")));
+        ImageIcon copy_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/copy_icon.png")));
+        ImageIcon paste_icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/paste_icon.png")));
+
         menuBar = new JMenuBar();
 
         file_menu = new JMenu("File");
@@ -293,18 +299,21 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         help_menu.setMnemonic(KeyEvent.VK_H);
 
         new_item = new JMenuItem("Нова експертиза");
-        new_item.setIcon(new_file_icon);
+        new_item.setIcon(iconSize(new_file_icon));
         open_item = new JMenuItem("Отвори експертиза");
-        open_item.setIcon(open_file_icon);
+        open_item.setIcon(iconSize(open_file_icon));
         save_item = new JMenuItem("Запиши експертиза");
-        save_item.setIcon(save_file_icon);
+        save_item.setIcon(iconSize(save_file_icon));
         generat_expertise_item = new JMenuItem("генерирай експертиза");
-        generat_expertise_item.setIcon(generate_expertise_icon);
+        generat_expertise_item.setIcon(iconSize(generate_expertise_icon));
         exit_item = new JMenuItem("Exit");
-        exit_item.setIcon(exit_program_icon);
+        exit_item.setIcon(iconSize(exit_program_icon));
         cut_item = new JMenuItem("Cut");
+        cut_item.setIcon(iconSize(cut_icon));
         copy_item = new JMenuItem("Copy");
+        copy_item.setIcon(iconSize(copy_icon));
         paste_item = new JMenuItem("Paste");
+        paste_item.setIcon(iconSize(paste_icon));
         rename_item = new JMenuItem("Преименувай обект");
         delete_item = new JMenuItem("Премахни обект");
         BLANK = new JMenuItem("BLANK");
@@ -352,6 +361,15 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         settings_item.addActionListener(this);
         manual_item.addActionListener(this);
         version_item.addActionListener(this);
+
+
+    }
+
+    private ImageIcon iconSize(ImageIcon iconName) {
+        Image image = iconName.getImage();
+        Image newimg = image.getScaledInstance(20, 20, Image.SCALE_SMOOTH);
+        iconName = new ImageIcon(newimg);
+        return iconName;
     }
 
     private void ToolbarMenu() {
@@ -451,7 +469,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
 
         text_tools.addSeparator(new Dimension(5, 25));
 
-        JSpinner font_size_spiner = new JSpinner();
+        font_size_spiner = new JSpinner();
         font_size_spiner.setValue(20);
         font_size_spiner.addChangeListener(new ChangeListener() {
             @Override
@@ -531,6 +549,9 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
 
         JLabel L1 = new JLabel("Експертизата е назначена от ");
         L1.setFont(new Font("Arial", Font.PLAIN, 16));
+        Dimension size = L1.getPreferredSize();
+        L1.setBounds(150, 100, size.width, size.height);
+        L1.setLayout(null);
         panel1.add(L1);
         T1 = new JTextField();
         T1.setFont(new Font("Arial", Font.PLAIN, 16));
@@ -544,14 +565,56 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         T2.setFont(new Font("Arial", Font.PLAIN, 16));
         T2.setText("Длъжност");
         T2.setPreferredSize(new Dimension(200, 25));
+        T2.setForeground(new Color(250, 100, 100));
+        T2.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (T2.getText().equals("Длъжност")) {
+                    T2.setText("");
+                    T2.setForeground(new Color(0, 0, 0));
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                T2.setText(T2.getText());
+                if (T2.getText().equals("")) {
+                    T2.setText("Длъжност");
+                    T2.setForeground(new Color(250, 100, 100));
+                } else {
+                    T2.setForeground(new Color(0, 0, 0));
+                }
+            }
+        });
         panel1.add(T2);
         JLabel L3 = new JLabel(" при ");
         L3.setFont(new Font("Arial", Font.PLAIN, 16));
         panel1.add(L3);
         T3 = new JTextField();
+        T3.setPreferredSize(new Dimension(200, 25));
+        T3.setForeground(new Color(250, 100, 100));
         T3.setFont(new Font("Arial", Font.PLAIN, 16));
         T3.setText("Служба");
-        T3.setPreferredSize(new Dimension(200, 25));
+        T3.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (T3.getText().equals("Служба")) {
+                    T3.setText("");
+                    T3.setForeground(new Color(0, 0, 0));
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                T3.setText(T3.getText());
+                if (T3.getText().equals("")) {
+                    T3.setText("Служба");
+                    T3.setForeground(new Color(250, 100, 100));
+                } else {
+                    T3.setForeground(new Color(0, 0, 0));
+                }
+            }
+        });
         panel1.add(T3);
         JLabel L4 = new JLabel(" с постановление с рег. № ");
         L4.setFont(new Font("Arial", Font.PLAIN, 16));
@@ -572,10 +635,30 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         JLabel L6 = new JLabel("г., по описа на ");
         L6.setFont(new Font("Arial", Font.PLAIN, 16));
         panel1.add(L6);
-        T6 = new JTextField("N/A");
+        T6 = new JTextField("Няма име");
         T6.setFont(new Font("Arial", Font.PLAIN, 16));
-        T6.setText(expertise);
+        T6.setForeground(new Color(250, 100, 100));
         T6.setPreferredSize(new Dimension(200, 25));
+        T6.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (T6.getText().equals("Няма име")) {
+                    T6.setText("");
+                    T6.setForeground(new Color(0, 0, 0));
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                T6.setText(T6.getText());
+                if (T6.getText().equals("")) {
+                    T6.setText("Няма име");
+                    T6.setForeground(new Color(250, 100, 100));
+                } else {
+                    T6.setForeground(new Color(0, 0, 0));
+                }
+            }
+        });
         panel1.add(T6);
 
         protocol = new JTabbedPane();
@@ -629,17 +712,19 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
 
         main_tree = new JTree(new_expertise);
         main_tree.setBackground(null);
+        //main_tree.setBackground(Color.BLUE);
         main_tree.setRowHeight(25);
         main_tree.setBounds(0, 0, 150, 900);
         tree_panell.add(main_tree, BorderLayout.WEST);
+        tree_panell.setBackground(new Color(255, 255, 255));
         main_tree.setVisible(true);
 
-        ImageIcon leafIcon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/docx_icon.png")));//createImageIcon("resources/docx_icon.png");
+        /*ImageIcon leafIcon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/docx_icon.png")));//createImageIcon("resources/docx_icon.png");
         if (!expertise.equals("Няма име")) {
             DefaultTreeCellRenderer renderer = new DefaultTreeCellRenderer();
             renderer.setLeafIcon(leafIcon);
             main_tree.setCellRenderer(renderer);
-        }
+        }*/
 
         main_tree.addTreeSelectionListener(new TreeSelectionListener() {
             @Override
@@ -647,7 +732,6 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
                 //DefaultMutableTreeNode node = (DefaultMutableTreeNode) main_tree.getLastSelectedPathComponent();
                 if (main_tree.getLastSelectedPathComponent() != null) {
                     myNode = main_tree.getLastSelectedPathComponent().toString();
-                    //System.out.println(myNode);
                     if (myNode.equals("Протокол")) {
                         T1.setText(name_contractor);
                         T4.setText(reg_no);
@@ -672,5 +756,58 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     @Override
     public void keyReleased(KeyEvent e) {
 
+    }
+
+    public static void setSkinTheme(String select_theme){
+        switch (select_theme) {
+            case "FlatArcIJTheme":
+                try {
+                    UIManager.setLookAndFeel(new FlatArcIJTheme());
+                    valueOfSkin = "FlatArcIJTheme";
+                } catch (Exception s) {
+                    s.printStackTrace();
+                }
+                break;
+            case "FlatArcOrangeIJTheme":
+                try {
+                    UIManager.setLookAndFeel(new FlatArcOrangeIJTheme());
+                    valueOfSkin = "FlatArcOrangeIJTheme";
+                } catch (Exception s) {
+                    s.printStackTrace();
+                }
+                break;
+            case "FlatCarbonIJTheme":
+                try {
+                    UIManager.setLookAndFeel(new FlatCarbonIJTheme());
+                    valueOfSkin = "FlatCarbonIJTheme";
+                } catch (Exception s) {
+                    s.printStackTrace();
+                }
+                break;
+            case "FlatHighContrastIJTheme":
+                try {
+                    UIManager.setLookAndFeel(new FlatHighContrastIJTheme());
+                    valueOfSkin = "FlatHighContrastIJTheme";
+                } catch (Exception s) {
+                    s.printStackTrace();
+                }
+                break;
+            case "FlatLightOwlContrastIJTheme":
+                try {
+                    UIManager.setLookAndFeel(new FlatLightOwlContrastIJTheme());
+                    valueOfSkin = "FlatLightOwlContrastIJTheme";
+                } catch (Exception s) {
+                    s.printStackTrace();
+                }
+                break;
+            case "FlatNightOwlContrastIJTheme":
+                try {
+                    UIManager.setLookAndFeel(new FlatNightOwlContrastIJTheme());
+                    valueOfSkin = "FlatNightOwlContrastIJTheme";
+                } catch (Exception s) {
+                    s.printStackTrace();
+                }
+                break;
+        }
     }
 }

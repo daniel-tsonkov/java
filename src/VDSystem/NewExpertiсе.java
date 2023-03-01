@@ -177,6 +177,7 @@ public class NewExpertiсе extends JFrame implements ActionListener, KeyListene
             MainScreen.expand_tree.setEnabled(true);
             MainScreen.colapse_tree.setEnabled(true);
 
+            MainScreen.font_size_spiner.setEnabled(true);
             MainScreen.color_buton.setEnabled(true);
             MainScreen.bold_buton.setEnabled(true);
             MainScreen.italic_buton.setEnabled(true);

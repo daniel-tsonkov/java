@@ -1,12 +1,5 @@
 package VDSystem;
 
-import com.formdev.flatlaf.intellijthemes.FlatArcIJTheme;
-import com.formdev.flatlaf.intellijthemes.FlatArcOrangeIJTheme;
-import com.formdev.flatlaf.intellijthemes.FlatCarbonIJTheme;
-import com.formdev.flatlaf.intellijthemes.FlatHighContrastIJTheme;
-import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatLightOwlContrastIJTheme;
-import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatNightOwlContrastIJTheme;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -30,8 +23,10 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
         this.setLayout(null);
         this.setVisible(true);
 
-        String[] objects = {"FlatArcIJTheme", "FlatArcOrangeIJTheme", "FlatCarbonIJTheme", "FlatHighContrastIJTheme", "FlatLightOwlContrastIJTheme", "FlatNightOwlContrastIJTheme"};
-        select_theme = new JComboBox(objects);
+        JLabel theme = new JLabel("Тема(Skin) ");
+        //public static String[] objects = {"FlatArcIJTheme", "FlatArcOrangeIJTheme", "FlatCarbonIJTheme", "FlatHighContrastIJTheme", "FlatLightOwlContrastIJTheme", "FlatNightOwlContrastIJTheme"};
+        select_theme = new JComboBox(MainScreen.objects);
+        select_theme.setSelectedIndex(1);
 
         //applay = new JButton("Приложи");
 
@@ -50,6 +45,7 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
         tabbedPane.add("Обекти", panel4);
         tabbedPane.add("Задачи", panel5);
 
+        panel1.add(theme);
         panel1.add(select_theme);
         //panel1.add(applay);
 
@@ -77,7 +73,8 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == select_theme) {
-            switch (select_theme.getSelectedItem().toString()) {
+            MainScreen.setSkinTheme(select_theme.getSelectedItem().toString());
+            /*switch (select_theme.getSelectedItem().toString()) {
                 case "FlatArcIJTheme":
                     try {
                         System.out.println("select1");
@@ -116,13 +113,19 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
                     }
                     break;
                 case "FlatNightOwlContrastIJTheme":
+                    //nameTheme(FlatNightOwlContrastIJTheme);
+                    //Class c = new Class();
+                    //String.valueOf("FlatNightOwlContrastIJTheme"); ca = new FlatNightOwlContrastIJTheme();
                     try {
+                        //UIManager.setLookAndFeel(ca);
                         UIManager.setLookAndFeel(new FlatNightOwlContrastIJTheme());
                     } catch (Exception s) {
                         s.printStackTrace();
                     }
                     break;
             }
+            SwingUtilities.updateComponentTreeUI(this);
+            SwingUtilities.updateComponentTreeUI(mainScreen);*/
             SwingUtilities.updateComponentTreeUI(this);
             SwingUtilities.updateComponentTreeUI(mainScreen);
         }
@@ -139,6 +142,16 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
             this.dispose();
         }
     }
+
+    /*private void nameTheme(Class nameTheme){
+        //Class c = getName("nameTheme");"nameTheme".getClass();
+        Class c = nameTheme;
+        try {
+            UIManager.setLookAndFeel(String.valueOf(c));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }*///ZA SEGA NE SE POLZVA
 
     @Override
     public void keyTyped(KeyEvent e) {
