@@ -5,7 +5,6 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Settings extends JFrame implements ActionListener, KeyListener, WindowListener {
-    JButton applay;
     JButton ok;
     JButton cancel;
     JComboBox select_theme;
@@ -24,11 +23,8 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
         this.setVisible(true);
 
         JLabel theme = new JLabel("Тема(Skin) ");
-        //public static String[] objects = {"FlatArcIJTheme", "FlatArcOrangeIJTheme", "FlatCarbonIJTheme", "FlatHighContrastIJTheme", "FlatLightOwlContrastIJTheme", "FlatNightOwlContrastIJTheme"};
         select_theme = new JComboBox(MainScreen.objects);
         select_theme.setSelectedIndex(findIndex(MainScreen.objects, MainScreen.valueOfSkin));
-
-        //applay = new JButton("Приложи");
 
         JPanel panel1 = new JPanel();
         JPanel panel2 = new JPanel();
@@ -47,7 +43,6 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
 
         panel1.add(theme);
         panel1.add(select_theme);
-        //panel1.add(applay);
 
         this.add(tabbedPane, BorderLayout.CENTER);
 
@@ -58,16 +53,10 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
         this.add(ok);
         ok.setBounds(500, 390, 120, 30);
 
-        cancel = new JButton("Отказвам се");
-        //this.add(cancel);
-        cancel.setBounds(500, 390, 120, 30);
 
         select_theme.addActionListener(this);
-        //applay.addActionListener(this);
         ok.addActionListener(this);
-        cancel.addActionListener(this);
         this.addWindowListener(this);
-
     }
 
     @Override
@@ -76,10 +65,6 @@ public class Settings extends JFrame implements ActionListener, KeyListener, Win
             MainScreen.setSkinTheme(select_theme.getSelectedItem().toString());
             SwingUtilities.updateComponentTreeUI(this);
             SwingUtilities.updateComponentTreeUI(mainScreen);
-        }
-
-        if (e.getSource() == applay) {
-
         }
 
         if (e.getSource() == ok) {

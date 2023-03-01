@@ -763,66 +763,34 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     }
 
     public static void setSkinTheme(String select_theme) {
-        switch (select_theme) {
-            case "Standart":
-                try {
+        try {
+            switch (select_theme) {
+                case "Standart":
                     UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-                    valueOfSkin = "Standart";
-                } catch (Exception s) {
-                    s.printStackTrace();
-                }
-                break;
-            case "FlatArcIJTheme":
-                try {
+                    break;
+                case "FlatArcIJTheme":
                     UIManager.setLookAndFeel(new FlatArcIJTheme());
-                    valueOfSkin = "FlatArcIJTheme";
-                } catch (Exception s) {
-                    s.printStackTrace();
-                }
-                break;
-            case "FlatArcOrangeIJTheme":
-                try {
+                    break;
+                case "FlatArcOrangeIJTheme":
                     UIManager.setLookAndFeel(new FlatArcOrangeIJTheme());
-                    valueOfSkin = "FlatArcOrangeIJTheme";
-                } catch (Exception s) {
-                    s.printStackTrace();
-                }
-                break;
-            case "FlatCarbonIJTheme":
-                try {
+                    break;
+                case "FlatCarbonIJTheme":
                     UIManager.setLookAndFeel(new FlatCarbonIJTheme());
-                    valueOfSkin = "FlatCarbonIJTheme";
-                } catch (Exception s) {
-                    s.printStackTrace();
-                }
-                break;
-            case "FlatHighContrastIJTheme":
-                try {
+                    break;
+                case "FlatHighContrastIJTheme":
                     UIManager.setLookAndFeel(new FlatHighContrastIJTheme());
-                    valueOfSkin = "FlatHighContrastIJTheme";
-                } catch (Exception s) {
-                    s.printStackTrace();
-                }
-                break;
-            case "FlatLightOwlContrastIJTheme":
-                try {
+                    break;
+                case "FlatLightOwlContrastIJTheme":
                     UIManager.setLookAndFeel(new FlatLightOwlContrastIJTheme());
-                    valueOfSkin = "FlatLightOwlContrastIJTheme";
-                } catch (Exception s) {
-                    s.printStackTrace();
-                }
-                break;
-            case "FlatNightOwlContrastIJTheme":
-                try {
+                    break;
+                case "FlatNightOwlContrastIJTheme":
                     UIManager.setLookAndFeel(new FlatNightOwlContrastIJTheme());
-                    valueOfSkin = "FlatNightOwlContrastIJTheme";
-                } catch (Exception s) {
-                    s.printStackTrace();
-                }
-                break;
-            default:
-
+                    break;
+            }
+        } catch (Exception s) {
+            s.printStackTrace();
         }
+        valueOfSkin = select_theme;
         readWriteInfoFile();
     }
 
@@ -835,8 +803,8 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
                 data = setReader.nextLine();
             }
             setReader.close();
-            if(!data.equals(valueOfSkin)){
-                try{
+            if (!data.equals(valueOfSkin)) {
+                try {
                     FileWriter setWriter = new FileWriter("C:/Users/Dani/IdeaProjects/java/tests/src/VDSystem/set.txt");
                     setWriter.write(valueOfSkin);
                     setWriter.close();
