@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
+      <change afterPath="$PROJECT_DIR$/src/data/students.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/demo/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dom/DOMHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dom/StudentDOM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VDSystem/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VDSystem/MainScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/XMLTest/XMLTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,12 +77,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Razni.TestGUI" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="demo.Main" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Razni.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -86,8 +90,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestGUIEdno" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Razni.TestGUIEdno" />
+    <configuration name="TestGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Razni.TestGUI" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
@@ -128,10 +132,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.TreeTestIconII" />
         <item itemvalue="Application.TreeTestIcon" />
         <item itemvalue="Application.TestGUI" />
-        <item itemvalue="Application.TestGUIEdno" />
       </list>
     </recent_temporary>
   </component>
@@ -143,13 +147,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00203" summary="Update">
-      <created>1677172101586</created>
-      <option name="number" value="00203" />
-      <option name="presentableId" value="LOCAL-00203" />
-      <option name="project" value="LOCAL" />
-      <updated>1677172101586</updated>
     </task>
     <task id="LOCAL-00204" summary="Update">
       <created>1677173135801</created>
@@ -487,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677833942559</updated>
     </task>
-    <option name="localTasksCounter" value="252" />
+    <task id="LOCAL-00252" summary="Update">
+      <created>1677837392895</created>
+      <option name="number" value="00252" />
+      <option name="presentableId" value="LOCAL-00252" />
+      <option name="project" value="LOCAL" />
+      <updated>1677837392895</updated>
+    </task>
+    <option name="localTasksCounter" value="253" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
