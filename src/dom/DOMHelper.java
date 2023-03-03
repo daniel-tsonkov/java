@@ -51,7 +51,7 @@ public class DOMHelper {
             StreamResult sr = new StreamResult(path_to_file);
             tf.transform(ds, sr);
         }catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            //System.out.println(ex.getMessage());
         }
     }
 }

@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <strudents>
     <student>
-        <id>01</id>
-        <name>Name 1</name>
-        <age>21</age>
-    </student>
-    <student>
         <id>02</id>
         <name>Name 2</name>
         <age>22</age>
     </student>
     <student>
         <id>03</id>
-        <name>Name 3</name>
-        <age>23</age>
+        <name>name 05</name>
+        <age>25</age>
     </student>
 </strudents>
