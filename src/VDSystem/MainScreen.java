@@ -550,9 +550,21 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         //vazlozhitel_panel.setBorder(new EmptyBorder(100, 100, 100, 100));
         vazlozhitel_panel.setPreferredSize(new Dimension(800, 500));
 
-        JPanel vazlozhitel_panel1 = new JPanel();
-        vazlozhitel_panel1.setBorder(BorderFactory.createLineBorder(Color.black));
-        vazlozhitel_panel1.setPreferredSize(new Dimension(800, 500));
+        JPanel zavedena_kato_panel = new JPanel();
+        zavedena_kato_panel.setBorder(BorderFactory.createLineBorder(Color.black));
+        zavedena_kato_panel.setPreferredSize(new Dimension(800, 500));
+
+        JPanel obstoyatelstva_panel = new JPanel();
+        obstoyatelstva_panel.setBorder(BorderFactory.createLineBorder(Color.black));
+        obstoyatelstva_panel.setPreferredSize(new Dimension(800, 500));
+
+        JPanel objects_panel = new JPanel();
+        objects_panel.setBorder(BorderFactory.createLineBorder(Color.black));
+        objects_panel.setPreferredSize(new Dimension(800, 500));
+
+        JPanel tasks_panel = new JPanel();
+        tasks_panel.setBorder(BorderFactory.createLineBorder(Color.black));
+        tasks_panel.setPreferredSize(new Dimension(800, 500));
 
         JPanel panel1 = new JPanel();
         panel1.setBorder(BorderFactory.createEmptyBorder(50, 20, 300, 20));
@@ -561,11 +573,20 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         panel2.setBorder(BorderFactory.createEmptyBorder(50, 20, 300, 20));
         panel2.setLayout(new BorderLayout());
         JPanel panel3 = new JPanel();
+        panel3.setBorder(BorderFactory.createEmptyBorder(50, 20, 300, 20));
+        panel3.setLayout(new BorderLayout());
         JPanel panel4 = new JPanel();
+        panel4.setBorder(BorderFactory.createEmptyBorder(50, 20, 300, 20));
+        panel4.setLayout(new BorderLayout());
         JPanel panel5 = new JPanel();
+        panel5.setBorder(BorderFactory.createEmptyBorder(50, 20, 300, 20));
+        panel5.setLayout(new BorderLayout());
 
         panel1.add(vazlozhitel_panel, BorderLayout.CENTER);
-        panel2.add(vazlozhitel_panel1, BorderLayout.CENTER);
+        panel2.add(zavedena_kato_panel, BorderLayout.CENTER);
+        panel3.add(obstoyatelstva_panel, BorderLayout.CENTER);
+        panel4.add(objects_panel, BorderLayout.CENTER);
+        panel5.add(tasks_panel, BorderLayout.CENTER);
 
         JLabel L1 = new JLabel("Експертизата е назначена от ");
         L1.setFont(new Font("Arial", Font.PLAIN, 16));
@@ -686,23 +707,23 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         Dimension size2 = L11.getPreferredSize();
         L11.setBounds(150, 100, size2.width, size2.height);
         L11.setLayout(null);
-        vazlozhitel_panel1.add(L11);
+        zavedena_kato_panel.add(L11);
         T11 = new JTextField();
         T11.setFont(new Font("Arial", Font.PLAIN, 16));
         T11.setText(dp_no);
         T11.setPreferredSize(new Dimension(120, 25));
-        vazlozhitel_panel1.add(T11);
+        zavedena_kato_panel.add(T11);
         JLabel L12 = new JLabel(" /  ");
         L12.setFont(new Font("Arial", Font.PLAIN, 16));
         //Dimension size2 = L11.getPreferredSize();
         //L11.setBounds(150, 100, size2.width, size2.height);
         L12.setLayout(null);
-        vazlozhitel_panel1.add(L12);
+        zavedena_kato_panel.add(L12);
         T12 = new JTextField();
         T12.setFont(new Font("Arial", Font.PLAIN, 16));
         T12.setText(date_expertise);
         T12.setPreferredSize(new Dimension(120, 25));
-        vazlozhitel_panel1.add(T12);
+        zavedena_kato_panel.add(T12);
 
         protocol = new JTabbedPane();
 
