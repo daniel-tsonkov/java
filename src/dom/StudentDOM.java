@@ -8,9 +8,10 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 public class StudentDOM {
+
     public void Add() {
-        Document d = DOMHelper.getDocument("src\\data\\students.xml");
         try {
+            Document d = DOMHelper.getDocument("src\\data\\students.xml");
             Element students = d.getDocumentElement();
             //crate student tag
             Element student = d.createElement("student");

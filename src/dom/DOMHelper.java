@@ -12,13 +12,13 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.StringWriter;
 
 public class DOMHelper {
-    public static Document getDocument(String pat_to_file) {
-        Document d;
 
+    public static Document getDocument(String path_to_file) {
+        Document d = null;
         try {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
-            d = db.parse(pat_to_file);
+            d = db.parse(path_to_file);
         } catch (Exception ex) {
             d = null;
         }
@@ -26,7 +26,7 @@ public class DOMHelper {
     }
 
     public static String getXMLContent(Document d) {
-        String result;
+        String result = "";
         try {
             TransformerFactory tff = TransformerFactory.newInstance();
             Transformer tf = tff.newTransformer();
@@ -50,8 +50,8 @@ public class DOMHelper {
             DOMSource ds = new DOMSource(d);
             StreamResult sr = new StreamResult(path_to_file);
             tf.transform(ds, sr);
-        }catch (Exception ex) {
-            //System.out.println(ex.getMessage());
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
         }
     }
 }
