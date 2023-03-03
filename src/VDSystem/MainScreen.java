@@ -51,6 +51,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     static DefaultMutableTreeNode new_expertise;
     public static String valueOfSkin;
     public static String[] objects = {"Standart", "FlatArcIJTheme", "FlatArcOrangeIJTheme", "FlatCarbonIJTheme", "FlatHighContrastIJTheme", "FlatLightOwlContrastIJTheme", "FlatNightOwlContrastIJTheme"};
+    JTextArea obstoyatelstva_text;
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -557,6 +558,9 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         JPanel obstoyatelstva_panel = new JPanel();
         obstoyatelstva_panel.setBorder(BorderFactory.createLineBorder(Color.black));
         obstoyatelstva_panel.setPreferredSize(new Dimension(800, 500));
+        /*Container c = new Container();
+        c.setLayout(null);
+        obstoyatelstva_panel.add(c);*/
 
         JPanel objects_panel = new JPanel();
         objects_panel.setBorder(BorderFactory.createLineBorder(Color.black));
@@ -566,6 +570,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         tasks_panel.setBorder(BorderFactory.createLineBorder(Color.black));
         tasks_panel.setPreferredSize(new Dimension(800, 500));
 
+
         JPanel panel1 = new JPanel();
         panel1.setBorder(BorderFactory.createEmptyBorder(50, 20, 300, 20));
         panel1.setLayout(new BorderLayout());
@@ -574,7 +579,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
         panel2.setLayout(new BorderLayout());
         JPanel panel3 = new JPanel();
         panel3.setBorder(BorderFactory.createEmptyBorder(50, 20, 300, 20));
-        panel3.setLayout(new BorderLayout());
+        //panel3.setLayout(new BorderLayout());
         JPanel panel4 = new JPanel();
         panel4.setBorder(BorderFactory.createEmptyBorder(50, 20, 300, 20));
         panel4.setLayout(new BorderLayout());
@@ -584,9 +589,42 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
 
         panel1.add(vazlozhitel_panel, BorderLayout.CENTER);
         panel2.add(zavedena_kato_panel, BorderLayout.CENTER);
-        panel3.add(obstoyatelstva_panel, BorderLayout.CENTER);
+        panel3.add(obstoyatelstva_panel);
         panel4.add(objects_panel, BorderLayout.CENTER);
         panel5.add(tasks_panel, BorderLayout.CENTER);
+
+        obstoyatelstva_text = new JTextArea("Не са посочени в постановлението за назначаване на експертиза.");
+        //obstoyatelstva_text.setBackground(new Color(255, 255, 255));
+        obstoyatelstva_text.setBorder(BorderFactory.createLineBorder(Color.black));
+        obstoyatelstva_text.setLineWrap(true);
+        obstoyatelstva_text.setSize(400, 400);
+        obstoyatelstva_text.setFont(new Font("Arial", Font.PLAIN, 16));
+        Dimension obstoyatelstva_panel_size = obstoyatelstva_panel.getPreferredSize();
+        obstoyatelstva_text.setBounds(0, 0, obstoyatelstva_panel_size.width - 5, obstoyatelstva_panel_size.height - 5);
+        //obstoyatelstva_text.setBounds(0, 0, 500, 500);
+        obstoyatelstva_text.setLayout(null);
+        obstoyatelstva_text.setForeground(new Color(250, 80, 80));
+        obstoyatelstva_text.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (obstoyatelstva_text.getText().equals("Не са посочени в постановлението за назначаване на експертиза.")) {
+                    obstoyatelstva_text.setText("");
+                    obstoyatelstva_text.setForeground(new Color(0, 0, 0));
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                obstoyatelstva_text.setText(obstoyatelstva_text.getText());
+                if (obstoyatelstva_text.getText().equals("")) {
+                    obstoyatelstva_text.setText("Не са посочени в постановлението за назначаване на експертиза.");
+                    obstoyatelstva_text.setForeground(new Color(250, 80, 80));
+                } else {
+                    obstoyatelstva_text.setForeground(new Color(0, 0, 0));
+                }
+            }
+        });
+        obstoyatelstva_panel.add(obstoyatelstva_text);
 
         JLabel L1 = new JLabel("Експертизата е назначена от ");
         L1.setFont(new Font("Arial", Font.PLAIN, 16));
