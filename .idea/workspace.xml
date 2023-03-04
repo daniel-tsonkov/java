@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/src/dom/DOMHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dom/DOMHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dom/StudentDOM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dom/StudentDOM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/XMLParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ZIP/Zip_File_Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/students.xml" beforeDir="false" afterPath="$PROJECT_DIR$/students.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,14 +54,14 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\VDSystem" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dani\IdeaProjects\java\tests" />
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\VDSystem" />
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\VDSystem\resources" />
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\aaa" />
-      <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\ааа" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.XMLParser">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="VDSystem.Main" />
       <module name="testove" />
@@ -125,13 +127,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="XMLParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="XMLParser" />
+      <module name="testove" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.XMLParser" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.TreeTestIconII" />
         <item itemvalue="Application.TreeTestIcon" />
-        <item itemvalue="Application.TestGUI" />
       </list>
     </recent_temporary>
   </component>
@@ -143,20 +152,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00206" summary="Update">
-      <created>1677177713577</created>
-      <option name="number" value="00206" />
-      <option name="presentableId" value="LOCAL-00206" />
-      <option name="project" value="LOCAL" />
-      <updated>1677177713577</updated>
-    </task>
-    <task id="LOCAL-00207" summary="Update">
-      <created>1677178966086</created>
-      <option name="number" value="00207" />
-      <option name="presentableId" value="LOCAL-00207" />
-      <option name="project" value="LOCAL" />
-      <updated>1677178966086</updated>
     </task>
     <task id="LOCAL-00208" summary="Update">
       <created>1677179565055</created>
@@ -487,7 +482,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677855971877</updated>
     </task>
-    <option name="localTasksCounter" value="255" />
+    <task id="LOCAL-00255" summary="Update">
+      <created>1677856463055</created>
+      <option name="number" value="00255" />
+      <option name="presentableId" value="LOCAL-00255" />
+      <option name="project" value="LOCAL" />
+      <updated>1677856463055</updated>
+    </task>
+    <task id="LOCAL-00256" summary="Update">
+      <created>1677856573570</created>
+      <option name="number" value="00256" />
+      <option name="presentableId" value="LOCAL-00256" />
+      <option name="project" value="LOCAL" />
+      <updated>1677856573570</updated>
+    </task>
+    <option name="localTasksCounter" value="257" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

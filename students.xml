@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<strudents>
+    <student name="001">
+        <price value="100" />
+        <ram value="1" />
+        <ssd value="1000" />
+    </student>
+    <student name="002">
+        <price value="200" />
+        <ram value="2" />
+        <hardDrive value="2000" />
+    </student>
+    <student name="003">
+        <price value="300" />
+        <ram value="3" />
+        <hardDrive value="3000" />
+    </student>
+</strudents>
