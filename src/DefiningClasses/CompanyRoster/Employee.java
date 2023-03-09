@@ -47,7 +47,7 @@ public class Employee {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append(name + " ").append(salary + " ");
+        builder.append(name + " ").append(String.format("%.2f ",salary + " "));
         if (email != null) {
             builder.append(email + " ");
         }else {
