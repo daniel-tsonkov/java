@@ -10,4 +10,8 @@ public class Company {
         this.department = department;
         this.salary = salary;
     }
+    @Override
+    public String toString() {
+        return companyName + " " + department + " " + String.format("%.2f", salary);
+    }
 }

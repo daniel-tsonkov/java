@@ -8,4 +8,9 @@ public class Parent {
         this.parentName = parentName;
         this.parentBirthday = parentBirthday;
     }
+
+    @Override
+    public String toString() {
+        return parentName + " " + parentBirthday;
+    }
 }

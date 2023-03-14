@@ -8,4 +8,8 @@ public class Pokemon {
         this.pokemonName = pokemonName;
         this.pokemonType = pokemonType;
     }
+    @Override
+    public String toString() {
+        return pokemonName + " " + pokemonType;
+    }
 }
