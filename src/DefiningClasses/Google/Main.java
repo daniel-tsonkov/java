@@ -13,6 +13,9 @@ public class Main {
         while (!information.equals("End")) {
             String[] parameters = information.split("\\S+");
             String personName = parameters[0];
+            if(!peopleData.containsKey(personName)) {
+                peopleData.put(personName, new Person());
+            }
             String typeCommand = parameters[1];
             switch (typeCommand) {
                 case "company":
