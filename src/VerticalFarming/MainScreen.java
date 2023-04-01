@@ -107,22 +107,8 @@ public class MainScreen  extends JFrame implements ActionListener {
         this.add(rightPanel, BorderLayout.EAST);
         this.add(statusPanel, BorderLayout.SOUTH);
         this.add(workArea, BorderLayout.CENTER);
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(TestCOM.class.getResource("C:/Users/Dani/IdeaProjects/java/tests/src/VerticalFarming/resourcesleafs.png")));//"resources/leafs.png")));
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(TestCOM.class.getResource("/VerticalFarming/resources/leafs.png")));
     }
-
-        /*public void readBytes() {
-            byte[] readBuffer = new byte[10];
-            sp.readBytes(readBuffer, readBuffer.length);
-            String isLedOn = null; //convert bytes to String
-            try {
-                isLedOn = new String(readBuffer, "UTF-8");
-            } catch (UnsupportedEncodingException ex) {
-                ex.printStackTrace();
-            }
-            isLedOn = isLedOn.replace("\n", "").replace("\r", "").replace("\0", "");
-            System.out.println("LED -> " + isLedOn);
-            statusLed.setText("LED " + isLedOn);
-        }*/
 
     public void incomingData() {
         sp.addDataListener(new SerialPortDataListener() {
