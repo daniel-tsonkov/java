@@ -88,14 +88,14 @@ public class MainScreen  extends JFrame implements ActionListener {
         workArea.setBackground(new Color(0, 0, 0));
 
         JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1280, 768);
-        frame.setLayout(new BorderLayout(1, 2));
-        frame.setVisible(true);
-        frame.getContentPane().setBackground(new Color(200, 200, 200));
-        frame.setTitle("COM Port Test");
-        frame.setResizable(false);
-        frame.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setSize(1280, 768);
+        this.setLayout(new BorderLayout(1, 2));
+        this.setVisible(true);
+        this.getContentPane().setBackground(new Color(200, 200, 200));
+        this.setTitle("COM Port Test");
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
         leftPanel.add(selectPort);
         statusPanel.add(statusLed);
         leftPanel.add(runPort);
@@ -103,11 +103,11 @@ public class MainScreen  extends JFrame implements ActionListener {
         leftPanel.add(disconnectButton);
         rightPanel.add(onButton);
         rightPanel.add(offButton);
-        frame.add(leftPanel, BorderLayout.WEST);
-        frame.add(rightPanel, BorderLayout.EAST);
-        frame.add(statusPanel, BorderLayout.SOUTH);
-        frame.add(workArea, BorderLayout.CENTER);
-        frame.setIconImage(Toolkit.getDefaultToolkit().getImage(TestCOM.class.getResource("/icon.jpg")));
+        this.add(leftPanel, BorderLayout.WEST);
+        this.add(rightPanel, BorderLayout.EAST);
+        this.add(statusPanel, BorderLayout.SOUTH);
+        this.add(workArea, BorderLayout.CENTER);
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(TestCOM.class.getResource("C:/Users/Dani/IdeaProjects/java/tests/src/VerticalFarming/resourcesleafs.png")));//"resources/leafs.png")));
     }
 
         /*public void readBytes() {
