@@ -15,7 +15,8 @@ public class MainScreen  extends JFrame implements ActionListener {
     JLabel selectPort = new JLabel();
     JLabel statusLed = new JLabel();
     JComboBox runPort;
-
+    ImageIcon iconSettings = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/gear.png")));
+    JButton settingsButton = new JButton(iconSettings);
     JButton connectButton = new JButton();
     JButton disconnectButton = new JButton();
     JButton onButton = new JButton();
@@ -47,8 +48,7 @@ public class MainScreen  extends JFrame implements ActionListener {
         statusLed.setForeground(new Color(255, 255, 255));
         //statusLed.setVerticalTextPosition(JLabel.BOTTOM);
 
-        ImageIcon iconSettings = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/gear.png")));
-        JButton settingsButton = new JButton(iconSettings);
+
         settingsButton.setPreferredSize(new Dimension(30, 30));
         settingsButton.setMargin(new Insets(0, 0, 0, 0));
 
@@ -143,6 +143,10 @@ public class MainScreen  extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == settingsButton) {
+            Settings();
+        }
+
         if (e.getSource() == runPort) {
             openPort = runPort.getSelectedItem().toString();
         }
