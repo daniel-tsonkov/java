@@ -16,6 +16,7 @@ public class MainScreen  extends JFrame implements ActionListener {
     JLabel selectPort = new JLabel();
     JLabel statusLed = new JLabel();
     JComboBox runPort;
+    JButton settingsButton = new JButton();
     JButton connectButton = new JButton();
     JButton disconnectButton = new JButton();
     JButton onButton = new JButton();
@@ -47,6 +48,9 @@ public class MainScreen  extends JFrame implements ActionListener {
         statusLed.setForeground(new Color(255, 255, 255));
         //statusLed.setVerticalTextPosition(JLabel.BOTTOM);
 
+        settingsButton.setPreferredSize(new Dimension(30, 30));
+        settingsButton.setMargin(new Insets(0, 0, 0, 0));
+
         connectButton.setText("Connect");
         connectButton.setFocusable(false);
         connectButton.setPreferredSize(new Dimension(90, 30));
@@ -67,6 +71,10 @@ public class MainScreen  extends JFrame implements ActionListener {
         offButton.setFocusable(false);
         offButton.setPreferredSize(new Dimension(90, 30));
         offButton.addActionListener(this);
+
+        JPanel topPanel = new JPanel();
+        topPanel.setPreferredSize(new Dimension(20, 35));
+        topPanel.setBackground(new Color(100, 100, 100));
 
         JPanel leftPanel = new JPanel();
         //leftPanel.setBounds(0, 0, 200, 540);
@@ -96,6 +104,7 @@ public class MainScreen  extends JFrame implements ActionListener {
         this.setTitle("COM Port Test");
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        topPanel.add(settingsButton, BorderLayout.EAST);
         leftPanel.add(selectPort);
         statusPanel.add(statusLed);
         leftPanel.add(runPort);
@@ -103,6 +112,7 @@ public class MainScreen  extends JFrame implements ActionListener {
         leftPanel.add(disconnectButton);
         rightPanel.add(onButton);
         rightPanel.add(offButton);
+        this.add(topPanel, BorderLayout.NORTH);
         this.add(leftPanel, BorderLayout.WEST);
         this.add(rightPanel, BorderLayout.EAST);
         this.add(statusPanel, BorderLayout.SOUTH);
