@@ -49,10 +49,8 @@ public class MainScreen  extends JFrame implements ActionListener {
 
         ImageIcon iconSettings = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/gear.png")));
         JButton settingsButton = new JButton(iconSettings);
-        //settingsButton.setIconImage(Toolkit.getDefaultToolkit().getImage(TestCOM.class.getResource("/VerticalFarming/resources/gear.png")));
-        settingsButton.setPreferredSize(new Dimension(60, 60));
+        settingsButton.setPreferredSize(new Dimension(30, 30));
         settingsButton.setMargin(new Insets(0, 0, 0, 0));
-        settingsButton.setLocation (50, 0);
 
         connectButton.setText("Connect");
         connectButton.setFocusable(false);
@@ -76,9 +74,9 @@ public class MainScreen  extends JFrame implements ActionListener {
         offButton.addActionListener(this);
 
         JPanel topPanel = new JPanel();
-        topPanel.setPreferredSize(new Dimension(20, 70));
+        topPanel.setPreferredSize(new Dimension(20, 35));
         topPanel.setBackground(new Color(100, 100, 100));
-        topPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        topPanel.setLayout(new BorderLayout());
 
         JPanel leftPanel = new JPanel();
         //leftPanel.setBounds(0, 0, 200, 540);
