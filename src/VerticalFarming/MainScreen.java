@@ -16,7 +16,7 @@ public class MainScreen  extends JFrame implements ActionListener {
     JLabel selectPort = new JLabel();
     JLabel statusLed = new JLabel();
     JComboBox runPort;
-    JButton settingsButton = new JButton();
+
     JButton connectButton = new JButton();
     JButton disconnectButton = new JButton();
     JButton onButton = new JButton();
@@ -48,7 +48,10 @@ public class MainScreen  extends JFrame implements ActionListener {
         statusLed.setForeground(new Color(255, 255, 255));
         //statusLed.setVerticalTextPosition(JLabel.BOTTOM);
 
-        settingsButton.setPreferredSize(new Dimension(30, 30));
+        ImageIcon iconSettings = new ImageIcon(Toolkit.getDefaultToolkit().getImage("icon.jpg"));
+        JButton settingsButton = new JButton(iconSettings);
+        //settingsButton.setIconImage(Toolkit.getDefaultToolkit().getImage(TestCOM.class.getResource("/VerticalFarming/resources/gear.png")));
+        settingsButton.setPreferredSize(new Dimension(60, 60));
         settingsButton.setMargin(new Insets(0, 0, 0, 0));
         settingsButton.setLocation (50, 0);
 
@@ -74,7 +77,7 @@ public class MainScreen  extends JFrame implements ActionListener {
         offButton.addActionListener(this);
 
         JPanel topPanel = new JPanel();
-        topPanel.setPreferredSize(new Dimension(20, 35));
+        topPanel.setPreferredSize(new Dimension(20, 70));
         topPanel.setBackground(new Color(100, 100, 100));
         topPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
 
@@ -118,7 +121,7 @@ public class MainScreen  extends JFrame implements ActionListener {
         this.add(rightPanel, BorderLayout.EAST);
         this.add(statusPanel, BorderLayout.SOUTH);
         this.add(workArea, BorderLayout.CENTER);
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(TestCOM.class.getResource("/VerticalFarming/resources/leafs.png")));
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(TestCOM.class.getResource("/VerticalFarming/resources/gear.png")));
     }
 
     public void incomingData() {
