@@ -1,6 +1,5 @@
 package VerticalFarming;
 
-import Swing1.TestCOM;
 import com.fazecast.jSerialComm.SerialPort;
 import com.fazecast.jSerialComm.SerialPortDataListener;
 import com.fazecast.jSerialComm.SerialPortEvent;
@@ -48,7 +47,7 @@ public class MainScreen  extends JFrame implements ActionListener {
         statusLed.setForeground(new Color(255, 255, 255));
         //statusLed.setVerticalTextPosition(JLabel.BOTTOM);
 
-        ImageIcon iconSettings = new ImageIcon(Toolkit.getDefaultToolkit().getImage("icon.jpg"));
+        ImageIcon iconSettings = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/gear.png")));
         JButton settingsButton = new JButton(iconSettings);
         //settingsButton.setIconImage(Toolkit.getDefaultToolkit().getImage(TestCOM.class.getResource("/VerticalFarming/resources/gear.png")));
         settingsButton.setPreferredSize(new Dimension(60, 60));
@@ -121,7 +120,7 @@ public class MainScreen  extends JFrame implements ActionListener {
         this.add(rightPanel, BorderLayout.EAST);
         this.add(statusPanel, BorderLayout.SOUTH);
         this.add(workArea, BorderLayout.CENTER);
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(TestCOM.class.getResource("/VerticalFarming/resources/gear.png")));
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/leafs.png")));
     }
 
     public void incomingData() {
