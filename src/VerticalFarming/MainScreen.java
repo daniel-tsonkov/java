@@ -158,8 +158,8 @@ public class MainScreen  extends JFrame implements ActionListener {
 
         int cmd = Integer.parseInt(e.getActionCommand());
         System.out.println(Integer.parseInt(e.getActionCommand()));
-        if(Integer.parseInt(e.getActionCommand()) == 5) {
+        /*if(Integer.parseInt(e.getActionCommand()) == 5) {
             array2dtop[xCell][yCell].setBackground(new Color(255, 100, 100));
-        }
+        }*/
     }
 }
