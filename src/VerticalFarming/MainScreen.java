@@ -50,6 +50,7 @@ public class MainScreen  extends JFrame implements ActionListener {
 
         settingsButton.setPreferredSize(new Dimension(30, 30));
         settingsButton.setMargin(new Insets(0, 0, 0, 0));
+        settingsButton.setLocation (50, 0);
 
         connectButton.setText("Connect");
         connectButton.setFocusable(false);
@@ -75,6 +76,7 @@ public class MainScreen  extends JFrame implements ActionListener {
         JPanel topPanel = new JPanel();
         topPanel.setPreferredSize(new Dimension(20, 35));
         topPanel.setBackground(new Color(100, 100, 100));
+        topPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
 
         JPanel leftPanel = new JPanel();
         //leftPanel.setBounds(0, 0, 200, 540);
@@ -95,7 +97,6 @@ public class MainScreen  extends JFrame implements ActionListener {
         workArea.setPreferredSize(new Dimension(200, 200));
         workArea.setBackground(new Color(0, 0, 0));
 
-        JFrame frame = new JFrame();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(1280, 768);
         this.setLayout(new BorderLayout(1, 2));
