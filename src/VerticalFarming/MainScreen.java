@@ -28,6 +28,7 @@ public class MainScreen  extends JFrame implements ActionListener {
     static SerialPort sp;
     OutputStream outputStream1;
     String receivedAnswers = "";
+    int cmd = 0;
 
     MainScreen() {
         settingsButton.setPreferredSize(new Dimension(30, 30));
@@ -61,7 +62,6 @@ public class MainScreen  extends JFrame implements ActionListener {
         workArea.setPreferredSize(new Dimension(200, 200));
         workArea.setBackground(new Color(0, 0, 0));
 
-
         for (xCell = 0; xCell < array2dtop.length; xCell++) {
             for (int yCell = 0; yCell < array2dtop.length; yCell++) {
                 array2dtop[xCell][yCell] = new JButton("C" + String.valueOf((xCell * 10) + yCell));
@@ -79,7 +79,7 @@ public class MainScreen  extends JFrame implements ActionListener {
         this.setLayout(new BorderLayout(2, 2));
         this.setVisible(true);
         this.getContentPane().setBackground(new Color(200, 200, 200));
-        this.setTitle("COM Port Test");
+        this.setTitle("Pidleri");
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         topPanel.add(settingsButton, BorderLayout.EAST);
@@ -125,12 +125,6 @@ public class MainScreen  extends JFrame implements ActionListener {
             }
             this.setEnabled(false);
         }
-
-        if (e.getSource() == runPort) {
-            openPort = runPort.getSelectedItem().toString();
-        }
-
-
         if (e.getSource() == onButton) {
             outputStream1 = sp.getOutputStream();
             String dataToSend = "";
@@ -156,8 +150,11 @@ public class MainScreen  extends JFrame implements ActionListener {
             incomingData();
         }
 
-        int cmd = Integer.parseInt(e.getActionCommand());
-        System.out.println(Integer.parseInt(e.getActionCommand()));
+        //int cmd = Integer.parseInt(e.getActionCommand());
+        try {
+            System.out.println(Integer.parseInt(e.getActionCommand()));
+        } catch (NumberFormatException numberFormatException) {
+        }
         /*if(Integer.parseInt(e.getActionCommand()) == 5) {
             array2dtop[xCell][yCell].setBackground(new Color(255, 100, 100));
         }*/

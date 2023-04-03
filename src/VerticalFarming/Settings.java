@@ -91,38 +91,42 @@ public class Settings  extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == runPort) {
+            MainScreen.openPort = runPort.getSelectedItem().toString();
+        }
+
         if (e.getSource() == ok) {
             mainScreen.setEnabled(true);
             this.dispose();
         }
 
-        String openPort = null;
-        SerialPort sp = null;
+        //String openPort = null;
+        //SerialPort sp = null;
         if (e.getSource() == connectButton) {
-            sp = SerialPort.getCommPort(openPort);//COM9
-            sp.setComPortParameters(9600, 8, 1, 0); // default connection settings for Arduino
-            sp.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0); // block until bytes can be written TIMEOUT_READ_SEMI_BLOCKING
+            MainScreen.sp = SerialPort.getCommPort(MainScreen.openPort);//COM9
+            MainScreen.sp.setComPortParameters(9600, 8, 1, 0); // default connection settings for Arduino
+            MainScreen.sp.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0); // block until bytes can be written TIMEOUT_READ_SEMI_BLOCKING
 
-            if (sp.openPort()) {
+            if (MainScreen.sp.openPort()) {
                 disconnectButton.setEnabled(true);
                 connectButton.setEnabled(false);
-                System.out.println(openPort + " is open :)");
-                selectPort.setText(openPort + " is open");
+                System.out.println(MainScreen.openPort + " is open :)");
+                selectPort.setText(MainScreen.openPort + " is open");
             } else {
                 System.out.println("Failed to open port :(");
-                selectPort.setText("Check again " + openPort);
+                selectPort.setText("Check again " + MainScreen.openPort);
             }
         }
 
         if (e.getSource() == disconnectButton) {
-            if (sp.closePort()) {
+            if (MainScreen.sp.closePort()) {
                 disconnectButton.setEnabled(false);
                 connectButton.setEnabled(true);
-                System.out.println(openPort + " is closed :)");
-                selectPort.setText(openPort + " is closed");
+                System.out.println(MainScreen.openPort + " is closed :)");
+                selectPort.setText(MainScreen.openPort + " is closed");
             } else {
                 System.out.println("Failed to close port :(");
-                selectPort.setText("Check again " + openPort);
+                selectPort.setText("Check again " + MainScreen.openPort);
             }
         }
     }
