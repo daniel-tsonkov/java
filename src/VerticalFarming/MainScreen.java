@@ -119,6 +119,8 @@ public class MainScreen  extends JFrame implements ActionListener {
         this.add(statusPanel, BorderLayout.SOUTH);
         this.add(workArea, BorderLayout.CENTER);
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/leafs.png")));
+
+        settingsButton.addActionListener(this);
     }
 
     public void incomingData() {
@@ -144,7 +146,12 @@ public class MainScreen  extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == settingsButton) {
-            Settings();
+            try {
+                Settings settings = new Settings(this);
+            } catch (ClassNotFoundException ex) {
+                ex.printStackTrace();
+            }
+            this.setEnabled(false);
         }
 
         if (e.getSource() == runPort) {
