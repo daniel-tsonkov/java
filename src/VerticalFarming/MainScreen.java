@@ -18,7 +18,7 @@ public class MainScreen extends JFrame implements ActionListener {
     ImageIcon iconSettings = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/gear.png")));
     JButton settingsButton = new JButton(iconSettings);
     JButton setMacAddr = new JButton();
-    JButton setReciveMacAddr = new JButton();
+    JButton getSoil = new JButton();
     JButton onButton = new JButton();
     JButton offButton = new JButton();
     JButton getTempAndHum = new JButton();
@@ -44,11 +44,6 @@ public class MainScreen extends JFrame implements ActionListener {
         setMacAddr.setMargin(new Insets(0, 0, 0, 0));
         setMacAddr.addActionListener(this);
 
-        setReciveMacAddr.setText("Recive mac");
-        setReciveMacAddr.setFocusable(false);
-        setReciveMacAddr.setPreferredSize(new Dimension(90, 30));
-        setReciveMacAddr.setMargin(new Insets(0, 0, 0, 0));
-        setReciveMacAddr.addActionListener(this);
 
         onButton.setText("on");
         onButton.setFocusable(false);
@@ -65,6 +60,12 @@ public class MainScreen extends JFrame implements ActionListener {
         getTempAndHum.setPreferredSize(new Dimension(185, 30));
         getTempAndHum.setMargin(new Insets(0, 0, 0, 0));
         getTempAndHum.addActionListener(this);
+
+        getSoil.setText("Get Soil");
+        getSoil.setFocusable(false);
+        getSoil.setPreferredSize(new Dimension(180, 30));
+        getSoil.setMargin(new Insets(0, 0, 0, 0));
+        getSoil.addActionListener(this);
 
         JPanel topPanel = new JPanel();
         topPanel.setPreferredSize(new Dimension(20, 30));
@@ -107,10 +108,10 @@ public class MainScreen extends JFrame implements ActionListener {
         topPanel.add(settingsButton, BorderLayout.EAST);
         statusPanel.add(statusLed, BorderLayout.WEST);
         rightPanel.add(setMacAddr);
-        //rightPanel.add(setReciveMacAddr);
         rightPanel.add(onButton);
         rightPanel.add(offButton);
         rightPanel.add(getTempAndHum);
+        rightPanel.add(getSoil);
         this.add(topPanel, BorderLayout.NORTH);
         this.add(rightPanel, BorderLayout.EAST);
         this.add(statusPanel, BorderLayout.SOUTH);
@@ -166,15 +167,6 @@ public class MainScreen extends JFrame implements ActionListener {
                 ex.printStackTrace();
             }
         }
-        /*if (e.getSource() == setReciveMacAddr) {
-            outputStream1 = sp.getOutputStream();
-            String dataToSend = "\"{\\\"getdata\\\":\\\"macaddr:4C11AE13F2D0\\\"}\"";
-            try {
-                outputStream1.write(dataToSend.getBytes());
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }*/
         if (e.getSource() == onButton) {
             outputStream1 = sp.getOutputStream();
             String dataToSend = "\"{\\\"getdata\\\":\\\"relay:on\\\"}\"";
@@ -202,11 +194,20 @@ public class MainScreen extends JFrame implements ActionListener {
                 ex.printStackTrace();
             }
         }
+        if (e.getSource() == getSoil) {
+            outputStream1 = sp.getOutputStream();
+            String dataToSend = "\"{\\\"getdata\\\":\\\"getdata:soil\\\"}\"";
+            try {
+                outputStream1.write(dataToSend.getBytes());
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
         if (sp != null) {
             incomingData();
         }
 
-        if ((e.getSource() != settingsButton) && (e.getSource() != setMacAddr) && (e.getSource() != setReciveMacAddr) && (e.getSource() != onButton) && (e.getSource() != offButton) && (e.getSource() != offButton) && (e.getSource() != getTempAndHum)) {
+        if ((e.getSource() != settingsButton) && (e.getSource() != setMacAddr) && (e.getSource() != getSoil) && (e.getSource() != onButton) && (e.getSource() != offButton) && (e.getSource() != offButton) && (e.getSource() != getTempAndHum)) {
             cmd = Integer.parseInt(e.getActionCommand());
             try {
                 System.out.println(Integer.parseInt(e.getActionCommand()));
