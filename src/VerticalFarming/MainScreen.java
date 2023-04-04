@@ -172,11 +172,21 @@ public class MainScreen extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == addCell) {
-
+            try {
+                Settings settings = new Settings(this);
+            } catch (ClassNotFoundException ex) {
+                ex.printStackTrace();
+            }
+            this.setEnabled(false);
         }
 
         if (e.getSource() == deleteCell) {
-
+            try {
+                Settings settings = new Settings(this);
+            } catch (ClassNotFoundException ex) {
+                ex.printStackTrace();
+            }
+            this.setEnabled(false);
         }
         if (e.getSource() == settingsButton) {
             try {
@@ -235,7 +245,7 @@ public class MainScreen extends JFrame implements ActionListener {
             incomingData();
         }
 
-        if ((e.getSource() != settingsButton) && (e.getSource() != setMacAddr) && (e.getSource() != getSoil) && (e.getSource() != onButton) && (e.getSource() != offButton) && (e.getSource() != offButton) && (e.getSource() != getTempAndHum)) {
+        if ((e.getSource() != addCell) && (e.getSource() != deleteCell) && (e.getSource() != settingsButton) && (e.getSource() != setMacAddr) && (e.getSource() != getSoil) && (e.getSource() != onButton) && (e.getSource() != offButton) && (e.getSource() != offButton) && (e.getSource() != getTempAndHum)) {
             cmd = Integer.parseInt(e.getActionCommand());
             try {
                 System.out.println(Integer.parseInt(e.getActionCommand()));
@@ -259,21 +269,24 @@ public class MainScreen extends JFrame implements ActionListener {
         toolBar = new JToolBar();
         toolBar.setBackground(new Color(100, 100, 100));
         toolBar.setFloatable(false);
-        addCell = new JButton(iconAddCell);
+        //addCell = new JButton(iconAddCell);
         addCell.setFocusable(false);
-        addCell.setPreferredSize(new Dimension(35, 35));
+        addCell.setPreferredSize(new Dimension(32, 32));
         addCell.setMargin(new Insets(0, 0, 0, 0));
+        addCell.setBorder(BorderFactory.createEtchedBorder(0));
         toolBar.add(addCell);
-        deleteCell = new JButton(iconDeleteCell);
+        //deleteCell = new JButton(iconDeleteCell);
         deleteCell.setFocusable(false);
-        deleteCell.setPreferredSize(new Dimension(35, 35));
+        deleteCell.setPreferredSize(new Dimension(32, 32));
         deleteCell.setMargin(new Insets(0, 0, 0, 0));
+        deleteCell.setBorder(BorderFactory.createEtchedBorder(0));
         toolBar.add(deleteCell);
 
         toolBar.add(Box.createHorizontalGlue());
-        settingsButton = new JButton(iconSettings);
+        //settingsButton = new JButton(iconSettings);
         settingsButton.setFocusable(false);
-        settingsButton.setPreferredSize(new Dimension(35, 35));
+        settingsButton.setPreferredSize(new Dimension(30, 30));
+        settingsButton.setBorder(BorderFactory.createEtchedBorder(0));
         toolBar.add(settingsButton);
 
         Container pane = this.getContentPane(); //add to JPane toolbar
