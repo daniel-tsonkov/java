@@ -22,6 +22,10 @@ public class MainScreen extends JFrame implements ActionListener {
     JButton onButton = new JButton();
     JButton offButton = new JButton();
     JButton getTempAndHum = new JButton();
+    ImageIcon iconAddCell = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/addcell.png")));
+    JButton addCell = new JButton();
+    ImageIcon iconDeleteCell = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/deletecell.png")));
+    JButton deleteCell = new JButton();
     JButton[][] array2dtop = new JButton[10][10];
     int xCell = 0;
     int yCell = 0;
@@ -34,6 +38,14 @@ public class MainScreen extends JFrame implements ActionListener {
     int cmd = 0;
 
     MainScreen() {
+        addCell.setPreferredSize(new Dimension(30, 30));
+        addCell.setMargin(new Insets(0, 0, 0, 0));
+        addCell.setBackground(new Color(220, 220, 220));
+
+        deleteCell.setPreferredSize(new Dimension(30, 30));
+        deleteCell.setMargin(new Insets(0, 0, 0, 0));
+        deleteCell.setBackground(new Color(220, 220, 220));
+
         settingsButton.setPreferredSize(new Dimension(30, 30));
         settingsButton.setMargin(new Insets(0, 0, 0, 0));
         settingsButton.setBackground(new Color(220, 220, 220));
@@ -105,6 +117,8 @@ public class MainScreen extends JFrame implements ActionListener {
         this.setTitle("Pidleri");
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        topPanel.add(addCell, BorderLayout.WEST);
+        //topPanel.add(deleteCell, BorderLayout.WEST);
         topPanel.add(settingsButton, BorderLayout.EAST);
         statusPanel.add(statusLed, BorderLayout.WEST);
         rightPanel.add(setMacAddr);
