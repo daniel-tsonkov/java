@@ -78,6 +78,7 @@ public class MainScreen extends JFrame implements ActionListener {
         JPanel statusPanel = new JPanel();
         statusPanel.setPreferredSize(new Dimension(20, 20));
         statusPanel.setBackground(new Color(100, 100, 100));
+        statusPanel.setLayout(new BorderLayout());
 
         JPanel workArea = new JPanel();
         workArea.setPreferredSize(new Dimension(200, 200));
@@ -104,7 +105,7 @@ public class MainScreen extends JFrame implements ActionListener {
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         topPanel.add(settingsButton, BorderLayout.EAST);
-        statusPanel.add(statusLed);
+        statusPanel.add(statusLed, BorderLayout.WEST);
         rightPanel.add(setMacAddr);
         //rightPanel.add(setReciveMacAddr);
         rightPanel.add(onButton);
@@ -130,20 +131,18 @@ public class MainScreen extends JFrame implements ActionListener {
             public void serialEvent(SerialPortEvent serialPortEvent) {
                 byte[] newData = serialPortEvent.getReceivedData();
 
-                if(!receivedAnswers.equals("Set MAC address OK")) {
-                    receivedAnswers = "";
-                }
-
                 for (byte b : newData) {
                     receivedAnswers += (char) b;
                 }
-                statusLed.setText("LED " + receivedAnswers);
-                String answear = receivedAnswers.trim();
-                System.out.println(answear);
-                if(answear.equals("Set MAC address OK")) {
-                    actionA();
-
+                String answear = receivedAnswers.trim().replace("\n", "").replace("\0", "");
+                if (!answear.equals("")) {
+                    System.out.println(answear);
+                    statusLed.setText(answear);
                 }
+                if (answear.equals("Set MAC address OK")) {
+                    actionA();
+                }
+                receivedAnswers = "";
             }
         });
     }
@@ -167,7 +166,7 @@ public class MainScreen extends JFrame implements ActionListener {
                 ex.printStackTrace();
             }
         }
-        if (e.getSource() == setReciveMacAddr) {
+        /*if (e.getSource() == setReciveMacAddr) {
             outputStream1 = sp.getOutputStream();
             String dataToSend = "\"{\\\"getdata\\\":\\\"macaddr:4C11AE13F2D0\\\"}\"";
             try {
@@ -175,7 +174,7 @@ public class MainScreen extends JFrame implements ActionListener {
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
-        }
+        }*/
         if (e.getSource() == onButton) {
             outputStream1 = sp.getOutputStream();
             String dataToSend = "\"{\\\"getdata\\\":\\\"relay:on\\\"}\"";
@@ -207,7 +206,7 @@ public class MainScreen extends JFrame implements ActionListener {
             incomingData();
         }
 
-        if((e.getSource() != settingsButton) && (e.getSource() != setMacAddr) && (e.getSource() != setReciveMacAddr) && (e.getSource() != onButton) && (e.getSource() != offButton) && (e.getSource() != offButton) && (e.getSource() != getTempAndHum)) {
+        if ((e.getSource() != settingsButton) && (e.getSource() != setMacAddr) && (e.getSource() != setReciveMacAddr) && (e.getSource() != onButton) && (e.getSource() != offButton) && (e.getSource() != offButton) && (e.getSource() != getTempAndHum)) {
             cmd = Integer.parseInt(e.getActionCommand());
             try {
                 System.out.println(Integer.parseInt(e.getActionCommand()));
@@ -216,17 +215,14 @@ public class MainScreen extends JFrame implements ActionListener {
         }
     }
 
-    void actionA(){
-        //String answear = receivedAnswers;
-        //if(answear.equals("Set MAC address OK")) {
-            OutputStream outputStream2 = sp.getOutputStream();
-            String dataToSend2 = "\"{\\\"getdata\\\":\\\"macaddr:4C11AE13F2D0\\\"}\"";
-            try {
-                outputStream2.write(dataToSend2.getBytes());
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-            //receivedAnswers = "";
-        //}
+    void actionA() {
+        OutputStream outputStream2 = sp.getOutputStream();
+        String dataToSend2 = "\"{\\\"getdata\\\":\\\"macaddr:4C11AE13F2D0\\\"}\"";
+        try {
+            outputStream2.write(dataToSend2.getBytes());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        //receivedAnswers = "";
     }
 }
