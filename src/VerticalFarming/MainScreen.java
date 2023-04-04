@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.OutputStream;
 
-public class MainScreen  extends JFrame implements ActionListener {
+public class MainScreen extends JFrame implements ActionListener {
 
     JLabel statusLed = new JLabel();
     JComboBox runPort;
@@ -92,6 +92,8 @@ public class MainScreen  extends JFrame implements ActionListener {
         this.add(workArea, BorderLayout.CENTER);
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/leafs.png")));
 
+        actionA();
+
         settingsButton.addActionListener(this);
     }
 
@@ -111,6 +113,7 @@ public class MainScreen  extends JFrame implements ActionListener {
                 }
                 statusLed.setText("LED " + receivedAnswers);
                 System.out.print(receivedAnswers);
+
             }
         });
     }
@@ -128,17 +131,23 @@ public class MainScreen  extends JFrame implements ActionListener {
         if (e.getSource() == onButton) {
             outputStream1 = sp.getOutputStream();
             String dataToSend = "";
-            dataToSend = "on";
+            dataToSend = "\"{\\\"macaddr\\\":\\\"4C11AE13D009\\\"}\"";
+            //System.out.println(dataToSend);
             try {
                 outputStream1.write(dataToSend.getBytes());
             } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
                 ex.printStackTrace();
             }
         }
         if (e.getSource() == offButton) { //off
             outputStream1 = sp.getOutputStream();
             String dataToSend = "";
-            dataToSend = "off";
+            dataToSend = "\"{\\\"getdata\\\":\\\"relay:off\\\"}\"";
             try {
                 outputStream1.write(dataToSend.getBytes());
             } catch (IOException ex) {
@@ -146,7 +155,7 @@ public class MainScreen  extends JFrame implements ActionListener {
             }
         }
         receivedAnswers = "";
-        if(sp != null) {
+        if (sp != null) {
             incomingData();
         }
 
@@ -158,5 +167,23 @@ public class MainScreen  extends JFrame implements ActionListener {
         /*if(Integer.parseInt(e.getActionCommand()) == 5) {
             array2dtop[xCell][yCell].setBackground(new Color(255, 100, 100));
         }*/
+        actionA();
+    }
+
+    void actionA(){
+        String answear = receivedAnswers.trim();
+        if(answear.equals("Set MAC address OK")) {
+            System.out.println("zzz");
+            OutputStream outputStream2 = sp.getOutputStream();
+            String dataToSend2 = "";
+            dataToSend2 = "\"{\\\"getdata\\\":\\\"relay:on\\\"}\"";
+            try {
+                outputStream2.write(dataToSend2.getBytes());
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        } else {
+            System.out.println(answear);
+        }
     }
 }

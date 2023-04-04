@@ -104,7 +104,7 @@ public class Settings  extends JFrame implements ActionListener {
         //SerialPort sp = null;
         if (e.getSource() == connectButton) {
             MainScreen.sp = SerialPort.getCommPort(MainScreen.openPort);//COM9
-            MainScreen.sp.setComPortParameters(9600, 8, 1, 0); // default connection settings for Arduino
+            MainScreen.sp.setComPortParameters(115200, 8, 1, 0); // default connection settings for Arduino
             MainScreen.sp.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0); // block until bytes can be written TIMEOUT_READ_SEMI_BLOCKING
 
             if (MainScreen.sp.openPort()) {
