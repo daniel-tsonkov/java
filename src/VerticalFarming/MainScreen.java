@@ -17,6 +17,8 @@ public class MainScreen extends JFrame implements ActionListener {
     JComboBox runPort;
     ImageIcon iconSettings = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/gear.png")));
     JButton settingsButton = new JButton(iconSettings);
+    JButton setMacAddr = new JButton();
+    JButton setReciveMacAddr = new JButton();
     JButton onButton = new JButton();
     JButton offButton = new JButton();
     JButton[][] array2dtop = new JButton[10][10];
@@ -34,6 +36,16 @@ public class MainScreen extends JFrame implements ActionListener {
         settingsButton.setPreferredSize(new Dimension(30, 30));
         settingsButton.setMargin(new Insets(0, 0, 0, 0));
         settingsButton.setBackground(new Color(220, 220, 220));
+
+        setMacAddr.setText("MAC addr");
+        setMacAddr.setFocusable(false);
+        setMacAddr.setPreferredSize(new Dimension(90, 30));
+        setMacAddr.addActionListener(this);
+
+        setReciveMacAddr.setText("Recive mac");
+        setReciveMacAddr.setFocusable(false);
+        setReciveMacAddr.setPreferredSize(new Dimension(90, 30));
+        setReciveMacAddr.addActionListener(this);
 
         onButton.setText("on");
         onButton.setFocusable(false);
@@ -84,6 +96,8 @@ public class MainScreen extends JFrame implements ActionListener {
         this.setLocationRelativeTo(null);
         topPanel.add(settingsButton, BorderLayout.EAST);
         statusPanel.add(statusLed);
+        rightPanel.add(setMacAddr);
+        rightPanel.add(setReciveMacAddr);
         rightPanel.add(onButton);
         rightPanel.add(offButton);
         this.add(topPanel, BorderLayout.NORTH);
@@ -91,8 +105,6 @@ public class MainScreen extends JFrame implements ActionListener {
         this.add(statusPanel, BorderLayout.SOUTH);
         this.add(workArea, BorderLayout.CENTER);
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/leafs.png")));
-
-        actionA();
 
         settingsButton.addActionListener(this);
     }
@@ -113,7 +125,7 @@ public class MainScreen extends JFrame implements ActionListener {
                 }
                 statusLed.setText("LED " + receivedAnswers);
                 System.out.print(receivedAnswers);
-
+                //actionA();
             }
         });
     }
@@ -128,7 +140,7 @@ public class MainScreen extends JFrame implements ActionListener {
             }
             this.setEnabled(false);
         }
-        if (e.getSource() == onButton) {
+        if (e.getSource() == setMacAddr) {
             outputStream1 = sp.getOutputStream();
             String dataToSend = "";
             dataToSend = "\"{\\\"macaddr\\\":\\\"4C11AE13D009\\\"}\"";
@@ -138,9 +150,26 @@ public class MainScreen extends JFrame implements ActionListener {
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
+        }
+        if (e.getSource() == setReciveMacAddr) {
+            outputStream1 = sp.getOutputStream();
+            String dataToSend = "";
+            dataToSend = "\"{\\\"getdata\\\":\\\"macaddr:4C11AE13F2D0\\\"}\"";
+            //System.out.println(dataToSend);
             try {
-                Thread.sleep(1000);
-            } catch (InterruptedException ex) {
+                outputStream1.write(dataToSend.getBytes());
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+        if (e.getSource() == onButton) {
+            outputStream1 = sp.getOutputStream();
+            String dataToSend = "";
+            dataToSend = "\"{\\\"getdata\\\":\\\"relay:on\\\"}\"";
+            //System.out.println(dataToSend);
+            try {
+                outputStream1.write(dataToSend.getBytes());
+            } catch (IOException ex) {
                 ex.printStackTrace();
             }
         }
@@ -167,7 +196,6 @@ public class MainScreen extends JFrame implements ActionListener {
         /*if(Integer.parseInt(e.getActionCommand()) == 5) {
             array2dtop[xCell][yCell].setBackground(new Color(255, 100, 100));
         }*/
-        actionA();
     }
 
     void actionA(){
