@@ -40,7 +40,7 @@ public class MainScreen extends JFrame implements ActionListener {
 
         setMacAddr.setText("MAC addr");
         setMacAddr.setFocusable(false);
-        setMacAddr.setPreferredSize(new Dimension(90, 30));
+        setMacAddr.setPreferredSize(new Dimension(185, 30));
         setMacAddr.setMargin(new Insets(0, 0, 0, 0));
         setMacAddr.addActionListener(this);
 
@@ -62,7 +62,7 @@ public class MainScreen extends JFrame implements ActionListener {
 
         getTempAndHum.setText("Temp and Hum");
         getTempAndHum.setFocusable(false);
-        getTempAndHum.setPreferredSize(new Dimension(90, 30));
+        getTempAndHum.setPreferredSize(new Dimension(185, 30));
         getTempAndHum.setMargin(new Insets(0, 0, 0, 0));
         getTempAndHum.addActionListener(this);
 
@@ -106,7 +106,7 @@ public class MainScreen extends JFrame implements ActionListener {
         topPanel.add(settingsButton, BorderLayout.EAST);
         statusPanel.add(statusLed);
         rightPanel.add(setMacAddr);
-        rightPanel.add(setReciveMacAddr);
+        //rightPanel.add(setReciveMacAddr);
         rightPanel.add(onButton);
         rightPanel.add(offButton);
         rightPanel.add(getTempAndHum);
@@ -130,12 +130,16 @@ public class MainScreen extends JFrame implements ActionListener {
             public void serialEvent(SerialPortEvent serialPortEvent) {
                 byte[] newData = serialPortEvent.getReceivedData();
 
+                if(!receivedAnswers.equals("Set MAC address OK")) {
+                    receivedAnswers = "";
+                }
+
                 for (byte b : newData) {
                     receivedAnswers += (char) b;
                 }
                 statusLed.setText("LED " + receivedAnswers);
                 System.out.print(receivedAnswers);
-                //actionA();
+                actionA();
             }
         });
     }
@@ -195,19 +199,20 @@ public class MainScreen extends JFrame implements ActionListener {
                 ex.printStackTrace();
             }
         }
-        receivedAnswers = "";
         if (sp != null) {
             incomingData();
         }
 
-        int cmd = Integer.parseInt(e.getActionCommand());
-        try {
-            System.out.println(Integer.parseInt(e.getActionCommand()));
-        } catch (NumberFormatException numberFormatException) {
+        if((e.getSource() != settingsButton) && (e.getSource() != setMacAddr) && (e.getSource() != setReciveMacAddr) && (e.getSource() != onButton) && (e.getSource() != offButton) && (e.getSource() != offButton) && (e.getSource() != getTempAndHum)) {
+            cmd = Integer.parseInt(e.getActionCommand());
+            try {
+                System.out.println(Integer.parseInt(e.getActionCommand()));
+            } catch (NumberFormatException numberFormatException) {
+            }
         }
     }
 
-    /*void actionA(){
+    void actionA(){
         String answear = receivedAnswers;
         if(answear.equals("Set MAC address OK")) {
             OutputStream outputStream2 = sp.getOutputStream();
@@ -217,6 +222,7 @@ public class MainScreen extends JFrame implements ActionListener {
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
+            receivedAnswers = "";
         }
-    }*/
+    }
 }
