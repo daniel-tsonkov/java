@@ -152,9 +152,7 @@ public class MainScreen extends JFrame implements ActionListener {
         }
         if (e.getSource() == setMacAddr) {
             outputStream1 = sp.getOutputStream();
-            String dataToSend = "";
-            dataToSend = "\"{\\\"macaddr\\\":\\\"4C11AE13D009\\\"}\"";
-            //System.out.println(dataToSend);
+            String dataToSend = "\"{\\\"macaddr\\\":\\\"4C11AE13D009\\\"}\"";
             try {
                 outputStream1.write(dataToSend.getBytes());
             } catch (IOException ex) {
@@ -163,9 +161,7 @@ public class MainScreen extends JFrame implements ActionListener {
         }
         if (e.getSource() == setReciveMacAddr) {
             outputStream1 = sp.getOutputStream();
-            String dataToSend = "";
-            dataToSend = "\"{\\\"getdata\\\":\\\"macaddr:4C11AE13F2D0\\\"}\"";
-            //System.out.println(dataToSend);
+            String dataToSend = "\"{\\\"getdata\\\":\\\"macaddr:4C11AE13F2D0\\\"}\"";
             try {
                 outputStream1.write(dataToSend.getBytes());
             } catch (IOException ex) {
@@ -174,29 +170,25 @@ public class MainScreen extends JFrame implements ActionListener {
         }
         if (e.getSource() == onButton) {
             outputStream1 = sp.getOutputStream();
-            String dataToSend = "";
-            dataToSend = "\"{\\\"getdata\\\":\\\"relay:on\\\"}\"";
-            //System.out.println(dataToSend);
+            String dataToSend = "\"{\\\"getdata\\\":\\\"relay:on\\\"}\"";
             try {
                 outputStream1.write(dataToSend.getBytes());
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
         }
-        if (e.getSource() == offButton) { //off
+        if (e.getSource() == offButton) {
             outputStream1 = sp.getOutputStream();
-            String dataToSend = "";
-            dataToSend = "\"{\\\"getdata\\\":\\\"relay:off\\\"}\"";
+            String dataToSend = "\"{\\\"getdata\\\":\\\"relay:off\\\"}\"";
             try {
                 outputStream1.write(dataToSend.getBytes());
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
         }
-        if (e.getSource() == getTempAndHum) { //off
+        if (e.getSource() == getTempAndHum) {
             outputStream1 = sp.getOutputStream();
-            String dataToSend = "";
-            dataToSend = "\"{\\\"getdata\\\":\\\"getdata:getdatavalue\\\"}\"";
+            String dataToSend = "\"{\\\"getdata\\\":\\\"getdata:getdatavalue\\\"}\"";
             try {
                 outputStream1.write(dataToSend.getBytes());
             } catch (IOException ex) {
@@ -208,30 +200,23 @@ public class MainScreen extends JFrame implements ActionListener {
             incomingData();
         }
 
-        //int cmd = Integer.parseInt(e.getActionCommand());
+        int cmd = Integer.parseInt(e.getActionCommand());
         try {
             System.out.println(Integer.parseInt(e.getActionCommand()));
         } catch (NumberFormatException numberFormatException) {
         }
-        /*if(Integer.parseInt(e.getActionCommand()) == 5) {
-            array2dtop[xCell][yCell].setBackground(new Color(255, 100, 100));
-        }*/
     }
 
-    void actionA(){
-        String answear = receivedAnswers.trim();
+    /*void actionA(){
+        String answear = receivedAnswers;
         if(answear.equals("Set MAC address OK")) {
-            System.out.println("zzz");
             OutputStream outputStream2 = sp.getOutputStream();
-            String dataToSend2 = "";
-            dataToSend2 = "\"{\\\"getdata\\\":\\\"relay:on\\\"}\"";
+            String dataToSend2 = "\"{\\\"getdata\\\":\\\"macaddr:4C11AE13F2D0\\\"}\"";
             try {
                 outputStream2.write(dataToSend2.getBytes());
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
-        } else {
-            System.out.println(answear);
         }
-    }
+    }*/
 }
