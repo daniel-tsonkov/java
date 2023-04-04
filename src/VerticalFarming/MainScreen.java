@@ -138,8 +138,12 @@ public class MainScreen extends JFrame implements ActionListener {
                     receivedAnswers += (char) b;
                 }
                 statusLed.setText("LED " + receivedAnswers);
-                System.out.print(receivedAnswers);
-                actionA();
+                String answear = receivedAnswers.trim();
+                System.out.println(answear);
+                if(answear.equals("Set MAC address OK")) {
+                    actionA();
+
+                }
             }
         });
     }
@@ -213,8 +217,8 @@ public class MainScreen extends JFrame implements ActionListener {
     }
 
     void actionA(){
-        String answear = receivedAnswers;
-        if(answear.equals("Set MAC address OK")) {
+        //String answear = receivedAnswers;
+        //if(answear.equals("Set MAC address OK")) {
             OutputStream outputStream2 = sp.getOutputStream();
             String dataToSend2 = "\"{\\\"getdata\\\":\\\"macaddr:4C11AE13F2D0\\\"}\"";
             try {
@@ -222,7 +226,7 @@ public class MainScreen extends JFrame implements ActionListener {
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
-            receivedAnswers = "";
-        }
+            //receivedAnswers = "";
+        //}
     }
 }
