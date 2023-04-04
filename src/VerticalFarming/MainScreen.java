@@ -13,6 +13,7 @@ import java.io.OutputStream;
 
 public class MainScreen extends JFrame implements ActionListener {
 
+    JToolBar toolBar;
     JLabel statusLed = new JLabel();
     JComboBox runPort;
     ImageIcon iconSettings = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/gear.png")));
@@ -23,9 +24,9 @@ public class MainScreen extends JFrame implements ActionListener {
     JButton offButton = new JButton();
     JButton getTempAndHum = new JButton();
     ImageIcon iconAddCell = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/addcell.png")));
-    JButton addCell = new JButton();
+    JButton addCell = new JButton(iconAddCell);
     ImageIcon iconDeleteCell = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/deletecell.png")));
-    JButton deleteCell = new JButton();
+    JButton deleteCell = new JButton(iconDeleteCell);
     JButton[][] array2dtop = new JButton[10][10];
     int xCell = 0;
     int yCell = 0;
@@ -38,17 +39,27 @@ public class MainScreen extends JFrame implements ActionListener {
     int cmd = 0;
 
     MainScreen() {
-        addCell.setPreferredSize(new Dimension(30, 30));
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setSize(1280, 768);
+        this.setLayout(new BorderLayout(2, 2));
+        this.setVisible(true);
+        this.getContentPane().setBackground(new Color(200, 200, 200));
+        this.setTitle("Pidleri");
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
+
+        /*addCell.setPreferredSize(new Dimension(30, 30));
         addCell.setMargin(new Insets(0, 0, 0, 0));
         addCell.setBackground(new Color(220, 220, 220));
 
         deleteCell.setPreferredSize(new Dimension(30, 30));
         deleteCell.setMargin(new Insets(0, 0, 0, 0));
         deleteCell.setBackground(new Color(220, 220, 220));
+        //deleteCell.setBounds(50, 10, 30, 30);
 
         settingsButton.setPreferredSize(new Dimension(30, 30));
         settingsButton.setMargin(new Insets(0, 0, 0, 0));
-        settingsButton.setBackground(new Color(220, 220, 220));
+        settingsButton.setBackground(new Color(220, 220, 220));*/
 
         setMacAddr.setText("MAC addr");
         setMacAddr.setFocusable(false);
@@ -78,6 +89,10 @@ public class MainScreen extends JFrame implements ActionListener {
         getSoil.setPreferredSize(new Dimension(180, 30));
         getSoil.setMargin(new Insets(0, 0, 0, 0));
         getSoil.addActionListener(this);
+
+        JPanel cellPanel = new JPanel();
+        cellPanel.setPreferredSize(new Dimension(100, 30));
+        cellPanel.setBackground(new Color(100, 100, 100));
 
         JPanel topPanel = new JPanel();
         topPanel.setPreferredSize(new Dimension(20, 30));
@@ -109,16 +124,9 @@ public class MainScreen extends JFrame implements ActionListener {
             }
         }
 
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(1280, 768);
-        this.setLayout(new BorderLayout(2, 2));
-        this.setVisible(true);
-        this.getContentPane().setBackground(new Color(200, 200, 200));
-        this.setTitle("Pidleri");
-        this.setResizable(false);
-        this.setLocationRelativeTo(null);
         topPanel.add(addCell, BorderLayout.WEST);
-        //topPanel.add(deleteCell, BorderLayout.WEST);
+        topPanel.add(deleteCell);
+        topPanel.add(cellPanel);
         topPanel.add(settingsButton, BorderLayout.EAST);
         statusPanel.add(statusLed, BorderLayout.WEST);
         rightPanel.add(setMacAddr);
@@ -126,13 +134,12 @@ public class MainScreen extends JFrame implements ActionListener {
         rightPanel.add(offButton);
         rightPanel.add(getTempAndHum);
         rightPanel.add(getSoil);
-        this.add(topPanel, BorderLayout.NORTH);
+        //this.add(topPanel, BorderLayout.NORTH);
         this.add(rightPanel, BorderLayout.EAST);
         this.add(statusPanel, BorderLayout.SOUTH);
         this.add(workArea, BorderLayout.CENTER);
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/leafs.png")));
-
-        settingsButton.addActionListener(this);
+        ToolbarMenu();
     }
 
     public void incomingData() {
@@ -164,6 +171,13 @@ public class MainScreen extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == addCell) {
+
+        }
+
+        if (e.getSource() == deleteCell) {
+
+        }
         if (e.getSource() == settingsButton) {
             try {
                 Settings settings = new Settings(this);
@@ -239,5 +253,34 @@ public class MainScreen extends JFrame implements ActionListener {
             ex.printStackTrace();
         }
         //receivedAnswers = "";
+    }
+
+    private void ToolbarMenu() {
+        toolBar = new JToolBar();
+        toolBar.setBackground(new Color(100, 100, 100));
+        toolBar.setFloatable(false);
+        addCell = new JButton(iconAddCell);
+        addCell.setFocusable(false);
+        addCell.setPreferredSize(new Dimension(35, 35));
+        addCell.setMargin(new Insets(0, 0, 0, 0));
+        toolBar.add(addCell);
+        deleteCell = new JButton(iconDeleteCell);
+        deleteCell.setFocusable(false);
+        deleteCell.setPreferredSize(new Dimension(35, 35));
+        deleteCell.setMargin(new Insets(0, 0, 0, 0));
+        toolBar.add(deleteCell);
+
+        toolBar.add(Box.createHorizontalGlue());
+        settingsButton = new JButton(iconSettings);
+        settingsButton.setFocusable(false);
+        settingsButton.setPreferredSize(new Dimension(35, 35));
+        toolBar.add(settingsButton);
+
+        Container pane = this.getContentPane(); //add to JPane toolbar
+        pane.add(toolBar, BorderLayout.NORTH);
+
+        addCell.addActionListener(this);
+        deleteCell.addActionListener(this);
+        settingsButton.addActionListener(this);
     }
 }
