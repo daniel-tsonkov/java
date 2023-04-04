@@ -21,6 +21,7 @@ public class MainScreen extends JFrame implements ActionListener {
     JButton setReciveMacAddr = new JButton();
     JButton onButton = new JButton();
     JButton offButton = new JButton();
+    JButton getTempAndHum = new JButton();
     JButton[][] array2dtop = new JButton[10][10];
     int xCell = 0;
     int yCell = 0;
@@ -40,11 +41,13 @@ public class MainScreen extends JFrame implements ActionListener {
         setMacAddr.setText("MAC addr");
         setMacAddr.setFocusable(false);
         setMacAddr.setPreferredSize(new Dimension(90, 30));
+        setMacAddr.setMargin(new Insets(0, 0, 0, 0));
         setMacAddr.addActionListener(this);
 
         setReciveMacAddr.setText("Recive mac");
         setReciveMacAddr.setFocusable(false);
         setReciveMacAddr.setPreferredSize(new Dimension(90, 30));
+        setReciveMacAddr.setMargin(new Insets(0, 0, 0, 0));
         setReciveMacAddr.addActionListener(this);
 
         onButton.setText("on");
@@ -56,6 +59,12 @@ public class MainScreen extends JFrame implements ActionListener {
         offButton.setFocusable(false);
         offButton.setPreferredSize(new Dimension(90, 30));
         offButton.addActionListener(this);
+
+        getTempAndHum.setText("Temp and Hum");
+        getTempAndHum.setFocusable(false);
+        getTempAndHum.setPreferredSize(new Dimension(90, 30));
+        getTempAndHum.setMargin(new Insets(0, 0, 0, 0));
+        getTempAndHum.addActionListener(this);
 
         JPanel topPanel = new JPanel();
         topPanel.setPreferredSize(new Dimension(20, 30));
@@ -100,6 +109,7 @@ public class MainScreen extends JFrame implements ActionListener {
         rightPanel.add(setReciveMacAddr);
         rightPanel.add(onButton);
         rightPanel.add(offButton);
+        rightPanel.add(getTempAndHum);
         this.add(topPanel, BorderLayout.NORTH);
         this.add(rightPanel, BorderLayout.EAST);
         this.add(statusPanel, BorderLayout.SOUTH);
@@ -177,6 +187,16 @@ public class MainScreen extends JFrame implements ActionListener {
             outputStream1 = sp.getOutputStream();
             String dataToSend = "";
             dataToSend = "\"{\\\"getdata\\\":\\\"relay:off\\\"}\"";
+            try {
+                outputStream1.write(dataToSend.getBytes());
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+        if (e.getSource() == getTempAndHum) { //off
+            outputStream1 = sp.getOutputStream();
+            String dataToSend = "";
+            dataToSend = "\"{\\\"getdata\\\":\\\"getdata:getdatavalue\\\"}\"";
             try {
                 outputStream1.write(dataToSend.getBytes());
             } catch (IOException ex) {
