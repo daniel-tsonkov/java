@@ -27,6 +27,8 @@ public class MainScreen extends JFrame implements ActionListener {
     JButton addCell = new JButton(iconAddCell);
     ImageIcon iconDeleteCell = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/deletecell.png")));
     JButton deleteCell = new JButton(iconDeleteCell);
+    JTextField redColor, greenColor, blueColor;
+    JButton setColor = new JButton();
     JButton[][] array2dtop = new JButton[10][10];
     int xCell = 0;
     int yCell = 0;
@@ -47,19 +49,6 @@ public class MainScreen extends JFrame implements ActionListener {
         this.setTitle("Pidleri");
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-
-        /*addCell.setPreferredSize(new Dimension(30, 30));
-        addCell.setMargin(new Insets(0, 0, 0, 0));
-        addCell.setBackground(new Color(220, 220, 220));
-
-        deleteCell.setPreferredSize(new Dimension(30, 30));
-        deleteCell.setMargin(new Insets(0, 0, 0, 0));
-        deleteCell.setBackground(new Color(220, 220, 220));
-        //deleteCell.setBounds(50, 10, 30, 30);
-
-        settingsButton.setPreferredSize(new Dimension(30, 30));
-        settingsButton.setMargin(new Insets(0, 0, 0, 0));
-        settingsButton.setBackground(new Color(220, 220, 220));*/
 
         setMacAddr.setText("MAC addr");
         setMacAddr.setFocusable(false);
@@ -95,6 +84,24 @@ public class MainScreen extends JFrame implements ActionListener {
         getSoil.setBorder(BorderFactory.createEtchedBorder(0));
         getSoil.addActionListener(this);
 
+        redColor = new JTextField();
+        redColor.setPreferredSize(new Dimension(50, 30));
+
+        greenColor = new JTextField();
+        greenColor.setBounds(0, 40, 30, 30);
+        greenColor.setPreferredSize(new Dimension(50, 30));
+
+        blueColor = new JTextField();
+        blueColor.setBounds(0, 80, 30, 30);
+        blueColor.setPreferredSize(new Dimension(50, 30));
+
+        setColor.setText("Set color");
+        setColor.setFocusable(false);
+        setColor.setPreferredSize(new Dimension(185, 30));
+        setColor.setMargin(new Insets(0, 0, 0, 0));
+        setColor.setBorder(BorderFactory.createEtchedBorder(0));
+        setColor.addActionListener(this);
+
         JPanel cellPanel = new JPanel();
         cellPanel.setPreferredSize(new Dimension(100, 30));
         cellPanel.setBackground(new Color(100, 100, 100));
@@ -107,6 +114,10 @@ public class MainScreen extends JFrame implements ActionListener {
         JPanel rightPanel = new JPanel();
         rightPanel.setPreferredSize(new Dimension(200, 200));
         rightPanel.setBackground(new Color(100, 100, 100));
+
+        JPanel colorPanel = new JPanel();
+        colorPanel.setPreferredSize(new Dimension(200, 200));
+        colorPanel.setBackground(new Color(100, 100, 100));
 
         JPanel statusPanel = new JPanel();
         statusPanel.setPreferredSize(new Dimension(20, 20));
@@ -140,7 +151,11 @@ public class MainScreen extends JFrame implements ActionListener {
         rightPanel.add(offButton);
         rightPanel.add(getTempAndHum);
         rightPanel.add(getSoil);
-        //this.add(topPanel, BorderLayout.NORTH);
+        rightPanel.add(colorPanel);
+        colorPanel.add(redColor);
+        colorPanel.add(greenColor);
+        colorPanel.add(blueColor);
+        colorPanel.add(setColor);
         this.add(rightPanel, BorderLayout.EAST);
         this.add(statusPanel, BorderLayout.SOUTH);
         this.add(workArea, BorderLayout.CENTER);
@@ -247,11 +262,23 @@ public class MainScreen extends JFrame implements ActionListener {
                 ex.printStackTrace();
             }
         }
+        if (e.getSource() == setColor) {
+            String ledColor;
+            ledColor = "\"{\\\"getdata\\\":\\\"set:" + redColor.getText() + greenColor.getText() + blueColor.getText() + "\\\"}\"";
+            //System.out.println(ledColor);
+            outputStream1 = sp.getOutputStream();
+            String dataToSend = ledColor;
+            try {
+                outputStream1.write(dataToSend.getBytes());
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
         if (sp != null) {
             incomingData();
         }
 
-        if ((e.getSource() != addCell) && (e.getSource() != deleteCell) && (e.getSource() != settingsButton) && (e.getSource() != setMacAddr) && (e.getSource() != getSoil) && (e.getSource() != onButton) && (e.getSource() != offButton) && (e.getSource() != offButton) && (e.getSource() != getTempAndHum)) {
+        if ((e.getSource() != setColor) && (e.getSource() != addCell) && (e.getSource() != deleteCell) && (e.getSource() != settingsButton) && (e.getSource() != setMacAddr) && (e.getSource() != getSoil) && (e.getSource() != onButton) && (e.getSource() != offButton) && (e.getSource() != offButton) && (e.getSource() != getTempAndHum)) {
             cmd = Integer.parseInt(e.getActionCommand());
             try {
                 System.out.println(Integer.parseInt(e.getActionCommand()));
