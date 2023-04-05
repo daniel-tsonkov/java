@@ -9,7 +9,8 @@ import java.awt.event.ActionListener;
 
 public class Settings  extends JFrame implements ActionListener {
 
-    JLabel selectPort = new JLabel();
+    JPanel topPanel;
+    //JLabel selectPort = new JLabel();
     JLabel statusLed = new JLabel();
     JComboBox runPort;
     JButton connectButton = new JButton();
@@ -30,6 +31,11 @@ public class Settings  extends JFrame implements ActionListener {
 
         JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT);
         tabbedPane.setBounds(5, 5, 630, 370);
+
+        topPanel = new JPanel();
+        topPanel.setOpaque(true);
+        //topPanel.setBackground(Color.WHITE);
+        topPanel.setBorder(BorderFactory.createTitledBorder("PORT"));
 
         JPanel panel1 = new JPanel();
         JPanel panel2 = new JPanel();
@@ -54,13 +60,16 @@ public class Settings  extends JFrame implements ActionListener {
         for (SerialPort port : s) {
             runPort.addItem(port.getSystemPortName());
         }
+        if(MainScreen.openPort != null){
+            runPort.setSelectedItem(MainScreen.openPort);
+        }
         runPort.setPreferredSize(new Dimension(110, 30));
         runPort.addActionListener(this);
 
-        selectPort.setText("Select PORT");
+        /*selectPort.setText("Select PORT");
         selectPort.setFont(new Font("Arial", Font.PLAIN, 18));
         selectPort.setForeground(new Color(10, 10, 10));
-        selectPort.setBounds(100, 100, 300, 300);
+        selectPort.setBounds(100, 100, 300, 300);*/
 
         statusLed.setText("LED");
         statusLed.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -75,10 +84,17 @@ public class Settings  extends JFrame implements ActionListener {
         disconnectButton.setPreferredSize(new Dimension(100, 30));
         disconnectButton.setEnabled(false);
 
-        panel1.add(selectPort);
-        panel1.add(runPort);
-        panel1.add(connectButton);
-        panel1.add(disconnectButton);
+        if (MainScreen.sp != null) {
+            disconnectButton.setEnabled(true);
+            connectButton.setEnabled(false);
+        }
+
+        panel1.add(topPanel, BorderLayout.CENTER);
+
+        //topPanel.add(selectPort);
+        topPanel.add(runPort);
+        topPanel.add(connectButton);
+        topPanel.add(disconnectButton);
 
         ok = new JButton("Затвори");
         this.add(ok);
@@ -103,7 +119,7 @@ public class Settings  extends JFrame implements ActionListener {
         //String openPort = null;
         //SerialPort sp = null;
         if (e.getSource() == connectButton) {
-            MainScreen.sp = SerialPort.getCommPort(MainScreen.openPort);//COM9
+            MainScreen.sp = SerialPort.getCommPort(MainScreen.openPort);
             MainScreen.sp.setComPortParameters(115200, 8, 1, 0); // default connection settings for Arduino
             MainScreen.sp.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0); // block until bytes can be written TIMEOUT_READ_SEMI_BLOCKING
 
@@ -111,10 +127,10 @@ public class Settings  extends JFrame implements ActionListener {
                 disconnectButton.setEnabled(true);
                 connectButton.setEnabled(false);
                 System.out.println(MainScreen.openPort + " is open :)");
-                selectPort.setText(MainScreen.openPort + " is open");
+                //selectPort.setText(MainScreen.openPort + " is open");
             } else {
                 System.out.println("Failed to open port :(");
-                selectPort.setText("Check again " + MainScreen.openPort);
+                //selectPort.setText("Check again " + MainScreen.openPort);
             }
         }
 
@@ -123,10 +139,10 @@ public class Settings  extends JFrame implements ActionListener {
                 disconnectButton.setEnabled(false);
                 connectButton.setEnabled(true);
                 System.out.println(MainScreen.openPort + " is closed :)");
-                selectPort.setText(MainScreen.openPort + " is closed");
+                //selectPort.setText(MainScreen.openPort + " is closed");
             } else {
                 System.out.println("Failed to close port :(");
-                selectPort.setText("Check again " + MainScreen.openPort);
+                //selectPort.setText("Check again " + MainScreen.openPort);
             }
         }
     }

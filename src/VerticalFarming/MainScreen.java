@@ -65,29 +65,34 @@ public class MainScreen extends JFrame implements ActionListener {
         setMacAddr.setFocusable(false);
         setMacAddr.setPreferredSize(new Dimension(185, 30));
         setMacAddr.setMargin(new Insets(0, 0, 0, 0));
+        setMacAddr.setBorder(BorderFactory.createEtchedBorder(0));
         setMacAddr.addActionListener(this);
 
 
         onButton.setText("on");
         onButton.setFocusable(false);
         onButton.setPreferredSize(new Dimension(90, 30));
+        onButton.setBorder(BorderFactory.createEtchedBorder(0));
         onButton.addActionListener(this);
 
         offButton.setText("off");
         offButton.setFocusable(false);
         offButton.setPreferredSize(new Dimension(90, 30));
+        offButton.setBorder(BorderFactory.createEtchedBorder(0));
         offButton.addActionListener(this);
 
         getTempAndHum.setText("Temp and Hum");
         getTempAndHum.setFocusable(false);
         getTempAndHum.setPreferredSize(new Dimension(185, 30));
         getTempAndHum.setMargin(new Insets(0, 0, 0, 0));
+        getTempAndHum.setBorder(BorderFactory.createEtchedBorder(0));
         getTempAndHum.addActionListener(this);
 
         getSoil.setText("Get Soil");
         getSoil.setFocusable(false);
-        getSoil.setPreferredSize(new Dimension(180, 30));
+        getSoil.setPreferredSize(new Dimension(185, 30));
         getSoil.setMargin(new Insets(0, 0, 0, 0));
+        getSoil.setBorder(BorderFactory.createEtchedBorder(0));
         getSoil.addActionListener(this);
 
         JPanel cellPanel = new JPanel();
@@ -119,6 +124,7 @@ public class MainScreen extends JFrame implements ActionListener {
                 array2dtop[xCell][yCell].setMargin(new Insets(0, 0, 0, 0));
                 array2dtop[xCell][yCell].addActionListener(this);
                 array2dtop[xCell][yCell].setPreferredSize(new Dimension(46, 46));
+                array2dtop[xCell][yCell].setBorder(BorderFactory.createEtchedBorder(0));
 
                 workArea.add(array2dtop[xCell][yCell]);
             }
