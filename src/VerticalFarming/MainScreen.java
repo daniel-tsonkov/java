@@ -15,7 +15,6 @@ public class MainScreen extends JFrame implements ActionListener {
 
     JToolBar toolBar;
     JLabel statusLed = new JLabel();
-    JComboBox runPort;
     ImageIcon iconSettings = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/gear.png")));
     JButton settingsButton = new JButton(iconSettings);
     JButton setMacAddr = new JButton();
@@ -31,10 +30,7 @@ public class MainScreen extends JFrame implements ActionListener {
     JTextField redColor, greenColor, blueColor;
     JButton setColor = new JButton();
     JButton[][] array2dtop = new JButton[10][10];
-    int xCell = 0;
-    int yCell = 0;
-    int selectedCell;
-    JButton cellNo = new JButton();
+    int xCell;
     static String openPort;
     static SerialPort sp;
     OutputStream outputStream1;
@@ -117,12 +113,9 @@ public class MainScreen extends JFrame implements ActionListener {
         topPanel.setLayout(new BorderLayout());
 
         JPanel rightPanel = new JPanel();
+        rightPanel.setBorder(BorderFactory.createTitledBorder("Settings"));
         rightPanel.setPreferredSize(new Dimension(200, 200));
         rightPanel.setBackground(new Color(100, 100, 100));
-
-        /*JPanel colorPanel = new JPanel();
-        colorPanel.setPreferredSize(new Dimension(200, 200));
-        colorPanel.setBackground(new Color(100, 100, 100));*/
 
         JPanel statusPanel = new JPanel();
         statusPanel.setPreferredSize(new Dimension(20, 20));
@@ -135,7 +128,7 @@ public class MainScreen extends JFrame implements ActionListener {
 
         for (xCell = 0; xCell < array2dtop.length; xCell++) {
             for (int yCell = 0; yCell < array2dtop.length; yCell++) {
-                array2dtop[xCell][yCell] = new JButton("C" + String.valueOf((xCell * 10) + yCell));
+                array2dtop[xCell][yCell] = new JButton("C" + ((xCell * 10) + yCell));
                 array2dtop[xCell][yCell].setActionCommand(String.valueOf((xCell * 10) + yCell));
                 array2dtop[xCell][yCell].setMargin(new Insets(0, 0, 0, 0));
                 array2dtop[xCell][yCell].addActionListener(this);
@@ -179,9 +172,12 @@ public class MainScreen extends JFrame implements ActionListener {
             public void serialEvent(SerialPortEvent serialPortEvent) {
                 byte[] newData = serialPortEvent.getReceivedData();
 
+                StringBuilder stringBuilder = new StringBuilder(receivedAnswers);
                 for (byte b : newData) {
-                    receivedAnswers += (char) b;
+                    stringBuilder.append((char) b);
                 }
+                receivedAnswers = stringBuilder.toString();
+
                 String answear = receivedAnswers.trim().replace("\n", "").replace("\0", "");
                 if (!answear.equals("")) {
                     System.out.println(answear);
@@ -199,7 +195,7 @@ public class MainScreen extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == addCell) {
             try {
-                Settings settings = new Settings(this);
+                new Settings(this);
             } catch (ClassNotFoundException ex) {
                 ex.printStackTrace();
             }
@@ -208,7 +204,7 @@ public class MainScreen extends JFrame implements ActionListener {
 
         if (e.getSource() == deleteCell) {
             try {
-                Settings settings = new Settings(this);
+                new Settings(this);
             } catch (ClassNotFoundException ex) {
                 ex.printStackTrace();
             }
@@ -216,7 +212,7 @@ public class MainScreen extends JFrame implements ActionListener {
         }
         if (e.getSource() == settingsButton) {
             try {
-                Settings settings = new Settings(this);
+                new Settings(this);
             } catch (ClassNotFoundException ex) {
                 ex.printStackTrace();
             }
@@ -268,10 +264,9 @@ public class MainScreen extends JFrame implements ActionListener {
             }
         }
         if (e.getSource() == setColor) {
-            String ledColor = "\"{\\\"getdata\\\":\\\"set:" + redColor.getText() + greenColor.getText() + blueColor.getText() + "\\\"}\"";
-            //System.out.println(ledColor);
             outputStream1 = sp.getOutputStream();
-            String dataToSend = ledColor;
+            //System.out.println(ledColor);
+            String dataToSend = "\"{\\\"getdata\\\":\\\"set:" + redColor.getText() + greenColor.getText() + blueColor.getText() + "\\\"}\"";
             try {
                 outputStream1.write(dataToSend.getBytes());
             } catch (IOException ex) {
@@ -286,7 +281,7 @@ public class MainScreen extends JFrame implements ActionListener {
             cmd = Integer.parseInt(e.getActionCommand());
             try {
                 System.out.println(Integer.parseInt(e.getActionCommand()));
-            } catch (NumberFormatException numberFormatException) {
+            } catch (NumberFormatException ignored) {
             }
         }
     }

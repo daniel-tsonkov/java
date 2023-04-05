@@ -36,6 +36,7 @@ public class Settings  extends JFrame implements ActionListener {
         topPanel.setOpaque(true);
         //topPanel.setBackground(Color.WHITE);
         topPanel.setBorder(BorderFactory.createTitledBorder("PORT"));
+        topPanel.setPreferredSize(new Dimension(500, 70));
 
         JPanel panel1 = new JPanel();
         JPanel panel2 = new JPanel();
@@ -115,9 +116,6 @@ public class Settings  extends JFrame implements ActionListener {
             mainScreen.setEnabled(true);
             this.dispose();
         }
-
-        //String openPort = null;
-        //SerialPort sp = null;
         if (e.getSource() == connectButton) {
             MainScreen.sp = SerialPort.getCommPort(MainScreen.openPort);
             MainScreen.sp.setComPortParameters(115200, 8, 1, 0); // default connection settings for Arduino
