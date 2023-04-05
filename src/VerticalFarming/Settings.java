@@ -89,6 +89,10 @@ public class Settings  extends JFrame implements ActionListener {
             disconnectButton.setEnabled(true);
             connectButton.setEnabled(false);
         }
+        if ((MainScreen.openPort == null) || (MainScreen.openPort.equals(""))) {
+            disconnectButton.setEnabled(false);
+            connectButton.setEnabled(true);
+        }
 
         panel1.add(topPanel, BorderLayout.CENTER);
 
@@ -138,6 +142,7 @@ public class Settings  extends JFrame implements ActionListener {
                 connectButton.setEnabled(true);
                 System.out.println(MainScreen.openPort + " is closed :)");
                 //selectPort.setText(MainScreen.openPort + " is closed");
+                MainScreen.openPort = "";
             } else {
                 System.out.println("Failed to close port :(");
                 //selectPort.setText("Check again " + MainScreen.openPort);
