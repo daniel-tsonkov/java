@@ -27,6 +27,7 @@ public class MainScreen extends JFrame implements ActionListener {
     JButton addCell = new JButton(iconAddCell);
     ImageIcon iconDeleteCell = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/deletecell.png")));
     JButton deleteCell = new JButton(iconDeleteCell);
+    JPanel colorPanel;
     JTextField redColor, greenColor, blueColor;
     JButton setColor = new JButton();
     JButton[][] array2dtop = new JButton[10][10];
@@ -84,20 +85,24 @@ public class MainScreen extends JFrame implements ActionListener {
         getSoil.setBorder(BorderFactory.createEtchedBorder(0));
         getSoil.addActionListener(this);
 
+        colorPanel = new JPanel();
+        colorPanel.setOpaque(true);
+        colorPanel.setBorder(BorderFactory.createTitledBorder("Set LED color"));
+        colorPanel.setPreferredSize(new Dimension(185, 100));
+        colorPanel.setBackground(new Color(100, 100, 100));
+
         redColor = new JTextField();
-        redColor.setPreferredSize(new Dimension(50, 30));
+        redColor.setPreferredSize(new Dimension(53, 30));
 
         greenColor = new JTextField();
-        greenColor.setBounds(0, 40, 30, 30);
-        greenColor.setPreferredSize(new Dimension(50, 30));
+        greenColor.setPreferredSize(new Dimension(53, 30));
 
         blueColor = new JTextField();
-        blueColor.setBounds(0, 80, 30, 30);
-        blueColor.setPreferredSize(new Dimension(50, 30));
+        blueColor.setPreferredSize(new Dimension(53, 30));
 
         setColor.setText("Set color");
         setColor.setFocusable(false);
-        setColor.setPreferredSize(new Dimension(185, 30));
+        setColor.setPreferredSize(new Dimension(170, 30));
         setColor.setMargin(new Insets(0, 0, 0, 0));
         setColor.setBorder(BorderFactory.createEtchedBorder(0));
         setColor.addActionListener(this);
@@ -115,9 +120,9 @@ public class MainScreen extends JFrame implements ActionListener {
         rightPanel.setPreferredSize(new Dimension(200, 200));
         rightPanel.setBackground(new Color(100, 100, 100));
 
-        JPanel colorPanel = new JPanel();
+        /*JPanel colorPanel = new JPanel();
         colorPanel.setPreferredSize(new Dimension(200, 200));
-        colorPanel.setBackground(new Color(100, 100, 100));
+        colorPanel.setBackground(new Color(100, 100, 100));*/
 
         JPanel statusPanel = new JPanel();
         statusPanel.setPreferredSize(new Dimension(20, 20));
@@ -263,8 +268,7 @@ public class MainScreen extends JFrame implements ActionListener {
             }
         }
         if (e.getSource() == setColor) {
-            String ledColor;
-            ledColor = "\"{\\\"getdata\\\":\\\"set:" + redColor.getText() + greenColor.getText() + blueColor.getText() + "\\\"}\"";
+            String ledColor = "\"{\\\"getdata\\\":\\\"set:" + redColor.getText() + greenColor.getText() + blueColor.getText() + "\\\"}\"";
             //System.out.println(ledColor);
             outputStream1 = sp.getOutputStream();
             String dataToSend = ledColor;
