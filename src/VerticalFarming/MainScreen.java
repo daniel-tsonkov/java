@@ -31,6 +31,7 @@ public class MainScreen extends JFrame implements ActionListener {
     JTextField redColor, greenColor, blueColor;
     JButton setColor = new JButton();
     JButton[][] array2dtop = new JButton[10][10];
+    JButton exitButton = new JButton("Exit");
     int xCell;
     static String openPort;
     static SerialPort sp;
@@ -39,8 +40,10 @@ public class MainScreen extends JFrame implements ActionListener {
     int cmd = 0;
 
     MainScreen() {
+        this.setUndecorated(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(1280, 768);
+        //this.setSize(1280, 768);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setLayout(new BorderLayout(2, 2));
         this.setVisible(true);
         this.getContentPane().setBackground(new Color(200, 200, 200));
@@ -62,6 +65,7 @@ public class MainScreen extends JFrame implements ActionListener {
         topPanel.add(cellPanel);
         topPanel.add(settingsButton, BorderLayout.EAST);
         statusPanel.add(statusLed, BorderLayout.WEST);
+        statusPanel.add(exitButton, BorderLayout.EAST);
         rightPanel.add(setMacAddr);
         rightPanel.add(onButton);
         rightPanel.add(offButton);
@@ -82,6 +86,8 @@ public class MainScreen extends JFrame implements ActionListener {
         this.add(workArea, BorderLayout.CENTER);
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/leafs.png")));
         ToolbarMenu();
+
+        exitButton.addActionListener(this);
     }
 
     private void statusPanel() {
@@ -89,6 +95,8 @@ public class MainScreen extends JFrame implements ActionListener {
         statusPanel.setPreferredSize(new Dimension(20, 20));
         statusPanel.setBackground(new Color(100, 100, 100));
         statusPanel.setLayout(new BorderLayout());
+
+
     }
 
     private void rightPanel() {
@@ -167,17 +175,17 @@ public class MainScreen extends JFrame implements ActionListener {
         cellPanel = new JPanel();
         cellPanel.setBorder(BorderFactory.createEmptyBorder(100, 0, 0, 0));
         cellPanel.setBorder(BorderFactory.createTitledBorder(null, "Cels", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
-        cellPanel.setPreferredSize(new Dimension(700, 650));
+        cellPanel.setPreferredSize(new Dimension(1140, 890));
         cellPanel.setBackground(new Color(0, 0, 0));
 
         rightPanelWorkarea = new JPanel();
-        rightPanelWorkarea.setPreferredSize(new Dimension(350, 650));
+        rightPanelWorkarea.setPreferredSize(new Dimension(350, 890));
         rightPanelWorkarea.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
         rightPanelWorkarea.setBackground(new Color(0, 0, 0));
 
         infoPanel = new JPanel();
         infoPanel.setBorder(BorderFactory.createTitledBorder(null, "Info", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
-        infoPanel.setPreferredSize(new Dimension(345, 320));
+        infoPanel.setPreferredSize(new Dimension(345, 560));
         infoPanel.setBackground(new Color(0, 0, 0));
 
         tankPanel = new JPanel();
@@ -315,12 +323,17 @@ public class MainScreen extends JFrame implements ActionListener {
             incomingData();
         }
 
-        if ((e.getSource() != setColor) && (e.getSource() != addCell) && (e.getSource() != deleteCell) && (e.getSource() != settingsButton) && (e.getSource() != setMacAddr) && (e.getSource() != getSoil) && (e.getSource() != onButton) && (e.getSource() != offButton) && (e.getSource() != offButton) && (e.getSource() != getTempAndHum)) {
+        if ((e.getSource() != exitButton) && (e.getSource() != setColor) && (e.getSource() != addCell) && (e.getSource() != deleteCell) && (e.getSource() != settingsButton) && (e.getSource() != setMacAddr) && (e.getSource() != getSoil) && (e.getSource() != onButton) && (e.getSource() != offButton) && (e.getSource() != offButton) && (e.getSource() != getTempAndHum)) {
             cmd = Integer.parseInt(e.getActionCommand());
             try {
                 System.out.println(Integer.parseInt(e.getActionCommand()));
             } catch (NumberFormatException ignored) {
             }
+        }
+
+        if (e.getSource() == exitButton) {
+            System.out.println("exit");
+            this.dispose();
         }
     }
 
