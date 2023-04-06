@@ -92,8 +92,11 @@ public class MainScreen extends JFrame implements ActionListener {
     }
 
     private void rightPanel() {
+        Font myFont = new Font("SansSerif", Font.PLAIN, 14);
+        Color myColor = Color.WHITE;
+
         rightPanel = new JPanel();
-        rightPanel.setBorder(BorderFactory.createTitledBorder("Settings"));
+        rightPanel.setBorder(BorderFactory.createTitledBorder(null, "Settings", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
         rightPanel.setPreferredSize(new Dimension(200, 200));
         rightPanel.setBackground(new Color(100, 100, 100));
 
@@ -132,7 +135,7 @@ public class MainScreen extends JFrame implements ActionListener {
 
         colorPanel = new JPanel();
         colorPanel.setOpaque(true);
-        colorPanel.setBorder(BorderFactory.createTitledBorder("Set LED color"));
+        colorPanel.setBorder(BorderFactory.createTitledBorder(null, "Set LED color", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
         colorPanel.setPreferredSize(new Dimension(185, 100));
         colorPanel.setBackground(new Color(100, 100, 100));
 
@@ -154,17 +157,16 @@ public class MainScreen extends JFrame implements ActionListener {
     }
 
     private void wonkArea() {
+        Font myFont = new Font("SansSerif", Font.PLAIN, 14);
+        Color myColor = Color.WHITE;
+
         workArea = new JPanel();
         workArea.setPreferredSize(new Dimension(200, 200));
         workArea.setBackground(new Color(0, 0, 0));
 
-        Font myFont = new Font("SansSerif", Font.PLAIN, 14);
-        Color myColor = Color.WHITE;
-
         cellPanel = new JPanel();
         cellPanel.setBorder(BorderFactory.createEmptyBorder(100, 0, 0, 0));
         cellPanel.setBorder(BorderFactory.createTitledBorder(null, "Cels", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
-        //cellPanel.setBorder(BorderFactory.createTitledBorder("Cells"));
         cellPanel.setPreferredSize(new Dimension(700, 650));
         cellPanel.setBackground(new Color(0, 0, 0));
 
