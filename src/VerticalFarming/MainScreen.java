@@ -40,7 +40,7 @@ public class MainScreen extends JFrame implements ActionListener {
     int cmd = 0;
 
     MainScreen() {
-        this.setUndecorated(true);
+        this.setUndecorated(true); //remove "Title bar"
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //this.setSize(1280, 768);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
