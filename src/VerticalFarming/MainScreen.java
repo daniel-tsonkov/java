@@ -14,6 +14,8 @@ import java.io.OutputStream;
 
 public class MainScreen extends JFrame implements ActionListener {
 
+    TankPanel tank;
+
     JToolBar toolBar;
     JLabel statusLed = new JLabel();
     ImageIcon iconSettings = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/gear.png")));
@@ -38,6 +40,7 @@ public class MainScreen extends JFrame implements ActionListener {
     OutputStream outputStream1;
     String receivedAnswers = "";
     int cmd = 0;
+    int tankFill = 50;
 
     MainScreen() {
         this.setUndecorated(true); //remove "Title bar"
@@ -188,10 +191,13 @@ public class MainScreen extends JFrame implements ActionListener {
         infoPanel.setPreferredSize(new Dimension(345, 560));
         infoPanel.setBackground(new Color(0, 0, 0));
 
+        tank = new TankPanel();
+
         tankPanel = new JPanel();
         tankPanel.setBorder(BorderFactory.createTitledBorder(null, "Tank", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
         tankPanel.setPreferredSize(new Dimension(345, 320));
         tankPanel.setBackground(new Color(0, 0, 0));
+        tankPanel.add(tank);
 
         for (xCell = 0; xCell < array2dtop.length; xCell++) {
             for (int yCell = 0; yCell < array2dtop.length; yCell++) {
@@ -333,7 +339,6 @@ public class MainScreen extends JFrame implements ActionListener {
         }
 
         if (e.getSource() == exitButton) {
-            System.out.println("exit");
             this.dispose();
         }
     }
