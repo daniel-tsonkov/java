@@ -5,6 +5,7 @@ import com.fazecast.jSerialComm.SerialPortDataListener;
 import com.fazecast.jSerialComm.SerialPortEvent;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,7 +27,7 @@ public class MainScreen extends JFrame implements ActionListener {
     JButton addCell = new JButton(iconAddCell);
     ImageIcon iconDeleteCell = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/deletecell.png")));
     JButton deleteCell = new JButton(iconDeleteCell);
-    JPanel colorPanel;
+    JPanel topPanel, rightPanel, statusPanel, workArea, colorPanel, cellPanel, rightPanelWorkarea, infoPanel, tankPanel;
     JTextField redColor, greenColor, blueColor;
     JButton setColor = new JButton();
     JButton[][] array2dtop = new JButton[10][10];
@@ -47,13 +48,61 @@ public class MainScreen extends JFrame implements ActionListener {
         this.setResizable(false);
         this.setLocationRelativeTo(null);
 
+        topPanel = new JPanel();
+        topPanel.setPreferredSize(new Dimension(20, 30));
+        topPanel.setBackground(new Color(100, 100, 100));
+        topPanel.setLayout(new BorderLayout());
+
+        rightPanel();
+        statusPanel();
+        wonkArea();
+
+        topPanel.add(addCell, BorderLayout.WEST);
+        topPanel.add(deleteCell);
+        topPanel.add(cellPanel);
+        topPanel.add(settingsButton, BorderLayout.EAST);
+        statusPanel.add(statusLed, BorderLayout.WEST);
+        rightPanel.add(setMacAddr);
+        rightPanel.add(onButton);
+        rightPanel.add(offButton);
+        rightPanel.add(getTempAndHum);
+        rightPanel.add(getSoil);
+        rightPanel.add(colorPanel);
+        colorPanel.add(redColor);
+        colorPanel.add(greenColor);
+        colorPanel.add(blueColor);
+        colorPanel.add(setColor);
+
+        workArea.add(cellPanel);
+        rightPanelWorkarea.add(infoPanel);
+        rightPanelWorkarea.add(tankPanel);
+        workArea.add(rightPanelWorkarea);
+        this.add(rightPanel, BorderLayout.EAST);
+        this.add(statusPanel, BorderLayout.SOUTH);
+        this.add(workArea, BorderLayout.CENTER);
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/leafs.png")));
+        ToolbarMenu();
+    }
+
+    private void statusPanel() {
+        statusPanel = new JPanel();
+        statusPanel.setPreferredSize(new Dimension(20, 20));
+        statusPanel.setBackground(new Color(100, 100, 100));
+        statusPanel.setLayout(new BorderLayout());
+    }
+
+    private void rightPanel() {
+        rightPanel = new JPanel();
+        rightPanel.setBorder(BorderFactory.createTitledBorder("Settings"));
+        rightPanel.setPreferredSize(new Dimension(200, 200));
+        rightPanel.setBackground(new Color(100, 100, 100));
+
         setMacAddr.setText("MAC addr");
         setMacAddr.setFocusable(false);
         setMacAddr.setPreferredSize(new Dimension(185, 30));
         setMacAddr.setMargin(new Insets(0, 0, 0, 0));
         setMacAddr.setBorder(BorderFactory.createEtchedBorder(0));
         setMacAddr.addActionListener(this);
-
 
         onButton.setText("on");
         onButton.setFocusable(false);
@@ -102,29 +151,37 @@ public class MainScreen extends JFrame implements ActionListener {
         setColor.setMargin(new Insets(0, 0, 0, 0));
         setColor.setBorder(BorderFactory.createEtchedBorder(0));
         setColor.addActionListener(this);
+    }
 
-        JPanel cellPanel = new JPanel();
-        cellPanel.setPreferredSize(new Dimension(100, 30));
-        cellPanel.setBackground(new Color(100, 100, 100));
-
-        JPanel topPanel = new JPanel();
-        topPanel.setPreferredSize(new Dimension(20, 30));
-        topPanel.setBackground(new Color(100, 100, 100));
-        topPanel.setLayout(new BorderLayout());
-
-        JPanel rightPanel = new JPanel();
-        rightPanel.setBorder(BorderFactory.createTitledBorder("Settings"));
-        rightPanel.setPreferredSize(new Dimension(200, 200));
-        rightPanel.setBackground(new Color(100, 100, 100));
-
-        JPanel statusPanel = new JPanel();
-        statusPanel.setPreferredSize(new Dimension(20, 20));
-        statusPanel.setBackground(new Color(100, 100, 100));
-        statusPanel.setLayout(new BorderLayout());
-
-        JPanel workArea = new JPanel();
+    private void wonkArea() {
+        workArea = new JPanel();
         workArea.setPreferredSize(new Dimension(200, 200));
         workArea.setBackground(new Color(0, 0, 0));
+
+        Font myFont = new Font("SansSerif", Font.PLAIN, 14);
+        Color myColor = Color.WHITE;
+
+        cellPanel = new JPanel();
+        cellPanel.setBorder(BorderFactory.createEmptyBorder(100, 0, 0, 0));
+        cellPanel.setBorder(BorderFactory.createTitledBorder(null, "Cels", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
+        //cellPanel.setBorder(BorderFactory.createTitledBorder("Cells"));
+        cellPanel.setPreferredSize(new Dimension(700, 650));
+        cellPanel.setBackground(new Color(0, 0, 0));
+
+        rightPanelWorkarea = new JPanel();
+        rightPanelWorkarea.setPreferredSize(new Dimension(350, 650));
+        rightPanelWorkarea.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        rightPanelWorkarea.setBackground(new Color(0, 0, 0));
+
+        infoPanel = new JPanel();
+        infoPanel.setBorder(BorderFactory.createTitledBorder(null, "Info", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
+        infoPanel.setPreferredSize(new Dimension(345, 320));
+        infoPanel.setBackground(new Color(0, 0, 0));
+
+        tankPanel = new JPanel();
+        tankPanel.setBorder(BorderFactory.createTitledBorder(null, "Tank", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
+        tankPanel.setPreferredSize(new Dimension(345, 320));
+        tankPanel.setBackground(new Color(0, 0, 0));
 
         for (xCell = 0; xCell < array2dtop.length; xCell++) {
             for (int yCell = 0; yCell < array2dtop.length; yCell++) {
@@ -135,30 +192,9 @@ public class MainScreen extends JFrame implements ActionListener {
                 array2dtop[xCell][yCell].setPreferredSize(new Dimension(46, 46));
                 array2dtop[xCell][yCell].setBorder(BorderFactory.createEtchedBorder(0));
 
-                workArea.add(array2dtop[xCell][yCell]);
+                cellPanel.add(array2dtop[xCell][yCell]);
             }
         }
-
-        topPanel.add(addCell, BorderLayout.WEST);
-        topPanel.add(deleteCell);
-        topPanel.add(cellPanel);
-        topPanel.add(settingsButton, BorderLayout.EAST);
-        statusPanel.add(statusLed, BorderLayout.WEST);
-        rightPanel.add(setMacAddr);
-        rightPanel.add(onButton);
-        rightPanel.add(offButton);
-        rightPanel.add(getTempAndHum);
-        rightPanel.add(getSoil);
-        rightPanel.add(colorPanel);
-        colorPanel.add(redColor);
-        colorPanel.add(greenColor);
-        colorPanel.add(blueColor);
-        colorPanel.add(setColor);
-        this.add(rightPanel, BorderLayout.EAST);
-        this.add(statusPanel, BorderLayout.SOUTH);
-        this.add(workArea, BorderLayout.CENTER);
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/leafs.png")));
-        ToolbarMenu();
     }
 
     public void incomingData() {
@@ -288,7 +324,7 @@ public class MainScreen extends JFrame implements ActionListener {
 
     void actionA() {
         OutputStream outputStream2 = sp.getOutputStream();
-        String dataToSend2 = "\"{\\\"getdata\\\":\\\"macaddr:4C11AE13F2D0\\\"}\"";
+        String dataToSend2 = "\"{\\\"getdata\\\":\\\"macaddr:BCFF4DFA019B\\\"}\"";
         try {
             outputStream2.write(dataToSend2.getBytes());
         } catch (IOException ex) {
