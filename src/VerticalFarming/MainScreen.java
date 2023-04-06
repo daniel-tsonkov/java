@@ -312,6 +312,7 @@ public class MainScreen extends JFrame implements ActionListener {
         if (e.getSource() == setColor) {
             outputStream1 = sp.getOutputStream();
             //System.out.println(ledColor);
+
             String dataToSend = "\"{\\\"getdata\\\":\\\"set:" + redColor.getText() + greenColor.getText() + blueColor.getText() + "\\\"}\"";
             try {
                 outputStream1.write(dataToSend.getBytes());
