@@ -40,7 +40,7 @@ public class MainScreen extends JFrame implements ActionListener {
     OutputStream outputStream1;
     String receivedAnswers = "";
     int cmd = 0;
-    int tankFill = 50;
+    static int tankFill = 99;
 
     MainScreen() {
         this.setUndecorated(true); //remove "Title bar"
