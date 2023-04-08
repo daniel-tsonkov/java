@@ -11,11 +11,13 @@ public class Settings  extends JFrame implements ActionListener {
 
     JPanel topPanel, tankPanel;
     //JLabel selectPort = new JLabel();
-    JLabel statusLed = new JLabel();
+    //
+    //JLabel statusLed = new JLabel();
     JComboBox runPort;
     JButton connectButton = new JButton();
     JButton disconnectButton = new JButton();
     JButton setTankButton = new JButton();
+    JTextField tankMacAddress = new JTextField(MainScreen.tankMacAddress);
     JButton ok;
 
     public MainScreen mainScreen;
@@ -78,9 +80,9 @@ public class Settings  extends JFrame implements ActionListener {
         selectPort.setForeground(new Color(10, 10, 10));
         selectPort.setBounds(100, 100, 300, 300);*/
 
-        statusLed.setText("LED");
+        /*statusLed.setText("LED");
         statusLed.setFont(new Font("Arial", Font.PLAIN, 12));
-        statusLed.setForeground(new Color(255, 255, 255));
+        statusLed.setForeground(new Color(255, 255, 255));*/
 
         connectButton.setText("Connect");
         connectButton.setFocusable(false);
@@ -112,6 +114,9 @@ public class Settings  extends JFrame implements ActionListener {
         topPanel.add(connectButton);
         topPanel.add(disconnectButton);
 
+        tankMacAddress.setPreferredSize(new Dimension(150, 30));
+
+        tankPanel.add(tankMacAddress);
         tankPanel.add(setTankButton);
 
         ok = new JButton("Затвори");
@@ -120,6 +125,7 @@ public class Settings  extends JFrame implements ActionListener {
 
         connectButton.addActionListener(this);
         disconnectButton.addActionListener(this);
+        setTankButton.addActionListener(this);
         ok.addActionListener(this);
     }
 
@@ -130,7 +136,9 @@ public class Settings  extends JFrame implements ActionListener {
         }
 
         if (e.getSource() == setTankButton) {
-            //MainScreen.openPort = runPort.getSelectedItem().toString();
+            MainScreen.tankMacAddress = tankMacAddress.getText();
+            MainScreen.statusLed.setText(MainScreen.tankMacAddress);
+            System.out.println(MainScreen.tankMacAddress);
         }
 
         if (e.getSource() == ok) {

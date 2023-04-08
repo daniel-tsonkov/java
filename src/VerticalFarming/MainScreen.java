@@ -17,7 +17,7 @@ public class MainScreen extends JFrame implements ActionListener {
     TankPanel tank;
 
     JToolBar toolBar;
-    JLabel statusLed = new JLabel();
+    public static JLabel statusLed = new JLabel();
     ImageIcon iconSettings = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/gear.png")));
     JButton settingsButton = new JButton(iconSettings);
     JButton setMacAddr = new JButton();
@@ -42,6 +42,7 @@ public class MainScreen extends JFrame implements ActionListener {
     String receivedAnswers = "";
     int cmd = 0;
     static int tankFill = 99;
+    static String tankMacAddress = "01020304";
 
     MainScreen() {
         this.setUndecorated(true); //remove "Title bar"
