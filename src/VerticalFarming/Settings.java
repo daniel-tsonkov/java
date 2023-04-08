@@ -15,6 +15,7 @@ public class Settings  extends JFrame implements ActionListener {
     JComboBox runPort;
     JButton connectButton = new JButton();
     JButton disconnectButton = new JButton();
+    JButton setTankButton = new JButton();
     JButton ok;
 
     public MainScreen mainScreen;
@@ -90,6 +91,10 @@ public class Settings  extends JFrame implements ActionListener {
         disconnectButton.setPreferredSize(new Dimension(100, 30));
         disconnectButton.setEnabled(false);
 
+        setTankButton.setText("Connect to tank");
+        setTankButton.setFocusable(false);
+        setTankButton.setPreferredSize(new Dimension(150, 30));
+
         if (MainScreen.sp != null) {
             disconnectButton.setEnabled(true);
             connectButton.setEnabled(false);
@@ -107,6 +112,8 @@ public class Settings  extends JFrame implements ActionListener {
         topPanel.add(connectButton);
         topPanel.add(disconnectButton);
 
+        tankPanel.add(setTankButton);
+
         ok = new JButton("Затвори");
         this.add(ok);
         ok.setBounds(500, 390, 120, 30);
@@ -120,6 +127,10 @@ public class Settings  extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == runPort) {
             MainScreen.openPort = runPort.getSelectedItem().toString();
+        }
+
+        if (e.getSource() == setTankButton) {
+            //MainScreen.openPort = runPort.getSelectedItem().toString();
         }
 
         if (e.getSource() == ok) {
