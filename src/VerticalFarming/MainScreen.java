@@ -33,8 +33,9 @@ public class MainScreen extends JFrame implements ActionListener {
     JTextField redColor, greenColor, blueColor;
     JButton setColor = new JButton();
     //JButton[][] array2dtop = new JButton[10][10];
-    JButton[] array2dtop = new JButton[154];
-    JButton exitButton = new JButton("Exit");
+    public static JButton[] array2dtop = new JButton[154];
+    ImageIcon iconExit = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/exit.png")));
+    JButton exitButton = new JButton(iconExit);
     int xCell;
     static String openPort;
     static SerialPort sp;
@@ -70,7 +71,7 @@ public class MainScreen extends JFrame implements ActionListener {
         topPanel.add(cellPanel);
         topPanel.add(settingsButton, BorderLayout.EAST);
         statusPanel.add(statusLed, BorderLayout.WEST);
-        statusPanel.add(exitButton, BorderLayout.EAST);
+        //rightPanel.add(exitButton, BorderLayout.EAST);
         rightPanel.add(setMacAddr);
         rightPanel.add(onButton);
         rightPanel.add(offButton);
@@ -217,9 +218,10 @@ public class MainScreen extends JFrame implements ActionListener {
             array2dtop[xCell] = new JButton("C" + (xCell + 1));
             array2dtop[xCell].setActionCommand(String.valueOf(xCell));
             array2dtop[xCell].setMargin(new Insets(0, 0, 0, 0));
-            array2dtop[xCell].addActionListener(this);
             array2dtop[xCell].setPreferredSize(new Dimension(46, 46));
             array2dtop[xCell].setBorder(BorderFactory.createEtchedBorder(0));
+            array2dtop[xCell].setBackground(UIManager.getColor("Button.background"));
+            array2dtop[xCell].addActionListener(this);
 
             cellPanel.add(array2dtop[xCell]);
         }
@@ -391,6 +393,8 @@ public class MainScreen extends JFrame implements ActionListener {
         settingsButton.setPreferredSize(new Dimension(30, 30));
         settingsButton.setBorder(BorderFactory.createEtchedBorder(0));
         toolBar.add(settingsButton);
+        exitButton.setPreferredSize(new Dimension(40, 25));
+        toolBar.add(exitButton);
 
         Container pane = this.getContentPane(); //add to JPane toolbar
         pane.add(toolBar, BorderLayout.NORTH);

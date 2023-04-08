@@ -43,7 +43,7 @@ public class Settings  extends JFrame implements ActionListener {
 
         tankPanel = new JPanel();
         tankPanel.setOpaque(true);
-        tankPanel.setBorder(BorderFactory.createTitledBorder("Резервоар"));
+        tankPanel.setBorder(BorderFactory.createTitledBorder("MAC адрес на резервоар"));
         tankPanel.setPreferredSize(new Dimension(500, 70));
 
         JPanel panel1 = new JPanel();
@@ -80,10 +80,6 @@ public class Settings  extends JFrame implements ActionListener {
         selectPort.setForeground(new Color(10, 10, 10));
         selectPort.setBounds(100, 100, 300, 300);*/
 
-        /*statusLed.setText("LED");
-        statusLed.setFont(new Font("Arial", Font.PLAIN, 12));
-        statusLed.setForeground(new Color(255, 255, 255));*/
-
         connectButton.setText("Connect");
         connectButton.setFocusable(false);
         connectButton.setPreferredSize(new Dimension(90, 30));
@@ -93,7 +89,7 @@ public class Settings  extends JFrame implements ActionListener {
         disconnectButton.setPreferredSize(new Dimension(100, 30));
         disconnectButton.setEnabled(false);
 
-        setTankButton.setText("Connect to tank");
+        setTankButton.setText("Connect");
         setTankButton.setFocusable(false);
         setTankButton.setPreferredSize(new Dimension(150, 30));
 
@@ -139,6 +135,7 @@ public class Settings  extends JFrame implements ActionListener {
             MainScreen.tankMacAddress = tankMacAddress.getText();
             MainScreen.statusLed.setText(MainScreen.tankMacAddress);
             System.out.println(MainScreen.tankMacAddress);
+            //MainScreen.array2dtop[100 - 1].setBackground(Color.RED);
         }
 
         if (e.getSource() == ok) {
