@@ -359,9 +359,9 @@ public class MainScreen extends JFrame implements ActionListener {
                 int event = (Integer.parseInt(e.getActionCommand()) + 1);
                 System.out.println(event);
                 statusLed.setText(String.valueOf(event));
-                for (int i = 0; i < array2dtop.length; i++) {
-                    if((Objects.equals(array2dtop[i].getBackground(), new Color(57, 181, 254))) && (array2dtop[i] != (array2dtop[event - 1]))) {
-                        array2dtop[i].setBackground(UIManager.getColor("Button.background"));
+                for (JButton jButton : array2dtop) {
+                    if ((Objects.equals(jButton.getBackground(), new Color(57, 181, 254))) && (jButton != (array2dtop[event - 1]))) {
+                        jButton.setBackground(UIManager.getColor("Button.background"));
                     }
                 }
                 if((!Objects.equals(array2dtop[event - 1].getBackground(), new Color(130, 130, 130)))) {
