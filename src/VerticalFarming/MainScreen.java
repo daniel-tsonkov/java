@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Objects;
 
 public class MainScreen extends JFrame implements ActionListener {
 
@@ -208,8 +209,8 @@ public class MainScreen extends JFrame implements ActionListener {
             array2dtop[cellNumber].setMargin(new Insets(0, 0, 0, 0));
             array2dtop[cellNumber].setPreferredSize(new Dimension(46, 46));
             array2dtop[cellNumber].setBorder(BorderFactory.createEtchedBorder(0));
-            if(cellNumber > 140 + 1){
-                array2dtop[cellNumber].setBackground(new Color(130,130,130));
+            if (cellNumber >= 140 - 1) {
+                array2dtop[cellNumber].setBackground(new Color(130, 130, 130));
             } else {
                 array2dtop[cellNumber].setBackground(UIManager.getColor("Button.background"));
             }
@@ -323,9 +324,25 @@ public class MainScreen extends JFrame implements ActionListener {
         }
         if (e.getSource() == setColor) {
             outputStream1 = sp.getOutputStream();
-            //System.out.println(ledColor);
-
-            String dataToSend = "\"{\\\"getdata\\\":\\\"set:" + redColor.getText() + greenColor.getText() + blueColor.getText() + "\\\"}\"";
+            String tempRedColor = redColor.getText();
+            String tempGreenColor = greenColor.getText();
+            String tempBlueColor = blueColor.getText();
+            if (Integer.parseInt(tempRedColor) < 10) {
+                tempRedColor = "00" + tempRedColor;
+            }else if((Integer.parseInt(tempRedColor) >= 10) && (Integer.parseInt(tempRedColor) < 100)) {
+                tempRedColor = "0" + tempRedColor;
+            }
+            if (Integer.parseInt(tempGreenColor) < 10) {
+                tempGreenColor = "00" + tempGreenColor;
+            }else if((Integer.parseInt(tempGreenColor) >= 10) && (Integer.parseInt(tempGreenColor) < 100)) {
+                tempGreenColor = "0" + tempGreenColor;
+            }
+            if (Integer.parseInt(tempBlueColor) < 10) {
+                tempBlueColor = "00" + tempBlueColor;
+            }else if((Integer.parseInt(tempBlueColor) >= 10) && (Integer.parseInt(tempBlueColor) < 100)) {
+                tempBlueColor = "0" + tempBlueColor;
+            }
+            String dataToSend = "\"{\\\"getdata\\\":\\\"set:" + tempRedColor + tempGreenColor + tempBlueColor + "\\\"}\"";
             try {
                 outputStream1.write(dataToSend.getBytes());
             } catch (IOException ex) {
@@ -342,6 +359,14 @@ public class MainScreen extends JFrame implements ActionListener {
                 int event = (Integer.parseInt(e.getActionCommand()) + 1);
                 System.out.println(event);
                 statusLed.setText(String.valueOf(event));
+                for (int i = 0; i < array2dtop.length; i++) {
+                    if((Objects.equals(array2dtop[i].getBackground(), new Color(57, 181, 254))) && (array2dtop[i] != (array2dtop[event - 1]))) {
+                        array2dtop[i].setBackground(UIManager.getColor("Button.background"));
+                    }
+                }
+                if((!Objects.equals(array2dtop[event - 1].getBackground(), new Color(130, 130, 130)))) {
+                    array2dtop[event - 1].setBackground(new Color(57, 181, 254));
+                }
             } catch (NumberFormatException ignored) {
             }
         }
