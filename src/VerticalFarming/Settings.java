@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 
 public class Settings  extends JFrame implements ActionListener {
 
-    JPanel topPanel;
+    JPanel topPanel, tankPanel;
     //JLabel selectPort = new JLabel();
     JLabel statusLed = new JLabel();
     JComboBox runPort;
@@ -35,8 +35,13 @@ public class Settings  extends JFrame implements ActionListener {
         topPanel = new JPanel();
         topPanel.setOpaque(true);
         //topPanel.setBackground(Color.WHITE);
-        topPanel.setBorder(BorderFactory.createTitledBorder("PORT"));
+        topPanel.setBorder(BorderFactory.createTitledBorder("Избор на порт"));
         topPanel.setPreferredSize(new Dimension(500, 70));
+
+        tankPanel = new JPanel();
+        tankPanel.setOpaque(true);
+        tankPanel.setBorder(BorderFactory.createTitledBorder("Резервоар"));
+        tankPanel.setPreferredSize(new Dimension(500, 70));
 
         JPanel panel1 = new JPanel();
         JPanel panel2 = new JPanel();
@@ -45,7 +50,7 @@ public class Settings  extends JFrame implements ActionListener {
         JPanel panel5 = new JPanel();
 
         tabbedPane.add("Порт", panel1);
-        tabbedPane.add("Empty", panel2);
+        tabbedPane.add("Резервоар", panel2);
         tabbedPane.add("Empty", panel3);
         tabbedPane.add("Empty", panel4);
         tabbedPane.add("Empty", panel5);
@@ -95,6 +100,7 @@ public class Settings  extends JFrame implements ActionListener {
         }
 
         panel1.add(topPanel, BorderLayout.CENTER);
+        panel2.add(tankPanel, BorderLayout.CENTER);
 
         //topPanel.add(selectPort);
         topPanel.add(runPort);

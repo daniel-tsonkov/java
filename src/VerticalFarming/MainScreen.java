@@ -32,7 +32,8 @@ public class MainScreen extends JFrame implements ActionListener {
     JPanel topPanel, rightPanel, statusPanel, workArea, colorPanel, cellPanel, rightPanelWorkarea, infoPanel, tankPanel;
     JTextField redColor, greenColor, blueColor;
     JButton setColor = new JButton();
-    JButton[][] array2dtop = new JButton[10][10];
+    //JButton[][] array2dtop = new JButton[10][10];
+    JButton[] array2dtop = new JButton[154];
     JButton exitButton = new JButton("Exit");
     int xCell;
     static String openPort;
@@ -199,7 +200,7 @@ public class MainScreen extends JFrame implements ActionListener {
         tankPanel.setBackground(new Color(0, 0, 0));
         tankPanel.add(tank);
 
-        for (xCell = 0; xCell < array2dtop.length; xCell++) {
+        /*for (xCell = 0; xCell < array2dtop.length; xCell++) {
             for (int yCell = 0; yCell < array2dtop.length; yCell++) {
                 array2dtop[xCell][yCell] = new JButton("C" + ((xCell * 10) + yCell));
                 array2dtop[xCell][yCell].setActionCommand(String.valueOf((xCell * 10) + yCell));
@@ -210,6 +211,16 @@ public class MainScreen extends JFrame implements ActionListener {
 
                 cellPanel.add(array2dtop[xCell][yCell]);
             }
+        }*/
+        for (xCell = 0; xCell < array2dtop.length; xCell++) {
+            array2dtop[xCell] = new JButton("C" + (xCell + 1));
+            array2dtop[xCell].setActionCommand(String.valueOf(xCell));
+            array2dtop[xCell].setMargin(new Insets(0, 0, 0, 0));
+            array2dtop[xCell].addActionListener(this);
+            array2dtop[xCell].setPreferredSize(new Dimension(46, 46));
+            array2dtop[xCell].setBorder(BorderFactory.createEtchedBorder(0));
+
+            cellPanel.add(array2dtop[xCell]);
         }
     }
 
@@ -333,7 +344,9 @@ public class MainScreen extends JFrame implements ActionListener {
         if ((e.getSource() != exitButton) && (e.getSource() != setColor) && (e.getSource() != addCell) && (e.getSource() != deleteCell) && (e.getSource() != settingsButton) && (e.getSource() != setMacAddr) && (e.getSource() != getSoil) && (e.getSource() != onButton) && (e.getSource() != offButton) && (e.getSource() != offButton) && (e.getSource() != getTempAndHum)) {
             cmd = Integer.parseInt(e.getActionCommand());
             try {
-                System.out.println(Integer.parseInt(e.getActionCommand()));
+                int event = (Integer.parseInt(e.getActionCommand()) + 1);
+                System.out.println(event);
+                statusLed.setText(String.valueOf(event));
             } catch (NumberFormatException ignored) {
             }
         }
