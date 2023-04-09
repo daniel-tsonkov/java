@@ -444,7 +444,7 @@ public class MainScreen extends JFrame implements ActionListener {
         settingsButton.addActionListener(this);
     }
 
-    public void PrintOnTheConsole(String str) {
+    public static void PrintOnTheConsole(String str) {
         evetTextArea.append("\n" + str);
         evetTextArea.setCaretPosition(evetTextArea.getDocument().getLength());
     }

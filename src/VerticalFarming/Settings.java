@@ -17,7 +17,7 @@ public class Settings  extends JFrame implements ActionListener {
     JButton connectButton = new JButton();
     JButton disconnectButton = new JButton();
     JButton setTankButton = new JButton();
-    JTextField tankMacAddress = new JTextField(MainScreen.tankMacAddress);
+    JTextField tankMacAddress = new JTextField("4C11AE13F2D0");
     JButton ok;
 
     public MainScreen mainScreen;
@@ -135,7 +135,8 @@ public class Settings  extends JFrame implements ActionListener {
             MainScreen.tankMacAddress = tankMacAddress.getText();
             MainScreen.statusLed.setText(MainScreen.tankMacAddress);
             System.out.println(MainScreen.tankMacAddress);
-            //MainScreen.array2dtop[100 - 1].setBackground(Color.RED);
+            MainScreen.stringToConsole = "Tank MAC address is: " + MainScreen.tankMacAddress;
+            MainScreen.PrintOnTheConsole(MainScreen.stringToConsole);
         }
 
         if (e.getSource() == ok) {
@@ -152,7 +153,8 @@ public class Settings  extends JFrame implements ActionListener {
                 connectButton.setEnabled(false);
                 System.out.println(MainScreen.openPort + " is open :)");
                 //selectPort.setText(MainScreen.openPort + " is open");
-                MainScreen.evetTextArea.append("\n" + MainScreen.openPort + " is open :)");
+                MainScreen.stringToConsole = MainScreen.openPort + " is open";
+                MainScreen.PrintOnTheConsole(MainScreen.stringToConsole);
             } else {
                 System.out.println("Failed to open port :(");
                 //selectPort.setText("Check again " + MainScreen.openPort);
