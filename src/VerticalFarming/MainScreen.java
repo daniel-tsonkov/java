@@ -190,8 +190,8 @@ public class MainScreen extends JFrame implements ActionListener {
         evetTextArea = new JTextArea();
         evetTextArea.setLineWrap(true);
         evetTextArea.setWrapStyleWord(true);
-        evetTextArea.setFont(new Font(null, Font.PLAIN, 14));
-        evetTextArea.setForeground(new Color(200, 0, 0));
+        evetTextArea.setFont(new Font(null, Font.PLAIN, 12));
+        evetTextArea.setForeground(new Color(200, 200, 200));
         evetTextArea.setBackground(new Color(0, 0, 50));
         scrollPane = new JScrollPane(evetTextArea);
         scrollPane.setPreferredSize(new Dimension(1140, 315));
@@ -366,6 +366,8 @@ public class MainScreen extends JFrame implements ActionListener {
             String dataToSend = "\"{\\\"getdata\\\":\\\"set:" + tempRedColor + tempGreenColor + tempBlueColor + "\\\"}\"";
             try {
                 outputStream1.write(dataToSend.getBytes());
+                evetTextArea.append("\n" + "Send color: " +tempRedColor + tempGreenColor + tempBlueColor);
+                evetTextArea.setCaretPosition(evetTextArea.getDocument().getLength());
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -379,6 +381,8 @@ public class MainScreen extends JFrame implements ActionListener {
             try {
                 int event = (Integer.parseInt(e.getActionCommand()) + 1);
                 System.out.println(event);
+                evetTextArea.append("\n" + "Selected cell: C" + event);
+                evetTextArea.setCaretPosition(evetTextArea.getDocument().getLength());
                 statusLed.setText(String.valueOf(event));
                 for (JButton jButton : array2dtop) {
                     if ((Objects.equals(jButton.getBackground(), new Color(57, 181, 254))) && (jButton != (array2dtop[event - 1]))) {

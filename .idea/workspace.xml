@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
+    <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="bb">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VerticalFarming/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerticalFarming/MainScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerticalFarming/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerticalFarming/Settings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,13 +157,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00274" summary="Update">
-      <created>1680335838841</created>
-      <option name="number" value="00274" />
-      <option name="presentableId" value="LOCAL-00274" />
-      <option name="project" value="LOCAL" />
-      <updated>1680335838841</updated>
     </task>
     <task id="LOCAL-00275" summary="Update">
       <created>1680337256875</created>
@@ -502,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681022969594</updated>
     </task>
-    <option name="localTasksCounter" value="323" />
+    <task id="LOCAL-00323" summary="bb">
+      <created>1681024191996</created>
+      <option name="number" value="00323" />
+      <option name="presentableId" value="LOCAL-00323" />
+      <option name="project" value="LOCAL" />
+      <updated>1681024191996</updated>
+    </task>
+    <option name="localTasksCounter" value="324" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -521,7 +520,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="testa" />
     <MESSAGE value="Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update" />
+    <MESSAGE value="bb" />
+    <option name="LAST_COMMIT_MESSAGE" value="bb" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
