@@ -40,7 +40,7 @@ public class MainScreen extends JFrame implements ActionListener {
     ImageIcon iconExit = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/exit.png")));
     JButton exitButton = new JButton(iconExit);
     int cellNumber;
-    static String openPort;
+    static String openPort, stringToConsole;
     static SerialPort sp;
     OutputStream outputStream1;
     String receivedAnswers = "";
@@ -85,7 +85,6 @@ public class MainScreen extends JFrame implements ActionListener {
         colorPanel.add(greenColor);
         colorPanel.add(blueColor);
         colorPanel.add(setColor);
-
 
         leftPanelWorkArea.add(cellPanel);
         leftPanelWorkArea.add(scrollPane);
@@ -197,7 +196,6 @@ public class MainScreen extends JFrame implements ActionListener {
         scrollPane.setPreferredSize(new Dimension(1140, 315));
         scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-
         cellPanel = new JPanel();
         cellPanel.setBorder(BorderFactory.createEmptyBorder(100, 0, 0, 0));
         cellPanel.setBorder(BorderFactory.createTitledBorder(null, "Cels", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
@@ -260,8 +258,8 @@ public class MainScreen extends JFrame implements ActionListener {
                 if (!answear.equals("")) {
                     System.out.println(answear);
                     statusLed.setText(answear);
-                    evetTextArea.append("\n" + answear);
-                    evetTextArea.setCaretPosition(evetTextArea.getDocument().getLength());
+                    stringToConsole = answear;
+                    PrintOnTheConsole(stringToConsole);
                 }
                 if (answear.equals("Set MAC address OK")) {
                     actionA();
@@ -366,8 +364,8 @@ public class MainScreen extends JFrame implements ActionListener {
             String dataToSend = "\"{\\\"getdata\\\":\\\"set:" + tempRedColor + tempGreenColor + tempBlueColor + "\\\"}\"";
             try {
                 outputStream1.write(dataToSend.getBytes());
-                evetTextArea.append("\n" + "Send color: " +tempRedColor + tempGreenColor + tempBlueColor);
-                evetTextArea.setCaretPosition(evetTextArea.getDocument().getLength());
+                stringToConsole = "Send color: " +tempRedColor + tempGreenColor + tempBlueColor;
+                PrintOnTheConsole(stringToConsole);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -381,8 +379,8 @@ public class MainScreen extends JFrame implements ActionListener {
             try {
                 int event = (Integer.parseInt(e.getActionCommand()) + 1);
                 System.out.println(event);
-                evetTextArea.append("\n" + "Selected cell: C" + event);
-                evetTextArea.setCaretPosition(evetTextArea.getDocument().getLength());
+                stringToConsole = "Selected cell: C" + event;
+                PrintOnTheConsole(stringToConsole);
                 statusLed.setText(String.valueOf(event));
                 for (JButton jButton : array2dtop) {
                     if ((Objects.equals(jButton.getBackground(), new Color(57, 181, 254))) && (jButton != (array2dtop[event - 1]))) {
@@ -444,5 +442,10 @@ public class MainScreen extends JFrame implements ActionListener {
         addCell.addActionListener(this);
         deleteCell.addActionListener(this);
         settingsButton.addActionListener(this);
+    }
+
+    public void PrintOnTheConsole(String str) {
+        evetTextArea.append("\n" + str);
+        evetTextArea.setCaretPosition(evetTextArea.getDocument().getLength());
     }
 }
