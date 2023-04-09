@@ -5,7 +5,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 public class TankPanel extends JPanel implements ActionListener {
     Timer timer;
     int tempValueForExample = 1;
@@ -42,8 +41,6 @@ public class TankPanel extends JPanel implements ActionListener {
         g2D.setPaint(new Color(155, 155, 0));
         g2D.setFont(new Font(null, Font.BOLD, 30));
         g2D.drawString(MainScreen.tankFill + "%", 140, 150);
-
-
     }
 
     @Override

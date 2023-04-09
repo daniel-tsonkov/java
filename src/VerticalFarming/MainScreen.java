@@ -30,7 +30,9 @@ public class MainScreen extends JFrame implements ActionListener {
     JButton addCell = new JButton(iconAddCell);
     ImageIcon iconDeleteCell = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/deletecell.png")));
     JButton deleteCell = new JButton(iconDeleteCell);
-    JPanel topPanel, rightPanel, statusPanel, workArea, colorPanel, cellPanel, leftPanelWorkArea, eventPanel, rightPanelWorkarea, infoPanel, tankPanel;
+    JPanel topPanel, rightPanel, statusPanel, workArea, colorPanel, cellPanel, leftPanelWorkArea, rightPanelWorkarea, infoPanel, tankPanel;
+    JTextArea evetTextArea;
+    JScrollPane scrollPane;
     JTextField redColor, greenColor, blueColor;
     JButton setColor = new JButton();
     //JButton[][] array2dtop = new JButton[10][10];
@@ -84,8 +86,9 @@ public class MainScreen extends JFrame implements ActionListener {
         colorPanel.add(blueColor);
         colorPanel.add(setColor);
 
+
         leftPanelWorkArea.add(cellPanel);
-        leftPanelWorkArea.add(eventPanel);
+        leftPanelWorkArea.add(scrollPane);
         rightPanelWorkarea.add(infoPanel);
         rightPanelWorkarea.add(tankPanel);
         workArea.add(leftPanelWorkArea);
@@ -184,16 +187,21 @@ public class MainScreen extends JFrame implements ActionListener {
         leftPanelWorkArea.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
         leftPanelWorkArea.setBackground(new Color(0, 0, 0));
 
+        evetTextArea = new JTextArea();
+        evetTextArea.setLineWrap(true);
+        evetTextArea.setWrapStyleWord(true);
+        //evetTextArea.setBorder(BorderFactory.createTitledBorder(null, "Events", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
+        evetTextArea.setBackground(new Color(0, 0, 50));
+        scrollPane = new JScrollPane(evetTextArea);
+        scrollPane.setPreferredSize(new Dimension(1140, 315));
+        scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+
         cellPanel = new JPanel();
         cellPanel.setBorder(BorderFactory.createEmptyBorder(100, 0, 0, 0));
         cellPanel.setBorder(BorderFactory.createTitledBorder(null, "Cels", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
         cellPanel.setPreferredSize(new Dimension(1140, 560));
         cellPanel.setBackground(new Color(0, 0, 0));
-
-        eventPanel = new JPanel();
-        eventPanel.setBorder(BorderFactory.createTitledBorder(null, "Events", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
-        eventPanel.setPreferredSize(new Dimension(1140, 320));
-        eventPanel.setBackground(new Color(0, 0, 50));
 
         rightPanelWorkarea = new JPanel();
         rightPanelWorkarea.setPreferredSize(new Dimension(350, 890));
