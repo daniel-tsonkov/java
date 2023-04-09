@@ -31,7 +31,7 @@ public class MainScreen extends JFrame implements ActionListener {
     ImageIcon iconDeleteCell = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/deletecell.png")));
     JButton deleteCell = new JButton(iconDeleteCell);
     JPanel topPanel, rightPanel, statusPanel, workArea, colorPanel, cellPanel, leftPanelWorkArea, rightPanelWorkarea, infoPanel, tankPanel;
-    JTextArea evetTextArea;
+    public static JTextArea evetTextArea;
     JScrollPane scrollPane;
     JTextField redColor, greenColor, blueColor;
     JButton setColor = new JButton();
@@ -190,6 +190,10 @@ public class MainScreen extends JFrame implements ActionListener {
         evetTextArea = new JTextArea();
         evetTextArea.setLineWrap(true);
         evetTextArea.setWrapStyleWord(true);
+        evetTextArea.setFont(new Font(null, Font.LAYOUT_LEFT_TO_RIGHT, 20));
+        evetTextArea.setForeground(new Color(200, 0, 0));
+        evetTextArea.setText("asd");
+        evetTextArea.append("\nwww");
         //evetTextArea.setBorder(BorderFactory.createTitledBorder(null, "Events", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
         evetTextArea.setBackground(new Color(0, 0, 50));
         scrollPane = new JScrollPane(evetTextArea);
@@ -347,17 +351,17 @@ public class MainScreen extends JFrame implements ActionListener {
             String tempBlueColor = blueColor.getText();
             if (Integer.parseInt(tempRedColor) < 10) {
                 tempRedColor = "00" + tempRedColor;
-            }else if((Integer.parseInt(tempRedColor) >= 10) && (Integer.parseInt(tempRedColor) < 100)) {
+            } else if ((Integer.parseInt(tempRedColor) >= 10) && (Integer.parseInt(tempRedColor) < 100)) {
                 tempRedColor = "0" + tempRedColor;
             }
             if (Integer.parseInt(tempGreenColor) < 10) {
                 tempGreenColor = "00" + tempGreenColor;
-            }else if((Integer.parseInt(tempGreenColor) >= 10) && (Integer.parseInt(tempGreenColor) < 100)) {
+            } else if ((Integer.parseInt(tempGreenColor) >= 10) && (Integer.parseInt(tempGreenColor) < 100)) {
                 tempGreenColor = "0" + tempGreenColor;
             }
             if (Integer.parseInt(tempBlueColor) < 10) {
                 tempBlueColor = "00" + tempBlueColor;
-            }else if((Integer.parseInt(tempBlueColor) >= 10) && (Integer.parseInt(tempBlueColor) < 100)) {
+            } else if ((Integer.parseInt(tempBlueColor) >= 10) && (Integer.parseInt(tempBlueColor) < 100)) {
                 tempBlueColor = "0" + tempBlueColor;
             }
             String dataToSend = "\"{\\\"getdata\\\":\\\"set:" + tempRedColor + tempGreenColor + tempBlueColor + "\\\"}\"";
@@ -382,7 +386,7 @@ public class MainScreen extends JFrame implements ActionListener {
                         jButton.setBackground(UIManager.getColor("Button.background"));
                     }
                 }
-                if((!Objects.equals(array2dtop[event - 1].getBackground(), new Color(130, 130, 130)))) {
+                if ((!Objects.equals(array2dtop[event - 1].getBackground(), new Color(130, 130, 130)))) {
                     array2dtop[event - 1].setBackground(new Color(57, 181, 254));
                 }
             } catch (NumberFormatException ignored) {
