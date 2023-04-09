@@ -190,11 +190,8 @@ public class MainScreen extends JFrame implements ActionListener {
         evetTextArea = new JTextArea();
         evetTextArea.setLineWrap(true);
         evetTextArea.setWrapStyleWord(true);
-        evetTextArea.setFont(new Font(null, Font.LAYOUT_LEFT_TO_RIGHT, 20));
+        evetTextArea.setFont(new Font(null, Font.PLAIN, 14));
         evetTextArea.setForeground(new Color(200, 0, 0));
-        evetTextArea.setText("asd");
-        evetTextArea.append("\nwww");
-        //evetTextArea.setBorder(BorderFactory.createTitledBorder(null, "Events", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
         evetTextArea.setBackground(new Color(0, 0, 50));
         scrollPane = new JScrollPane(evetTextArea);
         scrollPane.setPreferredSize(new Dimension(1140, 315));
@@ -263,6 +260,8 @@ public class MainScreen extends JFrame implements ActionListener {
                 if (!answear.equals("")) {
                     System.out.println(answear);
                     statusLed.setText(answear);
+                    evetTextArea.append("\n" + answear);
+                    evetTextArea.setCaretPosition(evetTextArea.getDocument().getLength());
                 }
                 if (answear.equals("Set MAC address OK")) {
                     actionA();

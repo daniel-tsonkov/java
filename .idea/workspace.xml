@@ -4,6 +4,7 @@
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VerticalFarming/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerticalFarming/MainScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VerticalFarming/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerticalFarming/Settings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,13 +158,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00273" summary="Update">
-      <created>1680335386950</created>
-      <option name="number" value="00273" />
-      <option name="presentableId" value="LOCAL-00273" />
-      <option name="project" value="LOCAL" />
-      <updated>1680335386950</updated>
     </task>
     <task id="LOCAL-00274" summary="Update">
       <created>1680335838841</created>
@@ -501,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681022173270</updated>
     </task>
-    <option name="localTasksCounter" value="322" />
+    <task id="LOCAL-00322" summary="Update">
+      <created>1681022969594</created>
+      <option name="number" value="00322" />
+      <option name="presentableId" value="LOCAL-00322" />
+      <option name="project" value="LOCAL" />
+      <updated>1681022969594</updated>
+    </task>
+    <option name="localTasksCounter" value="323" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

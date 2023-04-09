@@ -152,6 +152,7 @@ public class Settings  extends JFrame implements ActionListener {
                 connectButton.setEnabled(false);
                 System.out.println(MainScreen.openPort + " is open :)");
                 //selectPort.setText(MainScreen.openPort + " is open");
+                MainScreen.evetTextArea.append("\n" + MainScreen.openPort + " is open :)");
             } else {
                 System.out.println("Failed to open port :(");
                 //selectPort.setText("Check again " + MainScreen.openPort);
