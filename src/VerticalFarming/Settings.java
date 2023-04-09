@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 public class Settings  extends JFrame implements ActionListener {
 
@@ -128,7 +129,7 @@ public class Settings  extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == runPort) {
-            MainScreen.openPort = runPort.getSelectedItem().toString();
+            MainScreen.openPort = Objects.requireNonNull(runPort.getSelectedItem()).toString();
         }
 
         if (e.getSource() == setTankButton) {
