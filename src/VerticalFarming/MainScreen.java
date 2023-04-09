@@ -30,7 +30,7 @@ public class MainScreen extends JFrame implements ActionListener {
     JButton addCell = new JButton(iconAddCell);
     ImageIcon iconDeleteCell = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/deletecell.png")));
     JButton deleteCell = new JButton(iconDeleteCell);
-    JPanel topPanel, rightPanel, statusPanel, workArea, colorPanel, cellPanel, rightPanelWorkarea, infoPanel, tankPanel;
+    JPanel topPanel, rightPanel, statusPanel, workArea, colorPanel, cellPanel, leftPanelWorkArea, eventPanel, rightPanelWorkarea, infoPanel, tankPanel;
     JTextField redColor, greenColor, blueColor;
     JButton setColor = new JButton();
     //JButton[][] array2dtop = new JButton[10][10];
@@ -84,9 +84,11 @@ public class MainScreen extends JFrame implements ActionListener {
         colorPanel.add(blueColor);
         colorPanel.add(setColor);
 
-        workArea.add(cellPanel);
+        leftPanelWorkArea.add(cellPanel);
+        leftPanelWorkArea.add(eventPanel);
         rightPanelWorkarea.add(infoPanel);
         rightPanelWorkarea.add(tankPanel);
+        workArea.add(leftPanelWorkArea);
         workArea.add(rightPanelWorkarea);
         this.add(rightPanel, BorderLayout.EAST);
         this.add(statusPanel, BorderLayout.SOUTH);
@@ -102,8 +104,6 @@ public class MainScreen extends JFrame implements ActionListener {
         statusPanel.setPreferredSize(new Dimension(20, 20));
         statusPanel.setBackground(new Color(100, 100, 100));
         statusPanel.setLayout(new BorderLayout());
-
-
     }
 
     private void rightPanel() {
@@ -179,11 +179,21 @@ public class MainScreen extends JFrame implements ActionListener {
         workArea.setPreferredSize(new Dimension(200, 200));
         workArea.setBackground(new Color(0, 0, 0));
 
+        leftPanelWorkArea = new JPanel();
+        leftPanelWorkArea.setPreferredSize(new Dimension(1140, 890));
+        leftPanelWorkArea.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        leftPanelWorkArea.setBackground(new Color(0, 0, 0));
+
         cellPanel = new JPanel();
         cellPanel.setBorder(BorderFactory.createEmptyBorder(100, 0, 0, 0));
         cellPanel.setBorder(BorderFactory.createTitledBorder(null, "Cels", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
-        cellPanel.setPreferredSize(new Dimension(1140, 890));
+        cellPanel.setPreferredSize(new Dimension(1140, 560));
         cellPanel.setBackground(new Color(0, 0, 0));
+
+        eventPanel = new JPanel();
+        eventPanel.setBorder(BorderFactory.createTitledBorder(null, "Events", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
+        eventPanel.setPreferredSize(new Dimension(1140, 320));
+        eventPanel.setBackground(new Color(0, 0, 50));
 
         rightPanelWorkarea = new JPanel();
         rightPanelWorkarea.setPreferredSize(new Dimension(350, 890));
