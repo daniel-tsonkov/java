@@ -47,6 +47,7 @@ public class MainScreen extends JFrame implements ActionListener {
     int cmd = 0;
     static int tankFill = 99;
     static String tankMacAddress = "01020304";
+    static String myKey, myValue;
 
     MainScreen() {
         this.setUndecorated(true); //remove "Title bar"
@@ -260,6 +261,9 @@ public class MainScreen extends JFrame implements ActionListener {
                     statusLed.setText(answear);
                     stringToConsole = answear;
                     PrintOnTheConsole(stringToConsole);
+                    String[] incomingMessage = stringToConsole.split(" ");
+                    myKey = incomingMessage[0];
+                    myValue = incomingMessage[1];
                 }
                 if (answear.equals("Set MAC address OK")) {
                     actionA();

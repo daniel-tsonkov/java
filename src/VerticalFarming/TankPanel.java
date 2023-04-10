@@ -45,10 +45,13 @@ public class TankPanel extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if((MainScreen.tankFill == 0) || (MainScreen.tankFill == 100)){
+        /*if((MainScreen.tankFill == 0) || (MainScreen.tankFill == 100)){
             tempValueForExample = tempValueForExample * (-1);
         }
-        MainScreen.tankFill = MainScreen.tankFill - tempValueForExample;
+        MainScreen.tankFill = MainScreen.tankFill - tempValueForExample;*/
+        if (MainScreen.myKey.equals(MainScreen.tankMacAddress)) {
+            MainScreen.tankFill = Integer.parseInt(MainScreen.myValue);
+        }
 
         //MainScreen.statusLed.setText(String.valueOf((MainScreen.tankFill)));
 
