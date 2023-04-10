@@ -287,7 +287,11 @@ public class MainScreen extends JFrame implements ActionListener {
                     /*if(myKey.equals(tankMacAddress)) {
                         System.out.println("tankMacAddress");
                     }*/
-                    actionA();
+                    if (macRecipient.equals("BCFF4DFA019B")) {
+                        setCellDonglesMac();
+                    }else if (macRecipient.equals(tankMacAddress)) {
+                        setTankDonglesMac();
+                    }
                 }
                 receivedAnswers = "";
             }
@@ -434,7 +438,7 @@ public class MainScreen extends JFrame implements ActionListener {
         }
     }
 
-    void actionA() {
+    void setCellDonglesMac() {
         OutputStream outputStream2 = sp.getOutputStream();
         String dataToSend2 = "\"{\\\"getdata\\\":\\\"macaddr:BCFF4DFA019B\\\"}\"";
         try {
@@ -442,7 +446,16 @@ public class MainScreen extends JFrame implements ActionListener {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        //receivedAnswers = "";
+    }
+
+    void setTankDonglesMac() {
+        OutputStream outputStream2 = sp.getOutputStream();
+        String dataToSend2 = "\"{\\\"getdata\\\":\\\"macaddr:" + tankMacAddress + "\\\"}\"";
+        try {
+            outputStream2.write(dataToSend2.getBytes());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
     private void ToolbarMenu() {
