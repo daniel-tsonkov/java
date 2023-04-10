@@ -26,6 +26,7 @@ public class MainScreen extends JFrame implements ActionListener {
     JButton onButton = new JButton();
     JButton offButton = new JButton();
     JButton getTempAndHum = new JButton();
+    JButton setTankData = new JButton("Set tank data");
     JButton getTankData = new JButton("Tank data");
     ImageIcon iconAddCell = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/addcell.png")));
     JButton addCell = new JButton(iconAddCell);
@@ -43,7 +44,7 @@ public class MainScreen extends JFrame implements ActionListener {
     int cellNumber;
     static String openPort, stringToConsole;
     static SerialPort sp;
-    OutputStream outputStream1;
+    static OutputStream outputStream1;
     String receivedAnswers = "";
     int cmd = 0;
     static int tankFill = 99;
@@ -90,6 +91,7 @@ public class MainScreen extends JFrame implements ActionListener {
         colorPanel.add(greenColor);
         colorPanel.add(blueColor);
         colorPanel.add(setColor);
+        tankPanelGetData.add(setTankData);
         tankPanelGetData.add(getTankData);
 
         leftPanelWorkArea.add(cellPanel);
@@ -184,7 +186,12 @@ public class MainScreen extends JFrame implements ActionListener {
         tankPanelGetData.setPreferredSize(new Dimension(185, 100));
         tankPanelGetData.setBackground(new Color(100, 100, 100));
 
-        getTankData.setText("MAC addr");
+        setTankData.setFocusable(false);
+        setTankData.setPreferredSize(new Dimension(170, 30));
+        setTankData.setMargin(new Insets(0, 0, 0, 0));
+        setTankData.setBorder(BorderFactory.createEtchedBorder(0));
+        setTankData.addActionListener(this);
+
         getTankData.setFocusable(false);
         getTankData.setPreferredSize(new Dimension(170, 30));
         getTankData.setMargin(new Insets(0, 0, 0, 0));
@@ -284,14 +291,7 @@ public class MainScreen extends JFrame implements ActionListener {
                     myValue = incomingMessage[1];
                 }
                 if (answear.equals("Set MAC address OK")) {
-                    /*if(myKey.equals(tankMacAddress)) {
-                        System.out.println("tankMacAddress");
-                    }*/
-                    if (macRecipient.equals("BCFF4DFA019B")) {
-                        setCellDonglesMac();
-                    }else if (macRecipient.equals(tankMacAddress)) {
-                        setTankDonglesMac();
-                    }
+                    setRecipientDonglesMac();
                 }
                 receivedAnswers = "";
             }
@@ -400,20 +400,31 @@ public class MainScreen extends JFrame implements ActionListener {
                 ex.printStackTrace();
             }
         }
-        if (e.getSource() == setMacAddr) {//================================================
+        if (e.getSource() == setTankData) {//================================================
             outputStream1 = sp.getOutputStream();
-            String dataToSend = "\"{\\\"macaddr\\\":\\\"4C11AE13D009\\\"}\"";
+            String dataToSend = "\"{\\\"macaddr\\\":\\\"4C11AE13F2D0\\\"}\"";
             try {
                 outputStream1.write(dataToSend.getBytes());
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
         }
+
+        if (e.getSource() == getTankData) {
+            outputStream1 = sp.getOutputStream();
+            String dataToSend = "\"{\\\"getdata\\\":\\\"tank:getdatavalue\\\"}\"";
+            try {
+                outputStream1.write(dataToSend.getBytes());
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+
         if (sp != null) {
             incomingData();
         }
 
-        if ((e.getSource() != exitButton) && (e.getSource() != setColor) && (e.getSource() != addCell) && (e.getSource() != deleteCell) && (e.getSource() != settingsButton) && (e.getSource() != setMacAddr) && (e.getSource() != getSoil) && (e.getSource() != onButton) && (e.getSource() != offButton) && (e.getSource() != offButton) && (e.getSource() != getTempAndHum)) {
+        if ((e.getSource() != getTankData) && (e.getSource() != setTankData) && (e.getSource() != exitButton) && (e.getSource() != setColor) && (e.getSource() != addCell) && (e.getSource() != deleteCell) && (e.getSource() != settingsButton) && (e.getSource() != setMacAddr) && (e.getSource() != getSoil) && (e.getSource() != onButton) && (e.getSource() != offButton) && (e.getSource() != offButton) && (e.getSource() != getTempAndHum)) {
             cmd = Integer.parseInt(e.getActionCommand());
             try {
                 int event = (Integer.parseInt(e.getActionCommand()) + 1);
@@ -438,19 +449,9 @@ public class MainScreen extends JFrame implements ActionListener {
         }
     }
 
-    void setCellDonglesMac() {
+    void setRecipientDonglesMac() {
         OutputStream outputStream2 = sp.getOutputStream();
         String dataToSend2 = "\"{\\\"getdata\\\":\\\"macaddr:BCFF4DFA019B\\\"}\"";
-        try {
-            outputStream2.write(dataToSend2.getBytes());
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    void setTankDonglesMac() {
-        OutputStream outputStream2 = sp.getOutputStream();
-        String dataToSend2 = "\"{\\\"getdata\\\":\\\"macaddr:" + tankMacAddress + "\\\"}\"";
         try {
             outputStream2.write(dataToSend2.getBytes());
         } catch (IOException ex) {
