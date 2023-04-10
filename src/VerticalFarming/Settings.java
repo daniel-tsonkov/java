@@ -138,6 +138,7 @@ public class Settings  extends JFrame implements ActionListener {
             System.out.println(MainScreen.tankMacAddress);
             MainScreen.stringToConsole = "Tank MAC address is: " + MainScreen.tankMacAddress;
             MainScreen.PrintOnTheConsole(MainScreen.stringToConsole);
+            MainScreen.macRecipient = MainScreen.tankMacAddress;
         }
 
         if (e.getSource() == ok) {

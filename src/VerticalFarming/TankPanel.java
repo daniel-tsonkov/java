@@ -55,13 +55,13 @@ public class TankPanel extends JPanel implements ActionListener {
 
         //MainScreen.statusLed.setText(String.valueOf((MainScreen.tankFill)));
 
-        if((MainScreen.tankFill % 2) == 0){
+        /*if((MainScreen.tankFill % 2) == 0){
             MainScreen.array2dtop[100 - 1].setBackground(Color.RED);
             MainScreen.array2dtop[50 - 1].setBackground(UIManager.getColor("Button.background"));
         } else {
             MainScreen.array2dtop[50 - 1].setBackground(Color.GREEN);
             MainScreen.array2dtop[100 - 1].setBackground(UIManager.getColor("Button.background"));
-        }
+        }*/
         repaint();
     }
 }

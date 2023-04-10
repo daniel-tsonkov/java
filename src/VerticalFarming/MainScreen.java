@@ -26,11 +26,12 @@ public class MainScreen extends JFrame implements ActionListener {
     JButton onButton = new JButton();
     JButton offButton = new JButton();
     JButton getTempAndHum = new JButton();
+    JButton getTankData = new JButton("Tank data");
     ImageIcon iconAddCell = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/addcell.png")));
     JButton addCell = new JButton(iconAddCell);
     ImageIcon iconDeleteCell = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/deletecell.png")));
     JButton deleteCell = new JButton(iconDeleteCell);
-    JPanel topPanel, rightPanel, statusPanel, workArea, colorPanel, cellPanel, leftPanelWorkArea, rightPanelWorkarea, infoPanel, tankPanel;
+    JPanel topPanel, rightPanel, statusPanel, workArea, colorPanel, cellPanel, leftPanelWorkArea, rightPanelWorkarea, infoPanel, tankPanel, tankPanelGetData;
     public static JTextArea evetTextArea;
     JScrollPane scrollPane;
     JTextField redColor, greenColor, blueColor;
@@ -47,7 +48,9 @@ public class MainScreen extends JFrame implements ActionListener {
     int cmd = 0;
     static int tankFill = 99;
     static String tankMacAddress = "01020304";
-    static String myKey, myValue;
+    static String myKey = "0";
+    static String myValue = "0";
+    static String macRecipient;
 
     MainScreen() {
         this.setUndecorated(true); //remove "Title bar"
@@ -82,10 +85,12 @@ public class MainScreen extends JFrame implements ActionListener {
         rightPanel.add(getTempAndHum);
         rightPanel.add(getSoil);
         rightPanel.add(colorPanel);
+        rightPanel.add(tankPanelGetData);
         colorPanel.add(redColor);
         colorPanel.add(greenColor);
         colorPanel.add(blueColor);
         colorPanel.add(setColor);
+        tankPanelGetData.add(getTankData);
 
         leftPanelWorkArea.add(cellPanel);
         leftPanelWorkArea.add(scrollPane);
@@ -172,6 +177,19 @@ public class MainScreen extends JFrame implements ActionListener {
         setColor.setMargin(new Insets(0, 0, 0, 0));
         setColor.setBorder(BorderFactory.createEtchedBorder(0));
         setColor.addActionListener(this);
+
+        tankPanelGetData = new JPanel();
+        tankPanelGetData.setOpaque(true);
+        tankPanelGetData.setBorder(BorderFactory.createTitledBorder(null, "Get tank data", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
+        tankPanelGetData.setPreferredSize(new Dimension(185, 100));
+        tankPanelGetData.setBackground(new Color(100, 100, 100));
+
+        getTankData.setText("MAC addr");
+        getTankData.setFocusable(false);
+        getTankData.setPreferredSize(new Dimension(170, 30));
+        getTankData.setMargin(new Insets(0, 0, 0, 0));
+        getTankData.setBorder(BorderFactory.createEtchedBorder(0));
+        getTankData.addActionListener(this);
     }
 
     private void wonkArea() {
@@ -266,6 +284,9 @@ public class MainScreen extends JFrame implements ActionListener {
                     myValue = incomingMessage[1];
                 }
                 if (answear.equals("Set MAC address OK")) {
+                    /*if(myKey.equals(tankMacAddress)) {
+                        System.out.println("tankMacAddress");
+                    }*/
                     actionA();
                 }
                 receivedAnswers = "";
@@ -305,6 +326,7 @@ public class MainScreen extends JFrame implements ActionListener {
             String dataToSend = "\"{\\\"macaddr\\\":\\\"4C11AE13D009\\\"}\"";
             try {
                 outputStream1.write(dataToSend.getBytes());
+                macRecipient = "BCFF4DFA019B";
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -370,6 +392,15 @@ public class MainScreen extends JFrame implements ActionListener {
                 outputStream1.write(dataToSend.getBytes());
                 stringToConsole = "Send color: " +tempRedColor + tempGreenColor + tempBlueColor;
                 PrintOnTheConsole(stringToConsole);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+        if (e.getSource() == setMacAddr) {//================================================
+            outputStream1 = sp.getOutputStream();
+            String dataToSend = "\"{\\\"macaddr\\\":\\\"4C11AE13D009\\\"}\"";
+            try {
+                outputStream1.write(dataToSend.getBytes());
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
