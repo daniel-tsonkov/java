@@ -33,7 +33,7 @@ public class TankPanel extends JPanel implements ActionListener {
         g2D.fillOval(30, levelWater - 25, 200, 50);
 
         g2D.setPaint(new Color(155, 155, 155));
-        g2D.setStroke(new BasicStroke(3));
+        g2D.setStroke(new BasicStroke(2));
         g2D.drawLine(30, 50, 30, 250);
         g2D.drawLine(230, 50, 230, 250);
         g2D.drawOval(30, 25, 200, 50);
@@ -41,10 +41,10 @@ public class TankPanel extends JPanel implements ActionListener {
 
         g2D.setPaint(new Color(155, 155, 155));
         g2D.setFont(new Font(null, Font.BOLD, 30));
-        g2D.drawString(MainScreen.tankFill + "%", 105, 150);
+        g2D.drawString(MainScreen.tankFill + "%", 105, 160);
 
         //--PUMP
-        g2D.setPaint(new Color(0, 201, 0));
+        g2D.setPaint(new Color(200, 0, 0));
         g2D.fillOval(260, 205, 50, 50);
         g2D.setPaint(new Color(200, 200, 200));
         g2D.drawRect(255, 190, 27, 8);
@@ -53,10 +53,20 @@ public class TankPanel extends JPanel implements ActionListener {
         g2D.drawOval(260, 205, 50, 50);
         g2D.drawOval(275, 220, 20, 20);
         g2D.drawLine(270, 263, 278, 255);
-        g2D.drawLine(302, 263, 294, 255);
-        g2D.drawRect(269, 263, 35, 6);
+        g2D.drawLine(301, 263, 293, 255);
+        g2D.drawRect(269, 263, 33, 6);
 
         //--VALVE
+        g2D.setPaint(new Color(200, 0, 0));
+        g2D.fillRect(282, 102, 30, 40);
+        g2D.setPaint(new Color(200, 200, 200));
+        g2D.drawRect(282, 102, 30, 40);
+        g2D.drawString("S", 287, 132);
+        g2D.drawLine(252, 90, 282, 155);
+        g2D.drawLine(282, 90, 252, 155);
+        g2D.drawLine(252, 90, 282, 90);
+        g2D.drawLine(282, 155, 252, 155);
+        g2D.drawLine(267, 122, 282, 122);
     }
 
     @Override
