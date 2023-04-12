@@ -7,16 +7,16 @@ import java.awt.event.ActionListener;
 
 public class TankPanel extends JPanel implements ActionListener {
     Timer timer;
-    ImageIcon pumpOff;
+    Image pumpOff;
     int tempValueForExample = 1;
 
     TankPanel() {
         this.setPreferredSize(new Dimension(335, 290));
         this.setBackground(new Color(0, 0, 0));
 
-        //ImageIcon pumpOff = new ImageIcon("/VerticalFarming/resources/pump-off.png").getImage();
+        pumpOff = new ImageIcon("pump-off.png").getImage();
 
-        pumpOff = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/pump-off.png")));
+        //pumpOff = new Image(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/pump-off.png")));
         //ImageIcon pumpOon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/pump-on.png")));
 
         timer = new Timer(1000, this);
@@ -31,7 +31,7 @@ public class TankPanel extends JPanel implements ActionListener {
 
         int levelWater = 250 - (MainScreen.tankFill * 2);
 
-        g2D.setPaint(new Color(98, 205, 255));
+        /*g2D.setPaint(new Color(98, 205, 255));
         g2D.fillRect(50, levelWater, 230, 250 - levelWater);
         g2D.fillOval(50, 228, 230, 50);
         g2D.setPaint(new Color(185, 233, 252));
@@ -46,9 +46,9 @@ public class TankPanel extends JPanel implements ActionListener {
 
         g2D.setPaint(new Color(155, 155, 0));
         g2D.setFont(new Font(null, Font.BOLD, 30));
-        g2D.drawString(MainScreen.tankFill + "%", 140, 150);
+        g2D.drawString(MainScreen.tankFill + "%", 140, 150);*/
 
-        g2D.drawImage(pumpOff, 200, 230, null);
+        g2D.drawImage(pumpOff, 200, 200, null);
     }
 
     @Override
