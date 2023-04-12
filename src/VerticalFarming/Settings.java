@@ -10,10 +10,18 @@ import java.util.Objects;
 
 public class Settings  extends JFrame implements ActionListener {
 
-    JPanel topPanel, tankPanel;
+    JPanel topPanel, tankPanel, databasePanel, usernamePanel;
     //JLabel selectPort = new JLabel();
     //
     //JLabel statusLed = new JLabel();
+    JTextField fieldAddressDB = new JTextField();
+    JTextField fieldPortDB = new JTextField();
+    JTextField fieldUsernameDB = new JTextField();
+    JTextField fieldPassDB = new JTextField();
+    JLabel labelAdresDB = new JLabel("Адрес");
+    JLabel labelPosrtDB = new JLabel("Порт  ");
+    JLabel labelUsernameDB = new JLabel("Име  ");
+    JLabel labelPassDB = new JLabel("Парола");
     JComboBox runPort;
     JButton connectButton = new JButton();
     JButton disconnectButton = new JButton();
@@ -38,7 +46,6 @@ public class Settings  extends JFrame implements ActionListener {
 
         topPanel = new JPanel();
         topPanel.setOpaque(true);
-        //topPanel.setBackground(Color.WHITE);
         topPanel.setBorder(BorderFactory.createTitledBorder("Избор на порт"));
         topPanel.setPreferredSize(new Dimension(500, 70));
 
@@ -46,6 +53,36 @@ public class Settings  extends JFrame implements ActionListener {
         tankPanel.setOpaque(true);
         tankPanel.setBorder(BorderFactory.createTitledBorder("MAC адрес на резервоар"));
         tankPanel.setPreferredSize(new Dimension(500, 70));
+
+        databasePanel = new JPanel();
+        databasePanel.setOpaque(true);
+        databasePanel.setBorder(BorderFactory.createTitledBorder("База данни"));
+        databasePanel.setPreferredSize(new Dimension(500, 70));
+
+        databasePanel.add(labelAdresDB);
+
+        fieldAddressDB.setPreferredSize(new Dimension(100, 30));
+        databasePanel.add(fieldAddressDB);
+
+        databasePanel.add(labelPosrtDB);
+
+        fieldPortDB.setPreferredSize(new Dimension(100, 30));
+        databasePanel.add(fieldPortDB);
+
+        usernamePanel = new JPanel();
+        usernamePanel.setOpaque(true);
+        usernamePanel.setBorder(BorderFactory.createTitledBorder("Име и парола"));
+        usernamePanel.setPreferredSize(new Dimension(500, 70));
+
+        usernamePanel.add(labelUsernameDB);
+
+        fieldUsernameDB.setPreferredSize(new Dimension(100, 30));
+        usernamePanel.add(fieldUsernameDB);
+
+        usernamePanel.add(labelPassDB);
+
+        fieldPassDB.setPreferredSize(new Dimension(100, 30));
+        usernamePanel.add(fieldPassDB);
 
         JPanel panel1 = new JPanel();
         JPanel panel2 = new JPanel();
@@ -55,7 +92,7 @@ public class Settings  extends JFrame implements ActionListener {
 
         tabbedPane.add("Порт", panel1);
         tabbedPane.add("Резервоар", panel2);
-        tabbedPane.add("Empty", panel3);
+        tabbedPane.add("База данни", panel3);
         tabbedPane.add("Empty", panel4);
         tabbedPane.add("Empty", panel5);
 
@@ -105,6 +142,8 @@ public class Settings  extends JFrame implements ActionListener {
 
         panel1.add(topPanel, BorderLayout.CENTER);
         panel2.add(tankPanel, BorderLayout.CENTER);
+        panel3.add(databasePanel, BorderLayout.CENTER);
+        panel3.add(usernamePanel, BorderLayout.CENTER);
 
         //topPanel.add(selectPort);
         topPanel.add(runPort);
