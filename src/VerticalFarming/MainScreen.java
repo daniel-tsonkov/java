@@ -19,6 +19,7 @@ public class MainScreen extends JFrame implements ActionListener {
 
     JToolBar toolBar;
     public static JLabel statusLed = new JLabel();
+
     ImageIcon greenCircle = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/green-circle.png")));
     ImageIcon redCircle = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/red-circle.png")));
     JButton runSystem = new JButton(redCircle);
