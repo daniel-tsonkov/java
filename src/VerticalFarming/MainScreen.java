@@ -19,6 +19,9 @@ public class MainScreen extends JFrame implements ActionListener {
 
     JToolBar toolBar;
     public static JLabel statusLed = new JLabel();
+    ImageIcon greenCircle = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/green-circle.png")));
+    ImageIcon redCircle = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/red-circle.png")));
+    JButton runSystem = new JButton(redCircle);
     ImageIcon iconSettings = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/gear.png")));
     JButton settingsButton = new JButton(iconSettings);
     JButton setMacAddr = new JButton();
@@ -74,6 +77,7 @@ public class MainScreen extends JFrame implements ActionListener {
         statusPanel();
         wonkArea();
 
+        topPanel.add(runSystem, BorderLayout.WEST);
         topPanel.add(addCell, BorderLayout.WEST);
         topPanel.add(deleteCell);
         topPanel.add(cellPanel);
@@ -300,6 +304,13 @@ public class MainScreen extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == runSystem) {
+            if(runSystem.getIcon().equals(greenCircle)){
+                runSystem.setIcon(redCircle);
+            }else {
+                runSystem.setIcon(greenCircle);
+            }
+        }
         if (e.getSource() == addCell) {
             try {
                 new Settings(this);
@@ -424,7 +435,7 @@ public class MainScreen extends JFrame implements ActionListener {
             incomingData();
         }
 
-        if ((e.getSource() != getTankData) && (e.getSource() != setTankData) && (e.getSource() != exitButton) && (e.getSource() != setColor) && (e.getSource() != addCell) && (e.getSource() != deleteCell) && (e.getSource() != settingsButton) && (e.getSource() != setMacAddr) && (e.getSource() != getSoil) && (e.getSource() != onButton) && (e.getSource() != offButton) && (e.getSource() != offButton) && (e.getSource() != getTempAndHum)) {
+        if ((e.getSource() != runSystem) && (e.getSource() != getTankData) && (e.getSource() != setTankData) && (e.getSource() != exitButton) && (e.getSource() != setColor) && (e.getSource() != addCell) && (e.getSource() != deleteCell) && (e.getSource() != settingsButton) && (e.getSource() != setMacAddr) && (e.getSource() != getSoil) && (e.getSource() != onButton) && (e.getSource() != offButton) && (e.getSource() != offButton) && (e.getSource() != getTempAndHum)) {
             cmd = Integer.parseInt(e.getActionCommand());
             try {
                 int event = (Integer.parseInt(e.getActionCommand()) + 1);
@@ -464,6 +475,13 @@ public class MainScreen extends JFrame implements ActionListener {
         toolBar.setBackground(new Color(100, 100, 100));
         toolBar.setFloatable(false);
         //addCell = new JButton(iconAddCell);
+        runSystem.setFocusable(false);
+        runSystem.setPreferredSize(new Dimension(32, 32));
+        //runSystem.setBackground(new Color(100, 100, 100));
+        runSystem.setMargin(new Insets(0, 0, 0, 0));
+        runSystem.setBorder(BorderFactory.createEtchedBorder(0));
+        toolBar.add(runSystem);
+
         addCell.setFocusable(false);
         addCell.setPreferredSize(new Dimension(32, 32));
         addCell.setMargin(new Insets(0, 0, 0, 0));
@@ -488,6 +506,7 @@ public class MainScreen extends JFrame implements ActionListener {
         Container pane = this.getContentPane(); //add to JPane toolbar
         pane.add(toolBar, BorderLayout.NORTH);
 
+        runSystem.addActionListener(this);
         addCell.addActionListener(this);
         deleteCell.addActionListener(this);
         settingsButton.addActionListener(this);

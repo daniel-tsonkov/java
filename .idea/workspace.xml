@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="bb">
+      <change afterPath="$PROJECT_DIR$/src/VerticalFarming/resources/green-circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/VerticalFarming/resources/red-circle.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VerticalFarming/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerticalFarming/MainScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,13 +159,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00283" summary="Update">
-      <created>1680524479549</created>
-      <option name="number" value="00283" />
-      <option name="presentableId" value="LOCAL-00283" />
-      <option name="project" value="LOCAL" />
-      <updated>1680524479549</updated>
     </task>
     <task id="LOCAL-00284" summary="Update">
       <created>1680525487167</created>
@@ -500,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681154482337</updated>
     </task>
-    <option name="localTasksCounter" value="332" />
+    <task id="LOCAL-00332" summary="bb">
+      <created>1681155720404</created>
+      <option name="number" value="00332" />
+      <option name="presentableId" value="LOCAL-00332" />
+      <option name="project" value="LOCAL" />
+      <updated>1681155720404</updated>
+    </task>
+    <option name="localTasksCounter" value="333" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
