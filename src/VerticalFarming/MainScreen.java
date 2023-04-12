@@ -482,6 +482,8 @@ public class MainScreen extends JFrame implements ActionListener {
         runSystem.setBorder(BorderFactory.createEtchedBorder(0));
         toolBar.add(runSystem);
 
+        toolBar.addSeparator(new Dimension(30, 30));
+
         addCell.setFocusable(false);
         addCell.setPreferredSize(new Dimension(32, 32));
         addCell.setMargin(new Insets(0, 0, 0, 0));
