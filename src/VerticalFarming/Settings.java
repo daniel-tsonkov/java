@@ -15,7 +15,7 @@ public class Settings  extends JFrame implements ActionListener {
     //
     //JLabel statusLed = new JLabel();
     JTextField fieldAddressDB = new JTextField();
-    JTextField fieldPortDB = new JTextField();
+    JTextField fieldPortDB = new JTextField("3306");
     JTextField fieldUsernameDB = new JTextField();
     JTextField fieldPassDB = new JTextField();
     JLabel labelAdresDB = new JLabel("Адрес");
