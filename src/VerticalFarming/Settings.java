@@ -32,7 +32,7 @@ public class Settings extends JFrame implements ActionListener {
     public MainScreen mainScreen;
     public Settings(VerticalFarming.MainScreen mainScreen) throws ClassNotFoundException {
         this.mainScreen = mainScreen;
-        this.setLocationRelativeTo(null);
+        //this.setLocationRelativeTo(null);
         this.setSize(650, 480);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
