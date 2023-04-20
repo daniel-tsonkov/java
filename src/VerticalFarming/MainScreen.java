@@ -318,7 +318,7 @@ public class MainScreen extends JFrame implements ActionListener {
 
         if (e.getSource() == adminButton) {
             try {
-                new Settings(this);
+                new AdminPanel(this);
             } catch (ClassNotFoundException ex) {
                 ex.printStackTrace();
             }
@@ -531,6 +531,7 @@ public class MainScreen extends JFrame implements ActionListener {
         pane.add(toolBar, BorderLayout.NORTH);
 
         runSystem.addActionListener(this);
+        adminButton.addActionListener(this);
         addCell.addActionListener(this);
         deleteCell.addActionListener(this);
         settingsButton.addActionListener(this);

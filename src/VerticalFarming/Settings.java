@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
-public class Settings  extends JFrame implements ActionListener {
+public class Settings extends JFrame implements ActionListener {
 
     JPanel topPanel, tankPanel, databasePanel, usernamePanel;
     //JLabel selectPort = new JLabel();
