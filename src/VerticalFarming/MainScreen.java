@@ -317,7 +317,12 @@ public class MainScreen extends JFrame implements ActionListener {
         }
 
         if (e.getSource() == adminButton) {
-
+            try {
+                new Settings(this);
+            } catch (ClassNotFoundException ex) {
+                ex.printStackTrace();
+            }
+            this.setEnabled(false);
         }
 
         if (e.getSource() == addCell) {
