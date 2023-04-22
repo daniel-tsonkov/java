@@ -32,8 +32,9 @@ public class Settings extends JFrame implements ActionListener {
     public MainScreen mainScreen;
     public Settings(VerticalFarming.MainScreen mainScreen) throws ClassNotFoundException {
         this.mainScreen = mainScreen;
+        this.setUndecorated(true); //remove "Title bar"
         //this.setLocationRelativeTo(null);
-        this.setSize(650, 480);
+        this.setSize(650, 430);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("resources/gear.png")));
