@@ -16,9 +16,9 @@ public class AdminPanel extends JFrame implements ActionListener, MouseListener 
     JTabbedPane pane;
     JComboBox plantList;
     ImageIcon iconAdd = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/add.png")));
-    ImageIcon iconAddPBlack = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/add-plant-black.png")));
-    ImageIcon iconDelete = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/remove-plant.png")));
-    ImageIcon iconDeleteBlack = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/delete-plant-black.png")));
+    ImageIcon iconAddPBlack = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/add-black.png")));
+    ImageIcon iconDelete = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/remove.png")));
+    ImageIcon iconDeleteBlack = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/remove-black.png")));
     JButton addPlant = new JButton(iconAddPBlack);
     JButton removePlant = new JButton(iconDeleteBlack);
 
