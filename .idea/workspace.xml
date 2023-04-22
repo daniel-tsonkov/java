@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="bb">
-      <change afterPath="$PROJECT_DIR$/src/VerticalFarming/resources/add-plant-black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/VerticalFarming/resources/add.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/VerticalFarming/resources/delete-plant-black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/VerticalFarming/resources/remove-plant.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VerticalFarming/AdminPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerticalFarming/AdminPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerticalFarming/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerticalFarming/Settings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,20 +157,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00297" summary="Update">
-      <created>1680630994460</created>
-      <option name="number" value="00297" />
-      <option name="presentableId" value="LOCAL-00297" />
-      <option name="project" value="LOCAL" />
-      <updated>1680630994460</updated>
-    </task>
-    <task id="LOCAL-00298" summary="Update">
-      <created>1680637871730</created>
-      <option name="number" value="00298" />
-      <option name="presentableId" value="LOCAL-00298" />
-      <option name="project" value="LOCAL" />
-      <updated>1680637871730</updated>
     </task>
     <task id="LOCAL-00299" summary="Update">
       <created>1680638897943</created>
@@ -506,7 +487,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681999670601</updated>
     </task>
-    <option name="localTasksCounter" value="346" />
+    <task id="LOCAL-00346" summary="bb">
+      <created>1682182213571</created>
+      <option name="number" value="00346" />
+      <option name="presentableId" value="LOCAL-00346" />
+      <option name="project" value="LOCAL" />
+      <updated>1682182213571</updated>
+    </task>
+    <task id="LOCAL-00347" summary="bb">
+      <created>1682182343940</created>
+      <option name="number" value="00347" />
+      <option name="presentableId" value="LOCAL-00347" />
+      <option name="project" value="LOCAL" />
+      <updated>1682182343940</updated>
+    </task>
+    <option name="localTasksCounter" value="348" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
