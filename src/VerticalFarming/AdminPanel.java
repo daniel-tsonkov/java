@@ -15,6 +15,8 @@ public class AdminPanel extends JFrame implements ActionListener, MouseListener 
     JPanel selectPlant, mainInfo, algorithm, addRemoveUser, addRemovePlant;
     JTabbedPane pane;
     JComboBox plantList;
+    JTextArea userList, userInfo, textPlant;
+    JTextField addNewUser;
     ImageIcon iconAdd = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/add.png")));
     ImageIcon iconAddPBlack = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/add-black.png")));
     ImageIcon iconDelete = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/remove.png")));
@@ -44,6 +46,25 @@ public class AdminPanel extends JFrame implements ActionListener, MouseListener 
         addRemoveUser.setBorder(BorderFactory.createTitledBorder("Добави / премахни потребител"));
         addRemoveUser.setPreferredSize(new Dimension(1600, 80));
         addRemoveUser.setLayout(null);
+
+        userList = new JTextArea();
+        userList.setBorder(BorderFactory.createTitledBorder("Потребител"));
+        userList.setOpaque(true);
+        userList.setBackground(Color.white);
+        userList.setPreferredSize(new Dimension(200, 790));
+        userList.setLayout(new BorderLayout());
+
+        userInfo = new JTextArea();
+        userInfo.setBorder(BorderFactory.createTitledBorder("Информация за потребител"));
+        userInfo.setOpaque(true);
+        userInfo.setBackground(Color.white);
+        userInfo.setPreferredSize(new Dimension(1390, 790));
+        userInfo.setLayout(new BorderLayout());
+
+        addNewUser = new JTextField();
+        addNewUser.setFocusable(false);
+        addNewUser.setBounds(150, 20, 300, 35);
+        addRemoveUser.add(addNewUser);
 
         addUser.setFocusable(false);
         addUser.setBounds(5, 20, 60, 55);
@@ -100,11 +121,16 @@ public class AdminPanel extends JFrame implements ActionListener, MouseListener 
         plantList.addActionListener(this);
         selectPlant.add(plantList);
 
+        textPlant = new JTextArea();
+
         mainInfo = new JPanel();
         mainInfo.setOpaque(true);
+        mainInfo.setBackground(Color.white);
         mainInfo.setBorder(BorderFactory.createTitledBorder("Обща информация"));
         mainInfo.setPreferredSize(new Dimension(800, 740));
-        mainInfo.setLayout(null);
+        mainInfo.setLayout(new BorderLayout());
+
+        mainInfo.add(textPlant);
 
         algorithm = new JPanel();
         algorithm.setOpaque(true);
@@ -119,6 +145,8 @@ public class AdminPanel extends JFrame implements ActionListener, MouseListener 
         JPanel panel5 = new JPanel();
 
         panel1.add(addRemoveUser);
+        panel1.add(userList);
+        panel1.add(userInfo);
         panel2.add(addRemovePlant);
         panel2.add(selectPlant);
         panel2.add(mainInfo);
@@ -137,7 +165,7 @@ public class AdminPanel extends JFrame implements ActionListener, MouseListener 
 
         ok = new JButton("Затвори");
         this.add(ok);
-        ok.setBounds(1540, 915, 120, 30);
+        ok.setBounds(1550, 915, 120, 30);
 
         addUser.addActionListener(this);
         addUser.addMouseListener(this);
