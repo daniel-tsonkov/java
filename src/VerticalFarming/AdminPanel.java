@@ -21,10 +21,13 @@ public class AdminPanel extends JFrame implements ActionListener, MouseListener 
     ImageIcon iconAddPBlack = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/add-black.png")));
     ImageIcon iconDelete = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/remove.png")));
     ImageIcon iconDeleteBlack = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/remove-black.png")));
+    ImageIcon iconEditUser = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/edit-user.png")));
+    ImageIcon iconEditUserBlack = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/edit-user-black.png")));
     JButton addPlant = new JButton(iconAddPBlack);
     JButton removePlant = new JButton(iconDeleteBlack);
     JButton addUser = new JButton(iconAddPBlack);
     JButton removeUser = new JButton(iconDeleteBlack);
+    JButton editUser = new JButton(iconEditUserBlack);
 
     public AdminPanel(VerticalFarming.MainScreen mainScreen) throws ClassNotFoundException {
         this.setUndecorated(true); //remove "Title bar"
@@ -61,10 +64,10 @@ public class AdminPanel extends JFrame implements ActionListener, MouseListener 
         userInfo.setPreferredSize(new Dimension(1390, 790));
         userInfo.setLayout(new BorderLayout());
 
-        addNewUser = new JTextField();
+        /*addNewUser = new JTextField();
         addNewUser.setFocusable(false);
         addNewUser.setBounds(150, 20, 300, 35);
-        addRemoveUser.add(addNewUser);
+        addRemoveUser.add(addNewUser);*/
 
         addUser.setFocusable(false);
         addUser.setBounds(5, 20, 60, 55);
@@ -83,6 +86,15 @@ public class AdminPanel extends JFrame implements ActionListener, MouseListener 
         removeUser.setHorizontalTextPosition(SwingConstants.CENTER);
         removeUser.setText("Remove");
         addRemoveUser.add(removeUser);
+
+        editUser.setFocusable(false);
+        editUser.setBounds(125, 20, 60, 55);
+        editUser.setMargin(new Insets(0, 0, 0, 0));
+        editUser.setBorder(BorderFactory.createEtchedBorder(0));
+        editUser.setVerticalTextPosition(SwingConstants.BOTTOM);
+        editUser.setHorizontalTextPosition(SwingConstants.CENTER);
+        editUser.setText("Edit");
+        addRemoveUser.add(editUser);
 
         addRemovePlant = new JPanel();
         addRemovePlant.setOpaque(true);
@@ -171,6 +183,8 @@ public class AdminPanel extends JFrame implements ActionListener, MouseListener 
         addUser.addMouseListener(this);
         removeUser.addActionListener(this);
         removeUser.addMouseListener(this);
+        editUser.addActionListener(this);
+        editUser.addMouseListener(this);
         addPlant.addActionListener(this);
         addPlant.addMouseListener(this);
         removePlant.addActionListener(this);
@@ -214,6 +228,9 @@ public class AdminPanel extends JFrame implements ActionListener, MouseListener 
         if (e.getSource() == removeUser) {
             removeUser.setIcon(iconDelete);
         }
+        if (e.getSource() == editUser) {
+            editUser.setIcon(iconEditUser);
+        }
     }
 
     @Override
@@ -229,6 +246,9 @@ public class AdminPanel extends JFrame implements ActionListener, MouseListener 
         }
         if (e.getSource() == removeUser) {
             removeUser.setIcon(iconDeleteBlack);
+        }
+        if (e.getSource() == editUser) {
+            editUser.setIcon(iconEditUserBlack);
         }
     }
 }
