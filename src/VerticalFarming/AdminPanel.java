@@ -14,9 +14,9 @@ public class AdminPanel extends JFrame implements ActionListener, MouseListener 
     JButton ok;
     JPanel selectPlant, mainInfo, algorithm, addRemoveUser, addRemovePlant;
     JTabbedPane pane;
-    JComboBox plantList;
+    JComboBox<String> plantList;
     JTextArea userList, userInfo, textPlant;
-    JTextField addNewUser;
+    //JTextField addNewUser;
     ImageIcon iconAdd = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/add.png")));
     ImageIcon iconAddPBlack = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/add-black.png")));
     ImageIcon iconDelete = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/remove.png")));
@@ -126,8 +126,9 @@ public class AdminPanel extends JFrame implements ActionListener, MouseListener 
         selectPlant.setPreferredSize(new Dimension(1600, 50));
         selectPlant.setLayout(null);
 
-        plantList = new JComboBox();
+        plantList = new JComboBox<>();
         plantList.setBounds(10, 20, 1580, 20);
+        plantList.setEditable(false);
         plantList.addItem("---");
         plantList.addItem("Тест");
         plantList.addActionListener(this);
