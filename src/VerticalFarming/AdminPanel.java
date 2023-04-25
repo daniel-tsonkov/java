@@ -137,7 +137,7 @@ public class AdminPanel extends JFrame implements ActionListener, MouseListener 
 
         ok = new JButton("Затвори");
         this.add(ok);
-        ok.setBounds(1530, 915, 120, 30);
+        ok.setBounds(1540, 915, 120, 30);
 
         addUser.addActionListener(this);
         addUser.addMouseListener(this);
