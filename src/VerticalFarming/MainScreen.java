@@ -43,9 +43,11 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
     JButton setTankData = new JButton("Set tank data");
     JButton getTankData = new JButton("Tank data");
     ImageIcon iconAddCell = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/addcell.png")));
-    JButton addCell = new JButton(iconAddCell);
+    ImageIcon iconAddCellBlack = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/icon-add-cell-black.png")));
+    JButton addCell = new JButton(iconAddCellBlack);
     ImageIcon iconDeleteCell = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/deletecell.png")));
-    JButton deleteCell = new JButton(iconDeleteCell);
+    ImageIcon iconDeleteCellBlack = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/icon-del-cell-black.png")));
+    JButton deleteCell = new JButton(iconDeleteCellBlack);
     JPanel topPanel, rightPanel, statusPanel, workArea, colorPanel, cellPanel, razsadPanel, leftPanelWorkArea, rightPanelWorkarea, infoPanel, tankPanel, tankPanelGetData;
     public static JTextArea evetTextArea;
     JScrollPane scrollPane;
@@ -574,7 +576,9 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
         runSystem.addActionListener(this);
         adminButton.addActionListener(this);
         addCell.addActionListener(this);
+        addCell.addMouseListener(this);
         deleteCell.addActionListener(this);
+        deleteCell.addMouseListener(this);
         showCells.addActionListener(this);
         showCells.addMouseListener(this);
         showRazsad.addActionListener(this);
@@ -604,6 +608,12 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
 
     @Override
     public void mouseEntered(MouseEvent e) {
+        if (e.getSource() == addCell) {
+            addCell.setIcon(iconAddCell);
+        }
+        if (e.getSource() == deleteCell) {
+            deleteCell.setIcon(iconDeleteCell);
+        }
         if (e.getSource() == showCells) {
             showCells.setIcon(iconCells);
         }
@@ -614,6 +624,12 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
 
     @Override
     public void mouseExited(MouseEvent e) {
+        if (e.getSource() == addCell) {
+            addCell.setIcon(iconAddCellBlack);
+        }
+        if (e.getSource() == deleteCell) {
+            deleteCell.setIcon(iconDeleteCellBlack);
+        }
         if (e.getSource() == showCells) {
             showCells.setIcon(iconCellsBlack);
         }

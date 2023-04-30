@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="bb">
+      <change afterPath="$PROJECT_DIR$/src/VerticalFarming/resources/icon-add-cell-black.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/VerticalFarming/resources/icon-del-cell-black.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VerticalFarming/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerticalFarming/MainScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerticalFarming/resources/icon-plants-30.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerticalFarming/resources/icon-plants.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,11 +35,15 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="2AvOnPAaEjDVaBILE3kT43gnp34" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -158,13 +163,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00305" summary="Update">
-      <created>1680763615244</created>
-      <option name="number" value="00305" />
-      <option name="presentableId" value="LOCAL-00305" />
-      <option name="project" value="LOCAL" />
-      <updated>1680763615244</updated>
     </task>
     <task id="LOCAL-00306" summary="Update">
       <created>1680763930223</created>
@@ -502,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682845335789</updated>
     </task>
-    <option name="localTasksCounter" value="354" />
+    <task id="LOCAL-00354" summary="bb">
+      <created>1682847265901</created>
+      <option name="number" value="00354" />
+      <option name="presentableId" value="LOCAL-00354" />
+      <option name="project" value="LOCAL" />
+      <updated>1682847265901</updated>
+    </task>
+    <option name="localTasksCounter" value="355" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -518,6 +523,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="test" />
     <MESSAGE value="testa" />
     <MESSAGE value="Update" />
