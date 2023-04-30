@@ -9,11 +9,13 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Objects;
 
-public class MainScreen extends JFrame implements ActionListener {
+public class MainScreen extends JFrame implements ActionListener, MouseListener {
 
     TankPanel tank;
 
@@ -27,6 +29,12 @@ public class MainScreen extends JFrame implements ActionListener {
     JButton adminButton = new JButton(adminIcon);
     ImageIcon iconSettings = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/gear.png")));
     JButton settingsButton = new JButton(iconSettings);
+    ImageIcon iconCells = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/icon-cells.png")));
+    ImageIcon iconCellsBlack = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/icon-cells-black.png")));
+    JButton showCells = new JButton(iconCellsBlack);
+    ImageIcon iconPlants = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/icon-plants.png")));
+    ImageIcon iconPlantsBlack = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/icon-plants-black.png")));
+    JButton showRazsad = new JButton(iconPlantsBlack);
     JButton setMacAddr = new JButton();
     JButton getSoil = new JButton();
     JButton onButton = new JButton();
@@ -38,7 +46,7 @@ public class MainScreen extends JFrame implements ActionListener {
     JButton addCell = new JButton(iconAddCell);
     ImageIcon iconDeleteCell = new ImageIcon(Toolkit.getDefaultToolkit().getImage(MainScreen.class.getResource("/VerticalFarming/resources/deletecell.png")));
     JButton deleteCell = new JButton(iconDeleteCell);
-    JPanel topPanel, rightPanel, statusPanel, workArea, colorPanel, cellPanel, leftPanelWorkArea, rightPanelWorkarea, infoPanel, tankPanel, tankPanelGetData;
+    JPanel topPanel, rightPanel, statusPanel, workArea, colorPanel, cellPanel, razsadPanel, leftPanelWorkArea, rightPanelWorkarea, infoPanel, tankPanel, tankPanelGetData;
     public static JTextArea evetTextArea;
     JScrollPane scrollPane;
     JTextField redColor, greenColor, blueColor;
@@ -85,6 +93,7 @@ public class MainScreen extends JFrame implements ActionListener {
         topPanel.add(addCell, BorderLayout.WEST);
         topPanel.add(deleteCell);
         topPanel.add(cellPanel);
+        topPanel.add(razsadPanel);
         topPanel.add(settingsButton, BorderLayout.EAST);
         statusPanel.add(statusLed, BorderLayout.WEST);
         //rightPanel.add(exitButton, BorderLayout.EAST);
@@ -103,6 +112,7 @@ public class MainScreen extends JFrame implements ActionListener {
         tankPanelGetData.add(getTankData);
 
         leftPanelWorkArea.add(cellPanel);
+        leftPanelWorkArea.add(razsadPanel);
         leftPanelWorkArea.add(scrollPane);
         rightPanelWorkarea.add(infoPanel);
         rightPanelWorkarea.add(tankPanel);
@@ -231,10 +241,18 @@ public class MainScreen extends JFrame implements ActionListener {
         scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         cellPanel = new JPanel();
+        cellPanel.setVisible(true);
         cellPanel.setBorder(BorderFactory.createEmptyBorder(100, 0, 0, 0));
-        cellPanel.setBorder(BorderFactory.createTitledBorder(null, "Cels", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
+        cellPanel.setBorder(BorderFactory.createTitledBorder(null, "Клетки", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
         cellPanel.setPreferredSize(new Dimension(1140, 560));
         cellPanel.setBackground(new Color(0, 0, 0));
+
+        razsadPanel = new JPanel();
+        razsadPanel.setVisible(false);
+        razsadPanel.setBorder(BorderFactory.createEmptyBorder(100, 0, 0, 0));
+        razsadPanel.setBorder(BorderFactory.createTitledBorder(null, "Разсад", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
+        razsadPanel.setPreferredSize(new Dimension(1140, 560));
+        razsadPanel.setBackground(new Color(0, 0, 0));
 
         rightPanelWorkarea = new JPanel();
         rightPanelWorkarea.setPreferredSize(new Dimension(350, 890));
@@ -242,14 +260,14 @@ public class MainScreen extends JFrame implements ActionListener {
         rightPanelWorkarea.setBackground(new Color(0, 0, 0));
 
         infoPanel = new JPanel();
-        infoPanel.setBorder(BorderFactory.createTitledBorder(null, "Info", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
+        infoPanel.setBorder(BorderFactory.createTitledBorder(null, "Информация", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
         infoPanel.setPreferredSize(new Dimension(345, 560));
         infoPanel.setBackground(new Color(0, 0, 0));
 
         tank = new TankPanel();
 
         tankPanel = new JPanel();
-        tankPanel.setBorder(BorderFactory.createTitledBorder(null, "Tank", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
+        tankPanel.setBorder(BorderFactory.createTitledBorder(null, "Резервоар", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, myFont, myColor));
         tankPanel.setPreferredSize(new Dimension(345, 320));
         tankPanel.setBackground(new Color(0, 0, 0));
         tankPanel.add(tank);
@@ -341,6 +359,15 @@ public class MainScreen extends JFrame implements ActionListener {
                 ex.printStackTrace();
             }
             this.setEnabled(false);
+        }
+        if (e.getSource() == showCells) {
+            cellPanel.setVisible(true);
+            razsadPanel.setVisible(false);
+
+        }
+        if (e.getSource() == showRazsad) {
+            cellPanel.setVisible(false);
+            razsadPanel.setVisible(true);
         }
         if (e.getSource() == settingsButton) {
             try {
@@ -449,7 +476,7 @@ public class MainScreen extends JFrame implements ActionListener {
             incomingData();
         }
 
-        if ((e.getSource() != adminButton) && (e.getSource() != runSystem) && (e.getSource() != getTankData) && (e.getSource() != setTankData) && (e.getSource() != exitButton) && (e.getSource() != setColor) && (e.getSource() != addCell) && (e.getSource() != deleteCell) && (e.getSource() != settingsButton) && (e.getSource() != setMacAddr) && (e.getSource() != getSoil) && (e.getSource() != onButton) && (e.getSource() != offButton) && (e.getSource() != offButton) && (e.getSource() != getTempAndHum)) {
+        if ((e.getSource() != showRazsad) && (e.getSource() != showCells) && (e.getSource() != adminButton) && (e.getSource() != runSystem) && (e.getSource() != getTankData) && (e.getSource() != setTankData) && (e.getSource() != exitButton) && (e.getSource() != setColor) && (e.getSource() != addCell) && (e.getSource() != deleteCell) && (e.getSource() != settingsButton) && (e.getSource() != setMacAddr) && (e.getSource() != getSoil) && (e.getSource() != onButton) && (e.getSource() != offButton) && (e.getSource() != offButton) && (e.getSource() != getTempAndHum)) {
             cmd = Integer.parseInt(e.getActionCommand());
             try {
                 int event = (Integer.parseInt(e.getActionCommand()) + 1);
@@ -518,6 +545,20 @@ public class MainScreen extends JFrame implements ActionListener {
         deleteCell.setBorder(BorderFactory.createEtchedBorder(0));
         toolBar.add(deleteCell);
 
+        toolBar.addSeparator(new Dimension(5, 30));
+
+        showCells.setFocusable(false);
+        showCells.setPreferredSize(new Dimension(32, 32));
+        showCells.setMargin(new Insets(0, 0, 0, 0));
+        showCells.setBorder(BorderFactory.createEtchedBorder(0));
+        toolBar.add(showCells);
+
+        showRazsad.setFocusable(false);
+        showRazsad.setPreferredSize(new Dimension(32, 32));
+        showRazsad.setMargin(new Insets(0, 0, 0, 0));
+        showRazsad.setBorder(BorderFactory.createEtchedBorder(0));
+        toolBar.add(showRazsad);
+
         toolBar.add(Box.createHorizontalGlue());
         //settingsButton = new JButton(iconSettings);
         settingsButton.setFocusable(false);
@@ -534,11 +575,50 @@ public class MainScreen extends JFrame implements ActionListener {
         adminButton.addActionListener(this);
         addCell.addActionListener(this);
         deleteCell.addActionListener(this);
+        showCells.addActionListener(this);
+        showCells.addMouseListener(this);
+        showRazsad.addActionListener(this);
+        showRazsad.addMouseListener(this);
         settingsButton.addActionListener(this);
     }
 
     public static void PrintOnTheConsole(String str) {
         evetTextArea.append("\n" + str);
         evetTextArea.setCaretPosition(evetTextArea.getDocument().getLength());
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        if (e.getSource() == showCells) {
+            showCells.setIcon(iconCells);
+        }
+        if (e.getSource() == showRazsad) {
+            showRazsad.setIcon(iconPlants);
+        }
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        if (e.getSource() == showCells) {
+            showCells.setIcon(iconCellsBlack);
+        }
+        if (e.getSource() == showRazsad) {
+            showRazsad.setIcon(iconPlantsBlack);
+        }
     }
 }
