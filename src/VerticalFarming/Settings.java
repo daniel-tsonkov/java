@@ -105,13 +105,16 @@ public class Settings extends JFrame implements ActionListener {
         runPort = new JComboBox();
 
         runPort.removeAllItems();
+        if(s.length == 0) {
+            runPort.addItem("Няма устройство");
+        }
         for (SerialPort port : s) {
             runPort.addItem(port.getSystemPortName());
         }
         if(MainScreen.openPort != null){
             runPort.setSelectedItem(MainScreen.openPort);
         }
-        runPort.setPreferredSize(new Dimension(110, 30));
+        runPort.setPreferredSize(new Dimension(130, 30));
         runPort.addActionListener(this);
 
         /*selectPort.setText("Select PORT");

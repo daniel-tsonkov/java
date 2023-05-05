@@ -1,12 +1,5 @@
 package VDSystem;
 
-import com.formdev.flatlaf.intellijthemes.FlatArcIJTheme;
-import com.formdev.flatlaf.intellijthemes.FlatArcOrangeIJTheme;
-import com.formdev.flatlaf.intellijthemes.FlatCarbonIJTheme;
-import com.formdev.flatlaf.intellijthemes.FlatHighContrastIJTheme;
-import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatLightOwlContrastIJTheme;
-import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatNightOwlContrastIJTheme;
-
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -865,7 +858,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
     public static void setSkinTheme(String select_theme) {
         try {
             switch (select_theme) {
-                case "Standart":
+               /* case "Standart":
                     UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
                     break;
                 case "FlatArcIJTheme":
@@ -885,7 +878,7 @@ public class MainScreen extends JFrame implements ActionListener, KeyListener {/
                     break;
                 case "FlatNightOwlContrastIJTheme":
                     UIManager.setLookAndFeel(new FlatNightOwlContrastIJTheme());
-                    break;
+                    break;*/
             }
         } catch (Exception s) {
             s.printStackTrace();
