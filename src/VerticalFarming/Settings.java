@@ -112,7 +112,7 @@ public class Settings extends JFrame implements ActionListener {
             runPort.addItem(port.getSystemPortName());
         }
         if(MainScreen.openPort != null){
-            runPort.setSelectedItem(MainScreen.openPort);
+            runPort.setSelectedItem(MainScreen.openPort);//;
         }
         runPort.setPreferredSize(new Dimension(130, 30));
         runPort.addActionListener(this);
