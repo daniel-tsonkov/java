@@ -32,6 +32,7 @@ public class Settings extends JFrame implements ActionListener {
     JButton ok;
 
     public MainScreen mainScreen;
+
     public Settings(VerticalFarming.MainScreen mainScreen) throws ClassNotFoundException {
         this.mainScreen = mainScreen;
         this.setUndecorated(true); //remove "Title bar"
@@ -88,6 +89,8 @@ public class Settings extends JFrame implements ActionListener {
         languagePanel.setPreferredSize(new Dimension(500, 70));
 
         skinButton.setPreferredSize(new Dimension(90, 30));
+        skinButton.setText("Dark");
+        skinButton.addActionListener(this);
 
         usernamePanel.add(labelUsernameDB);
 
@@ -119,13 +122,13 @@ public class Settings extends JFrame implements ActionListener {
         runPort = new JComboBox();
 
         runPort.removeAllItems();
-        if(s.length == 0) {
+        if (s.length == 0) {
             runPort.addItem("Няма устройство");
         }
         for (SerialPort port : s) {
             runPort.addItem(port.getSystemPortName());
         }
-        if(MainScreen.openPort != null){
+        if (MainScreen.openPort != null) {
             runPort.setSelectedItem(MainScreen.openPort);//;
         }
         runPort.setPreferredSize(new Dimension(130, 30));
@@ -218,7 +221,14 @@ public class Settings extends JFrame implements ActionListener {
                 ex.printStackTrace();
             }*/
         }
-
+        if (e.getSource() == skinButton) {
+            String skinButtonText = skinButton.getText();
+            if(skinButtonText.equals("Dark")) {
+                skinButton.setText("Light");
+            } else {
+                skinButton.setText("Dark");
+            }
+        }
         if (e.getSource() == ok) {
             mainScreen.setEnabled(true);
             this.dispose();
