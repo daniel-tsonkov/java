@@ -10,7 +10,9 @@ import java.util.Objects;
 
 public class Settings extends JFrame implements ActionListener {
 
-    JPanel topPanel, tankPanel, databasePanel, usernamePanel;
+    JPanel topPanel, tankPanel, databasePanel, usernamePanel, skinPanel, languagePanel;
+    JToggleButton skinButton = new JToggleButton();
+    JComboBox languages;
     //JLabel selectPort = new JLabel();
     //
     //JLabel statusLed = new JLabel();
@@ -75,6 +77,18 @@ public class Settings extends JFrame implements ActionListener {
         usernamePanel.setBorder(BorderFactory.createTitledBorder("Име и парола"));
         usernamePanel.setPreferredSize(new Dimension(500, 70));
 
+        skinPanel = new JPanel();
+        skinPanel.setOpaque(true);
+        skinPanel.setBorder(BorderFactory.createTitledBorder("Тема"));
+        skinPanel.setPreferredSize(new Dimension(500, 70));
+
+        languagePanel = new JPanel();
+        languagePanel.setOpaque(true);
+        languagePanel.setBorder(BorderFactory.createTitledBorder("Език"));
+        languagePanel.setPreferredSize(new Dimension(500, 70));
+
+        skinButton.setPreferredSize(new Dimension(90, 30));
+
         usernamePanel.add(labelUsernameDB);
 
         fieldUsernameDB.setPreferredSize(new Dimension(100, 30));
@@ -95,7 +109,7 @@ public class Settings extends JFrame implements ActionListener {
         tabbedPane.add("Резервоар", panel2);
         tabbedPane.add("База данни", panel3);
         tabbedPane.add("Empty", panel4);
-        tabbedPane.add("Empty", panel5);
+        tabbedPane.add("Настройки", panel5);
 
         this.add(tabbedPane, BorderLayout.CENTER);
         tabbedPane.setVisible(true);
@@ -116,6 +130,11 @@ public class Settings extends JFrame implements ActionListener {
         }
         runPort.setPreferredSize(new Dimension(130, 30));
         runPort.addActionListener(this);
+
+        languages = new JComboBox();
+
+        languages.setPreferredSize(new Dimension(130, 30));
+        languages.addActionListener(this);
 
         /*selectPort.setText("Select PORT");
         selectPort.setFont(new Font("Arial", Font.PLAIN, 18));
@@ -148,6 +167,8 @@ public class Settings extends JFrame implements ActionListener {
         panel2.add(tankPanel, BorderLayout.CENTER);
         panel3.add(databasePanel, BorderLayout.CENTER);
         panel3.add(usernamePanel, BorderLayout.CENTER);
+        panel5.add(skinPanel, BorderLayout.CENTER);
+        panel5.add(languagePanel, BorderLayout.CENTER);
 
         //topPanel.add(selectPort);
         topPanel.add(runPort);
@@ -156,8 +177,13 @@ public class Settings extends JFrame implements ActionListener {
 
         tankMacAddress.setPreferredSize(new Dimension(150, 30));
 
-        tankPanel.add(tankMacAddress);
-        tankPanel.add(setTankButton);
+        skinPanel.add(skinButton);
+
+        languages.addItem("Български");
+        languages.addItem("English");
+        languages.setPreferredSize(new Dimension(130, 30));
+        languages.addActionListener(this);
+        languagePanel.add(languages);
 
         ok = new JButton("Затвори");
         this.add(ok);
