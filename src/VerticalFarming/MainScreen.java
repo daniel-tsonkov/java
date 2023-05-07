@@ -68,6 +68,7 @@ public class MainScreen extends JFrame implements ActionListener, MouseListener 
     static String myKey = "0";
     static String myValue = "0";
     static String macRecipient;
+    static String teme = "Dark";
 
     MainScreen() {
         this.setUndecorated(true); //remove "Title bar"

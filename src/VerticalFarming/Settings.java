@@ -89,7 +89,14 @@ public class Settings extends JFrame implements ActionListener {
         languagePanel.setPreferredSize(new Dimension(500, 70));
 
         skinButton.setPreferredSize(new Dimension(90, 30));
-        skinButton.setText("Dark");
+        if(MainScreen.teme.equals("Light")) {
+            skinButton.setBackground(new Color(250, 250, 250));
+            skinButton.setSelected(true);
+        } else {
+            skinButton.setBackground(new Color(100, 100, 100));
+            skinButton.setSelected(false);
+        }
+        skinButton.setText(MainScreen.teme);
         skinButton.addActionListener(this);
 
         usernamePanel.add(labelUsernameDB);
@@ -222,12 +229,23 @@ public class Settings extends JFrame implements ActionListener {
             }*/
         }
         if (e.getSource() == skinButton) {
-            String skinButtonText = skinButton.getText();
-            if(skinButtonText.equals("Dark")) {
+            //String skinButtonText = skinButton.getText();
+            if(MainScreen.teme.equals("Dark")) {
+                MainScreen.teme = "Light";
+                skinButton.setBackground(new Color(250, 250, 250));
+                skinButton.setText("Light");
+            } else {
+                MainScreen.teme = "Dark";
+                skinButton.setBackground(new Color(100, 100, 100));
+                skinButton.setText("Dark");
+            }
+            //System.out.println(skinButton.isSelected());
+            /*
+            if(skinButton.isSelected()) {
                 skinButton.setText("Light");
             } else {
                 skinButton.setText("Dark");
-            }
+            }*/
         }
         if (e.getSource() == ok) {
             mainScreen.setEnabled(true);
