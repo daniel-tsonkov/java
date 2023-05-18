@@ -18,14 +18,12 @@ public class BasicStackOperations {
             stack.pop();
         }
 
-        if(stack.contains(x)) {
+        if(stack.isEmpty()) {
+            System.out.println(0);
+        }else if(stack.contains(x)) {
             System.out.println("true");
         }else{
             System.out.println(Collections.min(stack));
-        }
-
-        if(stack.isEmpty()) {
-            System.out.println("0");
         }
     }
 }
