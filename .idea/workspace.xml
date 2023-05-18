@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/src/StacksAndQueues/BasicQueueOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StacksAndQueues/BasicQueueOperations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/StacksAndQueues/BalancedParentheses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +66,20 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\aaa" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MaximumElement">
+  <component name="RunManager" selected="Application.BalancedParentheses">
+    <configuration name="BalancedParentheses" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StacksAndQueues.BalancedParentheses" />
+      <module name="testove" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="StacksAndQueues.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BasicStackOperations" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="StacksAndQueues.BasicStackOperations" />
       <module name="testove" />
@@ -105,19 +119,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OpinionPoll" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DefiningClasses.OpinionPoll" />
-      <module name="testove" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="DefiningClasses.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ReverseNumbersWithAStack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="StacksAndQueues.ReverseNumbersWithAStack" />
       <module name="testove" />
@@ -146,11 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BalancedParentheses" />
         <item itemvalue="Application.MaximumElement" />
         <item itemvalue="Application.BasicStackOperations" />
         <item itemvalue="Application.ReverseNumbersWithAStack" />
         <item itemvalue="Application.VerticalFarming.Main" />
-        <item itemvalue="Application.OpinionPoll" />
       </list>
     </recent_temporary>
   </component>
@@ -162,13 +163,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00222" summary="Update">
-      <created>1677344549014</created>
-      <option name="number" value="00222" />
-      <option name="presentableId" value="LOCAL-00222" />
-      <option name="project" value="LOCAL" />
-      <updated>1677344549014</updated>
     </task>
     <task id="LOCAL-00223" summary="Update">
       <created>1677347695202</created>
@@ -506,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684424352608</updated>
     </task>
-    <option name="localTasksCounter" value="271" />
+    <task id="LOCAL-00271" summary="Update">
+      <created>1684424796116</created>
+      <option name="number" value="00271" />
+      <option name="presentableId" value="LOCAL-00271" />
+      <option name="project" value="LOCAL" />
+      <updated>1684424796116</updated>
+    </task>
+    <option name="localTasksCounter" value="272" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
