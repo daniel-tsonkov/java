@@ -229,23 +229,15 @@ public class Settings extends JFrame implements ActionListener {
             }*/
         }
         if (e.getSource() == skinButton) {
-            //String skinButtonText = skinButton.getText();
-            if(MainScreen.teme.equals("Dark")) {
+            if(skinButton.isSelected()) {
                 MainScreen.teme = "Light";
                 skinButton.setBackground(new Color(250, 250, 250));
-                skinButton.setText("Light");
+                skinButton.setText(MainScreen.teme);
             } else {
                 MainScreen.teme = "Dark";
                 skinButton.setBackground(new Color(100, 100, 100));
-                skinButton.setText("Dark");
+                skinButton.setText(MainScreen.teme);
             }
-            //System.out.println(skinButton.isSelected());
-            /*
-            if(skinButton.isSelected()) {
-                skinButton.setText("Light");
-            } else {
-                skinButton.setText("Dark");
-            }*/
         }
         if (e.getSource() == ok) {
             mainScreen.setEnabled(true);
@@ -273,7 +265,7 @@ public class Settings extends JFrame implements ActionListener {
             if (MainScreen.sp.closePort()) {
                 disconnectButton.setEnabled(false);
                 connectButton.setEnabled(true);
-                System.out.println(MainScreen.openPort + " is closed :)");
+                System.out.println(MainScreen.openPort + " is closed");
                 //selectPort.setText(MainScreen.openPort + " is closed");
                 MainScreen.openPort = "";
             } else {
