@@ -12,9 +12,9 @@ public class BalancedParentheses {
 
         label:
         for (String bracket : brackets) {
-            if(brackets.length % 2 != 0) {
+            if (brackets.length % 2 != 0) {
                 System.out.println("NO");
-                break label;
+                break;
             }
             if (bracket.equals("(") || bracket.equals("{") || bracket.equals("[")) {
                 stack.push(bracket);
@@ -42,8 +42,8 @@ public class BalancedParentheses {
             }
         }
 
-        if(brackets.length % 2 == 0) {
-            if(stack.isEmpty()) {
+        if (brackets.length % 2 == 0) {
+            if (stack.isEmpty()) {
                 System.out.println("YES");
             }
         }
