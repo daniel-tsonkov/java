@@ -16,6 +16,8 @@ public class MaximalSum {
         fillMatrix(matrix, scanner);
 
         int maxSum = Integer.MIN_VALUE;
+        int rowIndex = 0;
+        int colIndex = 0;
 
         for (int row = 0; row < rows - 2; row++) {
             for (int col = 0; col < cols - 2; col++) {
@@ -23,8 +25,21 @@ public class MaximalSum {
 
                 if (sum > maxSum) {
                     maxSum = sum;
+                    rowIndex = row;
+                    colIndex = col;
                 }
             }
+        }
+        System.out.println("Sum = " + maxSum);
+        printMatrix(matrix, rowIndex, colIndex);
+    }
+
+    private static void printMatrix(int[][] matrix, int rowIndex, int colIndex) {
+        for (int i = rowIndex; i <= rowIndex + 2; i++) {
+            for (int j = colIndex; j <= colIndex + 2; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
         }
     }
 

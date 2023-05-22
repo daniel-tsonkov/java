@@ -66,7 +66,7 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\aaa" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DiagonalDifference">
+  <component name="RunManager" selected="Application.MaximalSum">
     <configuration name="BalancedParentheses" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="StacksAndQueues.BalancedParentheses" />
       <module name="testove" />
@@ -106,12 +106,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaximumElement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="StacksAndQueues.MaximumElement" />
+    <configuration name="MaximalSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MultidimensionalArrays.MaximalSum" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="StacksAndQueues.*" />
+          <option name="PATTERN" value="MultidimensionalArrays.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -134,11 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MaximalSum" />
         <item itemvalue="Application.DiagonalDifference" />
         <item itemvalue="Application.MatrixOfPalindromes" />
         <item itemvalue="Application.MultidimensionalArrays.FillTheMatrix" />
         <item itemvalue="Application.BalancedParentheses" />
-        <item itemvalue="Application.MaximumElement" />
       </list>
     </recent_temporary>
   </component>
@@ -150,13 +150,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00234" summary="Update">
-      <created>1677510738951</created>
-      <option name="number" value="00234" />
-      <option name="presentableId" value="LOCAL-00234" />
-      <option name="project" value="LOCAL" />
-      <updated>1677510738951</updated>
     </task>
     <task id="LOCAL-00235" summary="Update">
       <created>1677571057232</created>
@@ -494,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684773961820</updated>
     </task>
-    <option name="localTasksCounter" value="283" />
+    <task id="LOCAL-00283" summary="Update">
+      <created>1684775578743</created>
+      <option name="number" value="00283" />
+      <option name="presentableId" value="LOCAL-00283" />
+      <option name="project" value="LOCAL" />
+      <updated>1684775578743</updated>
+    </task>
+    <option name="localTasksCounter" value="284" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
