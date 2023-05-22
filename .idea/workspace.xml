@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update" />
+    <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MultidimensionalArrays/StringMatrixRotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultidimensionalArrays/StringMatrixRotation.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,13 +150,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00236" summary="Update">
-      <created>1677575625774</created>
-      <option name="number" value="00236" />
-      <option name="presentableId" value="LOCAL-00236" />
-      <option name="project" value="LOCAL" />
-      <updated>1677575625775</updated>
     </task>
     <task id="LOCAL-00237" summary="Update">
       <created>1677577949801</created>
@@ -491,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684776362310</updated>
     </task>
-    <option name="localTasksCounter" value="285" />
+    <task id="LOCAL-00285" summary="Update">
+      <created>1684776634659</created>
+      <option name="number" value="00285" />
+      <option name="presentableId" value="LOCAL-00285" />
+      <option name="project" value="LOCAL" />
+      <updated>1684776634659</updated>
+    </task>
+    <option name="localTasksCounter" value="286" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
