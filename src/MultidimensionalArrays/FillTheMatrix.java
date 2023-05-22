@@ -23,9 +23,9 @@ public class FillTheMatrix {
     }
 
     private static void printMatrix(int[][] matrix) {
-        for (int i = 0; i < matrix.length; i++) {
+        for (int[] ints : matrix) {
             for (int j = 0; j < matrix.length; j++) {
-                System.out.print(matrix[i][j] + " ");
+                System.out.print(ints[j] + " ");
             }
             System.out.println();
         }
@@ -42,18 +42,18 @@ public class FillTheMatrix {
     }
 
     private static void fillPatternB(int[][] matrix) {
-        int fillValue = 1;
+        int cellValue = 1;
 
         for (int i = 0; i < matrix.length; i++) {
             if(i % 2 == 0) {
                 for (int j = 0; j < matrix.length; j++) {
-                    matrix[j][i] = fillValue;
-                    fillValue++;
+                    matrix[j][i] = cellValue;
+                    cellValue++;
                 }
             }else {
                 for (int j = matrix.length - 1; j >= 0; j--) {
-                    matrix[j][i] = fillValue;
-                    fillValue++;
+                    matrix[j][i] = cellValue;
+                    cellValue++;
                 }
             }
         }
