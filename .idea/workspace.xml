@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MultidimensionalArrays/MaximalSum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MultidimensionalArrays/DiagonalDifference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultidimensionalArrays/DiagonalDifference.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -150,13 +150,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00232" summary="Update">
-      <created>1677427174369</created>
-      <option name="number" value="00232" />
-      <option name="presentableId" value="LOCAL-00232" />
-      <option name="project" value="LOCAL" />
-      <updated>1677427174369</updated>
     </task>
     <task id="LOCAL-00233" summary="Update">
       <created>1677509076006</created>
@@ -494,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684740257722</updated>
     </task>
-    <option name="localTasksCounter" value="281" />
+    <task id="LOCAL-00281" summary="Update">
+      <created>1684741488950</created>
+      <option name="number" value="00281" />
+      <option name="presentableId" value="LOCAL-00281" />
+      <option name="project" value="LOCAL" />
+      <updated>1684741488950</updated>
+    </task>
+    <option name="localTasksCounter" value="282" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

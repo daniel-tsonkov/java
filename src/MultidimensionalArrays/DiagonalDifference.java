@@ -18,7 +18,6 @@ public class DiagonalDifference {
 
         int primariDiagonal = getPrimaryDiagonalValue(myMatrix);
         int secondaryDiagonal = getSecondaryDiagonalValue(myMatrix);
-                ;
 
         System.out.println(Math.abs(primariDiagonal - secondaryDiagonal));
 
