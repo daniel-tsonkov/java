@@ -16,6 +16,7 @@ public class UniqueUsernames {
             usernames.add(username);
         }
 
+        //usernames.forEach(System.out::println);
         for (String username : usernames) {
             System.out.println(username);
         }
