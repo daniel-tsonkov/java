@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/src/SetsAndMaps/UniqueUsernames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SetsAndMaps/UniqueUsernames.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SetsAndMaps/SetsOfElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SetsAndMaps/SetsOfElements.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,22 +66,9 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\aaa" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.UniqueUsernames">
+  <component name="RunManager" selected="Application.SetsOfElements">
     <configuration name="DiagonalDifference" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MultidimensionalArrays.DiagonalDifference" />
-      <module name="testove" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="MultidimensionalArrays.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MatrixOfPalindromes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MultidimensionalArrays.MatrixOfPalindromes" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
@@ -98,6 +86,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="MultidimensionalArrays.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SetsOfElements" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SetsAndMaps.SetsOfElements" />
+      <module name="testove" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="SetsAndMaps.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,11 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SetsOfElements" />
         <item itemvalue="Application.UniqueUsernames" />
         <item itemvalue="Application.StringMatrixRotation" />
         <item itemvalue="Application.MaximalSum" />
         <item itemvalue="Application.DiagonalDifference" />
-        <item itemvalue="Application.MatrixOfPalindromes" />
       </list>
     </recent_temporary>
   </component>
@@ -149,13 +150,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00244" summary="Update">
-      <created>1677667436584</created>
-      <option name="number" value="00244" />
-      <option name="presentableId" value="LOCAL-00244" />
-      <option name="project" value="LOCAL" />
-      <updated>1677667436584</updated>
     </task>
     <task id="LOCAL-00245" summary="Update">
       <created>1677668400107</created>
@@ -493,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684951474767</updated>
     </task>
-    <option name="localTasksCounter" value="293" />
+    <task id="LOCAL-00293" summary="Update">
+      <created>1684951804388</created>
+      <option name="number" value="00293" />
+      <option name="presentableId" value="LOCAL-00293" />
+      <option name="project" value="LOCAL" />
+      <updated>1684951804388</updated>
+    </task>
+    <option name="localTasksCounter" value="294" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
