@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/SetsAndMaps/Phonebook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SetsAndMaps/CountSymbols.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SetsAndMaps/CountSymbols.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SetsAndMaps/Phonebook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SetsAndMaps/Phonebook.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +66,7 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\aaa" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CountSymbols">
+  <component name="RunManager" selected="Application.Phonebook">
     <configuration name="CountSymbols" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SetsAndMaps.CountSymbols" />
       <module name="testove" />
@@ -80,12 +80,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaximalSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MultidimensionalArrays.MaximalSum" />
+    <configuration name="Phonebook" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SetsAndMaps.Phonebook" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="MultidimensionalArrays.*" />
+          <option name="PATTERN" value="SetsAndMaps.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -134,11 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Phonebook" />
         <item itemvalue="Application.CountSymbols" />
         <item itemvalue="Application.SetsOfElements" />
         <item itemvalue="Application.UniqueUsernames" />
         <item itemvalue="Application.StringMatrixRotation" />
-        <item itemvalue="Application.MaximalSum" />
       </list>
     </recent_temporary>
   </component>
@@ -150,13 +150,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00248" summary="Update">
-      <created>1677699366806</created>
-      <option name="number" value="00248" />
-      <option name="presentableId" value="LOCAL-00248" />
-      <option name="project" value="LOCAL" />
-      <updated>1677699366806</updated>
     </task>
     <task id="LOCAL-00249" summary="Update">
       <created>1677699468895</created>
@@ -494,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685009732769</updated>
     </task>
-    <option name="localTasksCounter" value="297" />
+    <task id="LOCAL-00297" summary="Update">
+      <created>1685010061017</created>
+      <option name="number" value="00297" />
+      <option name="presentableId" value="LOCAL-00297" />
+      <option name="project" value="LOCAL" />
+      <updated>1685010061017</updated>
+    </task>
+    <option name="localTasksCounter" value="298" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
