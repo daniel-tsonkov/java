@@ -3,8 +3,8 @@ package SetsAndMaps;
 import java.util.*;
 
 public class HandsOfCards {
-    private static Map<String, Integer> multiplaiers = new HashMap<>();
-    private static Map<String, Integer> cardsPowers = new HashMap<>();
+    private static final Map<String, Integer> multiplaiers = new HashMap<>();
+    private static final Map<String, Integer> cardsPowers = new HashMap<>();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
