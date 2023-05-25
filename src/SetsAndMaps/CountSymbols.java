@@ -9,7 +9,7 @@ public class CountSymbols {
         Scanner scanner = new Scanner(System.in);
 
         String text = scanner.nextLine();
-        Map<Character, Integer> occurrences = new TreeMap<>();
+        Map<Character, Integer> occurrences = new TreeMap<>(); //TreeMap<>(Collections.reversOrder());
 
         for (int i = 0; i < text.length(); i++) {
             char symbol = text.charAt(i);
