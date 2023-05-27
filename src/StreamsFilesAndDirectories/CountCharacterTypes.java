@@ -13,6 +13,7 @@ public class CountCharacterTypes {
         int otherSymbolsCount = 0;
         int punctoationsCount = 0;
         List<Character> vowels = List.of('a', 'e', 'i', 'o', 'u');
+        List<Character> punctoations = List.of('!', ',', '.', '?');
 
 
         try (BufferedReader reader = Files.newBufferedReader(Path.of(inputPath))) {
@@ -22,7 +23,15 @@ public class CountCharacterTypes {
                 for (int i = 0; i < line.length(); i++) {
                     char symbol = line.charAt(i);
 
-
+                    if (vowels.contains(symbol)) {
+                        vowelsCount++;
+                    } else if (punctoations.contains(symbol)) {
+                        punctoationsCount++;
+                    } else {
+                        if(symbol != ' ') {
+                            otherSymbolsCount++;
+                        }
+                    }
                 }
 
                 line = reader.readLine();
@@ -30,5 +39,7 @@ public class CountCharacterTypes {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        System.out.printf("Vowels: %s\nOther symbols: %s\nPunctuation: %s\n", vowelsCount, otherSymbolsCount, punctoationsCount);
     }
 }
