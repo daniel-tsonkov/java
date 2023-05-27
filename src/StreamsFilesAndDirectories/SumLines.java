@@ -1,15 +1,32 @@
 package StreamsFilesAndDirectories;
 
-import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.util.Scanner;
 
 public class SumLines {
     public static void main(String[] args) {
         String path = "C:\\Users\\Daniel\\IdeaProjects\\java\\src\\StreamsFilesAndDirectories\\04. Java-Advanced-Files-and-Streams-Exercises-Resources\\input.txt";
 
-        try (BufferedReader reader = Files.newBufferedReader(Paths.get(path))) {
+        try (FileReader fileReader = new FileReader(path)){
+            Scanner scanner = new Scanner(fileReader);
+
+            while (scanner.hasNext()) {
+                String line = scanner.nextLine();
+                char[] chars = line.toCharArray();
+                long sum = 0;
+
+                for (char aChar : chars) {
+                    sum += aChar;
+                }
+                System.out.println(sum);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        /*try (BufferedReader reader = Files.newBufferedReader(Paths.get(path))) {
 
             String line = reader.readLine();
 
@@ -27,7 +44,7 @@ public class SumLines {
 
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }
+        }*/
 
     }
 }
