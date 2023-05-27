@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/StreamsFilesAndDirectories/SumBytes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/StreamsFilesAndDirectories/04. Java-Advanced-Files-and-Streams-Exercises-Resources/Exercises Resources/output.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/StreamsFilesAndDirectories/AllCapitals.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StreamsFilesAndDirectories/SumLines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StreamsFilesAndDirectories/SumLines.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +67,20 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SumBytes">
+  <component name="RunManager" selected="Application.AllCapitals">
+    <configuration name="AllCapitals" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StreamsFilesAndDirectories.AllCapitals" />
+      <module name="testove" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="StreamsFilesAndDirectories.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FixEmails" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SetsAndMaps.FixEmails" />
       <module name="testove" />
@@ -83,19 +96,6 @@
     </configuration>
     <configuration name="HandsOfCards" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SetsAndMaps.HandsOfCards" />
-      <module name="testove" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="SetsAndMaps.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Phonebook" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="SetsAndMaps.Phonebook" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
@@ -135,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AllCapitals" />
         <item itemvalue="Application.SumBytes" />
         <item itemvalue="Application.SumLines" />
         <item itemvalue="Application.HandsOfCards" />
         <item itemvalue="Application.FixEmails" />
-        <item itemvalue="Application.Phonebook" />
       </list>
     </recent_temporary>
   </component>
@@ -151,13 +151,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00260" summary="Update">
-      <created>1678112814384</created>
-      <option name="number" value="00260" />
-      <option name="presentableId" value="LOCAL-00260" />
-      <option name="project" value="LOCAL" />
-      <updated>1678112814385</updated>
     </task>
     <task id="LOCAL-00261" summary="Update">
       <created>1683308924845</created>
@@ -495,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685176326016</updated>
     </task>
-    <option name="localTasksCounter" value="309" />
+    <task id="LOCAL-00309" summary="Update">
+      <created>1685182019656</created>
+      <option name="number" value="00309" />
+      <option name="presentableId" value="LOCAL-00309" />
+      <option name="project" value="LOCAL" />
+      <updated>1685182019656</updated>
+    </task>
+    <option name="localTasksCounter" value="310" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
