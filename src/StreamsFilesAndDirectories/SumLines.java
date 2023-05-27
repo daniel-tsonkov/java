@@ -11,7 +11,7 @@ public class SumLines {
         try (FileReader fileReader = new FileReader(path)){
             Scanner scanner = new Scanner(fileReader);
 
-            while (scanner.hasNext()) {
+            while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 char[] chars = line.toCharArray();
                 long sum = 0;

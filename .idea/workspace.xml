@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
+      <change afterPath="$PROJECT_DIR$/src/StreamsFilesAndDirectories/SumBytes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StreamsFilesAndDirectories/SumLines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StreamsFilesAndDirectories/SumLines.java" afterDir="false" />
     </list>
@@ -66,20 +67,7 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SumLines">
-    <configuration name="CountSymbols" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="SetsAndMaps.CountSymbols" />
-      <module name="testove" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="SetsAndMaps.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.SumBytes">
     <configuration name="FixEmails" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SetsAndMaps.FixEmails" />
       <module name="testove" />
@@ -119,6 +107,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SumBytes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StreamsFilesAndDirectories.SumBytes" />
+      <module name="testove" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="StreamsFilesAndDirectories.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SumLines" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="StreamsFilesAndDirectories.SumLines" />
       <module name="testove" />
@@ -134,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SumBytes" />
         <item itemvalue="Application.SumLines" />
         <item itemvalue="Application.HandsOfCards" />
         <item itemvalue="Application.FixEmails" />
         <item itemvalue="Application.Phonebook" />
-        <item itemvalue="Application.CountSymbols" />
       </list>
     </recent_temporary>
   </component>
@@ -150,13 +151,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00259" summary="Update">
-      <created>1677965042743</created>
-      <option name="number" value="00259" />
-      <option name="presentableId" value="LOCAL-00259" />
-      <option name="project" value="LOCAL" />
-      <updated>1677965042743</updated>
     </task>
     <task id="LOCAL-00260" summary="Update">
       <created>1678112814384</created>
@@ -494,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685175248453</updated>
     </task>
-    <option name="localTasksCounter" value="308" />
+    <task id="LOCAL-00308" summary="Update">
+      <created>1685176326016</created>
+      <option name="number" value="00308" />
+      <option name="presentableId" value="LOCAL-00308" />
+      <option name="project" value="LOCAL" />
+      <updated>1685176326016</updated>
+    </task>
+    <option name="localTasksCounter" value="309" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
