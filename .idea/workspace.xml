@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StreamsFilesAndDirectories/SumLines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StreamsFilesAndDirectories/SumLines.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +66,7 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HandsOfCards">
+  <component name="RunManager" selected="Application.SumLines">
     <configuration name="CountSymbols" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SetsAndMaps.CountSymbols" />
       <module name="testove" />
@@ -118,12 +119,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SetsOfElements" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="SetsAndMaps.SetsOfElements" />
+    <configuration name="SumLines" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StreamsFilesAndDirectories.SumLines" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="SetsAndMaps.*" />
+          <option name="PATTERN" value="StreamsFilesAndDirectories.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,11 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SumLines" />
         <item itemvalue="Application.HandsOfCards" />
         <item itemvalue="Application.FixEmails" />
         <item itemvalue="Application.Phonebook" />
         <item itemvalue="Application.CountSymbols" />
-        <item itemvalue="Application.SetsOfElements" />
       </list>
     </recent_temporary>
   </component>
@@ -149,20 +150,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00256" summary="Update">
-      <created>1677856573570</created>
-      <option name="number" value="00256" />
-      <option name="presentableId" value="LOCAL-00256" />
-      <option name="project" value="LOCAL" />
-      <updated>1677856573570</updated>
-    </task>
-    <task id="LOCAL-00257" summary="Update">
-      <created>1677954928677</created>
-      <option name="number" value="00257" />
-      <option name="presentableId" value="LOCAL-00257" />
-      <option name="project" value="LOCAL" />
-      <updated>1677954928678</updated>
     </task>
     <task id="LOCAL-00258" summary="Update">
       <created>1677958777966</created>
@@ -493,7 +480,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685034413368</updated>
     </task>
-    <option name="localTasksCounter" value="305" />
+    <task id="LOCAL-00305" summary="Update">
+      <created>1685172877668</created>
+      <option name="number" value="00305" />
+      <option name="presentableId" value="LOCAL-00305" />
+      <option name="project" value="LOCAL" />
+      <updated>1685172877668</updated>
+    </task>
+    <task id="LOCAL-00306" summary="Update">
+      <created>1685173000328</created>
+      <option name="number" value="00306" />
+      <option name="presentableId" value="LOCAL-00306" />
+      <option name="project" value="LOCAL" />
+      <updated>1685173000328</updated>
+    </task>
+    <option name="localTasksCounter" value="307" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
