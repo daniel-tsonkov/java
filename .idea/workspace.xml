@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/src/StreamsFilesAndDirectories/CountCharacterTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StreamsFilesAndDirectories/CountCharacterTypes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/StreamsFilesAndDirectories/LineNumbers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +65,7 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CountCharacterTypes">
+  <component name="RunManager" selected="Application.LineNumbers">
     <configuration name="AllCapitals" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="StreamsFilesAndDirectories.AllCapitals" />
       <module name="testove" />
@@ -92,12 +92,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HandsOfCards" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="SetsAndMaps.HandsOfCards" />
+    <configuration name="LineNumbers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StreamsFilesAndDirectories.LineNumbers" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="SetsAndMaps.*" />
+          <option name="PATTERN" value="StreamsFilesAndDirectories.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,11 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LineNumbers" />
         <item itemvalue="Application.CountCharacterTypes" />
         <item itemvalue="Application.AllCapitals" />
         <item itemvalue="Application.SumBytes" />
         <item itemvalue="Application.SumLines" />
-        <item itemvalue="Application.HandsOfCards" />
       </list>
     </recent_temporary>
   </component>
@@ -149,13 +149,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00263" summary="Update">
-      <created>1683483842757</created>
-      <option name="number" value="00263" />
-      <option name="presentableId" value="LOCAL-00263" />
-      <option name="project" value="LOCAL" />
-      <updated>1683483842757</updated>
     </task>
     <task id="LOCAL-00264" summary="Update">
       <created>1683484807146</created>
@@ -493,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685205286548</updated>
     </task>
-    <option name="localTasksCounter" value="312" />
+    <task id="LOCAL-00312" summary="Update">
+      <created>1685205960822</created>
+      <option name="number" value="00312" />
+      <option name="presentableId" value="LOCAL-00312" />
+      <option name="project" value="LOCAL" />
+      <updated>1685205960822</updated>
+    </task>
+    <option name="localTasksCounter" value="313" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
