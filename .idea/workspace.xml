@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/StreamsFilesAndDirectories/WordCount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/StreamsFilesAndDirectories/GetFolderSize.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +66,7 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WordCount">
+  <component name="RunManager" selected="Application.GetFolderSize">
     <configuration name="AllCapitals" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="StreamsFilesAndDirectories.AllCapitals" />
       <module name="testove" />
@@ -93,8 +93,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LineNumbers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="StreamsFilesAndDirectories.LineNumbers" />
+    <configuration name="GetFolderSize" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StreamsFilesAndDirectories.GetFolderSize" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
@@ -106,8 +106,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SumBytes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="StreamsFilesAndDirectories.SumBytes" />
+    <configuration name="LineNumbers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StreamsFilesAndDirectories.LineNumbers" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
@@ -134,11 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GetFolderSize" />
         <item itemvalue="Application.WordCount" />
         <item itemvalue="Application.LineNumbers" />
         <item itemvalue="Application.CountCharacterTypes" />
         <item itemvalue="Application.AllCapitals" />
-        <item itemvalue="Application.SumBytes" />
       </list>
     </recent_temporary>
   </component>
@@ -150,13 +150,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00265" summary="Update">
-      <created>1683486722022</created>
-      <option name="number" value="00265" />
-      <option name="presentableId" value="LOCAL-00265" />
-      <option name="project" value="LOCAL" />
-      <updated>1683486722022</updated>
     </task>
     <task id="LOCAL-00266" summary="Update">
       <created>1684409771039</created>
@@ -494,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685207738480</updated>
     </task>
-    <option name="localTasksCounter" value="314" />
+    <task id="LOCAL-00314" summary="Update">
+      <created>1685263843918</created>
+      <option name="number" value="00314" />
+      <option name="presentableId" value="LOCAL-00314" />
+      <option name="project" value="LOCAL" />
+      <updated>1685263843918</updated>
+    </task>
+    <option name="localTasksCounter" value="315" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
