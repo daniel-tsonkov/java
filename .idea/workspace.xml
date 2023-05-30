@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="bb">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FunctionalProgramming/ConsumerPrint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FunctionalProgramming/ConsumerPrint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FunctionalProgramming/KnightsOfHonor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FunctionalProgramming/KnightsOfHonor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,9 +64,22 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\VDSystem" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ConsumerPrint">
+  <component name="RunManager" selected="Application.KnightsOfHonor">
     <configuration name="ConsumerPrint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FunctionalProgramming.ConsumerPrint" />
+      <module name="testove" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="FunctionalProgramming.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KnightsOfHonor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FunctionalProgramming.KnightsOfHonor" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
@@ -117,19 +130,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OpinionPoll" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DefiningClasses.OpinionPoll" />
-      <module name="testove" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="DefiningClasses.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestCOM" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Swing1.TestCOM" />
       <module name="testove" />
@@ -145,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.KnightsOfHonor" />
         <item itemvalue="Application.ConsumerPrint" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.TestCOM" />
         <item itemvalue="Application.Main (2)" />
-        <item itemvalue="Application.OpinionPoll" />
       </list>
     </recent_temporary>
   </component>
@@ -161,20 +161,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00308" summary="Update">
-      <created>1680775626507</created>
-      <option name="number" value="00308" />
-      <option name="presentableId" value="LOCAL-00308" />
-      <option name="project" value="LOCAL" />
-      <updated>1680775626507</updated>
-    </task>
-    <task id="LOCAL-00309" summary="Update">
-      <created>1680790609388</created>
-      <option name="number" value="00309" />
-      <option name="presentableId" value="LOCAL-00309" />
-      <option name="project" value="LOCAL" />
-      <updated>1680790609389</updated>
     </task>
     <task id="LOCAL-00310" summary="Update">
       <created>1680800569222</created>
@@ -505,7 +491,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685446676247</updated>
     </task>
-    <option name="localTasksCounter" value="357" />
+    <task id="LOCAL-00357" summary="bb">
+      <created>1685447934573</created>
+      <option name="number" value="00357" />
+      <option name="presentableId" value="LOCAL-00357" />
+      <option name="project" value="LOCAL" />
+      <updated>1685447934573</updated>
+    </task>
+    <task id="LOCAL-00358" summary="bb">
+      <created>1685448176454</created>
+      <option name="number" value="00358" />
+      <option name="presentableId" value="LOCAL-00358" />
+      <option name="project" value="LOCAL" />
+      <updated>1685448176454</updated>
+    </task>
+    <option name="localTasksCounter" value="359" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
