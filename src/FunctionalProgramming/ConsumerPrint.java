@@ -1,6 +1,6 @@
 package FunctionalProgramming;
 
-public class FunctionalProgramming {
+public class ConsumerPrint {
     public static void main(String[] args) {
 
     }
