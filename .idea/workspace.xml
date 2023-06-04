@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="Update">
+      <change afterPath="$PROJECT_DIR$/src/DefiningClasses/OpinionPoll/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DefiningClasses/OpinionPoll/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FunctionalProgramming/ReverseAndExclude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FunctionalProgramming/ReverseAndExclude.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DefiningClasses/OpinionPoll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DefiningClasses/OpinionPolll.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +70,7 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\VDSystem" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AppliedArithmetic">
+  <component name="RunManager" selected="Application.DefiningClasses.OpinionPoll.Main">
     <configuration name="AppliedArithmetic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FunctionalProgramming.AppliedArithmetic" />
       <module name="testove" />
@@ -107,12 +110,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KnightsOfHonor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FunctionalProgramming.KnightsOfHonor" />
+    <configuration name="DefiningClasses.OpinionPoll.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DefiningClasses.OpinionPoll.Main" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="FunctionalProgramming.*" />
+          <option name="PATTERN" value="DefiningClasses.OpinionPoll.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -120,12 +123,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="VerticalFarming.Main" />
+    <configuration name="KnightsOfHonor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FunctionalProgramming.KnightsOfHonor" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="VerticalFarming.*" />
+          <option name="PATTERN" value="FunctionalProgramming.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -148,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DefiningClasses.OpinionPoll.Main" />
         <item itemvalue="Application.AppliedArithmetic" />
         <item itemvalue="Application.CustomMinFunction" />
         <item itemvalue="Application.KnightsOfHonor" />
         <item itemvalue="Application.ConsumerPrint" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -164,20 +167,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00314" summary="Update">
-      <created>1680940295537</created>
-      <option name="number" value="00314" />
-      <option name="presentableId" value="LOCAL-00314" />
-      <option name="project" value="LOCAL" />
-      <updated>1680940295537</updated>
-    </task>
-    <task id="LOCAL-00315" summary="Update">
-      <created>1680942474839</created>
-      <option name="number" value="00315" />
-      <option name="presentableId" value="LOCAL-00315" />
-      <option name="project" value="LOCAL" />
-      <updated>1680942474839</updated>
     </task>
     <task id="LOCAL-00316" summary="Update">
       <created>1680947652109</created>
@@ -508,7 +497,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685476410237</updated>
     </task>
-    <option name="localTasksCounter" value="363" />
+    <task id="LOCAL-00363" summary="Update">
+      <created>1685643659607</created>
+      <option name="number" value="00363" />
+      <option name="presentableId" value="LOCAL-00363" />
+      <option name="project" value="LOCAL" />
+      <updated>1685643659607</updated>
+    </task>
+    <task id="LOCAL-00364" summary="Update">
+      <created>1685643856379</created>
+      <option name="number" value="00364" />
+      <option name="presentableId" value="LOCAL-00364" />
+      <option name="project" value="LOCAL" />
+      <updated>1685643856379</updated>
+    </task>
+    <option name="localTasksCounter" value="365" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
