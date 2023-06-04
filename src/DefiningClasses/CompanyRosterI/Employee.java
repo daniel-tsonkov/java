@@ -79,6 +79,6 @@ public class Employee {
 
     @Override
     public String toString() {
-        return String.format("Highest Average Salary: %s %.2f %s %d", name, salary, email, age);
+        return String.format("%s %.2f %s %d", name, salary, email, age);
     }
 }
