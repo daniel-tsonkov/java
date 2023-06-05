@@ -28,16 +28,18 @@ public class Main {
             int amountOfKm = Integer.parseInt(tokens[2]);
 
             Car car = cars.stream().filter(c -> c.getModel()
-                    .equals(carModel))
+                            .equals(carModel))
                     .findFirst()
                     .orElse(null);
 
             if (car.isFuelSufficient(amountOfKm)) {
-
+                car.reduceFuel(amountOfKm);
+                car.setTraveledDistance(car.getTraveledDistance() + amountOfKm);
             } else {
                 System.out.println("Insufficient fuel for the drive");
             }
             line = scanner.nextLine();
         }
+        cars.forEach(System.out::println);
     }
 }

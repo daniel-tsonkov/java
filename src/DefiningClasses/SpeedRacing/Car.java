@@ -40,4 +40,25 @@ public class Car {
     private double neededFuel(int distance) {
         return this.fuelCostPerKm * distance;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s %.2f %d", model, fuelAmount, traveledDistance);
+    }
+
+    public double getFuelAmount() {
+        return fuelAmount;
+    }
+
+    public double getFuelCostPerKm() {
+        return fuelCostPerKm;
+    }
+
+    public int getTraveledDistance() {
+        return traveledDistance;
+    }
+
+    public void reduceFuel(int distance) {
+        this.fuelAmount -= neededFuel(distance);
+    }
 }
