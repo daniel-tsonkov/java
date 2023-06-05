@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="bb">
-      <change beforePath="$PROJECT_DIR$/src/DefiningClasses/SpeedRacing/Car.zip" beforeDir="false" afterPath="$PROJECT_DIR$/src/DefiningClasses/SpeedRacing/Car.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DefiningClasses/PokemonTrainer/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DefiningClasses/PokemonTrainer/Pokemon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DefiningClasses/PokemonTrainer/Trainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DefiningClasses/SpeedRacing/Main.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DefiningClasses/SpeedRacing/Car.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,22 +71,9 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\VDSystem" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="AppliedArithmetic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FunctionalProgramming.AppliedArithmetic" />
-      <module name="testove" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="FunctionalProgramming.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConsumerPrint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FunctionalProgramming.ConsumerPrint" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
@@ -133,6 +125,19 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DefiningClasses.PokemonTrainer.Main" />
+      <module name="testove" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DefiningClasses.PokemonTrainer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="demo.Main" />
       <module name="testove" />
       <extension name="coverage">
@@ -147,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.AppliedArithmetic" />
         <item itemvalue="Application.CustomMinFunction" />
         <item itemvalue="Application.KnightsOfHonor" />
-        <item itemvalue="Application.ConsumerPrint" />
       </list>
     </recent_temporary>
   </component>
@@ -163,13 +168,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00316" summary="Update">
-      <created>1680947652109</created>
-      <option name="number" value="00316" />
-      <option name="presentableId" value="LOCAL-00316" />
-      <option name="project" value="LOCAL" />
-      <updated>1680947652109</updated>
     </task>
     <task id="LOCAL-00317" summary="Update">
       <created>1680949005567</created>
@@ -507,7 +505,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685962893275</updated>
     </task>
-    <option name="localTasksCounter" value="365" />
+    <task id="LOCAL-00365" summary="bb">
+      <created>1685963252838</created>
+      <option name="number" value="00365" />
+      <option name="presentableId" value="LOCAL-00365" />
+      <option name="project" value="LOCAL" />
+      <updated>1685963252838</updated>
+    </task>
+    <option name="localTasksCounter" value="366" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
