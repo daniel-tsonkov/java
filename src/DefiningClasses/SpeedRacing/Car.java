@@ -41,11 +41,6 @@ public class Car {
         return this.fuelCostPerKm * distance;
     }
 
-    @Override
-    public String toString() {
-        return String.format("%s %.2f %d", model, fuelAmount, traveledDistance);
-    }
-
     public double getFuelAmount() {
         return fuelAmount;
     }
@@ -58,7 +53,16 @@ public class Car {
         return traveledDistance;
     }
 
+    public void increaseKm(int distance) {
+        this.traveledDistance += distance;
+    }
+
     public void reduceFuel(int distance) {
         this.fuelAmount -= neededFuel(distance);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %.2f %d", model, fuelAmount, traveledDistance);
     }
 }

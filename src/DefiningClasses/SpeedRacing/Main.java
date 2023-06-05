@@ -14,15 +14,15 @@ public class Main {
         for (int i = 0; i < n; i++) {
             String[] tokens = scanner.nextLine().split("\\s+");
             String name = tokens[0];
-            double fuelOfAmout = Double.parseDouble(tokens[1]);
+            double fuelAmount = Double.parseDouble(tokens[1]);
             double fuelCost = Double.parseDouble(tokens[2]);
 
-            Car car = new Car(name, fuelOfAmout, fuelCost);
+            Car car = new Car(name, fuelAmount, fuelCost);
             cars.add(car);
         }
         String line = scanner.nextLine();
-        while (!line.contains("End")) {
-            String[] tokens = scanner.nextLine().split("\\n+");
+        while (!line.equals("End")) {
+            String[] tokens = line.split("\\n+");
 
             String carModel = tokens[1];
             int amountOfKm = Integer.parseInt(tokens[2]);
