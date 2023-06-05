@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84ad41e9-c5d8-4b3f-9371-b3d83279ebba" name="Changes" comment="bb">
-      <change afterPath="$PROJECT_DIR$/src/DefiningClasses/SpeedRacing/Car.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DefiningClasses/SpeedRacing/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DefiningClasses/SpeedRacing/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DefiningClasses/SpeedRacing/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DefiningClasses/SpeedRacing/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DefiningClasses/SpeedRacing/Car.zip" beforeDir="false" afterPath="$PROJECT_DIR$/src/DefiningClasses/SpeedRacing/Car.zip" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +66,7 @@
       <recent name="C:\Users\Dani\IdeaProjects\java\tests\src\VDSystem" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AppliedArithmetic">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration name="AppliedArithmetic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FunctionalProgramming.AppliedArithmetic" />
       <module name="testove" />
@@ -122,12 +119,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="VerticalFarming.Main" />
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DefiningClasses.SpeedRacing.Main" />
       <module name="testove" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="VerticalFarming.*" />
+          <option name="PATTERN" value="DefiningClasses.SpeedRacing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -150,11 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.AppliedArithmetic" />
         <item itemvalue="Application.CustomMinFunction" />
         <item itemvalue="Application.KnightsOfHonor" />
         <item itemvalue="Application.ConsumerPrint" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -166,13 +163,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655886770102</updated>
-    </task>
-    <task id="LOCAL-00315" summary="Update">
-      <created>1680942474839</created>
-      <option name="number" value="00315" />
-      <option name="presentableId" value="LOCAL-00315" />
-      <option name="project" value="LOCAL" />
-      <updated>1680942474839</updated>
     </task>
     <task id="LOCAL-00316" summary="Update">
       <created>1680947652109</created>
@@ -510,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685961918845</updated>
     </task>
-    <option name="localTasksCounter" value="364" />
+    <task id="LOCAL-00364" summary="bb">
+      <created>1685962893275</created>
+      <option name="number" value="00364" />
+      <option name="presentableId" value="LOCAL-00364" />
+      <option name="project" value="LOCAL" />
+      <updated>1685962893275</updated>
+    </task>
+    <option name="localTasksCounter" value="365" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

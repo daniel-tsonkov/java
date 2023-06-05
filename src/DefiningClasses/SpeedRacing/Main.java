@@ -22,7 +22,7 @@ public class Main {
         }
         String line = scanner.nextLine();
         while (!line.equals("End")) {
-            String[] tokens = line.split("\\n+");
+            String[] tokens = line.split("\\s+");
 
             String carModel = tokens[1];
             int amountOfKm = Integer.parseInt(tokens[2]);
