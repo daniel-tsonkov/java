@@ -44,7 +44,6 @@ public class Main {
                     trainer.removeDiedPokemon();
                 }
             });
-
             line = scanner.nextLine();
         }
 
